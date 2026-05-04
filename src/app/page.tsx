@@ -3,7 +3,8 @@
 import { useState, useEffect, useRef } from "react";
 import wardIndex from "../../public/data/ward-index.json";
 
-const wardIndexData = wardIndex as Record<string, string[]>;
+type WardIndexEntry = { slug: string; areas: { name: string; slug: string }[] };
+const wardIndexData = wardIndex as Record<string, WardIndexEntry>;
 const WARD_NAMES = Object.keys(wardIndexData);
 
 /** 町名の「〇丁目」数字部分を除いたベース名を返す */
@@ -12,7 +13,7 @@ function baseTown(s: string): string {
 }
 
 /** Nominatim の近傍フィールドからエリアを推定する */
-function guessArea(areaList: string[], addr: Record<string, string>): string {
+function guessArea(areaList: { name: string; slug: string }[], addr: Record<string, string>): { name: string; slug: string } | null {
   const candidates = [
     addr.neighbourhood,
     addr.suburb,
@@ -23,44 +24,43 @@ function guessArea(areaList: string[], addr: Record<string, string>): string {
   for (const cand of candidates) {
     const base = baseTown(cand);
     if (!base) continue;
-    const exact = areaList.find((a) => a === base || a === cand);
+    const exact = areaList.find((a) => a.name === base || a.name === cand);
     if (exact) return exact;
-    const partial = areaList.find((a) => a.startsWith(base) || base.startsWith(baseTown(a)));
+    const partial = areaList.find((a) => a.name.startsWith(base) || base.startsWith(baseTown(a.name)));
     if (partial) return partial;
   }
-  return "";
+  return null;
 }
 
 export default function TopPage() {
   const [selectedWard, setSelectedWard] = useState("");
-  const [selectedArea, setSelectedArea] = useState("");
-  const [areas, setAreas] = useState<string[]>([]);
+  const [selectedAreaSlug, setSelectedAreaSlug] = useState("");
+  const [areas, setAreas] = useState<{ name: string; slug: string }[]>([]);
   const [gpsStatus, setGpsStatus] = useState("");
-  const pendingAreaRef = useRef("");
+  const pendingAreaRef = useRef<{ name: string; slug: string } | null>(null);
 
   useEffect(() => {
     if (selectedWard && wardIndexData[selectedWard]) {
-      setAreas(wardIndexData[selectedWard]);
+      setAreas(wardIndexData[selectedWard].areas);
       if (pendingAreaRef.current) {
-        setSelectedArea(pendingAreaRef.current);
-        pendingAreaRef.current = "";
+        setSelectedAreaSlug(pendingAreaRef.current.slug);
+        pendingAreaRef.current = null;
       } else {
-        setSelectedArea("");
+        setSelectedAreaSlug("");
       }
     } else {
       setAreas([]);
-      setSelectedArea("");
+      setSelectedAreaSlug("");
     }
   }, [selectedWard]);
 
   const handleSearch = () => {
-    if (selectedWard && selectedArea) {
-      const idx = (wardIndexData[selectedWard] ?? []).indexOf(selectedArea);
-      if (idx >= 0) {
-        window.location.href = `/ku/${selectedWard}/${idx}`;
-      }
+    if (selectedWard && selectedAreaSlug) {
+      const wardSlug = wardIndexData[selectedWard].slug;
+      window.location.href = `/Tokyo/${wardSlug}/${selectedAreaSlug}`;
     } else if (selectedWard) {
-      window.location.href = `/ku/${selectedWard}`;
+      const wardSlug = wardIndexData[selectedWard].slug;
+      window.location.href = `/Tokyo/${wardSlug}`;
     }
   };
 
@@ -82,11 +82,11 @@ export default function TopPage() {
           const city = addr.city || addr.town || addr.county || "";
           const matched = WARD_NAMES.find((w) => city.includes(w));
           if (matched) {
-            const areaList = wardIndexData[matched] ?? [];
+            const areaList = wardIndexData[matched].areas;
             const guessed = guessArea(areaList, addr);
             if (guessed) {
               pendingAreaRef.current = guessed;
-              setGpsStatus(`📍 ${matched} ${guessed}を検出しました`);
+              setGpsStatus(`📍 ${matched} ${guessed.name}を検出しました`);
             } else {
               setGpsStatus(`📍 ${matched}を検出しました`);
             }
@@ -130,13 +130,13 @@ export default function TopPage() {
             <div className="form-group">
               <label>地域・町名を選択</label>
               <select
-                value={selectedArea}
-                onChange={(e) => setSelectedArea(e.target.value)}
+                value={selectedAreaSlug}
+                onChange={(e) => setSelectedAreaSlug(e.target.value)}
                 disabled={!selectedWard}
               >
                 <option value="">-- 地域を選択 --</option>
                 {areas.map((a) => (
-                  <option key={a} value={a}>{a}</option>
+                  <option key={a.slug} value={a.slug}>{a.name}</option>
                 ))}
               </select>
             </div>
@@ -155,12 +155,12 @@ export default function TopPage() {
           {WARD_NAMES.map((ward) => (
             <a
               key={ward}
-              href={`/ku/${ward}`}
+              href={`/Tokyo/${wardIndexData[ward].slug}`}
               className="ward-card"
             >
               {ward}
               <div className="ward-card-count">
-                {wardIndexData[ward].length}地域
+                {wardIndexData[ward].areas.length}地域
               </div>
             </a>
           ))}

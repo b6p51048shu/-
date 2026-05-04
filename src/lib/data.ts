@@ -2,6 +2,7 @@ import wardDataRaw from "../../public/data/ward-data.json";
 
 export type AreaSchedule = {
   area: string;
+  slug: string;
   burnable: string;
   unburnable: string;
   recyclable: string;
@@ -21,6 +22,7 @@ export type AreaSchedule = {
 
 export type WardInfo = {
   code: string;
+  ward_slug: string;
   areas: AreaSchedule[];
 };
 
@@ -35,8 +37,19 @@ export const wardByCode: Record<string, string> = Object.fromEntries(
   Object.entries(wardData).map(([name, info]) => [info.code, name])
 );
 
+/** 英語スラッグ → 区名 の逆引きマップ */
+export const wardBySlug: Record<string, string> = Object.fromEntries(
+  Object.entries(wardData).map(([name, info]) => [info.ward_slug, name])
+);
+
 export function getWardByCode(code: string): { name: string; info: WardInfo } | null {
   const name = wardByCode[code];
+  if (!name) return null;
+  return { name, info: wardData[name] };
+}
+
+export function getWardBySlug(wardSlug: string): { name: string; info: WardInfo } | null {
+  const name = wardBySlug[wardSlug];
   if (!name) return null;
   return { name, info: wardData[name] };
 }
@@ -49,6 +62,14 @@ export function getAreaByIndex(wardName: string, index: number): AreaSchedule | 
   const ward = getWard(wardName);
   if (!ward) return null;
   return ward.areas[index] ?? null;
+}
+
+export function getAreaBySlug(wardSlug: string, areaSlug: string): { wardName: string; schedule: AreaSchedule } | null {
+  const wardResult = getWardBySlug(wardSlug);
+  if (!wardResult) return null;
+  const schedule = wardResult.info.areas.find((a) => a.slug === areaSlug);
+  if (!schedule) return null;
+  return { wardName: wardResult.name, schedule };
 }
 
 /** 「火曜日」→「火」に正規化し、同日・祝日等の複合語を除去 */

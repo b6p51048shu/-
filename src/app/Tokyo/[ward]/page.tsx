@@ -1,18 +1,18 @@
 import type { Metadata } from "next";
-import { wardData, wardNames, getWard } from "@/lib/data";
+import { wardData, wardNames, getWardBySlug } from "@/lib/data";
 import WardPageClient from "./WardPageClient";
 
 type Props = { params: Promise<{ ward: string }> };
 
 export async function generateStaticParams() {
-  return wardNames.map((ward) => ({ ward }));
+  return wardNames.map((name) => ({ ward: wardData[name].ward_slug }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { ward: wardParam } = await params;
-  const wardName = decodeURIComponent(wardParam);
-  const info = wardData[wardName];
-  if (!info) return {};
+  const { ward: wardSlug } = await params;
+  const result = getWardBySlug(wardSlug);
+  if (!result) return {};
+  const { name: wardName, info } = result;
   return {
     title: `${wardName}のごみ収集日一覧`,
     description: `${wardName}の全${info.areas.length}地域のごみ収集日（燃やすごみ・資源ごみ・プラスチック）を一覧表示。地域を選ぶと収集曜日をすぐに確認できます。`,
@@ -24,17 +24,18 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 }
 
 export default async function WardPage({ params }: Props) {
-  const { ward: wardParam } = await params;
-  const wardName = decodeURIComponent(wardParam);
-  const info = getWard(wardName);
+  const { ward: wardSlug } = await params;
+  const result = getWardBySlug(wardSlug);
 
-  if (!info) {
+  if (!result) {
     return (
       <div className="container">
-        <p>区が見つかりません: {wardName}</p>
+        <p>区が見つかりません</p>
       </div>
     );
   }
+
+  const { name: wardName, info } = result;
 
   const jsonLd = {
     "@context": "https://schema.org",
@@ -50,7 +51,7 @@ export default async function WardPage({ params }: Props) {
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
       />
-      <WardPageClient wardName={wardName} wardInfo={info} wardParam={wardParam} />
+      <WardPageClient wardName={wardName} wardInfo={info} wardSlug={wardSlug} />
     </>
   );
 }

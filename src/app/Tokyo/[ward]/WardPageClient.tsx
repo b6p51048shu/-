@@ -1,17 +1,15 @@
 "use client";
 
-"use client";
-
 import { useState } from "react";
 import type { WardInfo } from "@/lib/data";
 
 type Props = {
   wardName: string;
   wardInfo: WardInfo;
-  wardParam: string;
+  wardSlug: string;
 };
 
-export default function WardPageClient({ wardName, wardInfo, wardParam }: Props) {
+export default function WardPageClient({ wardName, wardInfo, wardSlug }: Props) {
   const [query, setQuery] = useState("");
 
   const filtered = wardInfo.areas.filter((a) =>
@@ -44,18 +42,15 @@ export default function WardPageClient({ wardName, wardInfo, wardParam }: Props)
         <p style={{ color: "var(--gray-400)" }}>該当する地域が見つかりません</p>
       ) : (
         <div className="area-list">
-          {filtered.map((a, filteredIdx) => {
-            const actualIdx = wardInfo.areas.findIndex((x) => x.area === a.area);
-            return (
-              <a
-                key={a.area}
-                href={`/ku/${wardParam}/${actualIdx}`}
-                className="area-link"
-              >
-                {a.area}
-              </a>
-            );
-          })}
+          {filtered.map((a) => (
+            <a
+              key={a.slug}
+              href={`/Tokyo/${wardSlug}/${a.slug}`}
+              className="area-link"
+            >
+              {a.area}
+            </a>
+          ))}
         </div>
       )}
     </div>

@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import { wardData, wardNames, getWard, getAreaByIndex, getTodayGarbage, getTomorrowGarbage } from "@/lib/data";
+import { wardData, wardNames, getWardBySlug, getAreaBySlug, getTodayGarbage, getTomorrowGarbage } from "@/lib/data";
 import type { AreaSchedule } from "@/lib/data";
 import IcsButton from "./IcsButton";
 import GarbageCalendar from "./GarbageCalendar";
@@ -8,23 +8,22 @@ type Props = { params: Promise<{ ward: string; area: string }> };
 
 export async function generateStaticParams() {
   const result: { ward: string; area: string }[] = [];
-  for (const ward of wardNames) {
-    const info = wardData[ward];
+  for (const wardName of wardNames) {
+    const info = wardData[wardName];
     if (!info) continue;
-    for (let i = 0; i < info.areas.length; i++) {
-      result.push({ ward, area: String(i) });
+    for (const a of info.areas) {
+      result.push({ ward: info.ward_slug, area: a.slug });
     }
   }
   return result;
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
-  const { ward: wardParam, area: areaParam } = await params;
-  const wardName = decodeURIComponent(wardParam);
-  const schedule = getAreaByIndex(wardName, parseInt(areaParam, 10));
-  if (!schedule) return {};
+  const { ward: wardSlug, area: areaSlug } = await params;
+  const found = getAreaBySlug(wardSlug, areaSlug);
+  if (!found) return {};
 
-  const areaName = schedule.area;
+  const { wardName, schedule } = found;
   const parts = [
     schedule.burnable && `燃やすごみ: ${schedule.burnable}`,
     schedule.unburnable && `燃やさないごみ: ${schedule.unburnable}`,
@@ -33,10 +32,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   ].filter(Boolean);
 
   return {
-    title: `${wardName} ${areaName}のごみ収集日`,
-    description: `${wardName} ${areaName}のごみ収集スケジュール。${parts.join("、")}。`,
+    title: `${wardName} ${schedule.area}のごみ収集日`,
+    description: `${wardName} ${schedule.area}のごみ収集スケジュール。${parts.join("、")}。`,
     openGraph: {
-      title: `${wardName} ${areaName}のごみ収集日 | ゴミカレ`,
+      title: `${wardName} ${schedule.area}のごみ収集日 | ゴミカレ`,
       description: `${parts.join("、")}`,
     },
   };
@@ -61,12 +60,10 @@ function getScheduleItems(schedule: AreaSchedule) {
 }
 
 export default async function AreaPage({ params }: Props) {
-  const { ward: wardParam, area: areaParam } = await params;
-  const wardName = decodeURIComponent(wardParam);
-  const areaIdx = parseInt(areaParam, 10);
-  const schedule = getAreaByIndex(wardName, areaIdx);
+  const { ward: wardSlug, area: areaSlug } = await params;
+  const found = getAreaBySlug(wardSlug, areaSlug);
 
-  if (!schedule) {
+  if (!found) {
     return (
       <div className="container">
         <p>地域が見つかりません</p>
@@ -74,6 +71,8 @@ export default async function AreaPage({ params }: Props) {
     );
   }
 
+  const { wardName, schedule } = found;
+  const wardInfo = getWardBySlug(wardSlug)?.info;
   const areaName = schedule.area;
   const todayItems = getTodayGarbage(schedule);
   const tomorrowItems = getTomorrowGarbage(schedule);
@@ -81,9 +80,10 @@ export default async function AreaPage({ params }: Props) {
   const todayName = dayNames[new Date().getDay()];
   const tomorrowName = dayNames[(new Date().getDay() + 1) % 7];
 
-  const wardInfo = getWard(wardName);
-  const prevIdx = areaIdx > 0 ? areaIdx - 1 : null;
-  const nextIdx = wardInfo && areaIdx < wardInfo.areas.length - 1 ? areaIdx + 1 : null;
+  const areas = wardInfo?.areas ?? [];
+  const currentIdx = areas.findIndex((a) => a.slug === areaSlug);
+  const prevArea = currentIdx > 0 ? areas[currentIdx - 1] : null;
+  const nextArea = currentIdx < areas.length - 1 ? areas[currentIdx + 1] : null;
 
   const scheduleItems = getScheduleItems(schedule);
 
@@ -111,7 +111,7 @@ export default async function AreaPage({ params }: Props) {
       <div className="container-narrow">
         <nav className="breadcrumb" aria-label="パンくず">
           <a href="/">ホーム</a>
-          <span><a href={`/ku/${wardParam}`}>{wardName}</a></span>
+          <span><a href={`/Tokyo/${wardSlug}`}>{wardName}</a></span>
           <span>{areaName}</span>
         </nav>
 
@@ -167,17 +167,17 @@ export default async function AreaPage({ params }: Props) {
 
         {/* 前後ナビゲーション */}
         <div style={{ display: "flex", gap: "1rem", marginTop: "2rem", flexWrap: "wrap" }}>
-          {prevIdx !== null && wardInfo && (
-            <a href={`/ku/${wardParam}/${prevIdx}`} className="btn btn-outline">
-              ← {wardInfo.areas[prevIdx].area}
+          {prevArea && (
+            <a href={`/Tokyo/${wardSlug}/${prevArea.slug}`} className="btn btn-outline">
+              ← {prevArea.area}
             </a>
           )}
-          <a href={`/ku/${wardParam}`} className="btn btn-outline">
+          <a href={`/Tokyo/${wardSlug}`} className="btn btn-outline">
             {wardName}一覧
           </a>
-          {nextIdx !== null && wardInfo && (
-            <a href={`/ku/${wardParam}/${nextIdx}`} className="btn btn-outline">
-              {wardInfo.areas[nextIdx].area} →
+          {nextArea && (
+            <a href={`/Tokyo/${wardSlug}/${nextArea.slug}`} className="btn btn-outline">
+              {nextArea.area} →
             </a>
           )}
         </div>
