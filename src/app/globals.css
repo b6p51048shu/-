@@ -526,3 +526,132 @@ a:hover { text-decoration: underline; }
   color: #92400e;
   margin-bottom: 1.5rem;
 }
+
+/* ── Ward Card Bags Badge ── */
+.ward-card-bags {
+  margin-left: .25rem;
+  font-size: .85em;
+}
+
+/* ── Designated Bags Panel ── */
+.bags-panel {
+  background: #fff;
+  border: 2px solid #fbbf24;
+  border-radius: var(--radius);
+  padding: 1.5rem;
+  margin: 2rem 0;
+  box-shadow: var(--shadow);
+}
+
+.bags-title {
+  font-size: 1.15rem;
+  font-weight: 700;
+  color: var(--gray-800);
+  margin-bottom: .5rem;
+}
+
+.bags-note {
+  font-size: .85rem;
+  color: var(--gray-600);
+  margin-bottom: 1.25rem;
+  background: #fffbeb;
+  padding: .5rem .75rem;
+  border-radius: 6px;
+  border-left: 3px solid #fbbf24;
+}
+
+.bags-types {
+  display: grid;
+  gap: 1.25rem;
+}
+
+@media (min-width: 640px) {
+  .bags-types {
+    grid-template-columns: repeat(auto-fill, minmax(260px, 1fr));
+  }
+}
+
+.bags-type-card {
+  background: var(--gray-50);
+  border-radius: 10px;
+  overflow: hidden;
+  border: 1px solid var(--gray-200);
+}
+
+.bags-type-header {
+  display: flex;
+  align-items: center;
+  gap: .625rem;
+  padding: .75rem 1rem;
+  background: #fff;
+  border-bottom: 1px solid var(--gray-200);
+}
+
+.bags-color-swatch {
+  width: 20px;
+  height: 20px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+.bags-type-label {
+  font-weight: 600;
+  font-size: .9rem;
+  flex: 1;
+}
+
+.bags-color-name {
+  font-size: .75rem;
+  color: var(--gray-600);
+}
+
+.bags-price-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: .82rem;
+}
+
+.bags-price-table th,
+.bags-price-table td {
+  padding: .45rem .75rem;
+  text-align: right;
+  border-bottom: 1px solid var(--gray-100);
+}
+
+.bags-price-table th {
+  font-weight: 600;
+  color: var(--gray-600);
+  background: #f8fafc;
+  text-align: right;
+}
+
+.bags-price-table td:first-child,
+.bags-price-table th:first-child {
+  text-align: left;
+}
+
+.bags-size { font-weight: 600; }
+.bags-capacity { color: var(--gray-600); }
+.bags-price { color: var(--orange); font-weight: 600; }
+.bags-price-10 { color: var(--gray-600); }
+
+.bags-footer {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: .5rem;
+  margin-top: 1.25rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--gray-200);
+  font-size: .85rem;
+}
+
+.bags-buy-label { font-weight: 600; white-space: nowrap; }
+.bags-buy-text { color: var(--gray-600); flex: 1; min-width: 120px; }
+
+.bags-info-link {
+  color: var(--blue);
+  font-weight: 600;
+  white-space: nowrap;
+}
+.bags-info-link:hover { text-decoration: underline; }

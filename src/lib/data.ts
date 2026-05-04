@@ -1,4 +1,5 @@
 import wardDataRaw from "../../public/data/ward-data.json";
+import regionIndexRaw from "../../public/data/region-index.json";
 
 export type AreaSchedule = {
   area: string;
@@ -20,11 +21,36 @@ export type AreaSchedule = {
   };
 };
 
+export type BagSize = {
+  size: string;
+  capacity: string;
+  price_per_10: number | null;
+  price_per_bag: number | null;
+};
+
+export type BagType = {
+  category: "burnable" | "unburnable" | "plastic" | "pet" | "recyclable";
+  label: string;
+  color: string;
+  sizes: BagSize[];
+};
+
+export type DesignatedBags = {
+  required: boolean;
+  note?: string;
+  types: BagType[];
+  where_to_buy: string;
+  info_url: string;
+};
+
 export type WardInfo = {
   code: string;
   ward_slug: string;
   areas: AreaSchedule[];
+  bags?: DesignatedBags;
 };
+
+export const regionIndex = regionIndexRaw as Record<string, string[]>;
 
 export type AllWardData = Record<string, WardInfo>;
 

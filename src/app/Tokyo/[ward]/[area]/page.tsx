@@ -3,6 +3,7 @@ import { wardData, wardNames, getWardBySlug, getAreaBySlug, getTodayGarbage, get
 import type { AreaSchedule } from "@/lib/data";
 import IcsButton from "./IcsButton";
 import GarbageCalendar from "./GarbageCalendar";
+import BagsPanel from "./BagsPanel";
 
 type Props = { params: Promise<{ ward: string; area: string }> };
 
@@ -153,6 +154,9 @@ export default async function AreaPage({ params }: Props) {
 
         {/* カレンダー同期 */}
         <IcsButton wardName={wardName} areaName={areaName} schedule={schedule} />
+
+        {/* 指定ごみ袋情報（あれば表示） */}
+        {wardInfo?.bags && <BagsPanel bags={wardInfo.bags} />}
 
         {/* FAQ テキスト (SEO) */}
         <section className="faq-section">

@@ -2,9 +2,15 @@
 
 import { useState, useEffect, useRef } from "react";
 import wardIndex from "../../public/data/ward-index.json";
+import regionIndex from "../../public/data/region-index.json";
 
-type WardIndexEntry = { slug: string; areas: { name: string; slug: string }[] };
+type WardIndexEntry = {
+  slug: string;
+  areas: { name: string; slug: string }[];
+  has_bags?: boolean;
+};
 const wardIndexData = wardIndex as Record<string, WardIndexEntry>;
+const regionData = regionIndex as Record<string, string[]>;
 const WARD_NAMES = Object.keys(wardIndexData);
 
 /** 町名の「〇丁目」数字部分を除いたベース名を返す */
@@ -92,7 +98,7 @@ export default function TopPage() {
             }
             setSelectedWard(matched);
           } else {
-            setGpsStatus(`現在地: ${city || "不明"} — 東京23区以外はサービス対象外です`);
+            setGpsStatus(`現在地: ${city || "不明"} — 現在対象外のエリアです`);
           }
         } catch {
           setGpsStatus("位置情報の解析に失敗しました");
@@ -102,12 +108,15 @@ export default function TopPage() {
     );
   };
 
+  const wards23 = regionData["23区"] ?? [];
+  const tamaCities = regionData["多摩地区"] ?? [];
+
   return (
     <>
       {/* ── Hero ── */}
       <section className="hero">
         <h1 className="hero-title">♻️ ゴミカレ</h1>
-        <p className="hero-sub">東京23区のごみ収集日を地域別に検索</p>
+        <p className="hero-sub">東京のごみ収集日・指定ごみ袋を地域別に検索</p>
 
         <div className="search-box">
           <h2>🔍 地域から調べる</h2>
@@ -118,12 +127,19 @@ export default function TopPage() {
             {gpsStatus && <p style={{ fontSize: ".85rem", color: "#374151" }}>{gpsStatus}</p>}
 
             <div className="form-group">
-              <label>区を選択</label>
+              <label>区・市を選択</label>
               <select value={selectedWard} onChange={(e) => setSelectedWard(e.target.value)}>
-                <option value="">-- 区を選択 --</option>
-                {WARD_NAMES.map((w) => (
-                  <option key={w} value={w}>{w}</option>
-                ))}
+                <option value="">-- 区・市を選択 --</option>
+                <optgroup label="東京23区">
+                  {wards23.filter((w) => wardIndexData[w]).map((w) => (
+                    <option key={w} value={w}>{w}</option>
+                  ))}
+                </optgroup>
+                <optgroup label="多摩地区">
+                  {tamaCities.filter((w) => wardIndexData[w]).map((w) => (
+                    <option key={w} value={w}>{w}</option>
+                  ))}
+                </optgroup>
               </select>
             </div>
 
@@ -152,7 +168,7 @@ export default function TopPage() {
       <div className="container">
         <h2 className="section-title">23区から選ぶ</h2>
         <div className="ward-grid">
-          {WARD_NAMES.map((ward) => (
+          {wards23.filter((w) => wardIndexData[w]).map((ward) => (
             <a
               key={ward}
               href={`/Tokyo/${wardIndexData[ward].slug}`}
@@ -166,24 +182,52 @@ export default function TopPage() {
           ))}
         </div>
 
+        {/* ── 多摩地区グリッド ── */}
+        {tamaCities.some((w) => wardIndexData[w]) && (
+          <>
+            <h2 className="section-title" style={{ marginTop: "2.5rem" }}>多摩地区から選ぶ</h2>
+            <div className="ward-grid">
+              {tamaCities.filter((w) => wardIndexData[w]).map((city) => (
+                <a
+                  key={city}
+                  href={`/Tokyo/${wardIndexData[city].slug}`}
+                  className="ward-card"
+                >
+                  {city}
+                  <div className="ward-card-count">
+                    {wardIndexData[city].areas.length}地域
+                    {wardIndexData[city].has_bags && (
+                      <span className="ward-card-bags" title="指定ごみ袋情報あり"> 🛍️</span>
+                    )}
+                  </div>
+                </a>
+              ))}
+            </div>
+          </>
+        )}
+
         {/* ── FAQ / SEO ── */}
         <section className="faq-section" aria-label="よくある質問">
           <h2 className="section-title">よくある質問</h2>
           <div className="faq-item">
             <p className="faq-q">Q. ゴミカレとは？</p>
-            <p className="faq-a">東京23区のごみ収集日を地域別に検索できる無料サービスです。燃やすごみ・燃やさないごみ・資源ごみ・プラスチックの収集曜日を一覧表示します。</p>
+            <p className="faq-a">東京都内のごみ収集日を地域別に検索できる無料サービスです。燃やすごみ・燃やさないごみ・資源ごみ・プラスチックの収集曜日を一覧表示します。多摩地区では指定ごみ袋の種類・価格情報も確認できます。</p>
           </div>
           <div className="faq-item">
             <p className="faq-q">Q. GPS機能はどのように使いますか？</p>
-            <p className="faq-a">「現在地から自動検索」ボタンを押すと、ブラウザの位置情報を使って現在地の区を自動判定します。許可を求めるダイアログが表示されたら「許可」を選んでください。</p>
+            <p className="faq-a">「現在地から自動検索」ボタンを押すと、ブラウザの位置情報を使って現在地の区・市を自動判定します。許可を求めるダイアログが表示されたら「許可」を選んでください。</p>
+          </div>
+          <div className="faq-item">
+            <p className="faq-q">Q. 指定ごみ袋とは何ですか？</p>
+            <p className="faq-a">多摩地区の多くの市では、ごみを捨てる際に自治体が指定した専用袋（有料）の使用が義務付けられています。袋の色や価格は市によって異なります。対応市のページでサイズ・価格・販売場所を確認できます。</p>
           </div>
           <div className="faq-item">
             <p className="faq-q">Q. データはいつ更新されますか？</p>
-            <p className="faq-a">各区の公式サイトに基づき随時更新しています。祝日や年末年始の特別スケジュールは各区の公式サイトでご確認ください。</p>
+            <p className="faq-a">各区・市の公式サイトに基づき随時更新しています。祝日や年末年始の特別スケジュールは各自治体の公式サイトでご確認ください。</p>
           </div>
           <div className="faq-item">
-            <p className="faq-q">Q. 対象エリアは東京23区のみですか？</p>
-            <p className="faq-a">現在は東京23区が対象です。順次対応エリアを拡大予定です。</p>
+            <p className="faq-q">Q. 対象エリアはどこですか？</p>
+            <p className="faq-a">東京23区と多摩地区（立川市ほか）に対応しています。順次対応エリアを拡大予定です。</p>
           </div>
         </section>
       </div>
