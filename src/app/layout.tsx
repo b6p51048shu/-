@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
+import LanguageSwitcher from "@/components/LanguageSwitcher";
 
 const notoSansJP = Noto_Sans_JP({
   weight: ["400", "500", "700"],
@@ -58,6 +59,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
             <nav className="site-nav">
               <a href="/">トップ</a>
             </nav>
+            <LanguageSwitcher />
           </header>
           <main className="site-main">{children}</main>
           <footer className="site-footer">

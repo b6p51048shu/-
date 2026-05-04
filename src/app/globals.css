@@ -63,6 +63,21 @@ a:hover { text-decoration: underline; }
   padding: .25rem .5rem;
 }
 .site-main { flex: 1; }
+
+/* ── 言語切替 ── */
+.lang-switcher { display: flex; gap: .25rem; margin-left: auto; }
+.lang-btn {
+  font-size: .75rem;
+  padding: .2rem .5rem;
+  border-radius: 4px;
+  color: var(--gray-600);
+  text-decoration: none;
+  border: 1px solid var(--gray-200);
+  transition: background .15s;
+}
+.lang-btn:hover { background: var(--gray-100); text-decoration: none; }
+.lang-btn.active { background: var(--green); color: #fff; border-color: var(--green); }
+
 .site-footer {
   background: var(--gray-800);
   color: #fff;
