@@ -16,10 +16,11 @@ export default function LanguageSwitcher() {
   return (
     <div className="lang-switcher">
       <a href={paths.jaPath} className={`lang-btn ${!paths.isEn ? "active" : ""}`} aria-label="日本語">
-        🇯🇵 JP
+        JA
       </a>
+      <span className="lang-sep">|</span>
       <a href={paths.enPath} className={`lang-btn ${paths.isEn ? "active" : ""}`} aria-label="English">
-        🇬🇧 EN
+        EN
       </a>
     </div>
   );

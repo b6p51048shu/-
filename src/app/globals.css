@@ -65,18 +65,19 @@ a:hover { text-decoration: underline; }
 .site-main { flex: 1; }
 
 /* ── 言語切替 ── */
-.lang-switcher { display: flex; gap: .25rem; margin-left: auto; }
+.lang-switcher { display: flex; align-items: center; gap: .375rem; margin-left: auto; }
+.lang-sep { color: var(--gray-300); font-size: .75rem; line-height: 1; }
 .lang-btn {
   font-size: .75rem;
-  padding: .2rem .5rem;
-  border-radius: 4px;
-  color: var(--gray-600);
+  font-weight: 600;
+  letter-spacing: .04em;
+  color: var(--gray-400);
   text-decoration: none;
-  border: 1px solid var(--gray-200);
-  transition: background .15s;
+  padding: .1rem 0;
+  transition: color .15s;
 }
-.lang-btn:hover { background: var(--gray-100); text-decoration: none; }
-.lang-btn.active { background: var(--green); color: #fff; border-color: var(--green); }
+.lang-btn:hover { color: var(--gray-700); text-decoration: none; }
+.lang-btn.active { color: var(--green); border-bottom: 2px solid var(--green); }
 
 .site-footer {
   background: var(--gray-800);
