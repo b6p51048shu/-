@@ -30,20 +30,25 @@ export const wardData = wardDataRaw as AllWardData;
 
 export const wardNames = Object.keys(wardData);
 
+/** 区コード → 区名 の逆引きマップ */
+export const wardByCode: Record<string, string> = Object.fromEntries(
+  Object.entries(wardData).map(([name, info]) => [info.code, name])
+);
+
+export function getWardByCode(code: string): { name: string; info: WardInfo } | null {
+  const name = wardByCode[code];
+  if (!name) return null;
+  return { name, info: wardData[name] };
+}
+
 export function getWard(wardName: string): WardInfo | null {
-  return wardData[decodeURIComponent(wardName)] ?? null;
+  return wardData[wardName] ?? null;
 }
 
 export function getAreaByIndex(wardName: string, index: number): AreaSchedule | null {
   const ward = getWard(wardName);
   if (!ward) return null;
   return ward.areas[index] ?? null;
-}
-
-export function getAreaIndex(wardName: string, areaName: string): number {
-  const ward = getWard(wardName);
-  if (!ward) return -1;
-  return ward.areas.findIndex((a) => a.area === areaName);
 }
 
 /** 「火曜日」→「火」に正規化し、同日・祝日等の複合語を除去 */

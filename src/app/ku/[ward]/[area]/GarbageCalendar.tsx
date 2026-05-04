@@ -63,10 +63,15 @@ function normalize(text: string): string {
     .replace(/([月火水木金土日])曜/g, "$1");
 }
 
-/** 「第N」数字を抽出 */
+/** 「第N・M」形式から週番号をすべて抽出（例: "第1・3月" → [1, 3]） */
 function extractNths(text: string): number[] {
-  const nths: number[] = [];
-  for (const m of text.matchAll(/第([１２３４５1-5])/g)) {
+  // まず最初の「第N」を見つける
+  const firstMatch = text.match(/第([１２３４５1-5])((?:[・、,，][１２３４５1-5])*)/);
+  if (!firstMatch) return [];
+  const nths: number[] = [parseInt(toHalf(firstMatch[1]), 10)];
+  // 続く「・N」「、N」部分を追加
+  const rest = firstMatch[2];
+  for (const m of rest.matchAll(/[・、,，]([１２３４５1-5])/g)) {
     nths.push(parseInt(toHalf(m[1]), 10));
   }
   return nths;
