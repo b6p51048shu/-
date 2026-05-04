@@ -1,6 +1,8 @@
 import type { MetadataRoute } from "next";
 import { wardData, wardNames } from "@/lib/data";
 
+export const dynamic = "force-static";
+
 const BASE_URL = "https://gomicale.jp";
 
 export default function sitemap(): MetadataRoute.Sitemap {
