@@ -1,29 +1,24 @@
 "use client";
 
-import { usePathname } from "next/navigation";
+import { useEffect, useState } from "react";
 
 export default function LanguageSwitcher() {
-  const pathname = usePathname();
+  const [paths, setPaths] = useState({ isEn: false, jaPath: "/", enPath: "/en" });
 
-  // 現在のパスから言語を判定し、切替先URLを生成
-  const isEn = pathname.startsWith("/en");
-  const jaPath = isEn ? pathname.replace(/^\/en/, "") || "/" : pathname;
-  const enPath = isEn ? pathname : `/en${pathname === "/" ? "" : pathname}`;
+  useEffect(() => {
+    const pathname = window.location.pathname;
+    const isEn = pathname.startsWith("/en");
+    const jaPath = isEn ? pathname.replace(/^\/en/, "") || "/" : pathname;
+    const enPath = isEn ? pathname : `/en${pathname === "/" ? "" : pathname}`;
+    setPaths({ isEn, jaPath, enPath });
+  }, []);
 
   return (
     <div className="lang-switcher">
-      <a
-        href={jaPath}
-        className={`lang-btn ${!isEn ? "active" : ""}`}
-        aria-label="日本語"
-      >
+      <a href={paths.jaPath} className={`lang-btn ${!paths.isEn ? "active" : ""}`} aria-label="日本語">
         🇯🇵 JP
       </a>
-      <a
-        href={enPath}
-        className={`lang-btn ${isEn ? "active" : ""}`}
-        aria-label="English"
-      >
+      <a href={paths.enPath} className={`lang-btn ${paths.isEn ? "active" : ""}`} aria-label="English">
         🇬🇧 EN
       </a>
     </div>
