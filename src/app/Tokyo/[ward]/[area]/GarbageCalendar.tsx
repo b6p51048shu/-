@@ -63,18 +63,23 @@ function normalize(text: string): string {
     .replace(/([月火水木金土日])曜/g, "$1");
 }
 
-/** 「第N・M」形式から週番号をすべて抽出（例: "第1・3月" → [1, 3]） */
+/** 週番号をすべて抽出（2つの形式に対応）
+ *  - 「第1火・第3火」: 各"第N"を個別にマッチ → [1, 3]
+ *  - 「第1・3月」: 最初の"第N"＋後続"・M" → [1, 3]
+ */
 function extractNths(text: string): number[] {
-  // まず最初の「第N」を見つける
-  const firstMatch = text.match(/第([１２３４５1-5])((?:[・、,，][１２３４５1-5])*)/);
-  if (!firstMatch) return [];
-  const nths: number[] = [parseInt(toHalf(firstMatch[1]), 10)];
-  // 続く「・N」「、N」部分を追加
-  const rest = firstMatch[2];
-  for (const m of rest.matchAll(/[・、,，]([１２３４５1-5])/g)) {
-    nths.push(parseInt(toHalf(m[1]), 10));
+  const nths = new Set<number>();
+  // 「第N」をすべて収集（「第1火・第3火」形式）
+  for (const m of text.matchAll(/第([１２３４５1-5])/g)) {
+    nths.add(parseInt(toHalf(m[1]), 10));
   }
-  return nths;
+  // 「第N・M」の「・M」部分も収集（「第1・3月」形式）
+  for (const m of text.matchAll(/第[１２３４５1-5]((?:[・、,，][１２３４５1-5])+)/g)) {
+    for (const n of m[1].matchAll(/[・、,，]([１２３４５1-5])/g)) {
+      nths.add(parseInt(toHalf(n[1]), 10));
+    }
+  }
+  return [...nths];
 }
 
 /** スケジュール文字列を解析して「その月の収集日リスト」を返す */
