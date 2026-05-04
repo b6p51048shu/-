@@ -14,14 +14,14 @@ export default function sitemap(): MetadataRoute.Sitemap {
     const info = wardData[ward];
     if (!info) continue;
     urls.push({
-      url: `${BASE_URL}/ku/${encodeURIComponent(ward)}`,
+      url: `${BASE_URL}/ku/${ward}`,
       lastModified: new Date(),
       priority: 0.8,
       changeFrequency: "monthly",
     });
     for (const a of info.areas) {
       urls.push({
-        url: `${BASE_URL}/ku/${encodeURIComponent(ward)}/${encodeURIComponent(a.area)}`,
+        url: `${BASE_URL}/ku/${ward}/${encodeURIComponent(a.area)}`,
         lastModified: new Date(),
         priority: 0.7,
         changeFrequency: "monthly",

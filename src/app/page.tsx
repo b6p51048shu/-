@@ -57,10 +57,10 @@ export default function TopPage() {
     if (selectedWard && selectedArea) {
       const idx = (wardIndexData[selectedWard] ?? []).indexOf(selectedArea);
       if (idx >= 0) {
-        window.location.href = `/ku/${encodeURIComponent(selectedWard)}/${idx}`;
+        window.location.href = `/ku/${selectedWard}/${idx}`;
       }
     } else if (selectedWard) {
-      window.location.href = `/ku/${encodeURIComponent(selectedWard)}`;
+      window.location.href = `/ku/${selectedWard}`;
     }
   };
 
@@ -155,7 +155,7 @@ export default function TopPage() {
           {WARD_NAMES.map((ward) => (
             <a
               key={ward}
-              href={`/ku/${encodeURIComponent(ward)}`}
+              href={`/ku/${ward}`}
               className="ward-card"
             >
               {ward}

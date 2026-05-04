@@ -12,7 +12,7 @@ export async function generateStaticParams() {
     const info = wardData[ward];
     if (!info) continue;
     for (let i = 0; i < info.areas.length; i++) {
-      result.push({ ward: encodeURIComponent(ward), area: String(i) });
+      result.push({ ward, area: String(i) });
     }
   }
   return result;

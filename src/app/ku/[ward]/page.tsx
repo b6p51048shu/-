@@ -5,7 +5,7 @@ import WardPageClient from "./WardPageClient";
 type Props = { params: Promise<{ ward: string }> };
 
 export async function generateStaticParams() {
-  return wardNames.map((ward) => ({ ward: encodeURIComponent(ward) }));
+  return wardNames.map((ward) => ({ ward }));
 }
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
