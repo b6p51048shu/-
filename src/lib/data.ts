@@ -6,8 +6,8 @@ export type AreaSchedule = {
   slug: string;
   burnable: string;
   unburnable: string;
-  recyclable: string;
-  plastic: string;
+  recyclable?: string;
+  plastic?: string;
   pet?: string;
   oversized?: string;
   office?: string;
@@ -113,8 +113,8 @@ export function getTodayGarbage(schedule: AreaSchedule): string[] {
   const result: string[] = [];
   if (normDay(schedule.burnable).includes(today)) result.push("燃やすごみ");
   if (normDay(schedule.unburnable).includes(today)) result.push("燃やさないごみ");
-  if (normDay(schedule.recyclable).includes(today)) result.push("資源ごみ");
-  if (normDay(schedule.plastic).includes(today)) result.push("プラスチック");
+  if (normDay(schedule.recyclable ?? "").includes(today)) result.push("資源ごみ");
+  if (normDay(schedule.plastic ?? "").includes(today)) result.push("プラスチック");
   if (normDay(schedule.pet ?? "").includes(today)) result.push("ペットボトル");
   return result;
 }
@@ -126,8 +126,8 @@ export function getTomorrowGarbage(schedule: AreaSchedule): string[] {
   const result: string[] = [];
   if (normDay(schedule.burnable).includes(tomorrow)) result.push("燃やすごみ");
   if (normDay(schedule.unburnable).includes(tomorrow)) result.push("燃やさないごみ");
-  if (normDay(schedule.recyclable).includes(tomorrow)) result.push("資源ごみ");
-  if (normDay(schedule.plastic).includes(tomorrow)) result.push("プラスチック");
+  if (normDay(schedule.recyclable ?? "").includes(tomorrow)) result.push("資源ごみ");
+  if (normDay(schedule.plastic ?? "").includes(tomorrow)) result.push("プラスチック");
   if (normDay(schedule.pet ?? "").includes(tomorrow)) result.push("ペットボトル");
   return result;
 }

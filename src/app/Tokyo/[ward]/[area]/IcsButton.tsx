@@ -32,11 +32,11 @@ function formatICSDate(d: Date): string {
 export default function IcsButton({ wardName, areaName, schedule }: Props) {
   const handleDownload = () => {
     const events: string[] = [];
-    const entries = [
+    const entries: { label: string; value: string }[] = [
       { label: "燃やすごみ収集", value: schedule.burnable },
       { label: "燃やさないごみ収集", value: schedule.unburnable },
-      { label: "資源ごみ収集", value: schedule.recyclable },
-      { label: "プラスチック収集", value: schedule.plastic },
+      { label: "資源ごみ収集", value: schedule.recyclable ?? "" },
+      { label: "プラスチック収集", value: schedule.plastic ?? "" },
     ].filter((e) => e.value);
 
     for (const { label, value } of entries) {

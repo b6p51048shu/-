@@ -2,529 +2,529 @@ export const mockData: any = {
   "東京都": {
     "千代田区": {
       "飯田橋一丁目・四丁目": {
-        "burnable": "飯田橋一丁目・四丁目",
-        "unburnable": "火・金",
-        "recyclable": "第２・４月曜日",
+        "burnable": "火・金",
+        "unburnable": "第２・４月曜日",
+        "recyclable": "土",
         "petBottle": "確認中",
-        "plastic": "土"
+        "plastic": "確認中"
       },
       "飯田橋二丁目・三丁目": {
-        "burnable": "飯田橋二丁目・三丁目",
-        "unburnable": "火・金",
-        "recyclable": "第１・３月曜日",
+        "burnable": "火・金",
+        "unburnable": "第１・３月曜日",
+        "recyclable": "土",
         "petBottle": "確認中",
-        "plastic": "土"
+        "plastic": "確認中"
       },
       "一番町1・2・3・4・5・7・9・11・23・25・27・29・31番地": {
-        "burnable": "一番町1・2・3・4・5・7・9・11・23・25・27・29・31番地",
-        "unburnable": "水・土",
-        "recyclable": "第１・３金曜日",
+        "burnable": "水・土",
+        "unburnable": "第１・３金曜日",
+        "recyclable": "木",
         "petBottle": "確認中",
-        "plastic": "木"
+        "plastic": "確認中"
       },
       "一番町6・8・10・12・13・14・15・16・17・18・19・20・21・22番地": {
-        "burnable": "一番町6・8・10・12・13・14・15・16・17・18・19・20・21・22番地",
-        "unburnable": "水・土",
-        "recyclable": "第２・４金曜日",
+        "burnable": "水・土",
+        "unburnable": "第２・４金曜日",
+        "recyclable": "木",
         "petBottle": "確認中",
-        "plastic": "木"
+        "plastic": "確認中"
       },
       "岩本町一丁目～三丁目": {
-        "burnable": "岩本町一丁目～三丁目",
-        "unburnable": "月・木",
-        "recyclable": "第１・３土曜日",
+        "burnable": "月・木",
+        "unburnable": "第１・３土曜日",
+        "recyclable": "火",
         "petBottle": "確認中",
-        "plastic": "火"
+        "plastic": "確認中"
       },
       "内神田一丁目～二丁目・三丁目（13・18・19・20・21・22番を除く）": {
-        "burnable": "内神田一丁目～二丁目・三丁目（13・18・19・20・21・22番を除く）",
-        "unburnable": "月・木",
-        "recyclable": "第２・４水曜日",
+        "burnable": "月・木",
+        "unburnable": "第２・４水曜日",
+        "recyclable": "金",
         "petBottle": "確認中",
-        "plastic": "金"
+        "plastic": "確認中"
       },
       "内神田三丁目13・18・19・20・21・22番": {
-        "burnable": "内神田三丁目13・18・19・20・21・22番",
-        "unburnable": "月・木",
-        "recyclable": "第１・３水曜日",
+        "burnable": "月・木",
+        "unburnable": "第１・３水曜日",
+        "recyclable": "金",
         "petBottle": "確認中",
-        "plastic": "金"
+        "plastic": "確認中"
       },
       "内幸町一丁目～二丁目": {
-        "burnable": "内幸町一丁目～二丁目",
-        "unburnable": "水・土",
-        "recyclable": "第２・４火曜日",
+        "burnable": "水・土",
+        "unburnable": "第２・４火曜日",
+        "recyclable": "月",
         "petBottle": "確認中",
-        "plastic": "月"
+        "plastic": "確認中"
       },
       "大手町一丁目～二丁目": {
-        "burnable": "大手町一丁目～二丁目",
-        "unburnable": "水・土",
-        "recyclable": "第２・４火曜日",
+        "burnable": "水・土",
+        "unburnable": "第２・４火曜日",
+        "recyclable": "月",
         "petBottle": "確認中",
-        "plastic": "月"
+        "plastic": "確認中"
       },
       "鍛冶町一丁目～二丁目": {
-        "burnable": "鍛冶町一丁目～二丁目",
-        "unburnable": "月・木",
-        "recyclable": "第１・３水曜日",
+        "burnable": "月・木",
+        "unburnable": "第１・３水曜日",
+        "recyclable": "金",
         "petBottle": "確認中",
-        "plastic": "金"
+        "plastic": "確認中"
       },
       "霞が関三丁目": {
-        "burnable": "霞が関三丁目",
-        "unburnable": "水・土",
-        "recyclable": "第２・４火曜日",
+        "burnable": "水・土",
+        "unburnable": "第２・４火曜日",
+        "recyclable": "月",
         "petBottle": "確認中",
-        "plastic": "月"
+        "plastic": "確認中"
       },
       "神田相生町": {
-        "burnable": "神田相生町",
-        "unburnable": "月・木",
-        "recyclable": "第２・４土曜日",
+        "burnable": "月・木",
+        "unburnable": "第２・４土曜日",
+        "recyclable": "火",
         "petBottle": "確認中",
-        "plastic": "火"
+        "plastic": "確認中"
       },
       "神田淡路町一丁目～二丁目": {
-        "burnable": "神田淡路町一丁目～二丁目",
-        "unburnable": "火・金",
-        "recyclable": "第１・３木曜日",
+        "burnable": "火・金",
+        "unburnable": "第１・３木曜日",
+        "recyclable": "水",
         "petBottle": "確認中",
-        "plastic": "水"
+        "plastic": "確認中"
       },
       "神田和泉町": {
-        "burnable": "神田和泉町",
-        "unburnable": "月・木",
-        "recyclable": "第２・４土曜日",
+        "burnable": "月・木",
+        "unburnable": "第２・４土曜日",
+        "recyclable": "火",
         "petBottle": "確認中",
-        "plastic": "火"
+        "plastic": "確認中"
       },
       "神田岩本町1・15番地": {
-        "burnable": "神田岩本町1・15番地",
-        "unburnable": "月・木",
-        "recyclable": "第２・４土曜日",
+        "burnable": "月・木",
+        "unburnable": "第２・４土曜日",
+        "recyclable": "火",
         "petBottle": "確認中",
-        "plastic": "火"
+        "plastic": "確認中"
       },
       "神田岩本町2・4番地": {
-        "burnable": "神田岩本町2・4番地",
-        "unburnable": "月・木",
-        "recyclable": "第１・３水曜日",
+        "burnable": "月・木",
+        "unburnable": "第１・３水曜日",
+        "recyclable": "金",
         "petBottle": "確認中",
-        "plastic": "金"
+        "plastic": "確認中"
       },
       "神田小川町一丁目～三丁目の奇数番地": {
-        "burnable": "神田小川町一丁目～三丁目の奇数番地",
-        "unburnable": "月・木",
-        "recyclable": "第２・４水曜日",
+        "burnable": "月・木",
+        "unburnable": "第２・４水曜日",
+        "recyclable": "金",
         "petBottle": "確認中",
-        "plastic": "金"
+        "plastic": "確認中"
       },
       "神田小川町一丁目の偶数番地": {
-        "burnable": "神田小川町一丁目の偶数番地",
-        "unburnable": "火・金",
-        "recyclable": "第１・３木曜日",
+        "burnable": "火・金",
+        "unburnable": "第１・３木曜日",
+        "recyclable": "水",
         "petBottle": "確認中",
-        "plastic": "水"
+        "plastic": "確認中"
       },
       "神田小川町二丁目～三丁目の偶数番地": {
-        "burnable": "神田小川町二丁目～三丁目の偶数番地",
-        "unburnable": "火・金",
-        "recyclable": "第２・４木曜日",
+        "burnable": "火・金",
+        "unburnable": "第２・４木曜日",
+        "recyclable": "水",
         "petBottle": "確認中",
-        "plastic": "水"
+        "plastic": "確認中"
       },
       "神田鍛冶町三丁目": {
-        "burnable": "神田鍛冶町三丁目",
-        "unburnable": "月・木",
-        "recyclable": "第１・３水曜日",
+        "burnable": "月・木",
+        "unburnable": "第１・３水曜日",
+        "recyclable": "金",
         "petBottle": "確認中",
-        "plastic": "金"
+        "plastic": "確認中"
       },
       "神田北乗物町": {
-        "burnable": "神田北乗物町",
-        "unburnable": "月・木",
-        "recyclable": "第１・３水曜日",
+        "burnable": "月・木",
+        "unburnable": "第１・３水曜日",
+        "recyclable": "金",
         "petBottle": "確認中",
-        "plastic": "金"
+        "plastic": "確認中"
       },
       "神田紺屋町": {
-        "burnable": "神田紺屋町",
-        "unburnable": "月・木",
-        "recyclable": "第１・３水曜日",
+        "burnable": "月・木",
+        "unburnable": "第１・３水曜日",
+        "recyclable": "金",
         "petBottle": "確認中",
-        "plastic": "金"
+        "plastic": "確認中"
       },
       "神田佐久間町一丁目～四丁目": {
-        "burnable": "神田佐久間町一丁目～四丁目",
-        "unburnable": "月・木",
-        "recyclable": "第２・４土曜日",
+        "burnable": "月・木",
+        "unburnable": "第２・４土曜日",
+        "recyclable": "火",
         "petBottle": "確認中",
-        "plastic": "火"
+        "plastic": "確認中"
       },
       "神田猿楽町丁目一丁目～二丁目": {
-        "burnable": "神田猿楽町丁目一丁目～二丁目",
-        "unburnable": "火・金",
-        "recyclable": "第２・４木曜日",
+        "burnable": "火・金",
+        "unburnable": "第２・４木曜日",
+        "recyclable": "水",
         "petBottle": "確認中",
-        "plastic": "水"
+        "plastic": "確認中"
       },
       "神田神保町一丁目～三丁目の奇数番地": {
-        "burnable": "神田神保町一丁目～三丁目の奇数番地",
-        "unburnable": "月・木",
-        "recyclable": "第２・４水曜日",
+        "burnable": "月・木",
+        "unburnable": "第２・４水曜日",
+        "recyclable": "金",
         "petBottle": "確認中",
-        "plastic": "金"
+        "plastic": "確認中"
       },
       "神田神保町一丁目～二丁目の偶数番地": {
-        "burnable": "神田神保町一丁目～二丁目の偶数番地",
-        "unburnable": "火・金",
-        "recyclable": "第２・４木曜日",
+        "burnable": "火・金",
+        "unburnable": "第２・４木曜日",
+        "recyclable": "水",
         "petBottle": "確認中",
-        "plastic": "水"
+        "plastic": "確認中"
       },
       "神田神保町三丁目の偶数番地": {
-        "burnable": "神田神保町三丁目の偶数番地",
-        "unburnable": "火・金",
-        "recyclable": "第１・３月曜日",
+        "burnable": "火・金",
+        "unburnable": "第１・３月曜日",
+        "recyclable": "土",
         "petBottle": "確認中",
-        "plastic": "土"
+        "plastic": "確認中"
       },
       "神田須田町一丁目1・3・5・9・11・13･15･17･19･21･23･25番地": {
-        "burnable": "神田須田町一丁目1・3・5・9・11・13･15･17･19･21･23･25番地",
-        "unburnable": "火・金",
-        "recyclable": "第１・３木曜日",
+        "burnable": "火・金",
+        "unburnable": "第１・３木曜日",
+        "recyclable": "水",
         "petBottle": "確認中",
-        "plastic": "水"
+        "plastic": "確認中"
       },
       "神田須田町一丁目7番地": {
-        "burnable": "神田須田町一丁目7番地",
-        "unburnable": "月・木",
-        "recyclable": "第２・４土曜日",
+        "burnable": "月・木",
+        "unburnable": "第２・４土曜日",
+        "recyclable": "火",
         "petBottle": "確認中",
-        "plastic": "火"
+        "plastic": "確認中"
       },
       "神田須田町一丁目の偶数番地": {
-        "burnable": "神田須田町一丁目の偶数番地",
-        "unburnable": "月・木",
-        "recyclable": "第１・３水曜日",
+        "burnable": "月・木",
+        "unburnable": "第１・３水曜日",
+        "recyclable": "金",
         "petBottle": "確認中",
-        "plastic": "金"
+        "plastic": "確認中"
       },
       "神田須田町二丁目の奇数番地": {
-        "burnable": "神田須田町二丁目の奇数番地",
-        "unburnable": "月・木",
-        "recyclable": "第２・４土曜日",
+        "burnable": "月・木",
+        "unburnable": "第２・４土曜日",
+        "recyclable": "火",
         "petBottle": "確認中",
-        "plastic": "火"
+        "plastic": "確認中"
       },
       "神田須田町二丁目の偶数番地": {
-        "burnable": "神田須田町二丁目の偶数番地",
-        "unburnable": "月・木",
-        "recyclable": "第１・３水曜日",
+        "burnable": "月・木",
+        "unburnable": "第１・３水曜日",
+        "recyclable": "金",
         "petBottle": "確認中",
-        "plastic": "金"
+        "plastic": "確認中"
       },
       "神田駿河台一丁目～二丁目": {
-        "burnable": "神田駿河台一丁目～二丁目",
-        "unburnable": "火・金",
-        "recyclable": "第２・４木曜日",
+        "burnable": "火・金",
+        "unburnable": "第２・４木曜日",
+        "recyclable": "水",
         "petBottle": "確認中",
-        "plastic": "水"
+        "plastic": "確認中"
       },
       "神田駿河台三丁目～四丁目の奇数番地": {
-        "burnable": "神田駿河台三丁目～四丁目の奇数番地",
-        "unburnable": "火・金",
-        "recyclable": "第２・４木曜日",
+        "burnable": "火・金",
+        "unburnable": "第２・４木曜日",
+        "recyclable": "水",
         "petBottle": "確認中",
-        "plastic": "水"
+        "plastic": "確認中"
       },
       "神田駿河台三丁目～四丁目の偶数番地": {
-        "burnable": "神田駿河台三丁目～四丁目の偶数番地",
-        "unburnable": "火・金",
-        "recyclable": "第１・３木曜日",
+        "burnable": "火・金",
+        "unburnable": "第１・３木曜日",
+        "recyclable": "水",
         "petBottle": "確認中",
-        "plastic": "水"
+        "plastic": "確認中"
       },
       "神田多町二丁目": {
-        "burnable": "神田多町二丁目",
-        "unburnable": "月・木",
-        "recyclable": "第１・３水曜日",
+        "burnable": "月・木",
+        "unburnable": "第１・３水曜日",
+        "recyclable": "金",
         "petBottle": "確認中",
-        "plastic": "金"
+        "plastic": "確認中"
       },
       "神田司町二丁目の奇数番地": {
-        "burnable": "神田司町二丁目の奇数番地",
-        "unburnable": "月・木",
-        "recyclable": "第２・４水曜日",
+        "burnable": "月・木",
+        "unburnable": "第２・４水曜日",
+        "recyclable": "金",
         "petBottle": "確認中",
-        "plastic": "金"
+        "plastic": "確認中"
       },
       "神田司町二丁目の偶数番地": {
-        "burnable": "神田司町二丁目の偶数番地",
-        "unburnable": "月・木",
-        "recyclable": "第１・３水曜日",
+        "burnable": "月・木",
+        "unburnable": "第１・３水曜日",
+        "recyclable": "金",
         "petBottle": "確認中",
-        "plastic": "金"
+        "plastic": "確認中"
       },
-      "カ神田富山町": {
-        "burnable": "神田富山町",
-        "unburnable": "月・木",
-        "recyclable": "第１・３水曜日",
+      "神田富山町": {
+        "burnable": "月・木",
+        "unburnable": "第１・３水曜日",
+        "recyclable": "金",
         "petBottle": "確認中",
-        "plastic": "金"
+        "plastic": "確認中"
       },
       "神田錦町一丁目～三丁目": {
-        "burnable": "神田錦町一丁目～三丁目",
-        "unburnable": "月・木",
-        "recyclable": "第２・４水曜日",
+        "burnable": "月・木",
+        "unburnable": "第２・４水曜日",
+        "recyclable": "金",
         "petBottle": "確認中",
-        "plastic": "金"
+        "plastic": "確認中"
       },
       "神田西福田町": {
-        "burnable": "神田西福田町",
-        "unburnable": "月・木",
-        "recyclable": "第１・３水曜日",
+        "burnable": "月・木",
+        "unburnable": "第１・３水曜日",
+        "recyclable": "金",
         "petBottle": "確認中",
-        "plastic": "金"
+        "plastic": "確認中"
       },
       "神田練塀町": {
-        "burnable": "神田練塀町",
-        "unburnable": "月・木",
-        "recyclable": "第２・４土曜日",
+        "burnable": "月・木",
+        "unburnable": "第２・４土曜日",
+        "recyclable": "火",
         "petBottle": "確認中",
-        "plastic": "火"
+        "plastic": "確認中"
       },
       "神田花岡町": {
-        "burnable": "神田花岡町",
-        "unburnable": "月・木",
-        "recyclable": "第２・４土曜日",
+        "burnable": "月・木",
+        "unburnable": "第２・４土曜日",
+        "recyclable": "火",
         "petBottle": "確認中",
-        "plastic": "火"
+        "plastic": "確認中"
       },
       "神田東紺屋町": {
-        "burnable": "神田東紺屋町",
-        "unburnable": "月・木",
-        "recyclable": "第１・３水曜日",
+        "burnable": "月・木",
+        "unburnable": "第１・３水曜日",
+        "recyclable": "金",
         "petBottle": "確認中",
-        "plastic": "金"
+        "plastic": "確認中"
       },
       "神田東松下町": {
-        "burnable": "神田東松下町",
-        "unburnable": "月・木",
-        "recyclable": "第１・３水曜日",
+        "burnable": "月・木",
+        "unburnable": "第１・３水曜日",
+        "recyclable": "金",
         "petBottle": "確認中",
-        "plastic": "金"
+        "plastic": "確認中"
       },
       "神田平河町": {
-        "burnable": "神田平河町",
-        "unburnable": "月・木",
-        "recyclable": "第２・４土曜日",
+        "burnable": "月・木",
+        "unburnable": "第２・４土曜日",
+        "recyclable": "火",
         "petBottle": "確認中",
-        "plastic": "火"
+        "plastic": "確認中"
       },
       "神田松永町": {
-        "burnable": "神田松永町",
-        "unburnable": "月・木",
-        "recyclable": "第２・４土曜日",
+        "burnable": "月・木",
+        "unburnable": "第２・４土曜日",
+        "recyclable": "火",
         "petBottle": "確認中",
-        "plastic": "火"
+        "plastic": "確認中"
       },
       "神田美倉町": {
-        "burnable": "神田美倉町",
-        "unburnable": "月・木",
-        "recyclable": "第１・３水曜日",
+        "burnable": "月・木",
+        "unburnable": "第１・３水曜日",
+        "recyclable": "金",
         "petBottle": "確認中",
-        "plastic": "金"
+        "plastic": "確認中"
       },
       "神田三崎町一丁目": {
-        "burnable": "神田三崎町一丁目",
-        "unburnable": "火・金",
-        "recyclable": "第２・４木曜日",
+        "burnable": "火・金",
+        "unburnable": "第２・４木曜日",
+        "recyclable": "水",
         "petBottle": "確認中",
-        "plastic": "水"
+        "plastic": "確認中"
       },
       "神田三崎町二丁目～三丁目": {
-        "burnable": "神田三崎町二丁目～三丁目",
-        "unburnable": "火・金",
-        "recyclable": "第１・３月曜日",
+        "burnable": "火・金",
+        "unburnable": "第１・３月曜日",
+        "recyclable": "土",
         "petBottle": "確認中",
-        "plastic": "土"
+        "plastic": "確認中"
       },
       "神田美土代町": {
-        "burnable": "神田美土代町",
-        "unburnable": "月・木",
-        "recyclable": "第２・４水曜日",
+        "burnable": "月・木",
+        "unburnable": "第２・４水曜日",
+        "recyclable": "金",
         "petBottle": "確認中",
-        "plastic": "金"
+        "plastic": "確認中"
       },
-      "キ紀尾井町": {
-        "burnable": "紀尾井町",
-        "unburnable": "水・土",
-        "recyclable": "第２・４火曜日",
+      "紀尾井町": {
+        "burnable": "水・土",
+        "unburnable": "第２・４火曜日",
+        "recyclable": "月",
         "petBottle": "確認中",
-        "plastic": "月"
+        "plastic": "確認中"
       },
       "九段北一丁目１～11番": {
-        "burnable": "九段北一丁目１～11番",
-        "unburnable": "火・金",
-        "recyclable": "第１・３月曜日",
+        "burnable": "火・金",
+        "unburnable": "第１・３月曜日",
+        "recyclable": "土",
         "petBottle": "確認中",
-        "plastic": "土"
+        "plastic": "確認中"
       },
       "九段北一丁目12～15番・二丁目～四丁目": {
-        "burnable": "九段北一丁目12～15番・二丁目～四丁目",
-        "unburnable": "火・金",
-        "recyclable": "第２・４月曜日",
+        "burnable": "火・金",
+        "unburnable": "第２・４月曜日",
+        "recyclable": "土",
         "petBottle": "確認中",
-        "plastic": "土"
+        "plastic": "確認中"
       },
       "九段南一丁目～四丁目": {
-        "burnable": "九段南一丁目～四丁目",
-        "unburnable": "水・土",
-        "recyclable": "第１・３金曜日",
+        "burnable": "水・土",
+        "unburnable": "第１・３金曜日",
+        "recyclable": "木",
         "petBottle": "確認中",
-        "plastic": "木"
+        "plastic": "確認中"
       },
       "麹町一丁目～六丁目の奇数番地": {
-        "burnable": "麹町一丁目～六丁目の奇数番地",
-        "unburnable": "水・土",
-        "recyclable": "第２・４火曜日",
+        "burnable": "水・土",
+        "unburnable": "第２・４火曜日",
+        "recyclable": "月",
         "petBottle": "確認中",
-        "plastic": "月"
+        "plastic": "確認中"
       },
       "麹町一丁目～六丁目の偶数番地": {
-        "burnable": "麹町一丁目～六丁目の偶数番地",
-        "unburnable": "水・土",
-        "recyclable": "第１・３火曜日",
+        "burnable": "水・土",
+        "unburnable": "第１・３火曜日",
+        "recyclable": "月",
         "petBottle": "確認中",
-        "plastic": "月"
+        "plastic": "確認中"
       },
       "五番町": {
-        "burnable": "五番町",
-        "unburnable": "水・土",
-        "recyclable": "第２・４金曜日",
+        "burnable": "水・土",
+        "unburnable": "第２・４金曜日",
+        "recyclable": "木",
         "petBottle": "確認中",
-        "plastic": "木"
+        "plastic": "確認中"
       },
-      "サ三番町1・2・3・5・6・8・10・26・28・30番地": {
-        "burnable": "三番町1・2・3・5・6・8・10・26・28・30番地",
-        "unburnable": "水・土",
-        "recyclable": "第１・３金曜日",
+      "三番町1・2・3・5・6・8・10・26・28・30番地": {
+        "burnable": "水・土",
+        "unburnable": "第１・３金曜日",
+        "recyclable": "木",
         "petBottle": "確認中",
-        "plastic": "木"
+        "plastic": "確認中"
       },
       "三番町7・9・12・14・16・18・20・22・24番地": {
-        "burnable": "三番町7・9・12・14・16・18・20・22・24番地",
-        "unburnable": "水・土",
-        "recyclable": "第２・４金曜日",
+        "burnable": "水・土",
+        "unburnable": "第２・４金曜日",
+        "recyclable": "木",
         "petBottle": "確認中",
-        "plastic": "木"
+        "plastic": "確認中"
       },
       "外神田一丁目１～11番・二丁目～三丁目・六丁目": {
-        "burnable": "外神田一丁目１～11番・二丁目～三丁目・六丁目",
-        "unburnable": "火・金",
-        "recyclable": "第１・３木曜日",
+        "burnable": "火・金",
+        "unburnable": "第１・３木曜日",
+        "recyclable": "水",
         "petBottle": "確認中",
-        "plastic": "水"
+        "plastic": "確認中"
       },
       "外神田一丁目12～18番・四丁目・五丁目": {
-        "burnable": "外神田一丁目12～18番・四丁目・五丁目",
-        "unburnable": "月・木",
-        "recyclable": "第２・４土曜日",
+        "burnable": "月・木",
+        "unburnable": "第２・４土曜日",
+        "recyclable": "火",
         "petBottle": "確認中",
-        "plastic": "火"
+        "plastic": "確認中"
       },
       "永田町一丁目～二丁目": {
-        "burnable": "永田町一丁目～二丁目",
-        "unburnable": "水・土",
-        "recyclable": "第２・４火曜日",
+        "burnable": "水・土",
+        "unburnable": "第２・４火曜日",
+        "recyclable": "月",
         "petBottle": "確認中",
-        "plastic": "月"
+        "plastic": "確認中"
       },
       "西神田一丁目～二丁目": {
-        "burnable": "西神田一丁目～二丁目",
-        "unburnable": "火・金",
-        "recyclable": "第２・４木曜日",
+        "burnable": "火・金",
+        "unburnable": "第２・４木曜日",
+        "recyclable": "水",
         "petBottle": "確認中",
-        "plastic": "水"
+        "plastic": "確認中"
       },
       "西神田三丁目": {
-        "burnable": "西神田三丁目",
-        "unburnable": "火・金",
-        "recyclable": "第１・３月曜日",
+        "burnable": "火・金",
+        "unburnable": "第１・３月曜日",
+        "recyclable": "土",
         "petBottle": "確認中",
-        "plastic": "土"
+        "plastic": "確認中"
       },
       "二番町": {
-        "burnable": "二番町",
-        "unburnable": "水・土",
-        "recyclable": "第１・３火曜日",
+        "burnable": "水・土",
+        "unburnable": "第１・３火曜日",
+        "recyclable": "月",
         "petBottle": "確認中",
-        "plastic": "月"
+        "plastic": "確認中"
       },
-      "ハ隼町": {
-        "burnable": "隼町",
-        "unburnable": "水・土",
-        "recyclable": "第２・４火曜日",
+      "隼町": {
+        "burnable": "水・土",
+        "unburnable": "第２・４火曜日",
+        "recyclable": "月",
         "petBottle": "確認中",
-        "plastic": "月"
+        "plastic": "確認中"
       },
       "東神田一丁目～三丁目": {
-        "burnable": "東神田一丁目～三丁目",
-        "unburnable": "月・木",
-        "recyclable": "第１・３土曜日",
+        "burnable": "月・木",
+        "unburnable": "第１・３土曜日",
+        "recyclable": "火",
         "petBottle": "確認中",
-        "plastic": "火"
+        "plastic": "確認中"
       },
       "一ツ橋一丁目～二丁目": {
-        "burnable": "一ツ橋一丁目～二丁目",
-        "unburnable": "月・木",
-        "recyclable": "第２・４水曜日",
+        "burnable": "月・木",
+        "unburnable": "第２・４水曜日",
+        "recyclable": "金",
         "petBottle": "確認中",
-        "plastic": "金"
+        "plastic": "確認中"
       },
       "平河町一丁目～二丁目": {
-        "burnable": "平河町一丁目～二丁目",
-        "unburnable": "水・土",
-        "recyclable": "第２・４火曜日",
+        "burnable": "水・土",
+        "unburnable": "第２・４火曜日",
+        "recyclable": "月",
         "petBottle": "確認中",
-        "plastic": "月"
+        "plastic": "確認中"
       },
       "富士見一丁目～二丁目": {
-        "burnable": "富士見一丁目～二丁目",
-        "unburnable": "火・金",
-        "recyclable": "第２・４月曜日",
+        "burnable": "火・金",
+        "unburnable": "第２・４月曜日",
+        "recyclable": "土",
         "petBottle": "確認中",
-        "plastic": "土"
+        "plastic": "確認中"
       },
       "丸の内一丁目～三丁目": {
-        "burnable": "丸の内一丁目～三丁目",
-        "unburnable": "水・土",
-        "recyclable": "第２・４火曜日",
+        "burnable": "水・土",
+        "unburnable": "第２・４火曜日",
+        "recyclable": "月",
         "petBottle": "確認中",
-        "plastic": "月"
+        "plastic": "確認中"
       },
       "有楽町一丁目～二丁目": {
-        "burnable": "有楽町一丁目～二丁目",
-        "unburnable": "水・土",
-        "recyclable": "第２・４火曜日",
+        "burnable": "水・土",
+        "unburnable": "第２・４火曜日",
+        "recyclable": "月",
         "petBottle": "確認中",
-        "plastic": "月"
+        "plastic": "確認中"
       },
-      "ヨ四番町": {
-        "burnable": "四番町",
-        "unburnable": "水・土",
-        "recyclable": "第２・４金曜日",
+      "四番町": {
+        "burnable": "水・土",
+        "unburnable": "第２・４金曜日",
+        "recyclable": "木",
         "petBottle": "確認中",
-        "plastic": "木"
+        "plastic": "確認中"
       },
-      "ロ六番町": {
-        "burnable": "六番町",
-        "unburnable": "水・土",
-        "recyclable": "第１・３火曜日",
+      "六番町": {
+        "burnable": "水・土",
+        "unburnable": "第１・３火曜日",
+        "recyclable": "月",
         "petBottle": "確認中",
-        "plastic": "月"
+        "plastic": "確認中"
       }
     },
     "中央区": {
@@ -1239,1197 +1239,1197 @@ export const mockData: any = {
       }
     },
     "新宿区": {
-      "あ愛住町": {
+      "愛住町": {
         "burnable": "火曜日・金曜日",
         "unburnable": "2・4番目の土曜日",
         "recyclable": "木曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "あ赤城下町": {
+      "赤城下町": {
         "burnable": "月曜日・木曜日",
         "unburnable": "1・3番目の水曜日",
         "recyclable": "火曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "あ赤城元町": {
+      "赤城元町": {
         "burnable": "月曜日・木曜日",
         "unburnable": "1・3番目の水曜日",
         "recyclable": "火曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "あ揚場町": {
+      "揚場町": {
         "burnable": "月曜日・木曜日",
         "unburnable": "2・4番目の水曜日",
         "recyclable": "土曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "あ荒木町（21から23番地）": {
+      "荒木町（21から23番地）": {
         "burnable": "火曜日・金曜日",
         "unburnable": "2・4番目の土曜日",
         "recyclable": "木曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "あ荒木町（上記を除く）": {
+      "荒木町（上記を除く）": {
         "burnable": "火曜日・金曜日",
         "unburnable": "2・4番目の月曜日",
         "recyclable": "木曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "い市谷加賀町1・2丁目": {
+      "市谷加賀町1・2丁目": {
         "burnable": "月曜日・木曜日",
         "unburnable": "2・4番目の金曜日",
         "recyclable": "土曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "い市谷甲良町": {
+      "市谷甲良町": {
         "burnable": "月曜日・木曜日",
         "unburnable": "2・4番目の金曜日",
         "recyclable": "土曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "い市谷砂土原町1から3丁目": {
+      "市谷砂土原町1から3丁目": {
         "burnable": "月曜日・木曜日",
         "unburnable": "2・4番目の金曜日",
         "recyclable": "土曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "い市谷左内町": {
+      "市谷左内町": {
         "burnable": "火曜日・金曜日",
         "unburnable": "2・4番目の月曜日",
         "recyclable": "木曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "い市谷鷹匠町": {
+      "市谷鷹匠町": {
         "burnable": "月曜日・木曜日",
         "unburnable": "2・4番目の金曜日",
         "recyclable": "土曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "い市谷田町1丁目": {
+      "市谷田町1丁目": {
         "burnable": "火曜日・金曜日",
         "unburnable": "2・4番目の月曜日",
         "recyclable": "木曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "い市谷田町2・3丁目": {
+      "市谷田町2・3丁目": {
         "burnable": "月曜日・木曜日",
         "unburnable": "2・4番目の金曜日",
         "recyclable": "土曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "い市谷台町（1、3、5、7、9、11、13番）": {
+      "市谷台町（1、3、5、7、9、11、13番）": {
         "burnable": "水曜日・土曜日",
         "unburnable": "2・4番目の火曜日",
         "recyclable": "金曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "い市谷台町（上記を除く）": {
+      "市谷台町（上記を除く）": {
         "burnable": "水曜日・土曜日",
         "unburnable": "2・4番目の木曜日",
         "recyclable": "金曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "い市谷長延寺町": {
+      "市谷長延寺町": {
         "burnable": "火曜日・金曜日",
         "unburnable": "2・4番目の月曜日",
         "recyclable": "木曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "い市谷仲之町": {
+      "市谷仲之町": {
         "burnable": "水曜日・土曜日",
         "unburnable": "2・4番目の火曜日",
         "recyclable": "金曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "い市谷八幡町": {
+      "市谷八幡町": {
         "burnable": "火曜日・金曜日",
         "unburnable": "2・4番目の月曜日",
         "recyclable": "木曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "い市谷船河原町（1、3から8、12、14番地）": {
+      "市谷船河原町（1、3から8、12、14番地）": {
         "burnable": "月曜日・木曜日",
         "unburnable": "2・4番目の金曜日",
         "recyclable": "土曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "い市谷船河原町（上記を除く）": {
+      "市谷船河原町（上記を除く）": {
         "burnable": "月曜日・木曜日",
         "unburnable": "2・4番目の水曜日",
         "recyclable": "土曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "い市谷本村町": {
+      "市谷本村町": {
         "burnable": "火曜日・金曜日",
         "unburnable": "2・4番目の月曜日",
         "recyclable": "木曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "い市谷薬王寺町（1から15番）": {
+      "市谷薬王寺町（1から15番）": {
         "burnable": "水曜日・土曜日",
         "unburnable": "1・3番目の火曜日",
         "recyclable": "月曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "い市谷薬王寺町（上記を除く）": {
+      "市谷薬王寺町（上記を除く）": {
         "burnable": "水曜日・土曜日",
         "unburnable": "2・4番目の火曜日",
         "recyclable": "金曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "い市谷柳町（1から7、45、46、48から50番地、47番地の一部）": {
+      "市谷柳町（1から7、45、46、48から50番地、47番地の一部）": {
         "burnable": "月曜日・木曜日",
         "unburnable": "1・3番目の金曜日",
         "recyclable": "火曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "い市谷柳町（8から11、23から35番地）": {
+      "市谷柳町（8から11、23から35番地）": {
         "burnable": "水曜日・土曜日",
         "unburnable": "1・3番目の火曜日",
         "recyclable": "月曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "い市谷柳町（15から22、37から43番地）": {
+      "市谷柳町（15から22、37から43番地）": {
         "burnable": "水曜日・土曜日",
         "unburnable": "2・4番目の火曜日",
         "recyclable": "金曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "い市谷柳町（47番地の一部）": {
+      "市谷柳町（47番地の一部）": {
         "burnable": "水曜日・土曜日",
         "unburnable": "1・3番目の木曜日",
         "recyclable": "月曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "い市谷山伏町": {
+      "市谷山伏町": {
         "burnable": "月曜日・木曜日",
         "unburnable": "1・3番目の金曜日",
         "recyclable": "火曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "い岩戸町（1から8番地、25から27番地）": {
+      "岩戸町（1から8番地、25から27番地）": {
         "burnable": "月曜日・木曜日",
         "unburnable": "1・3番目の金曜日",
         "recyclable": "火曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "い岩戸町（9、11から23番地、10番地の一部）": {
+      "岩戸町（9、11から23番地、10番地の一部）": {
         "burnable": "月曜日・木曜日",
         "unburnable": "2・4番目の水曜日",
         "recyclable": "土曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "い岩戸町（10番地の一部）": {
+      "岩戸町（10番地の一部）": {
         "burnable": "月曜日・木曜日",
         "unburnable": "2・4番目の金曜日",
         "recyclable": "土曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "え榎町（79番地）": {
+      "榎町（79番地）": {
         "burnable": "水曜日・土曜日",
         "unburnable": "1・3番目の火曜日",
         "recyclable": "月曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "え榎町（上記を除く）": {
+      "榎町（上記を除く）": {
         "burnable": "月曜日・木曜日",
         "unburnable": "1・3番目の金曜日",
         "recyclable": "火曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "お大久保1丁目": {
+      "大久保1丁目": {
         "burnable": "火曜日・金曜日",
         "unburnable": "1・3番目の木曜日",
         "recyclable": "土曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "お大久保2・3丁目": {
+      "大久保2・3丁目": {
         "burnable": "火曜日・金曜日",
         "unburnable": "1・3番目の月曜日",
         "recyclable": "木曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "か改代町": {
+      "改代町": {
         "burnable": "月曜日・木曜日",
         "unburnable": "1・3番目の水曜日",
         "recyclable": "火曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "か": {
+      "神楽河岸": {
         "burnable": "月曜日・木曜日",
         "unburnable": "2・4番目の水曜日",
         "recyclable": "土曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "か神楽坂1から4丁目": {
+      "神楽坂1から4丁目": {
         "burnable": "月曜日・木曜日",
         "unburnable": "2・4番目の水曜日",
         "recyclable": "土曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "か神楽坂5丁目（21から24番地）": {
+      "神楽坂5丁目（21から24番地）": {
         "burnable": "月曜日・木曜日",
         "unburnable": "1・3番目の金曜日",
         "recyclable": "火曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "か神楽坂5丁目（上記を除く）": {
+      "神楽坂5丁目（上記を除く）": {
         "burnable": "月曜日・木曜日",
         "unburnable": "2・4番目の水曜日",
         "recyclable": "土曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "か神楽坂6丁目（2から39番地）": {
+      "神楽坂6丁目（2から39番地）": {
         "burnable": "月曜日・木曜日",
         "unburnable": "1・3番目の水曜日",
         "recyclable": "火曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "か神楽坂6丁目（上記を除く）": {
+      "神楽坂6丁目（上記を除く）": {
         "burnable": "月曜日・木曜日",
         "unburnable": "1・3番目の金曜日",
         "recyclable": "火曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "か霞ヶ丘町": {
+      "霞ヶ丘町": {
         "burnable": "火曜日・金曜日",
         "unburnable": "1・3番目の月曜日",
         "recyclable": "水曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "か片町（5番、8番）": {
+      "片町（5番、8番）": {
         "burnable": "水曜日・土曜日",
         "unburnable": "2・4番目の火曜日",
         "recyclable": "金曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "か片町（上記を除く）": {
+      "片町（上記を除く）": {
         "burnable": "火曜日・金曜日",
         "unburnable": "2・4番目の月曜日",
         "recyclable": "木曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "か歌舞伎町1・2丁目": {
+      "歌舞伎町1・2丁目": {
         "burnable": "*",
         "unburnable": "*",
         "recyclable": "*",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "か上落合1丁目": {
+      "上落合1丁目": {
         "burnable": "水曜日・土曜日",
         "unburnable": "2・4番目の木曜日",
         "recyclable": "月曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "か上落合2・3丁目": {
+      "上落合2・3丁目": {
         "burnable": "水曜日・土曜日",
         "unburnable": "1・3番目の火曜日",
         "recyclable": "月曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "か河田町": {
+      "河田町": {
         "burnable": "水曜日・土曜日",
         "unburnable": "2・4番目の火曜日",
         "recyclable": "金曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "き喜久井町": {
+      "喜久井町": {
         "burnable": "水曜日・土曜日",
         "unburnable": "1・3番目の木曜日",
         "recyclable": "月曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "き北新宿1丁目": {
+      "北新宿1丁目": {
         "burnable": "月曜日・木曜日",
         "unburnable": "2・4番目の土曜日",
         "recyclable": "火曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "き北新宿2丁目": {
+      "北新宿2丁目": {
         "burnable": "水曜日・土曜日",
         "unburnable": "2・4番目の木曜日",
         "recyclable": "月曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "き北新宿3丁目": {
+      "北新宿3丁目": {
         "burnable": "水曜日・土曜日",
         "unburnable": "2・4番目の金曜日",
         "recyclable": "月曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "き北新宿4丁目": {
+      "北新宿4丁目": {
         "burnable": "水曜日・土曜日",
         "unburnable": "2・4番目の木曜日",
         "recyclable": "月曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "き北町（1から40番地、41番地の一部）": {
+      "北町（1から40番地、41番地の一部）": {
         "burnable": "月曜日・木曜日",
         "unburnable": "2・4番目の金曜日",
         "recyclable": "土曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "き北町（41番地の一部）": {
+      "北町（41番地の一部）": {
         "burnable": "月曜日・木曜日",
         "unburnable": "2・4番目の水曜日",
         "recyclable": "土曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "き北山伏町": {
+      "北山伏町": {
         "burnable": "月曜日・木曜日",
         "unburnable": "1・3番目の金曜日",
         "recyclable": "火曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "さ細工町": {
+      "細工町": {
         "burnable": "月曜日・木曜日",
         "unburnable": "2・4番目の金曜日",
         "recyclable": "土曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "さ左門町（1・2番地、6から12番地、16から20番地）": {
+      "左門町（1・2番地、6から12番地、16から20番地）": {
         "burnable": "火曜日・金曜日",
         "unburnable": "1・3番目の月曜日",
         "recyclable": "水曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "さ左門町（上記を除く）": {
+      "左門町（上記を除く）": {
         "burnable": "火曜日・金曜日",
         "unburnable": "1・3番目の土曜日",
         "recyclable": "水曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "し信濃町（12から34番地）": {
+      "信濃町（12から34番地）": {
         "burnable": "火曜日・金曜日",
         "unburnable": "1・3番目の月曜日",
         "recyclable": "水曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "し信濃町（上記を除く）": {
+      "信濃町（上記を除く）": {
         "burnable": "火曜日・金曜日",
         "unburnable": "1・3番目の土曜日",
         "recyclable": "水曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "し下落合1丁目": {
+      "下落合1丁目": {
         "burnable": "水曜日・土曜日",
         "unburnable": "1・3番目の木曜日",
         "recyclable": "金曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "し下落合2から4丁目": {
+      "下落合2から4丁目": {
         "burnable": "月曜日・木曜日",
         "unburnable": "2・4番目の水曜日",
         "recyclable": "火曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "し下宮比町": {
+      "下宮比町": {
         "burnable": "月曜日・木曜日",
         "unburnable": "2・4番目の水曜日",
         "recyclable": "土曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "し白銀町（12から18番地）": {
+      "白銀町（12から18番地）": {
         "burnable": "月曜日・木曜日",
         "unburnable": "2・4番目の水曜日",
         "recyclable": "土曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "し白銀町（上記を除く）": {
+      "白銀町（上記を除く）": {
         "burnable": "月曜日・木曜日",
         "unburnable": "1・3番目の水曜日",
         "recyclable": "火曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "し新小川町": {
+      "新小川町": {
         "burnable": "月曜日・木曜日",
         "unburnable": "2・4番目の水曜日",
         "recyclable": "土曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "し新宿1丁目": {
+      "新宿1丁目": {
         "burnable": "火曜日・金曜日",
         "unburnable": "1・3番目の土曜日",
         "recyclable": "水曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "し新宿2丁目": {
+      "新宿2丁目": {
         "burnable": "火曜日・金曜日",
         "unburnable": "2・4番目の土曜日",
         "recyclable": "水曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "し新宿3丁目": {
+      "新宿3丁目": {
         "burnable": "*",
         "unburnable": "*",
         "recyclable": "*",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "し新宿4丁目": {
+      "新宿4丁目": {
         "burnable": "*",
         "unburnable": "*",
         "recyclable": "金曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "し新宿5丁目（1から16番）": {
+      "新宿5丁目（1から16番）": {
         "burnable": "火曜日・金曜日",
         "unburnable": "1・3番目の月曜日",
         "recyclable": "水曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "し新宿5丁目（17番、18番）": {
-        "burnable": "*",
-        "unburnable": "*",
-        "recyclable": "*",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "し新宿6から7丁目": {
-        "burnable": "火曜日・金曜日",
-        "unburnable": "2・4番目の月曜日",
-        "recyclable": "水曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "す水道町": {
-        "burnable": "月曜日・木曜日",
-        "unburnable": "1・3番目の水曜日",
-        "recyclable": "火曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "す須賀町": {
-        "burnable": "火曜日・金曜日",
-        "unburnable": "1・3番目の月曜日",
-        "recyclable": "水曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "す住吉町（1、2番）": {
-        "burnable": "火曜日・金曜日",
-        "unburnable": "2・4番目の土曜日",
-        "recyclable": "木曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "す住吉町（3・4番）": {
-        "burnable": "水曜日・土曜日",
-        "unburnable": "2・4番目の木曜日",
-        "recyclable": "金曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "す住吉町（5から15番）": {
-        "burnable": "水曜日・土曜日",
-        "unburnable": "2・4番目の火曜日",
-        "recyclable": "金曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "た大京町": {
-        "burnable": "火曜日・金曜日",
-        "unburnable": "1・3番目の土曜日",
-        "recyclable": "水曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "た高田馬場1・2丁目": {
-        "burnable": "火曜日・金曜日",
-        "unburnable": "2・4番目の月曜日",
-        "recyclable": "木曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "た高田馬場3・4丁目": {
-        "burnable": "水曜日・土曜日",
-        "unburnable": "2・4番目の火曜日",
-        "recyclable": "金曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "た箪笥町（1から32番地）": {
-        "burnable": "月曜日・木曜日",
-        "unburnable": "1・3番目の金曜日",
-        "recyclable": "火曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "た箪笥町（33から43番地、44番地の一部）": {
-        "burnable": "月曜日・木曜日",
-        "unburnable": "2・4番目の金曜日",
-        "recyclable": "土曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "た箪笥町（44番地の一部）": {
-        "burnable": "月曜日・木曜日",
-        "unburnable": "2・4番目の水曜日",
-        "recyclable": "土曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "つ築地町": {
-        "burnable": "月曜日・木曜日",
-        "unburnable": "1・3番目の水曜日",
-        "recyclable": "火曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "つ津久戸町": {
-        "burnable": "月曜日・木曜日",
-        "unburnable": "2・4番目の水曜日",
-        "recyclable": "土曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "つ筑土八幡町（1番）": {
-        "burnable": "月曜日・木曜日",
-        "unburnable": "2・4番目の水曜日",
-        "recyclable": "土曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "つ筑土八幡町（上記を除く）": {
-        "burnable": "月曜日・木曜日",
-        "unburnable": "1・3番目の水曜日",
-        "recyclable": "火曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "て天神町（63から85番地）": {
-        "burnable": "月曜日・木曜日",
-        "unburnable": "1・3番目の金曜日",
-        "recyclable": "火曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "て天神町（上記を除く）": {
-        "burnable": "月曜日・木曜日",
-        "unburnable": "1・3番目の水曜日",
-        "recyclable": "火曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "と戸塚町1丁目": {
-        "burnable": "火曜日・金曜日",
-        "unburnable": "2・4番目の土曜日",
-        "recyclable": "水曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "と富久町（8、9番）": {
-        "burnable": "火曜日・金曜日",
-        "unburnable": "2・4番目の土曜日",
-        "recyclable": "木曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "と富久町（上記を除く）": {
-        "burnable": "水曜日・土曜日",
-        "unburnable": "2・4番目の木曜日",
-        "recyclable": "金曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "と戸山1・3丁目": {
-        "burnable": "火曜日・金曜日",
-        "unburnable": "2・4番目の土曜日",
-        "recyclable": "水曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "と戸山2丁目": {
-        "burnable": "火曜日・金曜日",
-        "unburnable": "2・4番目の月曜日",
-        "recyclable": "木曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "な内藤町": {
-        "burnable": "火曜日・金曜日",
-        "unburnable": "2・4番目の土曜日",
-        "recyclable": "木曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "な中井1・2丁目": {
-        "burnable": "水曜日・土曜日",
-        "unburnable": "1・3番目の火曜日",
-        "recyclable": "月曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "な中落合1から2丁目": {
-        "burnable": "月曜日・木曜日",
-        "unburnable": "1・3番目の金曜日",
-        "recyclable": "火曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "な中落合3丁目": {
-        "burnable": "月曜日・木曜日",
-        "unburnable": "1・3番目の金曜日",
-        "recyclable": "土曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "な中落合4丁目": {
-        "burnable": "月曜日・木曜日",
-        "unburnable": "1・3番目の水曜日",
-        "recyclable": "土曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "な中里町": {
-        "burnable": "月曜日・木曜日",
-        "unburnable": "1・3番目の水曜日",
-        "recyclable": "火曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "な中町": {
-        "burnable": "月曜日・木曜日",
-        "unburnable": "2・4番目の金曜日",
-        "recyclable": "土曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "な納戸町": {
-        "burnable": "月曜日・木曜日",
-        "unburnable": "2・4番目の金曜日",
-        "recyclable": "土曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "に西落合1丁目": {
-        "burnable": "月曜日・木曜日",
-        "unburnable": "1・3番目の水曜日",
-        "recyclable": "土曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "に西落合2から4丁目": {
-        "burnable": "月曜日・木曜日",
-        "unburnable": "2・4番目の金曜日",
-        "recyclable": "土曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "に西五軒町": {
-        "burnable": "月曜日・木曜日",
-        "unburnable": "1・3番目の水曜日",
-        "recyclable": "火曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "に西新宿1丁目": {
+      "新宿5丁目（17番、18番）": {
         "burnable": "*",
         "unburnable": "*",
         "recyclable": "*",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "に西新宿2・3丁目": {
-        "burnable": "水曜日・土曜日",
-        "unburnable": "1・3番目の月曜日",
-        "recyclable": "木曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "に西新宿4丁目": {
-        "burnable": "水曜日・土曜日",
-        "unburnable": "1・3番目の金曜日",
-        "recyclable": "木曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "に西新宿5丁目": {
-        "burnable": "水曜日・土曜日",
-        "unburnable": "2・4番目の木曜日",
-        "recyclable": "月曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "に西新宿6丁目": {
-        "burnable": "月曜日・木曜日",
-        "unburnable": "1・3番目の水曜日",
-        "recyclable": "土曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "に西新宿7から8丁目": {
-        "burnable": "月曜日・木曜日",
-        "unburnable": "2・4番目の水曜日",
-        "recyclable": "火曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "に西早稲田1・3丁目": {
-        "burnable": "火曜日・金曜日",
-        "unburnable": "1・3番目の土曜日",
-        "recyclable": "水曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "に西早稲田2丁目": {
-        "burnable": "火曜日・金曜日",
-        "unburnable": "2・4番目の土曜日",
-        "recyclable": "水曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "に二十騎町": {
-        "burnable": "月曜日・木曜日",
-        "unburnable": "2・4番目の金曜日",
-        "recyclable": "土曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "は払方町": {
-        "burnable": "月曜日・木曜日",
-        "unburnable": "2・4番目の金曜日",
-        "recyclable": "土曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "は原町1丁目（14から17番地）": {
-        "burnable": "水曜日・土曜日",
-        "unburnable": "2・4番目の火曜日",
-        "recyclable": "金曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "は原町1丁目（上記を除く）": {
-        "burnable": "水曜日・土曜日",
-        "unburnable": "1・3番目の木曜日",
-        "recyclable": "月曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "は原町2丁目（1から8番地の一部、9から12、30から43番地）": {
-        "burnable": "水曜日・土曜日",
-        "unburnable": "2・4番目の火曜日",
-        "recyclable": "金曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "は原町2丁目（上記を除く）": {
-        "burnable": "水曜日・土曜日",
-        "unburnable": "1・3番目の木曜日",
-        "recyclable": "月曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "は原町3丁目（1から9、84から89番地）": {
-        "burnable": "水曜日・土曜日",
-        "unburnable": "2・4番目の火曜日",
-        "recyclable": "金曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "は原町3丁目（上記を除く）": {
-        "burnable": "水曜日・土曜日",
-        "unburnable": "1・3番目の木曜日",
-        "recyclable": "月曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "は馬場下町（60から63番地）": {
-        "burnable": "水曜日・土曜日",
-        "unburnable": "1・3番目の火曜日",
-        "recyclable": "月曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "は馬場下町（上記を除く）": {
-        "burnable": "水曜日・土曜日",
-        "unburnable": "1・3番目の木曜日",
-        "recyclable": "月曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "ひ東榎町": {
-        "burnable": "月曜日・木曜日",
-        "unburnable": "1・3番目の金曜日",
-        "recyclable": "火曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "ひ東五軒町": {
-        "burnable": "月曜日・木曜日",
-        "unburnable": "1・3番目の水曜日",
-        "recyclable": "火曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "ひ百人町1丁目": {
-        "burnable": "月曜日・木曜日",
-        "unburnable": "1・3番目の土曜日",
-        "recyclable": "金曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "ひ百人町2丁目": {
-        "burnable": "火曜日・金曜日",
-        "unburnable": "1・3番目の水曜日",
-        "recyclable": "土曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "ひ百人町3・4丁目": {
-        "burnable": "水曜日・土曜日",
-        "unburnable": "1・3番目の木曜日",
-        "recyclable": "金曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "ふ袋町": {
-        "burnable": "月曜日・木曜日",
-        "unburnable": "2・4番目の水曜日",
-        "recyclable": "土曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "ふ舟町（1から6番地）": {
+      "新宿6から7丁目": {
         "burnable": "火曜日・金曜日",
         "unburnable": "2・4番目の月曜日",
-        "recyclable": "木曜日",
+        "recyclable": "水曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "ふ舟町（上記を除く）": {
-        "burnable": "火曜日・金曜日",
-        "unburnable": "2・4番目の土曜日",
-        "recyclable": "木曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "へ弁天町（1から30番地、106から176番地）": {
-        "burnable": "水曜日・土曜日",
-        "unburnable": "1・3番目の木曜日",
-        "recyclable": "月曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "へ弁天町（32から105番地）": {
+      "水道町": {
         "burnable": "月曜日・木曜日",
-        "unburnable": "1・3番目の金曜日",
+        "unburnable": "1・3番目の水曜日",
         "recyclable": "火曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "へ弁天町（177・178番地）": {
-        "burnable": "水曜日・土曜日",
-        "unburnable": "1・3番目の火曜日",
-        "recyclable": "月曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "み南町": {
-        "burnable": "月曜日・木曜日",
-        "unburnable": "2・4番目の金曜日",
-        "recyclable": "土曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "み南榎町": {
-        "burnable": "月曜日・木曜日",
-        "unburnable": "1・3番目の金曜日",
-        "recyclable": "火曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "み南元町": {
+      "須賀町": {
         "burnable": "火曜日・金曜日",
         "unburnable": "1・3番目の月曜日",
         "recyclable": "水曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "み南山伏町": {
-        "burnable": "月曜日・木曜日",
-        "unburnable": "2・4番目の金曜日",
-        "recyclable": "土曜日",
+      "住吉町（1、2番）": {
+        "burnable": "火曜日・金曜日",
+        "unburnable": "2・4番目の土曜日",
+        "recyclable": "木曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "や山吹町（1、11から21、81から131、291、331番地）": {
-        "burnable": "月曜日・木曜日",
-        "unburnable": "1・3番目の金曜日",
-        "recyclable": "火曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "や山吹町（4から7、258から270、293から318番地）": {
-        "burnable": "月曜日・木曜日",
-        "unburnable": "1・3番目の水曜日",
-        "recyclable": "火曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "や山吹町（332から366番地）": {
-        "burnable": "水曜日・土曜日",
-        "unburnable": "1・3番目の火曜日",
-        "recyclable": "月曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "や矢来町（1から111番地）": {
-        "burnable": "月曜日・木曜日",
-        "unburnable": "1・3番目の金曜日",
-        "recyclable": "火曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "や矢来町（上記を除く）": {
-        "burnable": "月曜日・木曜日",
-        "unburnable": "1・3番目の水曜日",
-        "recyclable": "火曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "よ横寺町": {
-        "burnable": "月曜日・木曜日",
-        "unburnable": "1・3番目の金曜日",
-        "recyclable": "火曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "よ余丁町（1から6番）": {
+      "住吉町（3・4番）": {
         "burnable": "水曜日・土曜日",
         "unburnable": "2・4番目の木曜日",
         "recyclable": "金曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "よ余丁町（上記を除く）": {
+      "住吉町（5から15番）": {
         "burnable": "水曜日・土曜日",
         "unburnable": "2・4番目の火曜日",
         "recyclable": "金曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "よ四谷1丁目（1、2番地、6番、9から18番地）": {
-        "burnable": "火曜日・金曜日",
-        "unburnable": "1・3番目の月曜日",
-        "recyclable": "水曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "よ四谷1丁目（上記を除く）": {
-        "burnable": "火曜日・金曜日",
-        "unburnable": "2・4番目の月曜日",
-        "recyclable": "木曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "よ四谷2丁目（1、4から8、11、14番地）": {
-        "burnable": "火曜日・金曜日",
-        "unburnable": "1・3番目の月曜日",
-        "recyclable": "水曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "よ四谷2丁目（上記を除く）": {
-        "burnable": "火曜日・金曜日",
-        "unburnable": "2・4番目の月曜日",
-        "recyclable": "木曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "よ四谷3丁目（1、4、5、8番地）": {
-        "burnable": "火曜日・金曜日",
-        "unburnable": "1・3番目の月曜日",
-        "recyclable": "水曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "よ四谷3丁目（2、3、6、7番地）": {
-        "burnable": "火曜日・金曜日",
-        "unburnable": "2・4番目の月曜日",
-        "recyclable": "木曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "よ四谷3丁目（9、12、13番地）": {
+      "大京町": {
         "burnable": "火曜日・金曜日",
         "unburnable": "1・3番目の土曜日",
         "recyclable": "水曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "よ四谷3丁目（10、11、14番地）": {
-        "burnable": "火曜日・金曜日",
-        "unburnable": "2・4番目の土曜日",
-        "recyclable": "木曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "よ四谷4丁目（1、4から7番地、25から32番地、33、34番地の一部）": {
-        "burnable": "火曜日・金曜日",
-        "unburnable": "1・3番目の土曜日",
-        "recyclable": "水曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "よ四谷4丁目（2、3、8から24番地、33、34番地の一部）": {
-        "burnable": "火曜日・金曜日",
-        "unburnable": "2・4番目の土曜日",
-        "recyclable": "木曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "よ四谷坂町": {
+      "高田馬場1・2丁目": {
         "burnable": "火曜日・金曜日",
         "unburnable": "2・4番目の月曜日",
         "recyclable": "木曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "よ四谷三栄町": {
-        "burnable": "火曜日・金曜日",
-        "unburnable": "2・4番目の月曜日",
-        "recyclable": "木曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "よ四谷本塩町": {
-        "burnable": "火曜日・金曜日",
-        "unburnable": "2・4番目の月曜日",
-        "recyclable": "木曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "わ若葉1から3丁目": {
-        "burnable": "火曜日・金曜日",
-        "unburnable": "1・3番目の月曜日",
-        "recyclable": "水曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "わ若松町（1から9番）": {
+      "高田馬場3・4丁目": {
         "burnable": "水曜日・土曜日",
         "unburnable": "2・4番目の火曜日",
         "recyclable": "金曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "わ若松町（上記を除く）": {
-        "burnable": "水曜日・土曜日",
-        "unburnable": "1・3番目の木曜日",
-        "recyclable": "月曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "わ若宮町": {
-        "burnable": "月曜日・木曜日",
-        "unburnable": "2・4番目の水曜日",
-        "recyclable": "土曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "わ早稲田町（5、9から12、27番地）": {
-        "burnable": "水曜日・土曜日",
-        "unburnable": "1・3番目の木曜日",
-        "recyclable": "月曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "わ早稲田町（上記を除く）": {
-        "burnable": "水曜日・土曜日",
-        "unburnable": "1・3番目の火曜日",
-        "recyclable": "月曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "わ早稲田鶴巻町（545、546番地）": {
+      "箪笥町（1から32番地）": {
         "burnable": "月曜日・木曜日",
         "unburnable": "1・3番目の金曜日",
         "recyclable": "火曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "わ早稲田鶴巻町（上記を除く）": {
+      "箪笥町（33から43番地、44番地の一部）": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "2・4番目の金曜日",
+        "recyclable": "土曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "箪笥町（44番地の一部）": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "2・4番目の水曜日",
+        "recyclable": "土曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "築地町": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "1・3番目の水曜日",
+        "recyclable": "火曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "津久戸町": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "2・4番目の水曜日",
+        "recyclable": "土曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "筑土八幡町（1番）": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "2・4番目の水曜日",
+        "recyclable": "土曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "筑土八幡町（上記を除く）": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "1・3番目の水曜日",
+        "recyclable": "火曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "天神町（63から85番地）": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "1・3番目の金曜日",
+        "recyclable": "火曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "天神町（上記を除く）": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "1・3番目の水曜日",
+        "recyclable": "火曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "戸塚町1丁目": {
+        "burnable": "火曜日・金曜日",
+        "unburnable": "2・4番目の土曜日",
+        "recyclable": "水曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "富久町（8、9番）": {
+        "burnable": "火曜日・金曜日",
+        "unburnable": "2・4番目の土曜日",
+        "recyclable": "木曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "富久町（上記を除く）": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "2・4番目の木曜日",
+        "recyclable": "金曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "戸山1・3丁目": {
+        "burnable": "火曜日・金曜日",
+        "unburnable": "2・4番目の土曜日",
+        "recyclable": "水曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "戸山2丁目": {
+        "burnable": "火曜日・金曜日",
+        "unburnable": "2・4番目の月曜日",
+        "recyclable": "木曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "内藤町": {
+        "burnable": "火曜日・金曜日",
+        "unburnable": "2・4番目の土曜日",
+        "recyclable": "木曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "中井1・2丁目": {
         "burnable": "水曜日・土曜日",
         "unburnable": "1・3番目の火曜日",
         "recyclable": "月曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "わ早稲田南町": {
+      "中落合1から2丁目": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "1・3番目の金曜日",
+        "recyclable": "火曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "中落合3丁目": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "1・3番目の金曜日",
+        "recyclable": "土曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "中落合4丁目": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "1・3番目の水曜日",
+        "recyclable": "土曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "中里町": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "1・3番目の水曜日",
+        "recyclable": "火曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "中町": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "2・4番目の金曜日",
+        "recyclable": "土曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "納戸町": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "2・4番目の金曜日",
+        "recyclable": "土曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "西落合1丁目": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "1・3番目の水曜日",
+        "recyclable": "土曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "西落合2から4丁目": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "2・4番目の金曜日",
+        "recyclable": "土曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "西五軒町": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "1・3番目の水曜日",
+        "recyclable": "火曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "西新宿1丁目": {
+        "burnable": "*",
+        "unburnable": "*",
+        "recyclable": "*",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "西新宿2・3丁目": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "1・3番目の月曜日",
+        "recyclable": "木曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "西新宿4丁目": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "1・3番目の金曜日",
+        "recyclable": "木曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "西新宿5丁目": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "2・4番目の木曜日",
+        "recyclable": "月曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "西新宿6丁目": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "1・3番目の水曜日",
+        "recyclable": "土曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "西新宿7から8丁目": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "2・4番目の水曜日",
+        "recyclable": "火曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "西早稲田1・3丁目": {
+        "burnable": "火曜日・金曜日",
+        "unburnable": "1・3番目の土曜日",
+        "recyclable": "水曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "西早稲田2丁目": {
+        "burnable": "火曜日・金曜日",
+        "unburnable": "2・4番目の土曜日",
+        "recyclable": "水曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "二十騎町": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "2・4番目の金曜日",
+        "recyclable": "土曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "払方町": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "2・4番目の金曜日",
+        "recyclable": "土曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "原町1丁目（14から17番地）": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "2・4番目の火曜日",
+        "recyclable": "金曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "原町1丁目（上記を除く）": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "1・3番目の木曜日",
+        "recyclable": "月曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "原町2丁目（1から8番地の一部、9から12、30から43番地）": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "2・4番目の火曜日",
+        "recyclable": "金曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "原町2丁目（上記を除く）": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "1・3番目の木曜日",
+        "recyclable": "月曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "原町3丁目（1から9、84から89番地）": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "2・4番目の火曜日",
+        "recyclable": "金曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "原町3丁目（上記を除く）": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "1・3番目の木曜日",
+        "recyclable": "月曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "馬場下町（60から63番地）": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "1・3番目の火曜日",
+        "recyclable": "月曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "馬場下町（上記を除く）": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "1・3番目の木曜日",
+        "recyclable": "月曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "東榎町": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "1・3番目の金曜日",
+        "recyclable": "火曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "東五軒町": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "1・3番目の水曜日",
+        "recyclable": "火曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "百人町1丁目": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "1・3番目の土曜日",
+        "recyclable": "金曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "百人町2丁目": {
+        "burnable": "火曜日・金曜日",
+        "unburnable": "1・3番目の水曜日",
+        "recyclable": "土曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "百人町3・4丁目": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "1・3番目の木曜日",
+        "recyclable": "金曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "袋町": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "2・4番目の水曜日",
+        "recyclable": "土曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "舟町（1から6番地）": {
+        "burnable": "火曜日・金曜日",
+        "unburnable": "2・4番目の月曜日",
+        "recyclable": "木曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "舟町（上記を除く）": {
+        "burnable": "火曜日・金曜日",
+        "unburnable": "2・4番目の土曜日",
+        "recyclable": "木曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "弁天町（1から30番地、106から176番地）": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "1・3番目の木曜日",
+        "recyclable": "月曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "弁天町（32から105番地）": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "1・3番目の金曜日",
+        "recyclable": "火曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "弁天町（177・178番地）": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "1・3番目の火曜日",
+        "recyclable": "月曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "南町": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "2・4番目の金曜日",
+        "recyclable": "土曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "南榎町": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "1・3番目の金曜日",
+        "recyclable": "火曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "南元町": {
+        "burnable": "火曜日・金曜日",
+        "unburnable": "1・3番目の月曜日",
+        "recyclable": "水曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "南山伏町": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "2・4番目の金曜日",
+        "recyclable": "土曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "山吹町（1、11から21、81から131、291、331番地）": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "1・3番目の金曜日",
+        "recyclable": "火曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "山吹町（4から7、258から270、293から318番地）": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "1・3番目の水曜日",
+        "recyclable": "火曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "山吹町（332から366番地）": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "1・3番目の火曜日",
+        "recyclable": "月曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "矢来町（1から111番地）": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "1・3番目の金曜日",
+        "recyclable": "火曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "矢来町（上記を除く）": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "1・3番目の水曜日",
+        "recyclable": "火曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "横寺町": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "1・3番目の金曜日",
+        "recyclable": "火曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "余丁町（1から6番）": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "2・4番目の木曜日",
+        "recyclable": "金曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "余丁町（上記を除く）": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "2・4番目の火曜日",
+        "recyclable": "金曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "四谷1丁目（1、2番地、6番、9から18番地）": {
+        "burnable": "火曜日・金曜日",
+        "unburnable": "1・3番目の月曜日",
+        "recyclable": "水曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "四谷1丁目（上記を除く）": {
+        "burnable": "火曜日・金曜日",
+        "unburnable": "2・4番目の月曜日",
+        "recyclable": "木曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "四谷2丁目（1、4から8、11、14番地）": {
+        "burnable": "火曜日・金曜日",
+        "unburnable": "1・3番目の月曜日",
+        "recyclable": "水曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "四谷2丁目（上記を除く）": {
+        "burnable": "火曜日・金曜日",
+        "unburnable": "2・4番目の月曜日",
+        "recyclable": "木曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "四谷3丁目（1、4、5、8番地）": {
+        "burnable": "火曜日・金曜日",
+        "unburnable": "1・3番目の月曜日",
+        "recyclable": "水曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "四谷3丁目（2、3、6、7番地）": {
+        "burnable": "火曜日・金曜日",
+        "unburnable": "2・4番目の月曜日",
+        "recyclable": "木曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "四谷3丁目（9、12、13番地）": {
+        "burnable": "火曜日・金曜日",
+        "unburnable": "1・3番目の土曜日",
+        "recyclable": "水曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "四谷3丁目（10、11、14番地）": {
+        "burnable": "火曜日・金曜日",
+        "unburnable": "2・4番目の土曜日",
+        "recyclable": "木曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "四谷4丁目（1、4から7番地、25から32番地、33、34番地の一部）": {
+        "burnable": "火曜日・金曜日",
+        "unburnable": "1・3番目の土曜日",
+        "recyclable": "水曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "四谷4丁目（2、3、8から24番地、33、34番地の一部）": {
+        "burnable": "火曜日・金曜日",
+        "unburnable": "2・4番目の土曜日",
+        "recyclable": "木曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "四谷坂町": {
+        "burnable": "火曜日・金曜日",
+        "unburnable": "2・4番目の月曜日",
+        "recyclable": "木曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "四谷三栄町": {
+        "burnable": "火曜日・金曜日",
+        "unburnable": "2・4番目の月曜日",
+        "recyclable": "木曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "四谷本塩町": {
+        "burnable": "火曜日・金曜日",
+        "unburnable": "2・4番目の月曜日",
+        "recyclable": "木曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "若葉1から3丁目": {
+        "burnable": "火曜日・金曜日",
+        "unburnable": "1・3番目の月曜日",
+        "recyclable": "水曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "若松町（1から9番）": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "2・4番目の火曜日",
+        "recyclable": "金曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "若松町（上記を除く）": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "1・3番目の木曜日",
+        "recyclable": "月曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "若宮町": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "2・4番目の水曜日",
+        "recyclable": "土曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "早稲田町（5、9から12、27番地）": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "1・3番目の木曜日",
+        "recyclable": "月曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "早稲田町（上記を除く）": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "1・3番目の火曜日",
+        "recyclable": "月曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "早稲田鶴巻町（545、546番地）": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "1・3番目の金曜日",
+        "recyclable": "火曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "早稲田鶴巻町（上記を除く）": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "1・3番目の火曜日",
+        "recyclable": "月曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "早稲田南町": {
         "burnable": "水曜日・土曜日",
         "unburnable": "1・3番目の木曜日",
         "recyclable": "月曜日",
@@ -2452,133 +2452,231 @@ export const mockData: any = {
       }
     },
     "文京区": {
-      "後楽": {
+      "後楽1丁目": {
+        "burnable": "火曜日・金曜日",
+        "unburnable": "第1・第3木曜日",
+        "recyclable": "水曜日",
+        "petBottle": "水曜日",
+        "plastic": "土曜日"
+      },
+      "後楽2丁目": {
         "burnable": "火曜日・金曜日",
         "unburnable": "第1・第3木曜日",
         "recyclable": "土曜日",
         "petBottle": "土曜日",
         "plastic": "水曜日"
       },
-      "春日": {
+      "春日1丁目": {
+        "burnable": "火曜日・金曜日",
+        "unburnable": "第1・第3木曜日",
+        "recyclable": "水曜日",
+        "petBottle": "水曜日",
+        "plastic": "土曜日"
+      },
+      "春日2丁目": {
         "burnable": "月曜日・木曜日",
         "unburnable": "第1・第3土曜日",
         "recyclable": "金曜日",
         "petBottle": "金曜日",
         "plastic": "火曜日"
       },
-      "小石川": {
+      "小石川1丁目1～16番": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "第1・第3土曜日",
+        "recyclable": "火曜日",
+        "petBottle": "火曜日",
+        "plastic": "金曜日"
+      },
+      "小石川1丁目17～28番": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "第2・第4金曜日",
+        "recyclable": "木曜日",
+        "petBottle": "木曜日",
+        "plastic": "月曜日"
+      },
+      "小石川2・3丁目": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "第1・第3土曜日",
+        "recyclable": "金曜日",
+        "petBottle": "金曜日",
+        "plastic": "火曜日"
+      },
+      "小石川4丁目1～14番": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "第1・第3土曜日",
+        "recyclable": "金曜日",
+        "petBottle": "金曜日",
+        "plastic": "火曜日"
+      },
+      "小石川4丁目15～22番": {
         "burnable": "月曜日・木曜日",
         "unburnable": "第2・第4土曜日",
         "recyclable": "金曜日",
         "petBottle": "金曜日",
         "plastic": "火曜日"
       },
-      "白山": {
+      "小石川5丁目": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "第2・第4土曜日",
+        "recyclable": "金曜日",
+        "petBottle": "金曜日",
+        "plastic": "火曜日"
+      },
+      "白山1丁目": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "第1・第3水曜日",
+        "recyclable": "火曜日",
+        "petBottle": "火曜日",
+        "plastic": "金曜日"
+      },
+      "白山2・5丁目": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "第2・第4金曜日",
+        "recyclable": "木曜日",
+        "petBottle": "木曜日",
+        "plastic": "月曜日"
+      },
+      "白山3・4丁目": {
         "burnable": "水曜日・土曜日",
         "unburnable": "第1・第3金曜日",
         "recyclable": "木曜日",
         "petBottle": "木曜日",
         "plastic": "月曜日"
       },
-      "千石": {
+      "千石1～4丁目": {
         "burnable": "水曜日・土曜日",
         "unburnable": "第1・第3金曜日",
         "recyclable": "木曜日",
         "petBottle": "木曜日",
         "plastic": "月曜日"
       },
-      "水道": {
+      "水道1・2丁目": {
         "burnable": "火曜日・金曜日",
         "unburnable": "第1・第3木曜日",
         "recyclable": "土曜日",
         "petBottle": "土曜日",
         "plastic": "水曜日"
       },
-      "小日向": {
+      "小日向1～4丁目": {
         "burnable": "火曜日・金曜日",
         "unburnable": "第1・第3月曜日",
         "recyclable": "土曜日",
         "petBottle": "土曜日",
         "plastic": "水曜日"
       },
-      "大塚": {
+      "大塚1・2丁目": {
+        "burnable": "火曜日・金曜日",
+        "unburnable": "第1・第3月曜日",
+        "recyclable": "土曜日",
+        "petBottle": "土曜日",
+        "plastic": "水曜日"
+      },
+      "大塚3～6丁目": {
         "burnable": "月曜日・木曜日",
         "unburnable": "第2・第4土曜日",
         "recyclable": "金曜日",
         "petBottle": "金曜日",
         "plastic": "火曜日"
       },
-      "関口": {
+      "関口1～3丁目": {
         "burnable": "火曜日・金曜日",
         "unburnable": "第2・第4月曜日",
         "recyclable": "土曜日",
         "petBottle": "土曜日",
         "plastic": "水曜日"
       },
-      "目白台": {
+      "目白台1～3丁目": {
         "burnable": "火曜日・金曜日",
         "unburnable": "第2・第4月曜日",
         "recyclable": "土曜日",
         "petBottle": "土曜日",
         "plastic": "水曜日"
       },
-      "音羽": {
+      "音羽1・2丁目": {
         "burnable": "火曜日・金曜日",
         "unburnable": "第1・第3月曜日",
         "recyclable": "土曜日",
         "petBottle": "土曜日",
         "plastic": "水曜日"
       },
-      "本郷": {
+      "本郷1・2丁目": {
+        "burnable": "火曜日・金曜日",
+        "unburnable": "第1・第3木曜日",
+        "recyclable": "水曜日",
+        "petBottle": "水曜日",
+        "plastic": "土曜日"
+      },
+      "本郷3～7丁目": {
         "burnable": "火曜日・金曜日",
         "unburnable": "第2・第4木曜日",
         "recyclable": "水曜日",
         "petBottle": "水曜日",
         "plastic": "土曜日"
       },
-      "湯島": {
+      "湯島1丁目": {
+        "burnable": "火曜日・金曜日",
+        "unburnable": "第1・第3木曜日",
+        "recyclable": "水曜日",
+        "petBottle": "水曜日",
+        "plastic": "土曜日"
+      },
+      "湯島2～4丁目": {
         "burnable": "火曜日・金曜日",
         "unburnable": "第2・第4木曜日",
         "recyclable": "水曜日",
         "petBottle": "水曜日",
         "plastic": "土曜日"
       },
-      "西片": {
+      "西片1・2丁目": {
         "burnable": "月曜日・木曜日",
         "unburnable": "第1・第3土曜日",
         "recyclable": "火曜日",
         "petBottle": "火曜日",
         "plastic": "金曜日"
       },
-      "向丘": {
+      "向丘1・2丁目": {
         "burnable": "月曜日・木曜日",
         "unburnable": "第1・第3水曜日",
         "recyclable": "火曜日",
         "petBottle": "火曜日",
         "plastic": "金曜日"
       },
-      "弥生": {
+      "弥生1・2丁目": {
         "burnable": "月曜日・木曜日",
         "unburnable": "第1・第3水曜日",
         "recyclable": "火曜日",
         "petBottle": "火曜日",
         "plastic": "金曜日"
       },
-      "根津": {
+      "根津1・2丁目": {
         "burnable": "月曜日・木曜日",
         "unburnable": "第2・第4水曜日",
         "recyclable": "火曜日",
         "petBottle": "火曜日",
         "plastic": "金曜日"
       },
-      "千駄木": {
+      "千駄木1・2丁目": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "第2・第4水曜日",
+        "recyclable": "火曜日",
+        "petBottle": "火曜日",
+        "plastic": "金曜日"
+      },
+      "千駄木3～5丁目": {
         "burnable": "水曜日・土曜日",
         "unburnable": "第1・第3火曜日",
         "recyclable": "月曜日",
         "petBottle": "月曜日",
         "plastic": "木曜日"
       },
-      "本駒込": {
+      "本駒込1・2丁目": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "第2・第4金曜日",
+        "recyclable": "月曜日",
+        "petBottle": "月曜日",
+        "plastic": "木曜日"
+      },
+      "本駒込3～6丁目": {
         "burnable": "水曜日・土曜日",
         "unburnable": "第2・第4火曜日",
         "recyclable": "月曜日",
@@ -2864,238 +2962,238 @@ export const mockData: any = {
     "墨田区": {
       "両国": {
         "burnable": "月曜日・木曜日",
-        "unburnable": "1回目・3回目 土曜日",
+        "unburnable": "1回目・3回目土曜日",
         "recyclable": "火曜日",
         "petBottle": "確認中",
         "plastic": "水曜日"
       },
       "亀沢": {
         "burnable": "月曜日・木曜日",
-        "unburnable": "1回目・3回目 土曜日",
+        "unburnable": "1回目・3回目土曜日",
         "recyclable": "火曜日",
         "petBottle": "確認中",
         "plastic": "水曜日"
       },
       "石原": {
         "burnable": "月曜日・木曜日",
-        "unburnable": "1回目・3回目 土曜日",
+        "unburnable": "1回目・3回目土曜日",
         "recyclable": "火曜日",
         "petBottle": "確認中",
         "plastic": "水曜日"
       },
       "横網": {
         "burnable": "月曜日・木曜日",
-        "unburnable": "1回目・3回目 土曜日",
+        "unburnable": "1回目・3回目土曜日",
         "recyclable": "火曜日",
         "petBottle": "確認中",
         "plastic": "水曜日"
       },
       "千歳": {
         "burnable": "月曜日・木曜日",
-        "unburnable": "2回目・4回目 土曜日",
+        "unburnable": "2回目・4回目土曜日",
         "recyclable": "火曜日",
         "petBottle": "確認中",
         "plastic": "水曜日"
       },
       "立川": {
         "burnable": "月曜日・木曜日",
-        "unburnable": "2回目・4回目 土曜日",
+        "unburnable": "2回目・4回目土曜日",
         "recyclable": "火曜日",
         "petBottle": "確認中",
         "plastic": "水曜日"
       },
       "太平": {
         "burnable": "月曜日・木曜日",
-        "unburnable": "1回目・3回目 水曜日",
+        "unburnable": "1回目・3回目水曜日",
         "recyclable": "金曜日",
         "petBottle": "確認中",
         "plastic": "土曜日"
       },
       "横川": {
         "burnable": "月曜日・木曜日",
-        "unburnable": "1回目・3回目 水曜日",
+        "unburnable": "1回目・3回目水曜日",
         "recyclable": "金曜日",
         "petBottle": "確認中",
         "plastic": "土曜日"
       },
       "菊川": {
         "burnable": "月曜日・木曜日",
-        "unburnable": "2回目・4回目 水曜日",
+        "unburnable": "2回目・4回目水曜日",
         "recyclable": "金曜日",
         "petBottle": "確認中",
         "plastic": "土曜日"
       },
       "江東橋": {
         "burnable": "月曜日・木曜日",
-        "unburnable": "2回目・4回目 水曜日",
+        "unburnable": "2回目・4回目水曜日",
         "recyclable": "金曜日",
         "petBottle": "確認中",
         "plastic": "土曜日"
       },
       "錦糸": {
         "burnable": "月曜日・木曜日",
-        "unburnable": "2回目・4回目 水曜日",
+        "unburnable": "2回目・4回目水曜日",
         "recyclable": "金曜日",
         "petBottle": "確認中",
         "plastic": "土曜日"
       },
       "本所1〜2丁目": {
         "burnable": "火曜日・金曜日",
-        "unburnable": "1回目・3回目 月曜日",
+        "unburnable": "1回目・3回目月曜日",
         "recyclable": "土曜日",
         "petBottle": "確認中",
         "plastic": "木曜日"
       },
       "東駒形1〜2丁目": {
         "burnable": "火曜日・金曜日",
-        "unburnable": "1回目・3回目 月曜日",
+        "unburnable": "1回目・3回目月曜日",
         "recyclable": "土曜日",
         "petBottle": "確認中",
         "plastic": "木曜日"
       },
       "吾妻橋": {
         "burnable": "火曜日・金曜日",
-        "unburnable": "1回目・3回目 月曜日",
+        "unburnable": "1回目・3回目月曜日",
         "recyclable": "土曜日",
         "petBottle": "確認中",
         "plastic": "木曜日"
       },
       "向島1〜3丁目": {
         "burnable": "火曜日・金曜日",
-        "unburnable": "1回目・3回目 月曜日",
+        "unburnable": "1回目・3回目月曜日",
         "recyclable": "土曜日",
         "petBottle": "確認中",
         "plastic": "木曜日"
       },
       "向島4〜5丁目": {
         "burnable": "火曜日・金曜日",
-        "unburnable": "2回目・4回目 月曜日",
+        "unburnable": "2回目・4回目月曜日",
         "recyclable": "土曜日",
         "petBottle": "確認中",
         "plastic": "木曜日"
       },
       "東向島1〜3丁目": {
         "burnable": "火曜日・金曜日",
-        "unburnable": "2回目・4回目 月曜日",
+        "unburnable": "2回目・4回目月曜日",
         "recyclable": "土曜日",
         "petBottle": "確認中",
         "plastic": "木曜日"
       },
       "堤通1丁目": {
         "burnable": "火曜日・金曜日",
-        "unburnable": "2回目・4回目 月曜日",
+        "unburnable": "2回目・4回目月曜日",
         "recyclable": "土曜日",
         "petBottle": "確認中",
         "plastic": "木曜日"
       },
       "押上": {
         "burnable": "火曜日・金曜日",
-        "unburnable": "1回目・3回目 木曜日",
+        "unburnable": "1回目・3回目木曜日",
         "recyclable": "水曜日",
         "petBottle": "確認中",
         "plastic": "月曜日"
       },
       "京島": {
         "burnable": "火曜日・金曜日",
-        "unburnable": "1回目・3回目 木曜日",
+        "unburnable": "1回目・3回目木曜日",
         "recyclable": "水曜日",
         "petBottle": "確認中",
         "plastic": "月曜日"
       },
       "本所3〜4丁目": {
         "burnable": "火曜日・金曜日",
-        "unburnable": "2回目・4回目 木曜日",
+        "unburnable": "2回目・4回目木曜日",
         "recyclable": "水曜日",
         "petBottle": "確認中",
         "plastic": "月曜日"
       },
       "東駒形3〜4丁目": {
         "burnable": "火曜日・金曜日",
-        "unburnable": "2回目・4回目 木曜日",
+        "unburnable": "2回目・4回目木曜日",
         "recyclable": "水曜日",
         "petBottle": "確認中",
         "plastic": "月曜日"
       },
       "業平": {
         "burnable": "火曜日・金曜日",
-        "unburnable": "2回目・4回目 木曜日",
+        "unburnable": "2回目・4回目木曜日",
         "recyclable": "水曜日",
         "petBottle": "確認中",
         "plastic": "月曜日"
       },
       "文花1丁目": {
         "burnable": "火曜日・金曜日",
-        "unburnable": "2回目・4回目 木曜日",
+        "unburnable": "2回目・4回目木曜日",
         "recyclable": "水曜日",
         "petBottle": "確認中",
         "plastic": "月曜日"
       },
       "堤通2丁目": {
         "burnable": "水曜日・土曜日",
-        "unburnable": "1回目・3回目 火曜日",
+        "unburnable": "1回目・3回目火曜日",
         "recyclable": "木曜日",
         "petBottle": "確認中",
         "plastic": "金曜日"
       },
       "東向島4丁目": {
         "burnable": "水曜日・土曜日",
-        "unburnable": "1回目・3回目 火曜日",
+        "unburnable": "1回目・3回目火曜日",
         "recyclable": "木曜日",
         "petBottle": "確認中",
         "plastic": "金曜日"
       },
       "墨田1・2・5丁目": {
         "burnable": "水曜日・土曜日",
-        "unburnable": "1回目・3回目 火曜日",
+        "unburnable": "1回目・3回目火曜日",
         "recyclable": "木曜日",
         "petBottle": "確認中",
         "plastic": "金曜日"
       },
       "東向島5〜6丁目": {
         "burnable": "水曜日・土曜日",
-        "unburnable": "2回目・4回目 火曜日",
+        "unburnable": "2回目・4回目火曜日",
         "recyclable": "木曜日",
         "petBottle": "確認中",
         "plastic": "金曜日"
       },
       "墨田3〜4丁目": {
         "burnable": "水曜日・土曜日",
-        "unburnable": "2回目・4回目 火曜日",
+        "unburnable": "2回目・4回目火曜日",
         "recyclable": "木曜日",
         "petBottle": "確認中",
         "plastic": "金曜日"
       },
       "八広6丁目": {
         "burnable": "水曜日・土曜日",
-        "unburnable": "2回目・4回目 火曜日",
+        "unburnable": "2回目・4回目火曜日",
         "recyclable": "木曜日",
         "petBottle": "確認中",
         "plastic": "金曜日"
       },
       "立花": {
         "burnable": "水曜日・土曜日",
-        "unburnable": "1回目・3回目 金曜日",
+        "unburnable": "1回目・3回目金曜日",
         "recyclable": "月曜日",
         "petBottle": "確認中",
         "plastic": "火曜日"
       },
       "東墨田": {
         "burnable": "水曜日・土曜日",
-        "unburnable": "1回目・3回目 金曜日",
+        "unburnable": "1回目・3回目金曜日",
         "recyclable": "月曜日",
         "petBottle": "確認中",
         "plastic": "火曜日"
       },
       "文花2〜3丁目": {
         "burnable": "水曜日・土曜日",
-        "unburnable": "2回目・4回目 金曜日",
+        "unburnable": "2回目・4回目金曜日",
         "recyclable": "月曜日",
         "petBottle": "確認中",
         "plastic": "火曜日"
       },
       "八広1〜5丁目": {
         "burnable": "水曜日・土曜日",
-        "unburnable": "2回目・4回目 金曜日",
+        "unburnable": "2回目・4回目金曜日",
         "recyclable": "月曜日",
         "petBottle": "確認中",
         "plastic": "火曜日"
@@ -3860,7 +3958,7 @@ export const mockData: any = {
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "東大井5丁目1～10番以外": {
+      "東大井5丁目（1～10番を除く）": {
         "burnable": "水・土",
         "unburnable": "第1金・第3金",
         "recyclable": "木",
@@ -4007,7 +4105,7 @@ export const mockData: any = {
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "南大井6丁目18番以外": {
+      "南大井6丁目（18番を除く）": {
         "burnable": "火・金",
         "unburnable": "第1月・第3月",
         "recyclable": "土",
@@ -4385,7 +4483,7 @@ export const mockData: any = {
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "平塚2丁目4番4号以外": {
+      "平塚2丁目（4番4号を除く）": {
         "burnable": "火・金",
         "unburnable": "第2木・第4木",
         "recyclable": "月",
@@ -4473,189 +4571,189 @@ export const mockData: any = {
     "目黒区": {
       "ア青葉台１丁目から３丁目": {
         "burnable": "火曜日・金曜日",
-        "unburnable": "第 1 ・ 第 ③ 土曜日",
+        "unburnable": "第1・第③土曜日",
         "recyclable": "確認中",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
       "青葉台４丁目": {
         "burnable": "火曜日・金曜日",
-        "unburnable": "第 ① ・ 第 3 土曜日",
+        "unburnable": "第①・第3土曜日",
         "recyclable": "確認中",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
       "オ大岡山１丁目・２丁目": {
         "burnable": "水曜日・土曜日",
-        "unburnable": "第 ② ・ 第 4 月曜日",
+        "unburnable": "第②・第4月曜日",
         "recyclable": "確認中",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
       "大橋１丁目・２丁目": {
         "burnable": "火曜日・金曜日",
-        "unburnable": "第 ① ・ 第 3 水曜日",
+        "unburnable": "第①・第3水曜日",
         "recyclable": "確認中",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
       "カ柿の木坂１丁目": {
         "burnable": "月曜日・木曜日",
-        "unburnable": "第 2 ・ 第 ④ 金曜日",
+        "unburnable": "第2・第④金曜日",
         "recyclable": "確認中",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
       "柿の木坂２丁目・３丁目": {
         "burnable": "月曜日・木曜日",
-        "unburnable": "第 ① ・ 第 3 金曜日",
+        "unburnable": "第①・第3金曜日",
         "recyclable": "確認中",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
       "上目黒１丁目": {
         "burnable": "火曜日・金曜日",
-        "unburnable": "第 1 ・ 第 ③ 土曜日",
+        "unburnable": "第1・第③土曜日",
         "recyclable": "確認中",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
       "上目黒２丁目": {
         "burnable": "月曜日・木曜日",
-        "unburnable": "第 ② ・ 第 4 火曜日",
+        "unburnable": "第②・第4火曜日",
         "recyclable": "確認中",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
       "上目黒３丁目": {
         "burnable": "火曜日・金曜日",
-        "unburnable": "第 ② ・ 第 4 水曜日",
+        "unburnable": "第②・第4水曜日",
         "recyclable": "確認中",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
       "上目黒４丁目・５丁目": {
         "burnable": "火曜日・金曜日",
-        "unburnable": "第 ② ・ 第 4 水曜日",
+        "unburnable": "第②・第4水曜日",
         "recyclable": "確認中",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
       "コ五本木１丁目・２丁目": {
         "burnable": "火曜日・金曜日",
-        "unburnable": "第 2 ・ 第 ④ 水曜日",
+        "unburnable": "第2・第④水曜日",
         "recyclable": "確認中",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
       "五本木３丁目": {
         "burnable": "月曜日・木曜日",
-        "unburnable": "第 2 ・ 第 ④ 金曜日",
+        "unburnable": "第2・第④金曜日",
         "recyclable": "確認中",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
       "駒場１丁目から４丁目": {
         "burnable": "火曜日・金曜日",
-        "unburnable": "第 ① ・ 第 3 土曜日",
+        "unburnable": "第①・第3土曜日",
         "recyclable": "確認中",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
       "シ下目黒１丁目・２丁目": {
         "burnable": "火曜日・金曜日",
-        "unburnable": "第 2 ・ 第 ④ 土曜日",
+        "unburnable": "第2・第④土曜日",
         "recyclable": "確認中",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
       "下目黒３丁目から５丁目": {
         "burnable": "火曜日・金曜日",
-        "unburnable": "第 ② ・ 第 4 土曜日",
+        "unburnable": "第②・第4土曜日",
         "recyclable": "確認中",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
       "下目黒６丁目": {
         "burnable": "水曜日・土曜日",
-        "unburnable": "第 ① ・ 第 3 木曜日",
+        "unburnable": "第①・第3木曜日",
         "recyclable": "確認中",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
       "自由が丘１丁目から３丁目": {
         "burnable": "水曜日・土曜日",
-        "unburnable": "第 ① ・ 第 3 月曜日",
+        "unburnable": "第①・第3月曜日",
         "recyclable": "確認中",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
       "セ洗足１丁目・２丁目": {
         "burnable": "水曜日・土曜日",
-        "unburnable": "第 ② ・ 第 4 木曜日",
+        "unburnable": "第②・第4木曜日",
         "recyclable": "確認中",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
       "タ平町１丁目・２丁目": {
         "burnable": "水曜日・土曜日",
-        "unburnable": "第 2 ・ 第 ④ 月曜日",
+        "unburnable": "第2・第④月曜日",
         "recyclable": "確認中",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
       "鷹番１丁目から３丁目": {
         "burnable": "月曜日・木曜日",
-        "unburnable": "第 ② ・ 第 4 金曜日",
+        "unburnable": "第②・第4金曜日",
         "recyclable": "確認中",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
       "チ中央町１丁目・２丁目": {
         "burnable": "月曜日・木曜日",
-        "unburnable": "第 ② ・ 第 4 金曜日",
+        "unburnable": "第②・第4金曜日",
         "recyclable": "確認中",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
       "ナ中町１丁目・２丁目": {
         "burnable": "月曜日・木曜日",
-        "unburnable": "第 ① ・ 第 3 火曜日",
+        "unburnable": "第①・第3火曜日",
         "recyclable": "確認中",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
       "中根１丁目": {
         "burnable": "水曜日・土曜日",
-        "unburnable": "第 ① ・ 第 3 月曜日",
+        "unburnable": "第①・第3月曜日",
         "recyclable": "確認中",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
       "中根２丁目": {
         "burnable": "水曜日・土曜日",
-        "unburnable": "第 2 ・ 第 ④ 月曜日",
+        "unburnable": "第2・第④月曜日",
         "recyclable": "確認中",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
       "中目黒１丁目・２丁目": {
         "burnable": "火曜日・金曜日",
-        "unburnable": "第 1 ・ 第 ③ 土曜日",
+        "unburnable": "第1・第③土曜日",
         "recyclable": "確認中",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
       "中目黒３丁目から５丁目": {
         "burnable": "月曜日・木曜日",
-        "unburnable": "第 2 ・ 第 ④ 火曜日",
+        "unburnable": "第2・第④火曜日",
         "recyclable": "確認中",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
       "ハ原町１丁目・２丁目": {
         "burnable": "水曜日・土曜日",
-        "unburnable": "第 ② ・ 第 4 木曜日",
+        "unburnable": "第②・第4木曜日",
         "recyclable": "確認中",
         "petBottle": "確認中",
         "plastic": "確認中"
@@ -4663,519 +4761,519 @@ export const mockData: any = {
     },
     "大田区": {
       "い1丁目・2丁目・4丁目": {
-        "burnable": "月曜・木曜",
-        "unburnable": "第2第4・金曜",
+        "burnable": "月曜木曜",
+        "unburnable": "第2第4金曜",
         "recyclable": "土曜",
         "petBottle": "確認中",
         "plastic": "水曜"
       },
-      "い3丁目・5丁目〔1～22番・25番・26番〕・6丁目・7丁目〔1～23番・25番・26番・29番〕・8丁目〔1～19番〕": {
-        "burnable": "月曜・木曜",
-        "unburnable": "第1第3・火曜",
+      "い3丁目・5丁目〔1～22番・25番・26番〕 6丁目・7丁目〔1～23番・25番・26番・29番〕 8丁目〔1～19番〕": {
+        "burnable": "月曜木曜",
+        "unburnable": "第1第3火曜",
         "recyclable": "水曜",
         "petBottle": "確認中",
         "plastic": "土曜"
       },
       "い5丁目〔23番・24番・27番・28番〕": {
-        "burnable": "水曜・土曜",
-        "unburnable": "第2第4・木曜",
+        "burnable": "水曜土曜",
+        "unburnable": "第2第4木曜",
         "recyclable": "金曜",
         "petBottle": "確認中",
         "plastic": "火曜"
       },
-      "い7丁目〔24番・27番・28番・30番・31番〕・8丁目〔20～27番〕": {
-        "burnable": "確認中",
-        "unburnable": "第1第3・木曜",
-        "recyclable": "確認中",
+      "い7丁目〔24番・27番・28番・30番・31番〕 8丁目〔20～27番〕": {
+        "burnable": "水曜土曜",
+        "unburnable": "第1第3木曜",
+        "recyclable": "金曜",
         "petBottle": "確認中",
-        "plastic": "確認中"
+        "plastic": "火曜"
       },
       "い石川町": {
-        "burnable": "火曜・金曜",
-        "unburnable": "第2第4・水曜",
+        "burnable": "火曜金曜",
+        "unburnable": "第2第4水曜",
         "recyclable": "木曜",
         "petBottle": "確認中",
         "plastic": "月曜"
       },
       "う1丁目": {
-        "burnable": "火曜・金曜",
-        "unburnable": "第1第3・土曜",
+        "burnable": "火曜金曜",
+        "unburnable": "第1第3土曜",
         "recyclable": "木曜",
         "petBottle": "確認中",
         "plastic": "月曜"
       },
       "う2丁目・3丁目": {
-        "burnable": "確認中",
-        "unburnable": "第2第4・土曜",
-        "recyclable": "確認中",
+        "burnable": "火曜金曜",
+        "unburnable": "第2第4土曜",
+        "recyclable": "木曜",
         "petBottle": "確認中",
-        "plastic": "確認中"
+        "plastic": "月曜"
       },
       "お1丁目・4丁目・5丁目": {
-        "burnable": "火曜・金曜",
-        "unburnable": "第2第4・水曜",
+        "burnable": "火曜金曜",
+        "unburnable": "第2第4水曜",
         "recyclable": "木曜",
         "petBottle": "確認中",
         "plastic": "月曜"
       },
       "お2丁目・3丁目・6丁目": {
-        "burnable": "確認中",
-        "unburnable": "第1第3・水曜",
-        "recyclable": "確認中",
+        "burnable": "火曜金曜",
+        "unburnable": "第1第3水曜",
+        "recyclable": "木曜",
         "petBottle": "確認中",
-        "plastic": "確認中"
+        "plastic": "月曜"
       },
       "お": {
-        "burnable": "水曜・土曜",
-        "unburnable": "第2第4・木曜",
+        "burnable": "水曜土曜",
+        "unburnable": "第2第4木曜",
         "recyclable": "金曜",
         "petBottle": "確認中",
         "plastic": "火曜"
       },
       "お1丁目・2丁目": {
-        "burnable": "水曜・土曜",
-        "unburnable": "第2第4・木曜",
+        "burnable": "水曜土曜",
+        "unburnable": "第2第4木曜",
         "recyclable": "金曜",
         "petBottle": "確認中",
         "plastic": "火曜"
       },
-      "お3丁目・4丁目・5丁目・6丁目・7丁目〔1～6番・7番（6～19号）〕": {
-        "burnable": "確認中",
-        "unburnable": "第1第3・月曜",
-        "recyclable": "確認中",
+      "お3丁目・4丁目・5丁目・6丁目 7丁目〔1～6番・7番（6～19号）〕": {
+        "burnable": "水曜土曜",
+        "unburnable": "第1第3月曜",
+        "recyclable": "火曜",
         "petBottle": "確認中",
-        "plastic": "確認中"
+        "plastic": "金曜"
       },
       "お7丁目〔7番（1～5号・20～28号）・8番・9番〕": {
-        "burnable": "火曜・金曜",
-        "unburnable": "第1第3・水曜",
+        "burnable": "火曜金曜",
+        "unburnable": "第1第3水曜",
         "recyclable": "木曜",
         "petBottle": "確認中",
         "plastic": "月曜"
       },
       "お3丁目・4丁目・5丁目": {
-        "burnable": "確認中",
-        "unburnable": "第1第3・木曜",
-        "recyclable": "確認中",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "お大森本町1丁目〔1～8番〕": {
-        "burnable": "火曜・金曜",
-        "unburnable": "第1第3・水曜",
-        "recyclable": "木曜",
-        "petBottle": "確認中",
-        "plastic": "月曜"
-      },
-      "お大森本町1丁目〔9～11番〕・2丁目〔1～24番・25番（1～9号・20～30号）・・26番・27番（1～4号）・31～33番〕": {
-        "burnable": "水曜・土曜",
-        "unburnable": "第2第4・月曜",
-        "recyclable": "火曜",
-        "petBottle": "確認中",
-        "plastic": "金曜"
-      },
-      "お大森本町2丁目〔25番（10～19号）・27番（5～7号）・・28～30番〕": {
-        "burnable": "確認中",
-        "unburnable": "第2第4・木曜",
+        "burnable": "水曜土曜",
+        "unburnable": "第1第3木曜",
         "recyclable": "金曜",
         "petBottle": "確認中",
         "plastic": "火曜"
       },
-      "お1丁目〔5～11番・12番（8～16号）・・17番（7～17号）・18番（7～14号）〕・2丁目・3丁目・4丁目・5丁目": {
-        "burnable": "確認中",
-        "unburnable": "第1第3・木曜",
-        "recyclable": "確認中",
+      "お大森本町1丁目〔1～8番〕": {
+        "burnable": "火曜金曜",
+        "unburnable": "第1第3水曜",
+        "recyclable": "木曜",
         "petBottle": "確認中",
-        "plastic": "確認中"
+        "plastic": "月曜"
       },
-      "お1丁目〔1～4番・12番（1号・2号・18号・20～26号）・・13～16番・17番（1～6号・18～27号）・・18番（1～6号・16～26号）・19～24番〕": {
-        "burnable": "月曜・木曜",
-        "unburnable": "第1第3・金曜",
+      "お大森本町1丁目〔9～11番〕 2丁目〔1～24番・25番（1～9号・20～30号）・ 26番・27番（1～4号）・31～33番〕": {
+        "burnable": "水曜土曜",
+        "unburnable": "第2第4月曜",
+        "recyclable": "火曜",
+        "petBottle": "確認中",
+        "plastic": "金曜"
+      },
+      "お大森本町2丁目〔25番（10～19号）・27番（5～7号）・ 28～30番〕": {
+        "burnable": "水曜土曜",
+        "unburnable": "第2第4木曜",
+        "recyclable": "金曜",
+        "petBottle": "確認中",
+        "plastic": "火曜"
+      },
+      "お1丁目〔5～11番・12番（8～16号）・ 17番（7～17号）・18番（7～14号）〕 2丁目・3丁目・4丁目・5丁目": {
+        "burnable": "水曜土曜",
+        "unburnable": "第1第3木曜",
+        "recyclable": "金曜",
+        "petBottle": "確認中",
+        "plastic": "火曜"
+      },
+      "お1丁目〔1～4番・12番（1号・2号・18号・20～26号）・ 13～16番・17番（1～6号・18～27号）・ 18番（1～6号・16～26号）・19～24番〕": {
+        "burnable": "月曜木曜",
+        "unburnable": "第1第3金曜",
         "recyclable": "土曜",
         "petBottle": "確認中",
         "plastic": "水曜"
       },
       "か1丁目・2丁目・3丁目": {
-        "burnable": "火曜・金曜",
-        "unburnable": "第1第3・水曜",
+        "burnable": "火曜金曜",
+        "unburnable": "第1第3水曜",
         "recyclable": "木曜",
         "petBottle": "確認中",
         "plastic": "月曜"
       },
       "か4丁目・5丁目": {
-        "burnable": "確認中",
-        "unburnable": "第2第4・水曜",
-        "recyclable": "確認中",
+        "burnable": "火曜金曜",
+        "unburnable": "第2第4水曜",
+        "recyclable": "木曜",
         "petBottle": "確認中",
-        "plastic": "確認中"
+        "plastic": "月曜"
       },
       "か蒲田本町": {
-        "burnable": "確認中",
-        "unburnable": "確認中",
-        "recyclable": "確認中",
+        "burnable": "火曜金曜",
+        "unburnable": "第2第4水曜",
+        "recyclable": "木曜",
         "petBottle": "確認中",
-        "plastic": "確認中"
+        "plastic": "月曜"
       },
       "か1丁目〔18・19番・21～53番〕・4丁目": {
-        "burnable": "月曜・木曜",
-        "unburnable": "第2第4・金曜",
+        "burnable": "月曜木曜",
+        "unburnable": "第2第4金曜",
         "recyclable": "土曜",
         "petBottle": "確認中",
         "plastic": "水曜"
       },
       "か1丁目〔1～17番・20番〕": {
-        "burnable": "確認中",
-        "unburnable": "確認中",
-        "recyclable": "確認中",
+        "burnable": "月曜木曜",
+        "unburnable": "第2第4金曜",
+        "recyclable": "土曜",
         "petBottle": "確認中",
-        "plastic": "確認中"
+        "plastic": "水曜"
       },
       "か2丁目・3丁目": {
-        "burnable": "確認中",
-        "unburnable": "第1第3・火曜",
+        "burnable": "月曜木曜",
+        "unburnable": "第1第3火曜",
         "recyclable": "水曜",
         "petBottle": "確認中",
         "plastic": "土曜"
       },
       "か5丁目": {
-        "burnable": "確認中",
-        "unburnable": "第2第4・火曜",
-        "recyclable": "確認中",
+        "burnable": "月曜木曜",
+        "unburnable": "第2第4火曜",
+        "recyclable": "水曜",
         "petBottle": "確認中",
-        "plastic": "確認中"
+        "plastic": "土曜"
       },
       "き": {
-        "burnable": "火曜・金曜",
-        "unburnable": "第1第3・土曜",
+        "burnable": "火曜金曜",
+        "unburnable": "第1第3土曜",
         "recyclable": "月曜",
         "petBottle": "確認中",
         "plastic": "木曜"
       },
       "き北嶺町": {
-        "burnable": "水曜・土曜",
-        "unburnable": "第1第3・木曜",
+        "burnable": "水曜土曜",
+        "unburnable": "第1第3木曜",
         "recyclable": "金曜",
         "petBottle": "確認中",
         "plastic": "火曜"
       },
       "く1丁目": {
-        "burnable": "水曜・土曜",
-        "unburnable": "第2第4・木曜",
+        "burnable": "水曜土曜",
+        "unburnable": "第2第4木曜",
         "recyclable": "金曜",
         "petBottle": "確認中",
         "plastic": "火曜"
       },
       "く2丁目": {
-        "burnable": "水曜・土曜",
-        "unburnable": "第1第3・月曜",
+        "burnable": "水曜土曜",
+        "unburnable": "第1第3月曜",
         "recyclable": "火曜",
         "petBottle": "確認中",
         "plastic": "金曜"
       },
       "く3丁目・4丁目・5丁目・6丁目": {
-        "burnable": "確認中",
-        "unburnable": "第2第4・月曜",
-        "recyclable": "確認中",
+        "burnable": "水曜土曜",
+        "unburnable": "第2第4月曜",
+        "recyclable": "火曜",
         "petBottle": "確認中",
-        "plastic": "確認中"
+        "plastic": "金曜"
       },
       "さ1丁目": {
-        "burnable": "火曜・金曜",
-        "unburnable": "第1第3・土曜",
+        "burnable": "火曜金曜",
+        "unburnable": "第1第3土曜",
         "recyclable": "月曜",
         "petBottle": "確認中",
         "plastic": "木曜"
       },
       "さ2丁目": {
-        "burnable": "確認中",
-        "unburnable": "第2第4・土曜",
-        "recyclable": "確認中",
+        "burnable": "火曜金曜",
+        "unburnable": "第2第4土曜",
+        "recyclable": "月曜",
         "petBottle": "確認中",
-        "plastic": "確認中"
+        "plastic": "木曜"
       },
       "さ3丁目・4丁目": {
-        "burnable": "確認中",
-        "unburnable": "第2第4・水曜",
-        "recyclable": "確認中",
+        "burnable": "火曜金曜",
+        "unburnable": "第2第4水曜",
+        "recyclable": "月曜",
         "petBottle": "確認中",
-        "plastic": "確認中"
+        "plastic": "木曜"
       },
       "し": {
-        "burnable": "水曜・土曜",
-        "unburnable": "第1第3・木曜",
+        "burnable": "水曜土曜",
+        "unburnable": "第1第3木曜",
         "recyclable": "金曜",
         "petBottle": "確認中",
         "plastic": "火曜"
       },
       "た": {
-        "burnable": "水曜・土曜",
-        "unburnable": "第2第4・月曜",
+        "burnable": "水曜土曜",
+        "unburnable": "第2第4月曜",
         "recyclable": "火曜",
         "petBottle": "確認中",
         "plastic": "金曜"
       },
       "ち1丁目〔1～19番〕": {
-        "burnable": "水曜・土曜",
-        "unburnable": "第2第4・月曜",
+        "burnable": "水曜土曜",
+        "unburnable": "第2第4月曜",
         "recyclable": "火曜",
         "petBottle": "確認中",
         "plastic": "金曜"
       },
-      "ち1丁目〔20～26番〕・2丁目〔1～26番・28～35番・37番〕": {
-        "burnable": "火曜・金曜",
-        "unburnable": "第2第4・土曜",
+      "ち1丁目〔20～26番〕 2丁目〔1～26番・28～35番・37番〕": {
+        "burnable": "火曜金曜",
+        "unburnable": "第2第4土曜",
         "recyclable": "木曜",
         "petBottle": "確認中",
         "plastic": "月曜"
       },
       "ち2丁目〔27番・36番・38～41番〕・3丁目": {
-        "burnable": "水曜・土曜",
-        "unburnable": "第1第3・月曜",
+        "burnable": "水曜土曜",
+        "unburnable": "第1第3月曜",
         "recyclable": "火曜",
         "petBottle": "確認中",
         "plastic": "金曜"
       },
       "ち1丁目": {
-        "burnable": "火曜・金曜",
-        "unburnable": "第2第4・土曜",
+        "burnable": "火曜金曜",
+        "unburnable": "第2第4土曜",
         "recyclable": "月曜",
         "petBottle": "確認中",
         "plastic": "木曜"
       },
       "ち2丁目": {
-        "burnable": "確認中",
-        "unburnable": "第2第4・月曜",
+        "burnable": "火曜金曜",
+        "unburnable": "第2第4月曜",
         "recyclable": "水曜",
         "petBottle": "確認中",
-        "plastic": "確認中"
+        "plastic": "木曜"
       },
       "ち3丁目・7丁目・8丁目": {
-        "burnable": "月曜・木曜",
-        "unburnable": "第2第4・火曜",
-        "recyclable": "確認中",
+        "burnable": "月曜木曜",
+        "unburnable": "第2第4火曜",
+        "recyclable": "水曜",
         "petBottle": "確認中",
         "plastic": "土曜"
       },
       "ち4丁目・5丁目・6丁目": {
-        "burnable": "確認中",
-        "unburnable": "第2第4・金曜",
+        "burnable": "月曜木曜",
+        "unburnable": "第2第4金曜",
         "recyclable": "土曜",
         "petBottle": "確認中",
         "plastic": "水曜"
       },
       "て1丁目": {
-        "burnable": "火曜・金曜",
-        "unburnable": "第2第4・水曜",
+        "burnable": "火曜金曜",
+        "unburnable": "第2第4水曜",
         "recyclable": "木曜",
         "petBottle": "確認中",
         "plastic": "月曜"
       },
       "て2丁目・3丁目・4丁目・5丁目": {
-        "burnable": "確認中",
-        "unburnable": "第1第3・水曜",
-        "recyclable": "確認中",
+        "burnable": "火曜金曜",
+        "unburnable": "第1第3水曜",
+        "recyclable": "木曜",
         "petBottle": "確認中",
-        "plastic": "確認中"
+        "plastic": "月曜"
       },
       "て田園調布本町": {
-        "burnable": "確認中",
-        "unburnable": "第1第3・土曜",
+        "burnable": "火曜金曜",
+        "unburnable": "第1第3土曜",
         "recyclable": "月曜",
         "petBottle": "確認中",
         "plastic": "木曜"
       },
       "て": {
-        "burnable": "確認中",
-        "unburnable": "確認中",
-        "recyclable": "確認中",
+        "burnable": "火曜金曜",
+        "unburnable": "第1第3土曜",
+        "recyclable": "月曜",
         "petBottle": "確認中",
-        "plastic": "確認中"
+        "plastic": "木曜"
       },
       "な": {
-        "burnable": "月曜・木曜",
-        "unburnable": "第1第3・金曜",
+        "burnable": "月曜木曜",
+        "unburnable": "第1第3金曜",
         "recyclable": "土曜",
         "petBottle": "確認中",
         "plastic": "水曜"
       },
       "な1丁目": {
-        "burnable": "火曜・金曜",
-        "unburnable": "第2第4・水曜",
+        "burnable": "火曜金曜",
+        "unburnable": "第2第4水曜",
         "recyclable": "木曜",
         "petBottle": "確認中",
         "plastic": "月曜"
       },
       "な2丁目・3丁目・4丁目": {
-        "burnable": "確認中",
-        "unburnable": "第2第4・土曜",
+        "burnable": "火曜金曜",
+        "unburnable": "第2第4土曜",
         "recyclable": "月曜",
         "petBottle": "確認中",
         "plastic": "木曜"
       },
       "に1丁目・2丁目・3丁目・4丁目・5丁目・6丁目・7丁目": {
-        "burnable": "水曜・土曜",
-        "unburnable": "第2第4・木曜",
+        "burnable": "水曜土曜",
+        "unburnable": "第2第4木曜",
         "recyclable": "金曜",
         "petBottle": "確認中",
         "plastic": "火曜"
       },
       "に8丁目": {
-        "burnable": "確認中",
-        "unburnable": "第1第3・木曜",
-        "recyclable": "確認中",
+        "burnable": "水曜土曜",
+        "unburnable": "第1第3木曜",
+        "recyclable": "金曜",
         "petBottle": "確認中",
-        "plastic": "確認中"
+        "plastic": "火曜"
       },
       "に": {
-        "burnable": "月曜・木曜",
-        "unburnable": "第1第3・金曜",
+        "burnable": "月曜木曜",
+        "unburnable": "第1第3金曜",
         "recyclable": "土曜",
         "petBottle": "確認中",
         "plastic": "水曜"
       },
       "に西嶺町": {
-        "burnable": "火曜・金曜",
-        "unburnable": "第1第3・土曜",
+        "burnable": "火曜金曜",
+        "unburnable": "第1第3土曜",
         "recyclable": "月曜",
         "petBottle": "確認中",
         "plastic": "木曜"
       },
       "に1丁目": {
-        "burnable": "火曜・金曜",
-        "unburnable": "第2第4・水曜",
+        "burnable": "火曜金曜",
+        "unburnable": "第2第4水曜",
         "recyclable": "木曜",
         "petBottle": "確認中",
         "plastic": "月曜"
       },
       "に2丁目・3丁目・4丁目": {
-        "burnable": "確認中",
-        "unburnable": "第2第4・土曜",
+        "burnable": "火曜金曜",
+        "unburnable": "第2第4土曜",
         "recyclable": "月曜",
         "petBottle": "確認中",
         "plastic": "木曜"
       },
       "は": {
-        "burnable": "月曜・木曜",
-        "unburnable": "第2第4・金曜",
+        "burnable": "月曜木曜",
+        "unburnable": "第2第4金曜",
         "recyclable": "土曜",
         "petBottle": "確認中",
         "plastic": "水曜"
       },
       "は羽田旭町": {
-        "burnable": "確認中",
-        "unburnable": "第1第3・金曜",
-        "recyclable": "確認中",
+        "burnable": "月曜木曜",
+        "unburnable": "第1第3金曜",
+        "recyclable": "土曜",
         "petBottle": "確認中",
-        "plastic": "確認中"
+        "plastic": "水曜"
       },
       "ひ": {
-        "burnable": "火曜・金曜",
-        "unburnable": "第1第3・土曜",
+        "burnable": "火曜金曜",
+        "unburnable": "第1第3土曜",
         "recyclable": "月曜",
         "petBottle": "確認中",
         "plastic": "木曜"
       },
       "ひ東嶺町": {
-        "burnable": "水曜・土曜",
-        "unburnable": "第2第4・木曜",
+        "burnable": "水曜土曜",
+        "unburnable": "第2第4木曜",
         "recyclable": "金曜",
         "petBottle": "確認中",
         "plastic": "火曜"
       },
-      "ひ1丁目〔1～4番・8番・9番（1～7号・19～21号）・・10番（8～13号）〕": {
-        "burnable": "月曜・木曜",
-        "unburnable": "第1第3・火曜",
+      "ひ1丁目〔1～4番・8番・9番（1～7号・19～21号）・ 10番（8～13号）〕": {
+        "burnable": "月曜木曜",
+        "unburnable": "第1第3火曜",
         "recyclable": "水曜",
         "petBottle": "確認中",
         "plastic": "土曜"
       },
-      "ひ1丁目〔5～7番・9番（8～18号）・10番（1～7号）・・11～18番〕・2丁目・3丁目": {
-        "burnable": "水曜・土曜",
-        "unburnable": "第1第3・木曜",
+      "ひ1丁目〔5～7番・9番（8～18号）・10番（1～7号）・ 11～18番〕 2丁目・3丁目": {
+        "burnable": "水曜土曜",
+        "unburnable": "第1第3木曜",
         "recyclable": "金曜",
         "petBottle": "確認中",
         "plastic": "火曜"
       },
       "ひ1丁目・4丁目": {
-        "burnable": "月曜・木曜",
-        "unburnable": "第1第3・火曜",
+        "burnable": "月曜木曜",
+        "unburnable": "第1第3火曜",
         "recyclable": "水曜",
         "petBottle": "確認中",
         "plastic": "土曜"
       },
       "ひ2丁目・3丁目・5丁目": {
-        "burnable": "確認中",
-        "unburnable": "第2第4・火曜",
-        "recyclable": "確認中",
+        "burnable": "月曜木曜",
+        "unburnable": "第2第4火曜",
+        "recyclable": "水曜",
         "petBottle": "確認中",
-        "plastic": "確認中"
+        "plastic": "土曜"
       },
       "へ": {
-        "burnable": "水曜・土曜",
-        "unburnable": "第2第4・木曜",
+        "burnable": "水曜土曜",
+        "unburnable": "第2第4木曜",
         "recyclable": "金曜",
         "petBottle": "確認中",
         "plastic": "火曜"
       },
       "ほ": {
-        "burnable": "月曜・木曜",
-        "unburnable": "第2第4・金曜",
+        "burnable": "月曜木曜",
+        "unburnable": "第2第4金曜",
         "recyclable": "土曜",
         "petBottle": "確認中",
         "plastic": "水曜"
       },
       "み": {
-        "burnable": "火曜・金曜",
-        "unburnable": "第1第3・土曜",
+        "burnable": "火曜金曜",
+        "unburnable": "第1第3土曜",
         "recyclable": "月曜",
         "petBottle": "確認中",
         "plastic": "木曜"
       },
       "み1丁目・2丁目": {
-        "burnable": "月曜・木曜",
-        "unburnable": "第2第4・金曜",
+        "burnable": "月曜木曜",
+        "unburnable": "第2第4金曜",
         "recyclable": "土曜",
         "petBottle": "確認中",
         "plastic": "水曜"
       },
       "み3丁目": {
-        "burnable": "確認中",
-        "unburnable": "第1第3・金曜",
-        "recyclable": "確認中",
+        "burnable": "月曜木曜",
+        "unburnable": "第1第3金曜",
+        "recyclable": "土曜",
         "petBottle": "確認中",
-        "plastic": "確認中"
+        "plastic": "水曜"
       },
       "み1丁目・2丁目・3丁目": {
-        "burnable": "火曜・金曜",
-        "unburnable": "第2第4・土曜",
+        "burnable": "火曜金曜",
+        "unburnable": "第2第4土曜",
         "recyclable": "月曜",
         "petBottle": "確認中",
         "plastic": "木曜"
       },
       "み4丁目・6丁目": {
-        "burnable": "月曜・木曜",
-        "unburnable": "第2第4・金曜",
+        "burnable": "月曜木曜",
+        "unburnable": "第2第4金曜",
         "recyclable": "土曜",
         "petBottle": "確認中",
         "plastic": "水曜"
       },
       "み5丁目": {
-        "burnable": "確認中",
-        "unburnable": "第1第3・金曜",
-        "recyclable": "確認中",
+        "burnable": "月曜木曜",
+        "unburnable": "第1第3金曜",
+        "recyclable": "土曜",
         "petBottle": "確認中",
-        "plastic": "確認中"
+        "plastic": "水曜"
       },
       "や": {
-        "burnable": "水曜・土曜",
-        "unburnable": "第2第4・月曜",
+        "burnable": "水曜土曜",
+        "unburnable": "第2第4月曜",
         "recyclable": "火曜",
         "petBottle": "確認中",
         "plastic": "金曜"
       },
       "ゆ雪谷大塚町": {
-        "burnable": "火曜・金曜",
-        "unburnable": "第2第4・水曜",
+        "burnable": "火曜金曜",
+        "unburnable": "第2第4水曜",
         "recyclable": "木曜",
         "petBottle": "確認中",
         "plastic": "月曜"
@@ -5183,521 +5281,430 @@ export const mockData: any = {
     },
     "世田谷区": {
       "赤堤": {
-        "burnable": "火・金曜日",
-        "unburnable": "2・4回目の木曜日",
+        "burnable": "火曜日・金曜日",
+        "unburnable": "2回目・4回目の木曜日",
         "recyclable": "土曜日",
-        "petBottle": "1・3回目の木曜日",
+        "petBottle": "1回目・3回目の木曜日",
         "plastic": "確認中"
       },
       "池尻": {
-        "burnable": "月・木曜日",
-        "unburnable": "1・3回目の土曜日",
+        "burnable": "月曜日・木曜日",
+        "unburnable": "1回目・3回目の土曜日",
         "recyclable": "水曜日",
-        "petBottle": "2・4回目の土曜日",
-        "plastic": "確認中"
-      },
-      "宇奈根、梅丘": {
-        "burnable": "確認中",
-        "unburnable": "確認中",
-        "recyclable": "確認中",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "大蔵、大原、岡本、奥沢、尾山台": {
-        "burnable": "確認中",
-        "unburnable": "確認中",
-        "recyclable": "確認中",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "粕谷、鎌田、上馬、上北沢、上祖師谷、上野毛、上用賀": {
-        "burnable": "確認中",
-        "unburnable": "確認中",
-        "recyclable": "確認中",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "北烏山、北沢、喜多見、砧、給田、経堂": {
-        "burnable": "確認中",
-        "unburnable": "確認中",
-        "recyclable": "確認中",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "豪徳寺、駒沢": {
-        "burnable": "確認中",
-        "unburnable": "確認中",
-        "recyclable": "確認中",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "桜、桜丘、桜新町、桜上水、三軒茶屋": {
-        "burnable": "確認中",
-        "unburnable": "確認中",
-        "recyclable": "確認中",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "下馬、新町": {
-        "burnable": "確認中",
-        "unburnable": "確認中",
-        "recyclable": "確認中",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "成城、瀬田、世田谷": {
-        "burnable": "確認中",
-        "unburnable": "確認中",
-        "recyclable": "確認中",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "祖師谷": {
-        "burnable": "水・土曜日",
-        "unburnable": "1・3回目の木曜日",
-        "recyclable": "火曜日",
-        "petBottle": "2・4回目の木曜日",
-        "plastic": "確認中"
-      },
-      "太子堂、代沢、代田、玉川、玉川台、玉川田園調布、玉堤": {
-        "burnable": "確認中",
-        "unburnable": "確認中",
-        "recyclable": "確認中",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "千歳台": {
-        "burnable": "水・土曜日",
-        "unburnable": "2・4回目の月曜日",
-        "recyclable": "金曜日",
-        "petBottle": "1・3回目の月曜日",
-        "plastic": "確認中"
-      },
-      "弦巻": {
-        "burnable": "水・土曜日",
-        "unburnable": "1・3回目の金曜日",
-        "recyclable": "火曜日",
-        "petBottle": "2・4回目の金曜日",
-        "plastic": "確認中"
-      },
-      "等々力": {
-        "burnable": "火・金曜日",
-        "unburnable": "1・3回目の土曜日",
-        "recyclable": "月曜日",
-        "petBottle": "2・4回目の土曜日",
-        "plastic": "確認中"
-      },
-      "中町": {
-        "burnable": "火・金曜日",
-        "unburnable": "1・3回目の土曜日",
-        "recyclable": "木曜日",
-        "petBottle": "2・4回目の土曜日",
-        "plastic": "確認中"
-      },
-      "野毛、野沢": {
-        "burnable": "確認中",
-        "unburnable": "確認中",
-        "recyclable": "確認中",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "八幡山、羽根木": {
-        "burnable": "確認中",
-        "unburnable": "確認中",
-        "recyclable": "確認中",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "東玉川": {
-        "burnable": "月・木曜日",
-        "unburnable": "1・3回目の金曜日",
-        "recyclable": "水曜日",
-        "petBottle": "2・4回目の金曜日",
-        "plastic": "確認中"
-      },
-      "深沢、船橋": {
-        "burnable": "確認中",
-        "unburnable": "確認中",
-        "recyclable": "確認中",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "松原": {
-        "burnable": "火・金曜日",
-        "unburnable": "1・3回目の木曜日",
-        "recyclable": "土曜日",
-        "petBottle": "2・4回目の木曜日",
-        "plastic": "確認中"
-      },
-      "三宿、南烏山、宮坂": {
-        "burnable": "確認中",
-        "unburnable": "確認中",
-        "recyclable": "確認中",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "用賀": {
-        "burnable": "水・土曜日",
-        "unburnable": "1・3回目の木曜日",
-        "recyclable": "金曜日",
-        "petBottle": "2・4回目の木曜日",
-        "plastic": "確認中"
-      },
-      "若林": {
-        "burnable": "火・金曜日",
-        "unburnable": "2・4回目の水曜日",
-        "recyclable": "土曜日",
-        "petBottle": "1・3回目の水曜日",
+        "petBottle": "2回目・4回目の土曜日",
         "plastic": "確認中"
       },
       "宇奈根": {
-        "burnable": "火・金曜日",
-        "unburnable": "2・4回目の土曜日",
+        "burnable": "火曜日・金曜日",
+        "unburnable": "2回目・4回目の土曜日",
         "recyclable": "月曜日",
-        "petBottle": "1・3回目の土曜日",
+        "petBottle": "1回目・3回目の土曜日",
         "plastic": "確認中"
       },
       "梅丘": {
-        "burnable": "火・金曜日",
-        "unburnable": "2・4回目の水曜日",
+        "burnable": "火曜日・金曜日",
+        "unburnable": "2回目・4回目の水曜日",
         "recyclable": "土曜日",
-        "petBottle": "1・3回目の水曜日",
+        "petBottle": "1回目・3回目の水曜日",
         "plastic": "確認中"
       },
       "大蔵": {
-        "burnable": "火・金曜日",
-        "unburnable": "1・3回目の水曜日",
+        "burnable": "火曜日・金曜日",
+        "unburnable": "1回目・3回目の水曜日",
         "recyclable": "月曜日",
-        "petBottle": "2・4回目の水曜日",
+        "petBottle": "2回目・4回目の水曜日",
         "plastic": "確認中"
       },
       "大原": {
-        "burnable": "火・金曜日",
-        "unburnable": "1・3回目の木曜日",
+        "burnable": "火曜日・金曜日",
+        "unburnable": "1回目・3回目の木曜日",
         "recyclable": "土曜日",
-        "petBottle": "2・4回目の木曜日",
+        "petBottle": "2回目・4回目の木曜日",
         "plastic": "確認中"
       },
       "岡本": {
-        "burnable": "火・金曜日",
-        "unburnable": "2・4回目の土曜日",
+        "burnable": "火曜日・金曜日",
+        "unburnable": "2回目・4回目の土曜日",
         "recyclable": "木曜日",
-        "petBottle": "1・3回目の土曜日",
+        "petBottle": "1回目・3回目の土曜日",
         "plastic": "確認中"
       },
       "奥沢": {
-        "burnable": "月・木曜日",
-        "unburnable": "2・4回目の金曜日",
+        "burnable": "月曜日・木曜日",
+        "unburnable": "2回目・4回目の金曜日",
         "recyclable": "土曜日",
-        "petBottle": "1・3回目の金曜日",
+        "petBottle": "1回目・3回目の金曜日",
         "plastic": "確認中"
       },
       "尾山台": {
-        "burnable": "月・木曜日",
-        "unburnable": "2・4回目の火曜日",
+        "burnable": "月曜日・木曜日",
+        "unburnable": "2回目・4回目の火曜日",
         "recyclable": "土曜日",
-        "petBottle": "1・3回目の火曜日",
+        "petBottle": "1回目・3回目の火曜日",
         "plastic": "確認中"
       },
       "粕谷": {
-        "burnable": "水・土曜日",
-        "unburnable": "2・4回目の木曜日",
+        "burnable": "水曜日・土曜日",
+        "unburnable": "2回目・4回目の木曜日",
         "recyclable": "火曜日",
-        "petBottle": "1・3回目の木曜日",
+        "petBottle": "1回目・3回目の木曜日",
         "plastic": "確認中"
       },
       "鎌田": {
-        "burnable": "火・金曜日",
-        "unburnable": "2・4回目の土曜日",
+        "burnable": "火曜日・金曜日",
+        "unburnable": "2回目・4回目の土曜日",
         "recyclable": "木曜日",
-        "petBottle": "1・3回目の土曜日",
+        "petBottle": "1回目・3回目の土曜日",
         "plastic": "確認中"
       },
       "上馬": {
-        "burnable": "火・金曜日",
-        "unburnable": "1・3回目の水曜日",
+        "burnable": "火曜日・金曜日",
+        "unburnable": "1回目・3回目の水曜日",
         "recyclable": "月曜日",
-        "petBottle": "2・4回目の水曜日",
+        "petBottle": "2回目・4回目の水曜日",
         "plastic": "確認中"
       },
       "上北沢": {
-        "burnable": "月・木曜日",
-        "unburnable": "2・4回目の火曜日",
+        "burnable": "月曜日・木曜日",
+        "unburnable": "2回目・4回目の火曜日",
         "recyclable": "土曜日",
-        "petBottle": "1・3回目の火曜日",
+        "petBottle": "1回目・3回目の火曜日",
         "plastic": "確認中"
       },
       "上祖師谷": {
-        "burnable": "水・土曜日",
-        "unburnable": "1・3回目の木曜日",
+        "burnable": "水曜日・土曜日",
+        "unburnable": "1回目・3回目の木曜日",
         "recyclable": "火曜日",
-        "petBottle": "2・4回目の木曜日",
+        "petBottle": "2回目・4回目の木曜日",
         "plastic": "確認中"
       },
       "上野毛": {
-        "burnable": "水・土曜日",
-        "unburnable": "1・3回目の月曜日",
+        "burnable": "水曜日・土曜日",
+        "unburnable": "1回目・3回目の月曜日",
         "recyclable": "火曜日",
-        "petBottle": "2・4回目の月曜日",
+        "petBottle": "2回目・4回目の月曜日",
         "plastic": "確認中"
       },
       "上用賀": {
-        "burnable": "水・土曜日",
-        "unburnable": "1・3回目の木曜日",
+        "burnable": "水曜日・土曜日",
+        "unburnable": "1回目・3回目の木曜日",
         "recyclable": "火曜日",
-        "petBottle": "2・4回目の木曜日",
+        "petBottle": "2回目・4回目の木曜日",
         "plastic": "確認中"
       },
       "北烏山": {
-        "burnable": "月・木曜日",
-        "unburnable": "2・4回目の金曜日",
+        "burnable": "月曜日・木曜日",
+        "unburnable": "2回目・4回目の金曜日",
         "recyclable": "水曜日",
-        "petBottle": "1・3回目の金曜日",
+        "petBottle": "1回目・3回目の金曜日",
         "plastic": "確認中"
       },
       "北沢": {
-        "burnable": "月・木曜日",
-        "unburnable": "2・4回目の土曜日",
+        "burnable": "月曜日・木曜日",
+        "unburnable": "2回目・4回目の土曜日",
         "recyclable": "水曜日",
-        "petBottle": "1・3回目の土曜日",
+        "petBottle": "1回目・3回目の土曜日",
         "plastic": "確認中"
       },
       "喜多見": {
-        "burnable": "火・金曜日",
-        "unburnable": "1・3回目の水曜日",
+        "burnable": "火曜日・金曜日",
+        "unburnable": "1回目・3回目の水曜日",
         "recyclable": "月曜日",
-        "petBottle": "2・4回目の水曜日",
+        "petBottle": "2回目・4回目の水曜日",
         "plastic": "確認中"
       },
       "砧": {
-        "burnable": "火・金曜日",
-        "unburnable": "2・4回目の水曜日",
+        "burnable": "火曜日・金曜日",
+        "unburnable": "2回目・4回目の水曜日",
         "recyclable": "月曜日",
-        "petBottle": "1・3回目の水曜日",
+        "petBottle": "1回目・3回目の水曜日",
         "plastic": "確認中"
       },
       "砧公園": {
-        "burnable": "火・金曜日",
-        "unburnable": "1・3回目の土曜日",
+        "burnable": "火曜日・金曜日",
+        "unburnable": "1回目・3回目の土曜日",
         "recyclable": "木曜日",
-        "petBottle": "2・4回目の土曜日",
+        "petBottle": "2回目・4回目の土曜日",
         "plastic": "確認中"
       },
       "給田": {
-        "burnable": "月・木曜日",
-        "unburnable": "1・3回目の金曜日",
+        "burnable": "月曜日・木曜日",
+        "unburnable": "1回目・3回目の金曜日",
         "recyclable": "水曜日",
-        "petBottle": "2・4回目の金曜日",
+        "petBottle": "2回目・4回目の金曜日",
         "plastic": "確認中"
       },
       "経堂": {
-        "burnable": "水・土曜日",
-        "unburnable": "2・4回目の月曜日",
+        "burnable": "水曜日・土曜日",
+        "unburnable": "2回目・4回目の月曜日",
         "recyclable": "木曜日",
-        "petBottle": "1・3回目の月曜日",
+        "petBottle": "1回目・3回目の月曜日",
         "plastic": "確認中"
       },
       "豪徳寺": {
-        "burnable": "水・土曜日",
-        "unburnable": "2・4回目の金曜日",
+        "burnable": "水曜日・土曜日",
+        "unburnable": "2回目・4回目の金曜日",
         "recyclable": "火曜日",
-        "petBottle": "1・3回目の金曜日",
+        "petBottle": "1回目・3回目の金曜日",
         "plastic": "確認中"
       },
       "駒沢": {
-        "burnable": "火・金曜日",
-        "unburnable": "2・4回目の水曜日",
+        "burnable": "火曜日・金曜日",
+        "unburnable": "2回目・4回目の水曜日",
         "recyclable": "月曜日",
-        "petBottle": "1・3回目の水曜日",
+        "petBottle": "1回目・3回目の水曜日",
         "plastic": "確認中"
       },
       "駒沢公園": {
-        "burnable": "火・金曜日",
-        "unburnable": "2・4回目の水曜日",
+        "burnable": "火曜日・金曜日",
+        "unburnable": "2回目・4回目の水曜日",
         "recyclable": "月曜日",
-        "petBottle": "1・3回目の水曜日",
+        "petBottle": "1回目・3回目の水曜日",
         "plastic": "確認中"
       },
       "桜": {
-        "burnable": "水・土曜日",
-        "unburnable": "2・4回目の金曜日",
+        "burnable": "水曜日・土曜日",
+        "unburnable": "2回目・4回目の金曜日",
         "recyclable": "火曜日",
-        "petBottle": "1・3回目の金曜日",
+        "petBottle": "1回目・3回目の金曜日",
         "plastic": "確認中"
       },
       "桜丘": {
-        "burnable": "水・土曜日",
-        "unburnable": "1・3回目の月曜日",
+        "burnable": "水曜日・土曜日",
+        "unburnable": "1回目・3回目の月曜日",
         "recyclable": "火曜日",
-        "petBottle": "2・4回目の月曜日",
+        "petBottle": "2回目・4回目の月曜日",
         "plastic": "確認中"
       },
       "桜新町": {
-        "burnable": "水・土曜日",
-        "unburnable": "2・4回目の木曜日",
+        "burnable": "水曜日・土曜日",
+        "unburnable": "2回目・4回目の木曜日",
         "recyclable": "金曜日",
-        "petBottle": "1・3回目の木曜日",
+        "petBottle": "1回目・3回目の木曜日",
         "plastic": "確認中"
       },
       "桜上水": {
-        "burnable": "水・土曜日",
-        "unburnable": "2・4回目の月曜日",
+        "burnable": "水曜日・土曜日",
+        "unburnable": "2回目・4回目の月曜日",
         "recyclable": "木曜日",
-        "petBottle": "1・3回目の月曜日",
+        "petBottle": "1回目・3回目の月曜日",
         "plastic": "確認中"
       },
       "三軒茶屋": {
-        "burnable": "火・金曜日",
-        "unburnable": "1・3回目の水曜日",
+        "burnable": "火曜日・金曜日",
+        "unburnable": "1回目・3回目の水曜日",
         "recyclable": "月曜日",
-        "petBottle": "2・4回目の水曜日",
+        "petBottle": "2回目・4回目の水曜日",
         "plastic": "確認中"
       },
       "下馬": {
-        "burnable": "月・木曜日",
-        "unburnable": "2・4回目の火曜日",
+        "burnable": "月曜日・木曜日",
+        "unburnable": "2回目・4回目の火曜日",
         "recyclable": "金曜日",
-        "petBottle": "1・3回目の火曜日",
+        "petBottle": "1回目・3回目の火曜日",
         "plastic": "確認中"
       },
       "新町": {
-        "burnable": "水・土曜日",
-        "unburnable": "2・4回目の木曜日",
+        "burnable": "水曜日・土曜日",
+        "unburnable": "2回目・4回目の木曜日",
         "recyclable": "金曜日",
-        "petBottle": "1・3回目の木曜日",
+        "petBottle": "1回目・3回目の木曜日",
         "plastic": "確認中"
       },
       "成城": {
-        "burnable": "水・土曜日",
-        "unburnable": "1・3回目の木曜日",
+        "burnable": "水曜日・土曜日",
+        "unburnable": "1回目・3回目の木曜日",
         "recyclable": "火曜日",
-        "petBottle": "2・4回目の木曜日",
+        "petBottle": "2回目・4回目の木曜日",
         "plastic": "確認中"
       },
       "瀬田": {
-        "burnable": "水・土曜日",
-        "unburnable": "2・4回目の月曜日",
+        "burnable": "水曜日・土曜日",
+        "unburnable": "2回目・4回目の月曜日",
         "recyclable": "火曜日",
-        "petBottle": "1・3回目の月曜日",
+        "petBottle": "1回目・3回目の月曜日",
         "plastic": "確認中"
       },
       "世田谷": {
-        "burnable": "水・土曜日",
-        "unburnable": "2・4回目の金曜日",
+        "burnable": "水曜日・土曜日",
+        "unburnable": "2回目・4回目の金曜日",
         "recyclable": "火曜日",
-        "petBottle": "1・3回目の金曜日",
+        "petBottle": "1回目・3回目の金曜日",
+        "plastic": "確認中"
+      },
+      "祖師谷": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "1回目・3回目の木曜日",
+        "recyclable": "火曜日",
+        "petBottle": "2回目・4回目の木曜日",
         "plastic": "確認中"
       },
       "太子堂": {
-        "burnable": "火・金曜日",
-        "unburnable": "2・4回目の水曜日",
+        "burnable": "火曜日・金曜日",
+        "unburnable": "2回目・4回目の水曜日",
         "recyclable": "月曜日",
-        "petBottle": "1・3回目の水曜日",
+        "petBottle": "1回目・3回目の水曜日",
         "plastic": "確認中"
       },
       "代沢": {
-        "burnable": "火・金曜日",
-        "unburnable": "1・3回目の木曜日",
+        "burnable": "火曜日・金曜日",
+        "unburnable": "1回目・3回目の木曜日",
         "recyclable": "月曜日",
-        "petBottle": "2・4回目の木曜日",
+        "petBottle": "2回目・4回目の木曜日",
         "plastic": "確認中"
       },
       "代田": {
-        "burnable": "月・木曜日",
-        "unburnable": "2・4回目の土曜日",
+        "burnable": "月曜日・木曜日",
+        "unburnable": "2回目・4回目の土曜日",
         "recyclable": "水曜日",
-        "petBottle": "1・3回目の土曜日",
+        "petBottle": "1回目・3回目の土曜日",
         "plastic": "確認中"
       },
       "玉川": {
-        "burnable": "水・土曜日",
-        "unburnable": "2・4回目の月曜日",
+        "burnable": "水曜日・土曜日",
+        "unburnable": "2回目・4回目の月曜日",
         "recyclable": "火曜日",
-        "petBottle": "1・3回目の月曜日",
+        "petBottle": "1回目・3回目の月曜日",
         "plastic": "確認中"
       },
       "玉川台": {
-        "burnable": "水・土曜日",
-        "unburnable": "2・4回目の月曜日",
+        "burnable": "水曜日・土曜日",
+        "unburnable": "2回目・4回目の月曜日",
         "recyclable": "火曜日",
-        "petBottle": "1・3回目の月曜日",
+        "petBottle": "1回目・3回目の月曜日",
         "plastic": "確認中"
       },
       "玉川田園調布": {
-        "burnable": "月・木曜日",
-        "unburnable": "2・4回目の金曜日",
+        "burnable": "月曜日・木曜日",
+        "unburnable": "2回目・4回目の金曜日",
         "recyclable": "水曜日",
-        "petBottle": "1・3回目の金曜日",
+        "petBottle": "1回目・3回目の金曜日",
         "plastic": "確認中"
       },
       "玉堤": {
-        "burnable": "月・木曜日",
-        "unburnable": "2・4回目の火曜日",
+        "burnable": "月曜日・木曜日",
+        "unburnable": "2回目・4回目の火曜日",
         "recyclable": "土曜日",
-        "petBottle": "1・3回目の火曜日",
+        "petBottle": "1回目・3回目の火曜日",
+        "plastic": "確認中"
+      },
+      "千歳台": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "2回目・4回目の月曜日",
+        "recyclable": "金曜日",
+        "petBottle": "1回目・3回目の月曜日",
+        "plastic": "確認中"
+      },
+      "弦巻": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "1回目・3回目の金曜日",
+        "recyclable": "火曜日",
+        "petBottle": "2回目・4回目の金曜日",
+        "plastic": "確認中"
+      },
+      "等々力": {
+        "burnable": "火曜日・金曜日",
+        "unburnable": "1回目・3回目の土曜日",
+        "recyclable": "月曜日",
+        "petBottle": "2回目・4回目の土曜日",
+        "plastic": "確認中"
+      },
+      "中町": {
+        "burnable": "火曜日・金曜日",
+        "unburnable": "1回目・3回目の土曜日",
+        "recyclable": "木曜日",
+        "petBottle": "2回目・4回目の土曜日",
         "plastic": "確認中"
       },
       "野毛": {
-        "burnable": "火・金曜日",
-        "unburnable": "2・4回目の土曜日",
+        "burnable": "火曜日・金曜日",
+        "unburnable": "2回目・4回目の土曜日",
         "recyclable": "木曜日",
-        "petBottle": "1・3回目の土曜日",
+        "petBottle": "1回目・3回目の土曜日",
         "plastic": "確認中"
       },
       "野沢": {
-        "burnable": "火・金曜日",
-        "unburnable": "1・3回目の水曜日",
+        "burnable": "火曜日・金曜日",
+        "unburnable": "1回目・3回目の水曜日",
         "recyclable": "月曜日",
-        "petBottle": "2・4回目の水曜日",
+        "petBottle": "2回目・4回目の水曜日",
         "plastic": "確認中"
       },
       "八幡山": {
-        "burnable": "月・木曜日",
-        "unburnable": "1・3回目の火曜日",
+        "burnable": "月曜日・木曜日",
+        "unburnable": "1回目・3回目の火曜日",
         "recyclable": "土曜日",
-        "petBottle": "2・4回目の火曜日",
+        "petBottle": "2回目・4回目の火曜日",
         "plastic": "確認中"
       },
       "羽根木": {
-        "burnable": "火・金曜日",
-        "unburnable": "1・3回目の木曜日",
+        "burnable": "火曜日・金曜日",
+        "unburnable": "1回目・3回目の木曜日",
         "recyclable": "土曜日",
-        "petBottle": "2・4回目の木曜日",
+        "petBottle": "2回目・4回目の木曜日",
+        "plastic": "確認中"
+      },
+      "東玉川": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "1回目・3回目の金曜日",
+        "recyclable": "水曜日",
+        "petBottle": "2回目・4回目の金曜日",
         "plastic": "確認中"
       },
       "深沢": {
-        "burnable": "火・金曜日",
-        "unburnable": "2・4回目の水曜日",
+        "burnable": "火曜日・金曜日",
+        "unburnable": "2回目・4回目の水曜日",
         "recyclable": "木曜日",
-        "petBottle": "1・3回目の水曜日",
+        "petBottle": "1回目・3回目の水曜日",
         "plastic": "確認中"
       },
       "船橋": {
-        "burnable": "水・土曜日",
-        "unburnable": "1・3回目の月曜日",
+        "burnable": "水曜日・土曜日",
+        "unburnable": "1回目・3回目の月曜日",
         "recyclable": "金曜日",
-        "petBottle": "2・4回目の月曜日",
+        "petBottle": "2回目・4回目の月曜日",
+        "plastic": "確認中"
+      },
+      "松原": {
+        "burnable": "火曜日・金曜日",
+        "unburnable": "1回目・3回目の木曜日",
+        "recyclable": "土曜日",
+        "petBottle": "2回目・4回目の木曜日",
         "plastic": "確認中"
       },
       "三宿": {
-        "burnable": "月・木曜日",
-        "unburnable": "1・3回目の土曜日",
+        "burnable": "月曜日・木曜日",
+        "unburnable": "1回目・3回目の土曜日",
         "recyclable": "水曜日",
-        "petBottle": "2・4回目の土曜日",
+        "petBottle": "2回目・4回目の土曜日",
         "plastic": "確認中"
       },
       "南烏山": {
-        "burnable": "月・木曜日",
-        "unburnable": "1・3回目の金曜日",
+        "burnable": "月曜日・木曜日",
+        "unburnable": "1回目・3回目の金曜日",
         "recyclable": "水曜日",
-        "petBottle": "2・4回目の金曜日",
+        "petBottle": "2回目・4回目の金曜日",
         "plastic": "確認中"
       },
       "宮坂": {
-        "burnable": "水・土曜日",
-        "unburnable": "2・4回目の月曜日",
+        "burnable": "水曜日・土曜日",
+        "unburnable": "2回目・4回目の月曜日",
         "recyclable": "木曜日",
-        "petBottle": "1・3回目の月曜日",
+        "petBottle": "1回目・3回目の月曜日",
+        "plastic": "確認中"
+      },
+      "用賀": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "1回目・3回目の木曜日",
+        "recyclable": "金曜日",
+        "petBottle": "2回目・4回目の木曜日",
+        "plastic": "確認中"
+      },
+      "若林": {
+        "burnable": "火曜日・金曜日",
+        "unburnable": "2回目・4回目の水曜日",
+        "recyclable": "土曜日",
+        "petBottle": "1回目・3回目の水曜日",
         "plastic": "確認中"
       }
     },
@@ -6107,366 +6114,366 @@ export const mockData: any = {
     "杉並区": {
       "阿佐谷北1～6丁目": {
         "burnable": "水曜日・土曜日",
-        "unburnable": "第1,3月曜日",
-        "recyclable": "確認中",
-        "petBottle": "金曜日",
+        "unburnable": "第1・3月曜日",
+        "recyclable": "月曜日",
+        "petBottle": "月曜日",
         "plastic": "金曜日"
       },
       "阿佐谷南1～3丁目": {
         "burnable": "水曜日・土曜日",
-        "unburnable": "第2,4月曜日",
-        "recyclable": "確認中",
-        "petBottle": "金曜日",
+        "unburnable": "第2・4月曜日",
+        "recyclable": "月曜日",
+        "petBottle": "月曜日",
         "plastic": "金曜日"
       },
       "天沼1～3丁目": {
         "burnable": "火曜日・金曜日",
-        "unburnable": "第1,3水曜日",
-        "recyclable": "確認中",
-        "petBottle": "木曜日",
+        "unburnable": "第1・3水曜日",
+        "recyclable": "水曜日",
+        "petBottle": "水曜日",
         "plastic": "木曜日"
       },
       "井草1～3丁目": {
         "burnable": "火曜日・金曜日",
-        "unburnable": "第2,4水曜日",
-        "recyclable": "確認中",
-        "petBottle": "木曜日",
+        "unburnable": "第2・4水曜日",
+        "recyclable": "水曜日",
+        "petBottle": "水曜日",
         "plastic": "木曜日"
       },
       "井草4・5丁目": {
         "burnable": "火曜日・金曜日",
-        "unburnable": "第2,4土曜日",
-        "recyclable": "確認中",
-        "petBottle": "月曜日",
+        "unburnable": "第2・4土曜日",
+        "recyclable": "土曜日",
+        "petBottle": "土曜日",
         "plastic": "月曜日"
       },
       "和泉1丁目": {
         "burnable": "水曜日・土曜日",
-        "unburnable": "第2,4金曜日",
-        "recyclable": "確認中",
-        "petBottle": "火曜日",
+        "unburnable": "第2・4金曜日",
+        "recyclable": "金曜日",
+        "petBottle": "金曜日",
         "plastic": "火曜日"
       },
       "和泉2～4丁目": {
         "burnable": "水曜日・土曜日",
-        "unburnable": "第1,3金曜日",
-        "recyclable": "確認中",
-        "petBottle": "火曜日",
+        "unburnable": "第1・3金曜日",
+        "recyclable": "金曜日",
+        "petBottle": "金曜日",
         "plastic": "火曜日"
       },
       "今川1～3丁目": {
         "burnable": "火曜日・金曜日",
-        "unburnable": "第2,4土曜日",
-        "recyclable": "確認中",
-        "petBottle": "月曜日",
+        "unburnable": "第2・4土曜日",
+        "recyclable": "土曜日",
+        "petBottle": "土曜日",
         "plastic": "月曜日"
       },
       "今川4丁目": {
         "burnable": "火曜日・金曜日",
-        "unburnable": "第1,3土曜日",
-        "recyclable": "確認中",
-        "petBottle": "月曜日",
+        "unburnable": "第1・3土曜日",
+        "recyclable": "土曜日",
+        "petBottle": "土曜日",
         "plastic": "月曜日"
       },
       "梅里1丁目": {
         "burnable": "水曜日・土曜日",
-        "unburnable": "第2,4火曜日",
-        "recyclable": "確認中",
-        "petBottle": "金曜日",
+        "unburnable": "第2・4火曜日",
+        "recyclable": "火曜日",
+        "petBottle": "火曜日",
         "plastic": "金曜日"
       },
       "梅里2丁目": {
         "burnable": "水曜日・土曜日",
-        "unburnable": "第2,4月曜日",
-        "recyclable": "確認中",
-        "petBottle": "金曜日",
+        "unburnable": "第2・4月曜日",
+        "recyclable": "月曜日",
+        "petBottle": "月曜日",
         "plastic": "金曜日"
       },
       "永福1～４丁目": {
         "burnable": "月曜日・木曜日",
-        "unburnable": "第2,4水曜日",
-        "recyclable": "確認中",
-        "petBottle": "土曜日",
+        "unburnable": "第2・4水曜日",
+        "recyclable": "水曜日",
+        "petBottle": "水曜日",
         "plastic": "土曜日"
       },
       "大宮1・2丁目": {
         "burnable": "水曜日・土曜日",
-        "unburnable": "第2,4火曜日",
-        "recyclable": "確認中",
-        "petBottle": "金曜日",
+        "unburnable": "第2・4火曜日",
+        "recyclable": "火曜日",
+        "petBottle": "火曜日",
         "plastic": "金曜日"
       },
       "荻窪1～5丁目": {
         "burnable": "水曜日・土曜日",
-        "unburnable": "第1,3木曜日",
-        "recyclable": "確認中",
-        "petBottle": "火曜日",
+        "unburnable": "第1・3木曜日",
+        "recyclable": "木曜日",
+        "petBottle": "木曜日",
         "plastic": "火曜日"
       },
       "上井草1・2丁目": {
         "burnable": "火曜日・金曜日",
-        "unburnable": "第2,4土曜日",
-        "recyclable": "確認中",
-        "petBottle": "月曜日",
+        "unburnable": "第2・4土曜日",
+        "recyclable": "土曜日",
+        "petBottle": "土曜日",
         "plastic": "月曜日"
       },
       "上井草3・4丁目": {
         "burnable": "火曜日・金曜日",
-        "unburnable": "第1,3土曜日",
-        "recyclable": "確認中",
-        "petBottle": "月曜日",
+        "unburnable": "第1・3土曜日",
+        "recyclable": "土曜日",
+        "petBottle": "土曜日",
         "plastic": "月曜日"
       },
       "上荻1丁目": {
         "burnable": "水曜日・土曜日",
-        "unburnable": "第1,3木曜日",
-        "recyclable": "確認中",
-        "petBottle": "火曜日",
+        "unburnable": "第1・3木曜日",
+        "recyclable": "木曜日",
+        "petBottle": "木曜日",
         "plastic": "火曜日"
       },
       "上荻2～4丁目": {
         "burnable": "水曜日・土曜日",
-        "unburnable": "第2,4金曜日",
-        "recyclable": "確認中",
-        "petBottle": "月曜日",
+        "unburnable": "第2・4金曜日",
+        "recyclable": "金曜日",
+        "petBottle": "金曜日",
         "plastic": "月曜日"
       },
       "上高井戸1～3丁目": {
         "burnable": "月曜日・木曜日",
-        "unburnable": "第1,3火曜日",
-        "recyclable": "確認中",
-        "petBottle": "土曜日",
+        "unburnable": "第1・3火曜日",
+        "recyclable": "火曜日",
+        "petBottle": "火曜日",
         "plastic": "土曜日"
       },
       "久我山1～3丁目": {
         "burnable": "月曜日・木曜日",
-        "unburnable": "第1,3火曜日",
-        "recyclable": "確認中",
-        "petBottle": "土曜日",
+        "unburnable": "第1・3火曜日",
+        "recyclable": "火曜日",
+        "petBottle": "火曜日",
         "plastic": "土曜日"
       },
       "久我山4・5丁目": {
         "burnable": "月曜日・木曜日",
-        "unburnable": "第2,4火曜日",
-        "recyclable": "確認中",
-        "petBottle": "土曜日",
+        "unburnable": "第2・4火曜日",
+        "recyclable": "火曜日",
+        "petBottle": "火曜日",
         "plastic": "土曜日"
       },
       "高円寺北1丁目": {
         "burnable": "火曜日・金曜日",
-        "unburnable": "第1,3月曜日",
-        "recyclable": "確認中",
-        "petBottle": "木曜日",
+        "unburnable": "第1・3月曜日",
+        "recyclable": "月曜日",
+        "petBottle": "月曜日",
         "plastic": "木曜日"
       },
       "高円寺北2～4丁目": {
         "burnable": "火曜日・金曜日",
-        "unburnable": "第1,3木曜日",
-        "recyclable": "確認中",
-        "petBottle": "月曜日",
+        "unburnable": "第1・3木曜日",
+        "recyclable": "木曜日",
+        "petBottle": "木曜日",
         "plastic": "月曜日"
       },
       "高円寺南1・5丁目": {
         "burnable": "火曜日・金曜日",
-        "unburnable": "第1,3月曜日",
-        "recyclable": "確認中",
-        "petBottle": "木曜日",
+        "unburnable": "第1・3月曜日",
+        "recyclable": "月曜日",
+        "petBottle": "月曜日",
         "plastic": "木曜日"
       },
       "高円寺南2～4丁目": {
         "burnable": "火曜日・金曜日",
-        "unburnable": "第2,4木曜日",
-        "recyclable": "確認中",
-        "petBottle": "月曜日",
+        "unburnable": "第2・4木曜日",
+        "recyclable": "木曜日",
+        "petBottle": "木曜日",
         "plastic": "月曜日"
       },
       "清水1・2丁目": {
         "burnable": "火曜日・金曜日",
-        "unburnable": "第1,3水曜日",
-        "recyclable": "確認中",
-        "petBottle": "木曜日",
+        "unburnable": "第1・3水曜日",
+        "recyclable": "水曜日",
+        "petBottle": "水曜日",
         "plastic": "木曜日"
       },
       "清水3丁目": {
         "burnable": "火曜日・金曜日",
-        "unburnable": "第2,4水曜日",
-        "recyclable": "確認中",
-        "petBottle": "木曜日",
+        "unburnable": "第2・4水曜日",
+        "recyclable": "水曜日",
+        "petBottle": "水曜日",
         "plastic": "木曜日"
       },
       "下井草1丁目": {
         "burnable": "火曜日・金曜日",
-        "unburnable": "第1,3月曜日",
-        "recyclable": "確認中",
-        "petBottle": "木曜日",
+        "unburnable": "第1・3月曜日",
+        "recyclable": "月曜日",
+        "petBottle": "月曜日",
         "plastic": "木曜日"
       },
       "下井草2～5丁目": {
         "burnable": "火曜日・金曜日",
-        "unburnable": "第2,4水曜日",
-        "recyclable": "確認中",
-        "petBottle": "木曜日",
+        "unburnable": "第2・4水曜日",
+        "recyclable": "水曜日",
+        "petBottle": "水曜日",
         "plastic": "木曜日"
       },
       "下高井戸1～4丁目": {
         "burnable": "月曜日・木曜日",
-        "unburnable": "第1,3水曜日",
-        "recyclable": "確認中",
-        "petBottle": "土曜日",
+        "unburnable": "第1・3水曜日",
+        "recyclable": "水曜日",
+        "petBottle": "水曜日",
         "plastic": "土曜日"
       },
       "下高井戸5丁目": {
         "burnable": "月曜日・木曜日",
-        "unburnable": "第2,4土曜日",
-        "recyclable": "確認中",
-        "petBottle": "水曜日",
+        "unburnable": "第2・4土曜日",
+        "recyclable": "土曜日",
+        "petBottle": "土曜日",
         "plastic": "水曜日"
       },
       "松庵1～3丁目": {
         "burnable": "月曜日・木曜日",
-        "unburnable": "第1,3金曜日",
-        "recyclable": "確認中",
-        "petBottle": "水曜日",
+        "unburnable": "第1・3金曜日",
+        "recyclable": "金曜日",
+        "petBottle": "金曜日",
         "plastic": "水曜日"
       },
       "善福寺1～4丁目": {
         "burnable": "火曜日・金曜日",
-        "unburnable": "第1,3土曜日",
-        "recyclable": "確認中",
-        "petBottle": "月曜日",
+        "unburnable": "第1・3土曜日",
+        "recyclable": "土曜日",
+        "petBottle": "土曜日",
         "plastic": "月曜日"
       },
       "高井戸西1丁目": {
         "burnable": "月曜日・木曜日",
-        "unburnable": "第1,3火曜日",
-        "recyclable": "確認中",
-        "petBottle": "土曜日",
+        "unburnable": "第1・3火曜日",
+        "recyclable": "火曜日",
+        "petBottle": "火曜日",
         "plastic": "土曜日"
       },
       "高井戸西2・3丁目": {
         "burnable": "月曜日・木曜日",
-        "unburnable": "第2,4火曜日",
-        "recyclable": "確認中",
-        "petBottle": "土曜日",
+        "unburnable": "第2・4火曜日",
+        "recyclable": "火曜日",
+        "petBottle": "火曜日",
         "plastic": "土曜日"
       },
       "高井戸東1～4丁目": {
         "burnable": "月曜日・木曜日",
-        "unburnable": "第1,3土曜日",
-        "recyclable": "確認中",
-        "petBottle": "水曜日",
+        "unburnable": "第1・3土曜日",
+        "recyclable": "土曜日",
+        "petBottle": "土曜日",
         "plastic": "水曜日"
       },
       "成田西1・2丁目": {
         "burnable": "水曜日・土曜日",
-        "unburnable": "第2,4木曜日",
-        "recyclable": "確認中",
-        "petBottle": "火曜日",
+        "unburnable": "第2・4木曜日",
+        "recyclable": "木曜日",
+        "petBottle": "木曜日",
         "plastic": "火曜日"
       },
       "成田西3・4丁目": {
         "burnable": "水曜日・土曜日",
-        "unburnable": "第1,3木曜日",
-        "recyclable": "確認中",
-        "petBottle": "火曜日",
+        "unburnable": "第1・3木曜日",
+        "recyclable": "木曜日",
+        "petBottle": "木曜日",
         "plastic": "火曜日"
       },
       "成田東1～5丁目": {
         "burnable": "水曜日・土曜日",
-        "unburnable": "第2,4木曜日",
-        "recyclable": "確認中",
-        "petBottle": "火曜日",
+        "unburnable": "第2・4木曜日",
+        "recyclable": "木曜日",
+        "petBottle": "木曜日",
         "plastic": "火曜日"
       },
       "西荻北1・2丁目": {
         "burnable": "月曜日・木曜日",
-        "unburnable": "第2,4金曜日",
-        "recyclable": "確認中",
-        "petBottle": "水曜日",
+        "unburnable": "第2・4金曜日",
+        "recyclable": "金曜日",
+        "petBottle": "金曜日",
         "plastic": "水曜日"
       },
       "西荻北3～5丁目": {
         "burnable": "月曜日・木曜日",
-        "unburnable": "第1,3土曜日",
-        "recyclable": "確認中",
-        "petBottle": "水曜日",
+        "unburnable": "第1・3土曜日",
+        "recyclable": "土曜日",
+        "petBottle": "土曜日",
         "plastic": "水曜日"
       },
       "西荻南1～4丁目": {
         "burnable": "月曜日・木曜日",
-        "unburnable": "第1,3金曜日",
-        "recyclable": "確認中",
-        "petBottle": "水曜日",
+        "unburnable": "第1・3金曜日",
+        "recyclable": "金曜日",
+        "petBottle": "金曜日",
         "plastic": "水曜日"
       },
       "浜田山1～4丁目": {
         "burnable": "月曜日・木曜日",
-        "unburnable": "第2,4土曜日",
-        "recyclable": "確認中",
-        "petBottle": "水曜日",
+        "unburnable": "第2・4土曜日",
+        "recyclable": "土曜日",
+        "petBottle": "土曜日",
         "plastic": "水曜日"
       },
       "方南1・2丁目": {
         "burnable": "水曜日・土曜日",
-        "unburnable": "第2,4金曜日",
-        "recyclable": "確認中",
-        "petBottle": "火曜日",
+        "unburnable": "第2・4金曜日",
+        "recyclable": "金曜日",
+        "petBottle": "金曜日",
         "plastic": "火曜日"
       },
       "堀ノ内1～3丁目": {
         "burnable": "水曜日・土曜日",
-        "unburnable": "第1,3火曜日",
-        "recyclable": "確認中",
-        "petBottle": "金曜日",
+        "unburnable": "第1・3火曜日",
+        "recyclable": "火曜日",
+        "petBottle": "火曜日",
         "plastic": "金曜日"
       },
       "本天沼1～3丁目": {
         "burnable": "火曜日・金曜日",
-        "unburnable": "第1,3水曜日",
-        "recyclable": "確認中",
-        "petBottle": "木曜日",
+        "unburnable": "第1・3水曜日",
+        "recyclable": "水曜日",
+        "petBottle": "水曜日",
         "plastic": "木曜日"
       },
       "松ノ木1～3丁目": {
         "burnable": "水曜日・土曜日",
-        "unburnable": "第2,4火曜日",
-        "recyclable": "確認中",
-        "petBottle": "金曜日",
+        "unburnable": "第2・4火曜日",
+        "recyclable": "火曜日",
+        "petBottle": "火曜日",
         "plastic": "金曜日"
       },
       "南荻窪1～4丁目": {
         "burnable": "月曜日・木曜日",
-        "unburnable": "第2,4金曜日",
-        "recyclable": "確認中",
-        "petBottle": "水曜日",
+        "unburnable": "第2・4金曜日",
+        "recyclable": "金曜日",
+        "petBottle": "金曜日",
         "plastic": "水曜日"
       },
       "宮前1・4・5丁目": {
         "burnable": "月曜日・木曜日",
-        "unburnable": "第2,4火曜日",
-        "recyclable": "確認中",
-        "petBottle": "土曜日",
+        "unburnable": "第2・4火曜日",
+        "recyclable": "火曜日",
+        "petBottle": "火曜日",
         "plastic": "土曜日"
       },
       "宮前2・3丁目": {
         "burnable": "月曜日・木曜日",
-        "unburnable": "第1,3金曜日",
-        "recyclable": "確認中",
-        "petBottle": "土曜日",
+        "unburnable": "第1・3金曜日",
+        "recyclable": "金曜日",
+        "petBottle": "金曜日",
         "plastic": "土曜日"
       },
       "桃井1～4丁目": {
         "burnable": "火曜日・金曜日",
-        "unburnable": "第2,4土曜日",
-        "recyclable": "確認中",
-        "petBottle": "月曜日",
+        "unburnable": "第2・4土曜日",
+        "recyclable": "土曜日",
+        "petBottle": "土曜日",
         "plastic": "月曜日"
       },
       "和田1～3丁目": {
         "burnable": "火曜日・金曜日",
-        "unburnable": "第2,4月曜日",
-        "recyclable": "確認中",
-        "petBottle": "木曜日",
+        "unburnable": "第2・4月曜日",
+        "recyclable": "月曜日",
+        "petBottle": "月曜日",
         "plastic": "木曜日"
       }
     },
@@ -6858,299 +6865,502 @@ export const mockData: any = {
       }
     },
     "北区": {
-      "１～９番一丁目上記を除く": {
-        "burnable": "水・土",
-        "unburnable": "第１・第３ 木",
-        "recyclable": "確認中",
-        "petBottle": "月",
-        "plastic": "火"
+      "赤羽一丁目 １～９番": {
+        "burnable": "火金",
+        "unburnable": "第２・第４水",
+        "recyclable": "木",
+        "petBottle": "金",
+        "plastic": "木"
       },
-      "１～６番二丁目上記を除く": {
-        "burnable": "火・金",
-        "unburnable": "第２・第４ 水",
-        "recyclable": "確認中",
+      "赤羽一丁目 （１～９番を除く）": {
+        "burnable": "火金",
+        "unburnable": "第１・第３土",
+        "recyclable": "月",
         "petBottle": "金",
         "plastic": "月"
       },
-      "１～６番三丁目上記を除く": {
-        "burnable": "月・木",
-        "unburnable": "第１・第３ 金",
-        "recyclable": "確認中",
-        "petBottle": "水",
-        "plastic": "土"
+      "赤羽二丁目 １～６番": {
+        "burnable": "火金",
+        "unburnable": "第２・第４水",
+        "recyclable": "月",
+        "petBottle": "金",
+        "plastic": "月"
       },
-      "一丁目二丁目三丁目": {
-        "burnable": "火・金",
-        "unburnable": "第２・第４ 土",
-        "recyclable": "確認中",
+      "赤羽二丁目 （１～６番を除く）": {
+        "burnable": "火金",
+        "unburnable": "第１・第３土",
+        "recyclable": "月",
+        "petBottle": "金",
+        "plastic": "月"
+      },
+      "赤羽三丁目 １～６番": {
+        "burnable": "火金",
+        "unburnable": "第１・第３土",
+        "recyclable": "月",
+        "petBottle": "金",
+        "plastic": "月"
+      },
+      "赤羽三丁目 （１～６番を除く）": {
+        "burnable": "火金",
+        "unburnable": "第１・第３土",
+        "recyclable": "月",
         "petBottle": "月",
         "plastic": "月"
       },
-      "一丁目二丁目": {
-        "burnable": "月・木",
-        "unburnable": "第１・第３ 火",
-        "recyclable": "確認中",
-        "petBottle": "火",
-        "plastic": "水"
-      },
-      "１６～１７番四丁目上記を除く": {
-        "burnable": "火・金",
-        "unburnable": "第２・第４ 土",
-        "recyclable": "確認中",
-        "petBottle": "水",
+      "赤羽北二丁目": {
+        "burnable": "火金",
+        "unburnable": "第２・第４土",
+        "recyclable": "月",
+        "petBottle": "月",
         "plastic": "月"
       },
-      "一丁目二丁目三丁目四丁目": {
-        "burnable": "月・木",
-        "unburnable": "第１・第３ 金",
-        "recyclable": "確認中",
+      "赤羽台二丁目": {
+        "burnable": "月木",
+        "unburnable": "第１・第３金",
+        "recyclable": "土",
         "petBottle": "水",
         "plastic": "土"
       },
-      "五丁目六丁目": {
-        "burnable": "火・金",
-        "unburnable": "第２・第４ 月",
-        "recyclable": "確認中",
+      "赤羽台三丁目 １～６番": {
+        "burnable": "月木",
+        "unburnable": "第１・第３金",
+        "recyclable": "土",
+        "petBottle": "水",
+        "plastic": "土"
+      },
+      "赤羽台三丁目 （１～６番を除く）": {
+        "burnable": "火金",
+        "unburnable": "第２・第４土",
+        "recyclable": "月",
+        "petBottle": "水",
+        "plastic": "月"
+      },
+      "赤羽台四丁目 １６～１７番": {
+        "burnable": "火金",
+        "unburnable": "第２・第４土",
+        "recyclable": "月",
+        "petBottle": "水",
+        "plastic": "月"
+      },
+      "赤羽台四丁目 （１６～１７番を除く）": {
+        "burnable": "火金",
+        "unburnable": "第２・第４土",
+        "recyclable": "月",
+        "petBottle": "月",
+        "plastic": "月"
+      },
+      "赤羽西三丁目": {
+        "burnable": "月木",
+        "unburnable": "第１・第３金",
+        "recyclable": "土",
+        "petBottle": "水",
+        "plastic": "土"
+      },
+      "赤羽西六丁目": {
+        "burnable": "月木",
+        "unburnable": "第２・第４金",
+        "recyclable": "土",
+        "petBottle": "水",
+        "plastic": "土"
+      },
+      "赤羽南全域": {
+        "burnable": "火金",
+        "unburnable": "第２・第４水",
+        "recyclable": "木",
+        "petBottle": "金",
+        "plastic": "木"
+      },
+      "岩淵町 ７番の一部": {
+        "burnable": "火金",
+        "unburnable": "第１・第３水",
+        "recyclable": "木",
+        "petBottle": "金",
+        "plastic": "木"
+      },
+      "岩淵町": {
+        "burnable": "火金",
+        "unburnable": "第１・第３土",
+        "recyclable": "月",
+        "petBottle": "金",
+        "plastic": "月"
+      },
+      "浮間一丁目": {
+        "burnable": "火金",
+        "unburnable": "第１・第３木",
+        "recyclable": "月",
+        "petBottle": "火",
+        "plastic": "月"
+      },
+      "浮間二丁目 ９番１９～３１号": {
+        "burnable": "火金",
+        "unburnable": "第１・第３木",
+        "recyclable": "土",
+        "petBottle": "金",
+        "plastic": "土"
+      },
+      "浮間二丁目 １２～３１番": {
+        "burnable": "火金",
+        "unburnable": "第２・第４月",
+        "recyclable": "土",
+        "petBottle": "金",
+        "plastic": "土"
+      },
+      "浮間二丁目 （９番１９～３１号・１２～３１番を除く）": {
+        "burnable": "火金",
+        "unburnable": "第１・第３月",
+        "recyclable": "土",
+        "petBottle": "金",
+        "plastic": "土"
+      },
+      "浮間三丁目 １～４番・２８番・３１～３２番": {
+        "burnable": "火金",
+        "unburnable": "第２・第４木",
+        "recyclable": "月",
+        "petBottle": "火",
+        "plastic": "月"
+      },
+      "浮間三丁目 （１～４番・２８番・３１～３２番を除く）": {
+        "burnable": "月木",
+        "unburnable": "第２・第４金",
+        "recyclable": "水",
+        "petBottle": "火",
+        "plastic": "水"
+      },
+      "浮間四丁目 １～９番": {
+        "burnable": "月木",
+        "unburnable": "第１・第３金",
+        "recyclable": "水",
+        "petBottle": "金",
+        "plastic": "水"
+      },
+      "浮間四丁目 ３１・３２番の線路北側": {
+        "burnable": "火金",
+        "unburnable": "第２・第４月",
+        "recyclable": "土",
+        "petBottle": "金",
+        "plastic": "土"
+      },
+      "浮間四丁目 （１～９番・３１・３２番の線路北側を除く）": {
+        "burnable": "月木",
+        "unburnable": "第１・第３火",
+        "recyclable": "金",
+        "petBottle": "金",
+        "plastic": "金"
+      },
+      "浮間五丁目 １番": {
+        "burnable": "月木",
+        "unburnable": "第１・第３金",
+        "recyclable": "水",
+        "petBottle": "金",
+        "plastic": "水"
+      },
+      "浮間五丁目 （１番を除く）": {
+        "burnable": "月木",
+        "unburnable": "第２・第４火",
+        "recyclable": "金",
+        "petBottle": "金",
+        "plastic": "金"
+      },
+      "神谷一丁目 １～９番": {
+        "burnable": "水土",
+        "unburnable": "第１・第３木",
+        "recyclable": "火",
+        "petBottle": "月",
+        "plastic": "火"
+      },
+      "神谷一丁目 （１～９番を除く）": {
+        "burnable": "水土",
+        "unburnable": "第２・第４木",
+        "recyclable": "火",
+        "petBottle": "月",
+        "plastic": "火"
+      },
+      "神谷二丁目": {
+        "burnable": "水土",
+        "unburnable": "第２・第４木",
+        "recyclable": "火",
+        "petBottle": "月",
+        "plastic": "火"
+      },
+      "神谷三丁目": {
+        "burnable": "火金",
+        "unburnable": "第２・第４水",
+        "recyclable": "木",
+        "petBottle": "月",
+        "plastic": "木"
+      },
+      "桐ケ丘一丁目": {
+        "burnable": "火金",
+        "unburnable": "第２・第４土",
+        "recyclable": "月",
+        "petBottle": "水",
+        "plastic": "月"
+      },
+      "桐ケ丘二丁目 １１番": {
+        "burnable": "火金",
+        "unburnable": "第２・第４土",
+        "recyclable": "月",
+        "petBottle": "月",
+        "plastic": "月"
+      },
+      "桐ケ丘二丁目 （１１番を除く）": {
+        "burnable": "火金",
+        "unburnable": "第２・第４土",
+        "recyclable": "月",
+        "petBottle": "水",
+        "plastic": "月"
+      },
+      "志茂一丁目": {
+        "burnable": "火金",
+        "unburnable": "第２・第４水",
+        "recyclable": "木",
+        "petBottle": "金",
+        "plastic": "木"
+      },
+      "志茂二丁目": {
+        "burnable": "火金",
+        "unburnable": "第１・第３水",
+        "recyclable": "木",
+        "petBottle": "金",
+        "plastic": "木"
+      },
+      "志茂三丁目 １～３番、６～１３番": {
+        "burnable": "火金",
+        "unburnable": "第２・第４水",
+        "recyclable": "木",
+        "petBottle": "金",
+        "plastic": "木"
+      },
+      "志茂三丁目 （１～３番、６～１３番を除く）": {
+        "burnable": "火金",
+        "unburnable": "第１・第３水",
+        "recyclable": "木",
+        "petBottle": "金",
+        "plastic": "木"
+      },
+      "志茂四丁目": {
+        "burnable": "火金",
+        "unburnable": "第１・第３水",
+        "recyclable": "木",
+        "petBottle": "金",
+        "plastic": "木"
+      },
+      "志茂五丁目": {
+        "burnable": "火金",
+        "unburnable": "第１・第３水",
+        "recyclable": "木",
+        "petBottle": "金",
+        "plastic": "木"
+      },
+      "西が丘一丁目": {
+        "burnable": "月木",
+        "unburnable": "第２・第４金",
+        "recyclable": "土",
+        "petBottle": "水",
+        "plastic": "土"
+      },
+      "西が丘二丁目 １～２番": {
+        "burnable": "月木",
+        "unburnable": "第１・第３金",
+        "recyclable": "土",
+        "petBottle": "水",
+        "plastic": "土"
+      },
+      "西が丘二丁目 （１～２番を除く）": {
+        "burnable": "月木",
+        "unburnable": "第２・第４金",
+        "recyclable": "土",
+        "petBottle": "水",
+        "plastic": "土"
+      },
+      "西が丘三丁目": {
+        "burnable": "月木",
+        "unburnable": "第２・第４金",
+        "recyclable": "土",
+        "petBottle": "水",
+        "plastic": "土"
+      },
+      "上中里一丁目": {
+        "burnable": "水土",
+        "unburnable": "第２・第４金",
+        "recyclable": "木",
+        "petBottle": "木",
+        "plastic": "木"
+      },
+      "上中里三丁目": {
+        "burnable": "火金",
+        "unburnable": "第１・第３木",
+        "recyclable": "土",
+        "petBottle": "火",
+        "plastic": "土"
+      },
+      "栄町全域": {
+        "burnable": "火金",
+        "unburnable": "第１・第３木",
+        "recyclable": "土",
+        "petBottle": "火",
+        "plastic": "土"
+      },
+      "昭和町全域": {
+        "burnable": "火金",
+        "unburnable": "第１・第３木",
+        "recyclable": "土",
+        "petBottle": "火",
+        "plastic": "土"
+      },
+      "滝野川一丁目 ９２～９３番": {
+        "burnable": "月木",
+        "unburnable": "第１・第３土",
+        "recyclable": "金",
+        "petBottle": "木",
+        "plastic": "金"
+      },
+      "滝野川一丁目 （９２～９３番を除く）": {
+        "burnable": "月木",
+        "unburnable": "第１・第３土",
+        "recyclable": "金",
+        "petBottle": "火",
+        "plastic": "金"
+      },
+      "滝野川二丁目": {
+        "burnable": "月木",
+        "unburnable": "第１・第３土",
+        "recyclable": "金",
+        "petBottle": "火",
+        "plastic": "金"
+      },
+      "滝野川三丁目 １～３番・８４～８８番": {
+        "burnable": "月木",
+        "unburnable": "第２・第４土",
+        "recyclable": "金",
+        "petBottle": "火",
+        "plastic": "金"
+      },
+      "滝野川三丁目 （１～３番・８４～８８番を除く）": {
+        "burnable": "月木",
+        "unburnable": "第２・第４土",
+        "recyclable": "金",
+        "petBottle": "木",
+        "plastic": "金"
+      },
+      "滝野川四丁目": {
+        "burnable": "月木",
+        "unburnable": "第１・第３水",
+        "recyclable": "土",
+        "petBottle": "木",
+        "plastic": "土"
+      },
+      "滝野川五丁目": {
+        "burnable": "月木",
+        "unburnable": "第２・第４土",
+        "recyclable": "金",
+        "petBottle": "木",
+        "plastic": "金"
+      },
+      "滝野川六丁目": {
+        "burnable": "月木",
+        "unburnable": "第１・第３水",
+        "recyclable": "火",
+        "petBottle": "木",
+        "plastic": "火"
+      },
+      "滝野川七丁目": {
+        "burnable": "月木",
+        "unburnable": "第２・第４水",
+        "recyclable": "火",
+        "petBottle": "木",
+        "plastic": "火"
+      },
+      "田端一丁目 ２８～２９番": {
+        "burnable": "火金",
+        "unburnable": "第１・第３月",
+        "recyclable": "土",
         "petBottle": "土",
         "plastic": "土"
       },
-      "全域": {
-        "burnable": "火・金",
-        "unburnable": "第２・第４ 木",
-        "recyclable": "確認中",
-        "petBottle": "月",
+      "田端一丁目 （２８～２９番を除く）": {
+        "burnable": "火金",
+        "unburnable": "第１・第３月",
+        "recyclable": "水",
+        "petBottle": "土",
         "plastic": "水"
       },
-      "７番の一部": {
-        "burnable": "火・金",
-        "unburnable": "第１・第３ 水",
-        "recyclable": "確認中",
-        "petBottle": "金",
+      "田端二丁目": {
+        "burnable": "火金",
+        "unburnable": "第２・第４月",
+        "recyclable": "水",
+        "petBottle": "土",
+        "plastic": "水"
+      },
+      "田端四丁目": {
+        "burnable": "水土",
+        "unburnable": "第１・第３金",
+        "recyclable": "木",
+        "petBottle": "土",
         "plastic": "木"
       },
-      "上記を除く": {
-        "burnable": "火・金",
-        "unburnable": "第１・第３ 土",
-        "recyclable": "確認中",
-        "petBottle": "金",
-        "plastic": "月"
-      },
-      "一丁目": {
-        "burnable": "火・金",
-        "unburnable": "第１・第３ 月",
-        "recyclable": "確認中",
-        "petBottle": "月",
-        "plastic": "水"
-      },
-      "９番１９～３１号二丁目 １２～３１番上記を除く": {
-        "burnable": "火・金",
-        "unburnable": "第１・第３ 木",
-        "recyclable": "確認中",
-        "petBottle": "金",
-        "plastic": "土"
-      },
-      "１～４番・２８番・３１～３２番三丁目上記を除く": {
-        "burnable": "火・金",
-        "unburnable": "第２・第４ 木",
-        "recyclable": "確認中",
-        "petBottle": "火",
-        "plastic": "月"
-      },
-      "１～９番四丁目 ３１・３２番の線路北側上記を除く": {
-        "burnable": "月・木",
-        "unburnable": "第１・第３ 金",
-        "recyclable": "確認中",
-        "petBottle": "金",
-        "plastic": "水"
-      },
-      "１番五丁目上記を除く": {
-        "burnable": "月・木",
-        "unburnable": "第１・第３ 金",
-        "recyclable": "確認中",
-        "petBottle": "金",
-        "plastic": "水"
-      },
-      "二丁目": {
-        "burnable": "火・金",
-        "unburnable": "第２・第４ 月",
-        "recyclable": "確認中",
-        "petBottle": "月",
-        "plastic": "水"
-      },
-      "三丁目": {
-        "burnable": "月・木",
-        "unburnable": "第１・第３ 火",
-        "recyclable": "確認中",
-        "petBottle": "木",
-        "plastic": "水"
-      },
-      "１１番二丁目上記を除く": {
-        "burnable": "火・金",
-        "unburnable": "第２・第４ 土",
-        "recyclable": "確認中",
-        "petBottle": "月",
-        "plastic": "月"
-      },
-      "１～３番、６～１３番三丁目上記を除く": {
-        "burnable": "火・金",
-        "unburnable": "第２・第４ 水",
-        "recyclable": "確認中",
-        "petBottle": "金",
-        "plastic": "木"
-      },
-      "四丁目": {
-        "burnable": "月・木",
-        "unburnable": "第１・第３ 水",
-        "recyclable": "確認中",
-        "petBottle": "木",
-        "plastic": "土"
-      },
-      "５番～７番・３３番・３４番五丁目 ３６番・３９番・４０番の一部上記を除く": {
-        "burnable": "火・金",
-        "unburnable": "第１・第３ 土",
-        "recyclable": "確認中",
-        "petBottle": "金",
-        "plastic": "月"
-      },
-      "１～２番二丁目上記を除く": {
-        "burnable": "月・木",
-        "unburnable": "第１・第３ 金",
-        "recyclable": "確認中",
-        "petBottle": "水",
-        "plastic": "土"
-      },
-      "１番・３番２番一丁目２９～３０番上記を除く": {
-        "burnable": "水・土",
-        "unburnable": "第１・第３ 火",
-        "recyclable": "確認中",
-        "petBottle": "水",
-        "plastic": "月"
-      },
-      "三丁目四丁目五丁目": {
-        "burnable": "水・土",
-        "unburnable": "第１・第３ 木",
-        "recyclable": "確認中",
-        "petBottle": "水",
-        "plastic": "火"
-      },
-      "六丁目": {
-        "burnable": "月・木",
-        "unburnable": "第１・第３ 水",
-        "recyclable": "確認中",
-        "petBottle": "木",
-        "plastic": "火"
-      },
-      "二丁目三丁目": {
-        "burnable": "水・土",
-        "unburnable": "第２・第４ 金",
-        "recyclable": "確認中",
-        "petBottle": "木",
-        "plastic": "木"
-      },
-      "１番・１４番・１７番２７～３０番・４０～４２番五丁目 ４７番・４８番の一部３０番の一部上記を除く": {
-        "burnable": "月・木",
-        "unburnable": "第２・第４ 金",
-        "recyclable": "確認中",
-        "petBottle": "火",
-        "plastic": "土"
-      },
-      "三丁目四丁目": {
-        "burnable": "水・土",
-        "unburnable": "第２・第４ 火",
-        "recyclable": "確認中",
-        "petBottle": "木",
-        "plastic": "月"
-      },
-      "１～１１番二丁目 ２３～２６番上記を除く": {
-        "burnable": "水・土",
-        "unburnable": "第２・第４ 月",
-        "recyclable": "確認中",
-        "petBottle": "月",
-        "plastic": "金"
-      },
-      "１～３番・４番の一部・１０番三丁目 ２０～２８番上記を除く": {
-        "burnable": "水・土",
-        "unburnable": "第１・第３ 木",
-        "recyclable": "確認中",
-        "petBottle": "月",
-        "plastic": "火"
-      },
-      "１～９番四丁目上記を除く": {
-        "burnable": "水・土",
-        "unburnable": "第１・第３ 木",
-        "recyclable": "確認中",
-        "petBottle": "月",
-        "plastic": "金"
-      },
-      "五丁目": {
-        "burnable": "月・木",
-        "unburnable": "第２・第４ 土",
-        "recyclable": "確認中",
-        "petBottle": "木",
-        "plastic": "金"
-      },
-      "１番六丁目上記を除く": {
-        "burnable": "水・土",
-        "unburnable": "第１・第３ 月",
-        "recyclable": "確認中",
-        "petBottle": "月",
-        "plastic": "火"
-      },
-      "七丁目八丁目": {
-        "burnable": "水・土",
-        "unburnable": "第１・第３ 木",
-        "recyclable": "確認中",
-        "petBottle": "月",
-        "plastic": "火"
-      },
-      "１０番の一部二丁目上記を除く": {
-        "burnable": "月・木",
-        "unburnable": "第１・第３ 金",
-        "recyclable": "確認中",
-        "petBottle": "木",
-        "plastic": "水"
-      },
-      "３５～３６番三丁目上記を除く": {
-        "burnable": "月・木",
-        "unburnable": "第１・第３ 金",
-        "recyclable": "確認中",
-        "petBottle": "木",
-        "plastic": "水"
-      },
-      "１番・８番・１４番の一部四丁目上記を除く": {
-        "burnable": "月・木",
-        "unburnable": "第１・第３ 金",
-        "recyclable": "確認中",
-        "petBottle": "木",
-        "plastic": "水"
-      },
-      "９２～９３番一丁目上記を除く": {
-        "burnable": "月・木",
-        "unburnable": "第１・第３ 土",
-        "recyclable": "確認中",
-        "petBottle": "木",
-        "plastic": "金"
-      },
-      "１～３番・８４～８８番三丁目上記を除く": {
-        "burnable": "月・木",
-        "unburnable": "第２・第４ 土",
-        "recyclable": "確認中",
-        "petBottle": "火",
-        "plastic": "金"
-      },
-      "七丁目": {
-        "burnable": "月・木",
-        "unburnable": "第２・第４ 水",
-        "recyclable": "確認中",
-        "petBottle": "木",
-        "plastic": "火"
-      },
-      "２８～２９番一丁目上記を除く": {
-        "burnable": "火・金",
-        "unburnable": "第１・第３ 月",
-        "recyclable": "確認中",
+      "田端六丁目": {
+        "burnable": "火金",
+        "unburnable": "第２・第４月",
+        "recyclable": "土",
         "petBottle": "土",
         "plastic": "土"
+      },
+      "田端新町全域": {
+        "burnable": "火金",
+        "unburnable": "第２・第４木",
+        "recyclable": "水",
+        "petBottle": "月",
+        "plastic": "水"
+      },
+      "中里一丁目": {
+        "burnable": "水土",
+        "unburnable": "第１・第３金",
+        "recyclable": "木",
+        "petBottle": "木",
+        "plastic": "木"
+      },
+      "中里三丁目": {
+        "burnable": "水土",
+        "unburnable": "第２・第４金",
+        "recyclable": "木",
+        "petBottle": "木",
+        "plastic": "木"
+      },
+      "西ケ原一丁目": {
+        "burnable": "水土",
+        "unburnable": "第１・第３火",
+        "recyclable": "火",
+        "petBottle": "木",
+        "plastic": "火"
+      },
+      "西ケ原二丁目": {
+        "burnable": "水土",
+        "unburnable": "第１・第３火",
+        "recyclable": "月",
+        "petBottle": "木",
+        "plastic": "月"
+      },
+      "西ケ原四丁目": {
+        "burnable": "水土",
+        "unburnable": "第２・第４火",
+        "recyclable": "月",
+        "petBottle": "木",
+        "plastic": "月"
+      },
+      "東田端一丁目": {
+        "burnable": "火金",
+        "unburnable": "第１・第３月",
+        "recyclable": "水",
+        "petBottle": "月",
+        "plastic": "水"
+      },
+      "東田端二丁目": {
+        "burnable": "火金",
+        "unburnable": "第２・第４月",
+        "recyclable": "水",
+        "petBottle": "月",
+        "plastic": "水"
       }
     },
     "荒川区": {
@@ -7231,7 +7441,7 @@ export const mockData: any = {
         "petBottle": "確認中",
         "plastic": "毎週　土曜"
       },
-      "町屋二から四丁目※注釈": {
+      "町屋二から四丁目": {
         "burnable": "毎週　火曜・金曜",
         "unburnable": "2・4回目　土曜",
         "recyclable": "確認中",
@@ -8182,322 +8392,322 @@ export const mockData: any = {
     "練馬区": {
       "旭丘": {
         "burnable": "水曜･土曜",
-        "unburnable": "第1･3 月曜",
+        "unburnable": "第1･3月曜",
         "recyclable": "確認中",
         "petBottle": "火曜",
         "plastic": "火曜"
       },
       "旭町": {
         "burnable": "火曜･金曜",
-        "unburnable": "第2･4 土曜",
+        "unburnable": "第2･4土曜",
         "recyclable": "確認中",
         "petBottle": "月曜",
         "plastic": "木曜"
       },
       "大泉学園町": {
         "burnable": "水曜･土曜",
-        "unburnable": "第1･3 月曜",
+        "unburnable": "第1･3月曜",
         "recyclable": "確認中",
         "petBottle": "金曜",
         "plastic": "火曜"
       },
       "大泉町": {
         "burnable": "水曜･土曜",
-        "unburnable": "第2･4 月曜",
+        "unburnable": "第2･4月曜",
         "recyclable": "確認中",
         "petBottle": "水曜",
         "plastic": "金曜"
       },
       "春日町": {
         "burnable": "水曜･土曜",
-        "unburnable": "第2･4 木曜",
+        "unburnable": "第2･4木曜",
         "recyclable": "確認中",
         "petBottle": "金曜",
         "plastic": "金曜"
       },
       "上石神井": {
         "burnable": "火曜･金曜",
-        "unburnable": "第2･4 水曜",
+        "unburnable": "第2･4水曜",
         "recyclable": "確認中",
         "petBottle": "土曜",
         "plastic": "木曜"
       },
       "上石神井南町": {
         "burnable": "月曜･木曜",
-        "unburnable": "第1･3 火曜",
+        "unburnable": "第1･3火曜",
         "recyclable": "確認中",
         "petBottle": "木曜",
         "plastic": "水曜"
       },
       "北町": {
         "burnable": "水曜･土曜",
-        "unburnable": "第1･3 木曜",
+        "unburnable": "第1･3木曜",
         "recyclable": "確認中",
         "petBottle": "金曜",
         "plastic": "月曜"
       },
       "向山": {
         "burnable": "月曜･木曜",
-        "unburnable": "第2･4 金曜",
+        "unburnable": "第2･4金曜",
         "recyclable": "確認中",
         "petBottle": "木曜",
         "plastic": "土曜"
       },
       "小竹町": {
         "burnable": "水曜･土曜",
-        "unburnable": "第1･3 月曜",
+        "unburnable": "第1･3月曜",
         "recyclable": "確認中",
         "petBottle": "火曜",
         "plastic": "火曜"
       },
       "栄町": {
         "burnable": "水曜･土曜",
-        "unburnable": "第1･3 月曜",
+        "unburnable": "第1･3月曜",
         "recyclable": "確認中",
         "petBottle": "火曜",
         "plastic": "火曜"
       },
       "桜台": {
         "burnable": "水曜･土曜",
-        "unburnable": "第1･3 木曜",
+        "unburnable": "第1･3木曜",
         "recyclable": "確認中",
         "petBottle": "火曜",
         "plastic": "火曜"
       },
       "下石神井": {
         "burnable": "月曜･木曜",
-        "unburnable": "第1･3 火曜",
+        "unburnable": "第1･3火曜",
         "recyclable": "確認中",
         "petBottle": "火曜",
         "plastic": "水曜"
       },
       "石神井台": {
         "burnable": "火曜･金曜",
-        "unburnable": "第1･3 土曜",
+        "unburnable": "第1･3土曜",
         "recyclable": "確認中",
         "petBottle": "土曜",
         "plastic": "月曜"
       },
       "石神井町": {
         "burnable": "月曜･木曜",
-        "unburnable": "第1･3 火曜",
+        "unburnable": "第1･3火曜",
         "recyclable": "確認中",
         "petBottle": "水曜",
         "plastic": "水曜"
       },
       "関町北": {
         "burnable": "火曜･金曜",
-        "unburnable": "第2･4 土曜",
+        "unburnable": "第2･4土曜",
         "recyclable": "確認中",
         "petBottle": "木曜",
         "plastic": "木曜"
       },
       "関町東": {
         "burnable": "火曜･金曜",
-        "unburnable": "第2･4 水曜",
+        "unburnable": "第2･4水曜",
         "recyclable": "確認中",
         "petBottle": "木曜",
         "plastic": "木曜"
       },
       "関町南": {
         "burnable": "月曜･木曜",
-        "unburnable": "第1･3 金曜",
+        "unburnable": "第1･3金曜",
         "recyclable": "確認中",
         "petBottle": "木曜",
         "plastic": "水曜"
       },
       "高野台": {
         "burnable": "月曜･木曜",
-        "unburnable": "第2･4 金曜",
+        "unburnable": "第2･4金曜",
         "recyclable": "確認中",
         "petBottle": "火曜",
         "plastic": "土曜"
       },
       "高松": {
         "burnable": "火曜･金曜",
-        "unburnable": "第2･4 土曜",
+        "unburnable": "第2･4土曜",
         "recyclable": "確認中",
         "petBottle": "月曜",
         "plastic": "木曜"
       },
       "田柄": {
         "burnable": "火曜･金曜",
-        "unburnable": "第2･4 水曜",
+        "unburnable": "第2･4水曜",
         "recyclable": "確認中",
         "petBottle": "火曜",
         "plastic": "木曜"
       },
       "立野町": {
         "burnable": "月曜･木曜",
-        "unburnable": "第1･3 金曜",
+        "unburnable": "第1･3金曜",
         "recyclable": "確認中",
         "petBottle": "木曜",
         "plastic": "水曜"
       },
       "土支田": {
         "burnable": "火曜･金曜",
-        "unburnable": "第2･4 土曜",
+        "unburnable": "第2･4土曜",
         "recyclable": "確認中",
         "petBottle": "月曜",
         "plastic": "木曜"
       },
       "豊玉上": {
         "burnable": "月曜･木曜",
-        "unburnable": "第1･3 火曜",
+        "unburnable": "第1･3火曜",
         "recyclable": "確認中",
         "petBottle": "土曜",
         "plastic": "水曜"
       },
       "豊玉北": {
         "burnable": "月曜･木曜",
-        "unburnable": "第1･3 金曜",
+        "unburnable": "第1･3金曜",
         "recyclable": "確認中",
         "petBottle": "土曜",
         "plastic": "水曜"
       },
       "豊玉中": {
         "burnable": "月曜･木曜",
-        "unburnable": "第1･3 金曜",
+        "unburnable": "第1･3金曜",
         "recyclable": "確認中",
         "petBottle": "土曜",
         "plastic": "水曜"
       },
       "豊玉南": {
         "burnable": "月曜･木曜",
-        "unburnable": "第1･3 火曜",
+        "unburnable": "第1･3火曜",
         "recyclable": "確認中",
         "petBottle": "土曜",
         "plastic": "水曜"
       },
       "中村": {
         "burnable": "月曜･木曜",
-        "unburnable": "第2･4 火曜",
+        "unburnable": "第2･4火曜",
         "recyclable": "確認中",
         "petBottle": "木曜",
         "plastic": "土曜"
       },
       "中村北": {
         "burnable": "月曜･木曜",
-        "unburnable": "第2･4 火曜",
+        "unburnable": "第2･4火曜",
         "recyclable": "確認中",
         "petBottle": "木曜",
         "plastic": "土曜"
       },
       "中村南": {
         "burnable": "月曜･木曜",
-        "unburnable": "第2･4 火曜",
+        "unburnable": "第2･4火曜",
         "recyclable": "確認中",
         "petBottle": "木曜",
         "plastic": "土曜"
       },
       "西大泉": {
         "burnable": "水曜･土曜",
-        "unburnable": "第1･3 木曜",
+        "unburnable": "第1･3木曜",
         "recyclable": "確認中",
         "petBottle": "金曜",
         "plastic": "火曜"
       },
       "西大泉町": {
         "burnable": "水曜･土曜",
-        "unburnable": "第1･3 木曜",
+        "unburnable": "第1･3木曜",
         "recyclable": "確認中",
         "petBottle": "金曜",
         "plastic": "火曜"
       },
       "錦": {
         "burnable": "火曜･金曜",
-        "unburnable": "第1･3 水曜",
+        "unburnable": "第1･3水曜",
         "recyclable": "確認中",
         "petBottle": "水曜",
         "plastic": "月曜"
       },
       "貫井": {
         "burnable": "月曜･木曜",
-        "unburnable": "第2･4 金曜",
+        "unburnable": "第2･4金曜",
         "recyclable": "確認中",
         "petBottle": "月曜",
         "plastic": "土曜"
       },
       "練馬": {
         "burnable": "水曜･土曜",
-        "unburnable": "第2･4 月曜",
+        "unburnable": "第2･4月曜",
         "recyclable": "確認中",
         "petBottle": "木曜",
         "plastic": "金曜"
       },
       "羽沢": {
         "burnable": "水曜･土曜",
-        "unburnable": "第1･3 月曜",
+        "unburnable": "第1･3月曜",
         "recyclable": "確認中",
         "petBottle": "火曜",
         "plastic": "火曜"
       },
       "早宮": {
         "burnable": "水曜･土曜",
-        "unburnable": "第2･4 木曜",
+        "unburnable": "第2･4木曜",
         "recyclable": "確認中",
         "petBottle": "金曜",
         "plastic": "金曜"
       },
       "東大泉": {
         "burnable": "火曜･金曜",
-        "unburnable": "第1･3 土曜",
+        "unburnable": "第1･3土曜",
         "recyclable": "確認中",
         "petBottle": "月曜",
         "plastic": "月曜"
       },
       "光が丘": {
         "burnable": "水曜･土曜",
-        "unburnable": "第1･3 木曜",
+        "unburnable": "第1･3木曜",
         "recyclable": "確認中",
         "petBottle": "土曜",
         "plastic": "火曜"
       },
       "氷川台": {
         "burnable": "火曜･金曜",
-        "unburnable": "第1･3 水曜",
+        "unburnable": "第1･3水曜",
         "recyclable": "確認中",
         "petBottle": "水曜",
         "plastic": "月曜"
       },
       "富士見台": {
         "burnable": "月曜･木曜",
-        "unburnable": "第2･4 火曜",
+        "unburnable": "第2･4火曜",
         "recyclable": "確認中",
         "petBottle": "火曜",
         "plastic": "土曜"
       },
       "平和台": {
         "burnable": "火曜･金曜",
-        "unburnable": "第1･3 土曜",
+        "unburnable": "第1･3土曜",
         "recyclable": "確認中",
         "petBottle": "水曜",
         "plastic": "月曜"
       },
       "南大泉": {
         "burnable": "水曜･土曜",
-        "unburnable": "第2･4 木曜",
+        "unburnable": "第2･4木曜",
         "recyclable": "確認中",
         "petBottle": "月曜",
         "plastic": "金曜"
       },
       "南田中": {
         "burnable": "月曜･木曜",
-        "unburnable": "第2･4 火曜",
+        "unburnable": "第2･4火曜",
         "recyclable": "確認中",
         "petBottle": "火曜",
         "plastic": "土曜"
       },
       "三原台": {
         "burnable": "水曜･土曜",
-        "unburnable": "第1･3 月曜",
+        "unburnable": "第1･3月曜",
         "recyclable": "確認中",
         "petBottle": "水曜",
         "plastic": "火曜"
       },
       "谷原": {
         "burnable": "水曜･土曜",
-        "unburnable": "第1･3 月曜",
+        "unburnable": "第1･3月曜",
         "recyclable": "確認中",
         "petBottle": "水曜",
         "plastic": "火曜"
@@ -10237,761 +10447,1024 @@ export const mockData: any = {
       }
     },
     "江戸川区": {
-      "一之江": {
-        "burnable": "資源月曜日",
-        "unburnable": "燃やすごみ水曜日・土曜日",
-        "recyclable": "1から5丁目",
+      "一之江 1から5丁目": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "第1・3金曜日",
+        "recyclable": "月曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "6から8丁目": {
-        "burnable": "燃やすごみ水曜日・土曜日",
-        "unburnable": "燃やさないごみ第2・4金曜日",
-        "recyclable": "資源月曜日",
+      "一之江 6から8丁目": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "第2・4金曜日",
+        "recyclable": "月曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
       "一之江町": {
-        "burnable": "資源火曜日",
-        "unburnable": "燃やすごみ水曜日・土曜日",
-        "recyclable": "全域",
+        "burnable": "水曜日・土曜日",
+        "unburnable": "第1・3月曜日",
+        "recyclable": "火曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
       "宇喜田町": {
-        "burnable": "資源土曜日",
-        "unburnable": "燃やすごみ月曜日・木曜日",
-        "recyclable": "全域",
+        "burnable": "月曜日・木曜日",
+        "unburnable": "第2・4金曜日",
+        "recyclable": "土曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "江戸川": {
-        "burnable": "資源月曜日",
-        "unburnable": "燃やすごみ水曜日・土曜日",
-        "recyclable": "1・2丁目（11から15）・(32から39)",
+      "江戸川 1・2丁目（11から15）・(32から39)": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "第2・4木曜日",
+        "recyclable": "月曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "2丁目(1から10)（16から31）から4丁目(1～14)": {
-        "burnable": "燃やすごみ水曜日・土曜日",
-        "unburnable": "燃やさないごみ第1・3月曜日",
-        "recyclable": "資源木曜日",
+      "江戸川 2丁目(1から10)（16から31）から4丁目(1～14)": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "第1・3月曜日",
+        "recyclable": "木曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "4丁目（16から25）": {
-        "burnable": "燃やすごみ水曜日・土曜日",
-        "unburnable": "燃やさないごみ第2・4金曜日",
-        "recyclable": "資源月曜日",
+      "江戸川 4丁目（16から25）": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "第2・4金曜日",
+        "recyclable": "月曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "5・6丁目(1から9)(39から50)環七通り東側": {
-        "burnable": "燃やすごみ水曜日・土曜日",
-        "unburnable": "燃やさないごみ第2・4月曜日",
-        "recyclable": "資源火曜日",
+      "江戸川 5・6丁目(1から9)(39から50)環七通り東側": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "第2・4月曜日",
+        "recyclable": "火曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "6丁目(8から40)環七通り西側": {
-        "burnable": "燃やすごみ水曜日・土曜日",
-        "unburnable": "燃やさないごみ第1・3月曜日",
-        "recyclable": "資源火曜日",
+      "江戸川 6丁目(8から40) 環七通り西側": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "第1・3月曜日",
+        "recyclable": "火曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "大杉": {
-        "burnable": "資源水曜日",
-        "unburnable": "燃やすごみ火曜日・金曜日",
-        "recyclable": "1・2・5丁目",
+      "大杉 1・2・5丁目": {
+        "burnable": "火曜日・金曜日",
+        "unburnable": "第1・3月曜日",
+        "recyclable": "水曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "3・4丁目": {
-        "burnable": "燃やすごみ月曜日・木曜日",
-        "unburnable": "燃やさないごみ第2・4水曜日",
-        "recyclable": "資源金曜日",
+      "大杉 3・4丁目": {
+        "burnable": "火曜日・金曜日",
+        "unburnable": "第2・4木曜日",
+        "recyclable": "土曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
       "興宮町": {
-        "burnable": "資源土曜日",
-        "unburnable": "燃やすごみ火曜日・金曜日",
-        "recyclable": "全域",
+        "burnable": "火曜日・金曜日",
+        "unburnable": "第1・3木曜日",
+        "recyclable": "土曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "上一色": {
-        "burnable": "資源土曜日",
-        "unburnable": "燃やすごみ火曜日・金曜日",
-        "recyclable": "1から3丁目",
+      "上一色 1から3丁目": {
+        "burnable": "火曜日・金曜日",
+        "unburnable": "第1・3木曜日",
+        "recyclable": "土曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "上篠崎": {
-        "burnable": "資源土曜日",
-        "unburnable": "燃やすごみ火曜日・金曜日",
-        "recyclable": "1・2丁目",
+      "上篠崎 1・2丁目": {
+        "burnable": "火曜日・金曜日",
+        "unburnable": "第2・4水曜日",
+        "recyclable": "土曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "北葛西": {
-        "burnable": "資源金曜日",
-        "unburnable": "燃やすごみ月曜日・木曜日",
-        "recyclable": "1・2丁目",
+      "上篠崎 3・4丁目": {
+        "burnable": "火曜日・金曜日",
+        "unburnable": "第1・3水曜日",
+        "recyclable": "土曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "3から5丁目": {
-        "burnable": "燃やすごみ火曜日・金曜日",
-        "unburnable": "燃やさないごみ第2・4木曜日",
-        "recyclable": "資源水曜日",
+      "北葛西 1・2丁目": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "第1・3土曜日",
+        "recyclable": "金曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "北小岩": {
-        "burnable": "資源水曜日",
-        "unburnable": "燃やすごみ火曜日・金曜日",
-        "recyclable": "1・2丁目",
+      "北葛西 3から5丁目": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "第2・4金曜日",
+        "recyclable": "土曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "3から8丁目": {
-        "burnable": "燃やすごみ火曜日・金曜日",
-        "unburnable": "燃やさないごみ第2・4土曜日",
-        "recyclable": "資源水曜日",
+      "北小岩 1・2丁目": {
+        "burnable": "火曜日・金曜日",
+        "unburnable": "第1・3土曜日",
+        "recyclable": "水曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "北篠崎": {
-        "burnable": "資源土曜日",
-        "unburnable": "燃やすごみ火曜日・金曜日",
-        "recyclable": "1・2丁目",
+      "北小岩 3から8丁目": {
+        "burnable": "火曜日・金曜日",
+        "unburnable": "第2・4土曜日",
+        "recyclable": "水曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "小松川": {
-        "burnable": "資源金曜日",
-        "unburnable": "燃やすごみ月曜日・木曜日",
-        "recyclable": "1丁目（1から4、7）",
+      "北篠崎 1・2丁目": {
+        "burnable": "火曜日・金曜日",
+        "unburnable": "第1・3水曜日",
+        "recyclable": "土曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "1丁目（5の1から6）": {
-        "burnable": "燃やすごみ月曜日・木曜日",
-        "unburnable": "燃やさないごみ第2・4土曜日",
-        "recyclable": "資源火曜日",
+      "小松川 1丁目（1から4、7）": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "第2・4水曜日",
+        "recyclable": "金曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "1丁目（5の7から10）": {
-        "burnable": "燃やすごみ火曜日・金曜日",
-        "unburnable": "燃やさないごみ第2・4月曜日",
-        "recyclable": "資源水曜日",
+      "小松川 1丁目（5の1から6）": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "第2・4土曜日",
+        "recyclable": "火曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "2丁目（1から4）": {
-        "burnable": "燃やすごみ火曜日・金曜日",
-        "unburnable": "燃やさないごみ第2・4木曜日",
-        "recyclable": "資源土曜日",
+      "小松川 1丁目（5の7から10）": {
+        "burnable": "火曜日・金曜日",
+        "unburnable": "第2・4月曜日",
+        "recyclable": "水曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "2丁目（5から10）": {
-        "burnable": "燃やすごみ火曜日・金曜日",
-        "unburnable": "燃やさないごみ第2・4月曜日",
-        "recyclable": "資源水曜日",
+      "小松川 2丁目（1から4）": {
+        "burnable": "火曜日・金曜日",
+        "unburnable": "第2・4木曜日",
+        "recyclable": "土曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "3丁目（1から5）(7の2から6)": {
-        "burnable": "燃やすごみ月曜日・木曜日",
-        "unburnable": "燃やさないごみ第2・4土曜日",
-        "recyclable": "資源火曜日",
+      "小松川 2丁目（5から10）": {
+        "burnable": "火曜日・金曜日",
+        "unburnable": "第2・4月曜日",
+        "recyclable": "水曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "3丁目（7の1）・(7の8・9)": {
-        "burnable": "燃やすごみ水曜日・土曜日",
-        "unburnable": "燃やさないごみ第2・4火曜日",
-        "recyclable": "資源木曜日",
+      "小松川 3丁目（1から5）(7の2から6)": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "第2・4土曜日",
+        "recyclable": "火曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "3丁目（10から13）": {
-        "burnable": "燃やすごみ水曜日・土曜日",
-        "unburnable": "燃やさないごみ第2・4金曜日",
-        "recyclable": "資源月曜日",
+      "小松川 3丁目（7の1）・(7の8・9)": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "第2・4火曜日",
+        "recyclable": "木曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "3丁目（73から79、89、90）4丁目": {
-        "burnable": "燃やすごみ月曜日・木曜日",
-        "unburnable": "燃やさないごみ第1・3土曜日",
-        "recyclable": "資源火曜日",
+      "小松川 3丁目（10から13）": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "第2・4金曜日",
+        "recyclable": "月曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "鹿骨": {
-        "burnable": "資源火曜日",
-        "unburnable": "燃やすごみ月曜日・木曜日",
-        "recyclable": "1・2・3丁目（1から17）",
+      "小松川 3丁目（73から79、89、90）4丁目": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "第1・3土曜日",
+        "recyclable": "火曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "3丁目（18から20）": {
-        "burnable": "燃やすごみ月曜日・木曜日",
-        "unburnable": "燃やさないごみ第1・3金曜日",
-        "recyclable": "資源火曜日",
+      "鹿骨 1・2・3丁目 （1から17）": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "第2・4金曜日",
+        "recyclable": "火曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "4丁目（1から8、16から30）": {
-        "burnable": "燃やすごみ月曜日・木曜日",
-        "unburnable": "燃やさないごみ第2・4金曜日",
-        "recyclable": "資源火曜日",
+      "鹿骨 3丁目 （18から20）": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "第1・3金曜日",
+        "recyclable": "火曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "4丁目（9から15、31から33）5・6丁目": {
-        "burnable": "燃やすごみ月曜日・木曜日",
-        "unburnable": "燃やさないごみ第1・3金曜日",
-        "recyclable": "資源火曜日",
+      "鹿骨 4丁目 （1から8、16から30）": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "第2・4金曜日",
+        "recyclable": "火曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "鹿骨 4丁目（9から15、31から33）5・6丁目": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "第1・3金曜日",
+        "recyclable": "火曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
       "鹿骨町": {
-        "burnable": "資源火曜日",
-        "unburnable": "燃やすごみ月曜日・木曜日",
-        "recyclable": "全域",
+        "burnable": "月曜日・木曜日",
+        "unburnable": "第1・3金曜日",
+        "recyclable": "火曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "篠崎町": {
-        "burnable": "資源土曜日",
-        "unburnable": "燃やすごみ火曜日・金曜日",
-        "recyclable": "1・2丁目",
+      "篠崎町 1・2丁目": {
+        "burnable": "火曜日・金曜日",
+        "unburnable": "第2・4水曜日",
+        "recyclable": "土曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "3丁目（1から22）": {
-        "burnable": "燃やすごみ水曜日・土曜日",
-        "unburnable": "燃やさないごみ第1・3木曜日",
-        "recyclable": "資源月曜日",
+      "篠崎町 3丁目（1から22）": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "第1・3木曜日",
+        "recyclable": "月曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "3丁目（23から33）": {
-        "burnable": "燃やすごみ水曜日・土曜日",
-        "unburnable": "燃やさないごみ第2・4木曜日",
-        "recyclable": "資源月曜日",
+      "篠崎町 3丁目（23から33）": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "第2・4木曜日",
+        "recyclable": "月曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "4から6丁目": {
-        "burnable": "燃やすごみ水曜日・土曜日",
-        "unburnable": "燃やさないごみ第1・3木曜日",
-        "recyclable": "資源月曜日",
+      "篠崎町 4から6丁目": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "第1・3木曜日",
+        "recyclable": "月曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "7・8丁目": {
-        "burnable": "燃やすごみ火曜日・金曜日",
-        "unburnable": "燃やさないごみ第2・4水曜日",
-        "recyclable": "資源木曜日",
+      "篠崎町 7・8丁目": {
+        "burnable": "火曜日・金曜日",
+        "unburnable": "第2・4水曜日",
+        "recyclable": "土曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
       "下篠崎町": {
-        "burnable": "資源月曜日",
-        "unburnable": "燃やすごみ水曜日・土曜日",
-        "recyclable": "全域",
+        "burnable": "水曜日・土曜日",
+        "unburnable": "第2・4木曜日",
+        "recyclable": "月曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "清新町1丁目": {
-        "burnable": "資源火曜日",
-        "unburnable": "燃やすごみ水曜日・土曜日",
-        "recyclable": "（1）清新中央ハイツ・清新南ハイツ",
+      "清新町 1丁目 （1）清新中央ハイツ・清新南ハイツ": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "第2・4金曜日",
+        "recyclable": "火曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "（2）コーシャハイム清新": {
-        "burnable": "燃やすごみ水曜日・土曜日",
-        "unburnable": "燃やさないごみ第1・3金曜日",
-        "recyclable": "資源火曜日",
+      "清新町 1丁目 （2）コーシャハイム清新": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "第1・3金曜日",
+        "recyclable": "火曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "（3）清新プラザ（4）シティコープ清新・清新北ハイツ": {
-        "burnable": "燃やすごみ水曜日・土曜日",
-        "unburnable": "燃やさないごみ第2・4木曜日",
-        "recyclable": "資源月曜日",
+      "清新町 1丁目 （3）清新プラザ （4）シティコープ清新・清新北ハイツ": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "第2・4木曜日",
+        "recyclable": "月曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "（5）都営清新町1丁目アパート・清新住宅": {
-        "burnable": "燃やすごみ月曜日・木曜日",
-        "unburnable": "燃やさないごみ第1・3土曜日",
-        "recyclable": "資源金曜日",
+      "清新町 1丁目 （5）都営清新町1丁目アパート・清新住宅": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "第1・3土曜日",
+        "recyclable": "金曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "清新町2丁目": {
-        "burnable": "資源土曜日",
-        "unburnable": "燃やすごみ月曜日・木曜日",
-        "recyclable": "（1から10）都営清新町2丁目アパート含む",
+      "清新町 2丁目 （1から10） 都営清新町2丁目アパート含む": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "第1・3金曜日",
+        "recyclable": "土曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "都営清新町2丁目第二アパート・バウス西葛西": {
-        "burnable": "燃やすごみ水曜日・土曜日",
-        "unburnable": "燃やさないごみ第1・3金曜日",
-        "recyclable": "資源月曜日",
+      "清新町 2丁目 都営清新町2丁目第二アパート・バウス西葛西": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "第1・3金曜日",
+        "recyclable": "月曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "中央": {
-        "burnable": "資源水曜日",
-        "unburnable": "燃やすごみ火曜日・金曜日",
-        "recyclable": "1・2丁目",
+      "中央 1・2丁目": {
+        "burnable": "火曜日・金曜日",
+        "unburnable": "第1・3月曜日",
+        "recyclable": "水曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "中葛西": {
-        "burnable": "資源火曜日",
-        "unburnable": "燃やすごみ水曜日・土曜日",
-        "recyclable": "1・2丁目",
+      "中央 3・4丁目": {
+        "burnable": "火曜日・金曜日",
+        "unburnable": "第2・4木曜日",
+        "recyclable": "土曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "6・7丁目": {
-        "burnable": "燃やすごみ月曜日・木曜日",
-        "unburnable": "燃やさないごみ第1・3水曜日",
-        "recyclable": "資源金曜日",
+      "中葛西 1・2丁目": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "第2・4月曜日",
+        "recyclable": "火曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "8丁目": {
-        "burnable": "燃やすごみ火曜日・金曜日",
-        "unburnable": "燃やさないごみ第2・4木曜日",
-        "recyclable": "資源水曜日",
+      "中葛西 3から5丁目": {
+        "burnable": "火曜日・金曜日",
+        "unburnable": "第2・4木曜日",
+        "recyclable": "水曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "新堀": {
-        "burnable": "資源火曜日",
-        "unburnable": "燃やすごみ月曜日・木曜日",
-        "recyclable": "1・2丁目",
+      "中葛西 6・7丁目": {
+        "burnable": "火曜日・金曜日",
+        "unburnable": "第1・3木曜日",
+        "recyclable": "水曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "西一之江": {
-        "burnable": "資源水曜日",
-        "unburnable": "燃やすごみ火曜日・金曜日",
-        "recyclable": "1・4丁目",
+      "中葛西 8丁目": {
+        "burnable": "火曜日・金曜日",
+        "unburnable": "第2・4木曜日",
+        "recyclable": "水曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "2・3丁目": {
-        "burnable": "燃やすごみ火曜日・金曜日",
-        "unburnable": "燃やさないごみ第2・4水曜日",
-        "recyclable": "資源木曜日",
+      "新堀 1・2丁目": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "第2・4金曜日",
+        "recyclable": "火曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "西葛西": {
-        "burnable": "資源金曜日",
-        "unburnable": "燃やすごみ月曜日・木曜日",
-        "recyclable": "1・2丁目",
+      "西一之江 1・4丁目": {
+        "burnable": "火曜日・金曜日",
+        "unburnable": "第2・4月曜日",
+        "recyclable": "水曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "3から6丁目": {
-        "burnable": "燃やすごみ月曜日・木曜日",
-        "unburnable": "燃やさないごみ第2・4土曜日",
-        "recyclable": "資源金曜日",
+      "西一之江 2・3丁目": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "第1・3金曜日",
+        "recyclable": "月曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "西小岩": {
-        "burnable": "資源金曜日",
-        "unburnable": "燃やすごみ月曜日・木曜日",
-        "recyclable": "1から5丁目",
+      "西葛西 1・2丁目": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "第1・3土曜日",
+        "recyclable": "金曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "西葛西 3から6丁目": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "第2・4土曜日",
+        "recyclable": "金曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "西葛西 7・8丁目": {
+        "burnable": "火曜日・金曜日",
+        "unburnable": "第1・3木曜日",
+        "recyclable": "水曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "西小岩 1から5丁目": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "第2・4火曜日",
+        "recyclable": "金曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
       "西小松川": {
-        "burnable": "資源木曜日",
-        "unburnable": "燃やすごみ水曜日・土曜日",
-        "recyclable": "全域",
+        "burnable": "水曜日・土曜日",
+        "unburnable": "第2・4火曜日",
+        "recyclable": "木曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "西篠崎": {
-        "burnable": "資源土曜日",
-        "unburnable": "燃やすごみ火曜日・金曜日",
-        "recyclable": "1・2丁目",
+      "西篠崎 1・2丁目": {
+        "burnable": "火曜日・金曜日",
+        "unburnable": "第1・3水曜日",
+        "recyclable": "土曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "西瑞江": {
-        "burnable": "資源木曜日",
-        "unburnable": "燃やすごみ水曜日・土曜日",
-        "recyclable": "3・4丁目(5から9)",
+      "西瑞江 3・4丁目(5から9)": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "第1・3月曜日",
+        "recyclable": "木曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "4丁目（5から9を除く）": {
-        "burnable": "燃やすごみ水曜日・土曜日",
-        "unburnable": "燃やさないごみ第2・4金曜日",
-        "recyclable": "資源月曜日",
+      "西瑞江 4丁目（5から9を除く）": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "第2・4金曜日",
+        "recyclable": "月曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "5丁目": {
-        "burnable": "燃やすごみ水曜日・土曜日",
-        "unburnable": "燃やさないごみ第2・4木曜日",
-        "recyclable": "資源月曜日",
+      "西瑞江 5丁目": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "第1・3月曜日",
+        "recyclable": "火曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
       "二之江町": {
-        "burnable": "資源火曜日",
-        "unburnable": "燃やすごみ水曜日・土曜日",
-        "recyclable": "全域",
+        "burnable": "水曜日・土曜日",
+        "unburnable": "第1・3月曜日",
+        "recyclable": "火曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "春江町": {
-        "burnable": "資源火曜日",
-        "unburnable": "燃やすごみ月曜日・木曜日",
-        "recyclable": "1・2丁目",
+      "春江町 1・2丁目": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "第2・4金曜日",
+        "recyclable": "火曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "3丁目": {
+      "春江町 3丁目": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "第2・4月曜日",
+        "recyclable": "木曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "春江町 4丁目": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "第2・4金曜日",
+        "recyclable": "月曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "春江町 5丁目": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "第1・3月曜日",
+        "recyclable": "火曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "東葛西 1から4丁目": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "第1・3火曜日",
+        "recyclable": "月曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "東葛西 5丁目（1から52）": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "第2・4火曜日",
+        "recyclable": "月曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "東葛西 5丁目（53から56の補助289号線東側)": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "第1・3火曜日",
+        "recyclable": "月曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "東葛西 5丁目（53から56の補助289号線西側）": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "第2・4火曜日",
+        "recyclable": "月曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "東葛西 5丁目（57)": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "第1・3火曜日",
+        "recyclable": "月曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "東葛西 6丁目": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "第2・4火曜日",
+        "recyclable": "月曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "東葛西 7・8丁目": {
+        "burnable": "火曜日・金曜日",
+        "unburnable": "第2・4水曜日",
+        "recyclable": "木曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "東葛西 9丁目（1から3）": {
+        "burnable": "火曜日・金曜日",
+        "unburnable": "第1・3水曜日",
+        "recyclable": "木曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "東葛西 9丁目（4から23）": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "第2・4火曜日",
+        "recyclable": "月曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "東小岩 1丁目": {
+        "burnable": "火曜日・金曜日",
+        "unburnable": "第1・3水曜日",
+        "recyclable": "土曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "東小岩 2から6丁目": {
+        "burnable": "火曜日・金曜日",
+        "unburnable": "第1・3土曜日",
+        "recyclable": "水曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "東小松川 1丁目から4丁目": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "第2・4火曜日",
+        "recyclable": "木曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "東篠崎 1・2丁目": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "第2・4木曜日",
+        "recyclable": "月曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "東篠崎町": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "第2・4木曜日",
+        "recyclable": "月曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "東松本 1・2丁目": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "第1・3金曜日",
+        "recyclable": "火曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "東瑞江 1丁目（1、2）": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "第1・3月曜日",
+        "recyclable": "木曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "東瑞江 1丁目 （1、2を除く）": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "第2・4木曜日",
+        "recyclable": "月曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "東瑞江 2丁目": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "第1・3月曜日",
+        "recyclable": "木曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "東瑞江 3丁目": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "第2・4月曜日",
+        "recyclable": "木曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "平井 1・2丁目": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "第1・3土曜日",
+        "recyclable": "火曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "平井 3・4丁目": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "第2・4水曜日",
+        "recyclable": "金曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "平井 5丁目（1から30）": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "第1・3水曜日",
+        "recyclable": "金曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "平井 5丁目（31から58）": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "第2・4水曜日",
+        "recyclable": "金曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "平井 6・7丁目": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "第1・3水曜日",
+        "recyclable": "金曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "船堀 1・2・4から6丁目": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "第1・3金曜日",
+        "recyclable": "土曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "船堀 3丁目": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "第2・4金曜日",
+        "recyclable": "土曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "船堀 7丁目": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "第1・3月曜日",
+        "recyclable": "火曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "本一色 1から3丁目": {
+        "burnable": "火曜日・金曜日",
+        "unburnable": "第1・3木曜日",
+        "recyclable": "土曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "松江 1・2丁目": {
+        "burnable": "火曜日・金曜日",
+        "unburnable": "第2・4月曜日",
+        "recyclable": "水曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "松江 3から7丁目": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "第1・3火曜日",
+        "recyclable": "木曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "松島 1丁目": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "第1・3土曜日",
+        "recyclable": "火曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "松島 2から4丁目": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "第2・4土曜日",
+        "recyclable": "火曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "松本 1・2丁目": {
+        "burnable": "火曜日・金曜日",
+        "unburnable": "第2・4木曜日",
+        "recyclable": "土曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "瑞江 1丁目（1から21）": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "第2・4金曜日",
+        "recyclable": "火曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "瑞江 1丁目（22から65）2・3・4丁目": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "第2・4月曜日",
+        "recyclable": "木曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "南葛西 1丁目": {
+        "burnable": "火曜日・金曜日",
+        "unburnable": "第1・3木曜日",
+        "recyclable": "水曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "南葛西 2・3丁目": {
+        "burnable": "火曜日・金曜日",
+        "unburnable": "第2・4水曜日",
+        "recyclable": "木曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "南葛西 4から7丁目": {
+        "burnable": "火曜日・金曜日",
+        "unburnable": "第1・3水曜日",
+        "recyclable": "木曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "南小岩 1から4丁目": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "第1・3金曜日",
+        "recyclable": "火曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "南小岩 5から8丁目": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "第1・3火曜日",
+        "recyclable": "金曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "南篠崎町 1丁目": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "第1・3木曜日",
+        "recyclable": "月曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "南篠崎町 2丁目": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "第2・4木曜日",
+        "recyclable": "月曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "南篠崎町 3丁目（26、27）": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "第1・3木曜日",
+        "recyclable": "月曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "南篠崎町 3丁目（26、27を除く）": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "第2・4月曜日",
+        "recyclable": "木曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "南篠崎町 4丁目（9、10）": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "第2・4月曜日",
+        "recyclable": "木曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "南篠崎町 4丁目（9・10を除く）": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "第1・3木曜日",
+        "recyclable": "月曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "南篠崎町 5丁目": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "第2・4木曜日",
+        "recyclable": "月曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "谷河内 1丁目": {
+        "burnable": "月曜日・木曜日",
+        "unburnable": "第2・4金曜日",
+        "recyclable": "火曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "谷河内 2丁目（1から3）": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "第2・4月曜日",
+        "recyclable": "木曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "谷河内 2丁目（4から15）": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "第1・3木曜日",
+        "recyclable": "月曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "臨海町 1丁目": {
+        "burnable": "水曜日・土曜日",
+        "unburnable": "第1・3木曜日",
+        "recyclable": "月曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "臨海町 2丁目": {
+        "burnable": "火曜日・金曜日",
+        "unburnable": "第1・3土曜日",
+        "recyclable": "水曜日",
+        "petBottle": "確認中",
+        "plastic": "確認中"
+      },
+      "臨海町 3丁目": {
         "burnable": "-",
         "unburnable": "-",
         "recyclable": "-",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "4丁目": {
-        "burnable": "燃やすごみ水曜日・土曜日",
-        "unburnable": "燃やさないごみ第2・4金曜日",
-        "recyclable": "資源月曜日",
+      "臨海町 4・5丁目": {
+        "burnable": "火曜日・金曜日",
+        "unburnable": "第2・4水曜日",
+        "recyclable": "木曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
       },
-      "東葛西": {
-        "burnable": "資源月曜日",
-        "unburnable": "燃やすごみ水曜日・土曜日",
-        "recyclable": "1から4丁目",
+      "臨海町 6丁目": {
+        "burnable": "火曜日・金曜日",
+        "unburnable": "第1・3水曜日",
+        "recyclable": "木曜日",
         "petBottle": "確認中",
         "plastic": "確認中"
+      }
+    },
+    "立川市": {
+      "1地区（富士見、柴崎、錦、羽衣）": {
+        "burnable": "毎週月・木曜日",
+        "unburnable": "隔週金曜日",
+        "recyclable": "毎週水曜日、隔週水・木・金曜日",
+        "petBottle": "毎週金曜日",
+        "plastic": "毎週火曜日"
       },
-      "5丁目（1から52）": {
-        "burnable": "燃やすごみ水曜日・土曜日",
-        "unburnable": "燃やさないごみ第2・4火曜日",
-        "recyclable": "資源月曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
+      "2地区（曙、高松、栄）": {
+        "burnable": "毎週月・木曜日",
+        "unburnable": "隔週火曜日",
+        "recyclable": "毎週水曜日、隔週火・水・木曜日",
+        "petBottle": "毎週火曜日",
+        "plastic": "毎週金曜日"
       },
-      "5丁目（53から56の補助289号線東側)": {
-        "burnable": "燃やすごみ水曜日・土曜日",
-        "unburnable": "燃やさないごみ第1・3火曜日",
-        "recyclable": "資源月曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
+      "3地区（若葉、幸、柏）": {
+        "burnable": "毎週火・金曜日",
+        "unburnable": "隔週木曜日",
+        "recyclable": "毎週水曜日、隔週水・木・金曜日",
+        "petBottle": "毎週木曜日",
+        "plastic": "毎週月曜日"
       },
-      "5丁目（53から56の補助289号線西側）": {
-        "burnable": "燃やすごみ水曜日・土曜日",
-        "unburnable": "燃やさないごみ第2・4火曜日",
-        "recyclable": "資源月曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
+      "4地区（緑、泉、砂川、上砂、一番、西砂）": {
+        "burnable": "毎週火・金曜日",
+        "unburnable": "隔週月曜日",
+        "recyclable": "毎週水曜日、隔週月・水・金曜日",
+        "petBottle": "毎週月曜日",
+        "plastic": "毎週木曜日"
+      }
+    },
+    "町田市": {
+      "1地区（玉川学園1～8丁目（特別指定除く）、忠生1～4丁目）": {
+        "burnable": "毎週月・木曜日",
+        "unburnable": "（指定日）（指定日）",
+        "recyclable": "確認中",
+        "petBottle": "毎週土曜日",
+        "plastic": "毎週金曜日"
       },
-      "5丁目（57)": {
-        "burnable": "燃やすごみ水曜日・土曜日",
-        "unburnable": "燃やさないごみ第1・3火曜日",
-        "recyclable": "資源月曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
+      "2地区（高ヶ坂1～7丁目、常盤町、三輪町、町田木曽住宅）": {
+        "burnable": "毎週月・木曜日",
+        "unburnable": "（指定日）（指定日）",
+        "recyclable": "確認中",
+        "petBottle": "毎週土曜日",
+        "plastic": "毎週金曜日"
       },
-      "6丁目": {
-        "burnable": "燃やすごみ火曜日・金曜日",
-        "unburnable": "燃やさないごみ第1・3水曜日",
-        "recyclable": "資源木曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
+      "3地区（金井町、金井ヶ丘1～5丁目、金井1～8丁目、三輪緑山1～4丁目、矢部町）": {
+        "burnable": "毎週月・木曜日",
+        "unburnable": "（指定日）（指定日）",
+        "recyclable": "確認中",
+        "petBottle": "毎週金曜日",
+        "plastic": "毎週火曜日"
       },
-      "9丁目（1から3）": {
-        "burnable": "燃やすごみ火曜日・金曜日",
-        "unburnable": "燃やさないごみ第1・3水曜日",
-        "recyclable": "資源木曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
+      "4地区（木曽住宅、原町田1～6丁目、南成瀬1～8丁目、山崎町（特別指定：シーアイハイツ除く）、山崎1丁目）": {
+        "burnable": "毎週月・木曜日",
+        "unburnable": "（指定日）（指定日）",
+        "recyclable": "確認中",
+        "petBottle": "毎週金曜日",
+        "plastic": "毎週火曜日"
       },
-      "9丁目（4から23）": {
-        "burnable": "燃やすごみ水曜日・土曜日",
-        "unburnable": "燃やさないごみ第2・4火曜日",
-        "recyclable": "資源月曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
+      "5地区（成瀬1～8丁目、西成瀬1～3丁目、野津田町、藤の台1～3丁目）": {
+        "burnable": "毎週火・金曜日",
+        "unburnable": "（指定日）（指定日）",
+        "recyclable": "確認中",
+        "petBottle": "毎週水曜日",
+        "plastic": "毎週土曜日"
       },
-      "東小岩": {
-        "burnable": "資源土曜日",
-        "unburnable": "燃やすごみ火曜日・金曜日",
-        "recyclable": "1丁目",
-        "petBottle": "確認中",
-        "plastic": "確認中"
+      "6地区（鶴川団地、広袴町、広袴1～4丁目、本町田、本町田住宅）": {
+        "burnable": "毎週火・金曜日",
+        "unburnable": "（指定日）（指定日）",
+        "recyclable": "確認中",
+        "petBottle": "毎週水曜日",
+        "plastic": "毎週土曜日"
       },
-      "2から6丁目": {
-        "burnable": "燃やすごみ火曜日・金曜日",
-        "unburnable": "燃やさないごみ第1・3土曜日",
-        "recyclable": "資源水曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
+      "7地区（木曽町、都営木曽森野第1アパート、木曽西1～5丁目、木曽東1～4丁目、真光寺町、真光寺1～3丁目、下小山田町、薬師台1～3丁目）": {
+        "burnable": "毎週火・金曜日",
+        "unburnable": "（指定日）（指定日）",
+        "recyclable": "確認中",
+        "petBottle": "毎週月曜日",
+        "plastic": "毎週水曜日"
       },
-      "東小松川": {
-        "burnable": "資源木曜日",
-        "unburnable": "燃やすごみ水曜日・土曜日",
-        "recyclable": "1丁目から4丁目",
-        "petBottle": "確認中",
-        "plastic": "確認中"
+      "8地区（東玉川学園1～4丁目（特別指定除く）、森野1～6丁目、都営木曽森野第2アパート、大蔵町、（特別指定：小山田桜台1・2丁目、公社森野住宅除く））": {
+        "burnable": "毎週火・金曜日",
+        "unburnable": "（指定日）（指定日）",
+        "recyclable": "確認中",
+        "petBottle": "毎週月曜日",
+        "plastic": "毎週水曜日"
       },
-      "東篠崎": {
-        "burnable": "資源月曜日",
-        "unburnable": "燃やすごみ水曜日・土曜日",
-        "recyclable": "1・2丁目",
-        "petBottle": "確認中",
-        "plastic": "確認中"
+      "9地区（相原町（特別指定：都営武蔵岡住宅除く）、図師町、根岸町、根岸1～2丁目）": {
+        "burnable": "毎週水・土曜日",
+        "unburnable": "（指定日）（指定日）",
+        "recyclable": "確認中",
+        "petBottle": "毎週木曜日",
+        "plastic": "毎週月曜日"
       },
-      "東篠崎町": {
-        "burnable": "資源月曜日",
-        "unburnable": "燃やすごみ水曜日・土曜日",
-        "recyclable": "全域",
-        "petBottle": "確認中",
-        "plastic": "確認中"
+      "10地区（小山町、上小山田町、中町1～4丁目）": {
+        "burnable": "毎週水・土曜日",
+        "unburnable": "（指定日）（指定日）",
+        "recyclable": "確認中",
+        "petBottle": "毎週木曜日",
+        "plastic": "毎週月曜日"
       },
-      "東松本": {
-        "burnable": "資源火曜日",
-        "unburnable": "燃やすごみ月曜日・木曜日",
-        "recyclable": "1・2丁目",
-        "petBottle": "確認中",
-        "plastic": "確認中"
+      "11地区（旭町1～3丁目、小野路町、能ヶ谷1～7丁目、南大谷）": {
+        "burnable": "毎週水・土曜日",
+        "unburnable": "（指定日）（指定日）",
+        "recyclable": "確認中",
+        "petBottle": "毎週火曜日",
+        "plastic": "毎週木曜日"
       },
-      "東瑞江": {
-        "burnable": "資源木曜日",
-        "unburnable": "燃やすごみ水曜日・土曜日",
-        "recyclable": "1丁目（1、2）",
-        "petBottle": "確認中",
-        "plastic": "確認中"
+      "12地区（境川住宅、鶴川1～6丁目、成瀬台1～4丁目、山崎団地）": {
+        "burnable": "毎週水・土曜日",
+        "unburnable": "（指定日）（指定日）",
+        "recyclable": "確認中",
+        "petBottle": "毎週火曜日",
+        "plastic": "毎週木曜日"
       },
-      "1丁目（1、2を除く）": {
-        "burnable": "燃やすごみ水曜日・土曜日",
-        "unburnable": "燃やさないごみ第2・4木曜日",
-        "recyclable": "資源月曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
+      "13地区（資源とごみの収集カレンダー）": {
+        "burnable": "毎週火・金曜日",
+        "unburnable": "毎週月曜日",
+        "recyclable": "確認中",
+        "petBottle": "毎週水曜日",
+        "plastic": "毎週木曜日"
       },
-      "2丁目": {
-        "burnable": "燃やすごみ火曜日・金曜日",
-        "unburnable": "燃やさないごみ第1・3土曜日",
-        "recyclable": "資源水曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
+      "14地区": {
+        "burnable": "毎週火・金曜日",
+        "unburnable": "（指定日）（指定日）",
+        "recyclable": "確認中",
+        "petBottle": "（指定日）（指定日）",
+        "plastic": "毎週水曜日"
       },
-      "平井": {
-        "burnable": "資源火曜日",
-        "unburnable": "燃やすごみ月曜日・木曜日",
-        "recyclable": "1・2丁目",
-        "petBottle": "確認中",
-        "plastic": "確認中"
+      "15地区": {
+        "burnable": "毎週火・金曜日",
+        "unburnable": "（指定日）（指定日）",
+        "recyclable": "確認中",
+        "petBottle": "（指定日）（指定日）",
+        "plastic": "毎週水曜日"
       },
-      "5丁目（1から30）": {
-        "burnable": "燃やすごみ月曜日・木曜日",
-        "unburnable": "燃やさないごみ第1・3水曜日",
-        "recyclable": "資源金曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
+      "16地区": {
+        "burnable": "毎週月・木曜日",
+        "unburnable": "（指定日）（指定日）",
+        "recyclable": "確認中",
+        "petBottle": "（指定日）（指定日）",
+        "plastic": "毎週火曜日"
       },
-      "5丁目（31から58）": {
-        "burnable": "燃やすごみ月曜日・木曜日",
-        "unburnable": "燃やさないごみ第2・4水曜日",
-        "recyclable": "資源金曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "船堀": {
-        "burnable": "資源土曜日",
-        "unburnable": "燃やすごみ月曜日・木曜日",
-        "recyclable": "1・2・4から6丁目",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "7丁目": {
-        "burnable": "燃やすごみ水曜日・土曜日",
-        "unburnable": "燃やさないごみ第1・3月曜日",
-        "recyclable": "資源火曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "本一色": {
-        "burnable": "資源土曜日",
-        "unburnable": "燃やすごみ火曜日・金曜日",
-        "recyclable": "1から3丁目",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "松江": {
-        "burnable": "資源水曜日",
-        "unburnable": "燃やすごみ火曜日・金曜日",
-        "recyclable": "1・2丁目",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "3から7丁目": {
-        "burnable": "燃やすごみ水曜日・土曜日",
-        "unburnable": "燃やさないごみ第1・3火曜日",
-        "recyclable": "資源木曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "松島": {
-        "burnable": "資源火曜日",
-        "unburnable": "燃やすごみ月曜日・木曜日",
-        "recyclable": "1丁目",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "2から4丁目": {
-        "burnable": "燃やすごみ月曜日・木曜日",
-        "unburnable": "燃やさないごみ第2・4土曜日",
-        "recyclable": "資源火曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "松本": {
-        "burnable": "資源土曜日",
-        "unburnable": "燃やすごみ火曜日・金曜日",
-        "recyclable": "1・2丁目",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "瑞江": {
-        "burnable": "資源火曜日",
-        "unburnable": "燃やすごみ月曜日・木曜日",
-        "recyclable": "1丁目（1から21）",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "1丁目（22から65）2・3・4丁目": {
-        "burnable": "燃やすごみ水曜日・土曜日",
-        "unburnable": "燃やさないごみ第2・4月曜日",
-        "recyclable": "資源木曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "南葛西": {
-        "burnable": "資源水曜日",
-        "unburnable": "燃やすごみ火曜日・金曜日",
-        "recyclable": "1丁目",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "4から7丁目": {
-        "burnable": "燃やすごみ火曜日・金曜日",
-        "unburnable": "燃やさないごみ第1・3水曜日",
-        "recyclable": "資源木曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "南小岩": {
-        "burnable": "資源火曜日",
-        "unburnable": "燃やすごみ月曜日・木曜日",
-        "recyclable": "1から4丁目",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "5から8丁目": {
-        "burnable": "燃やすごみ月曜日・木曜日",
-        "unburnable": "燃やさないごみ第1・3火曜日",
-        "recyclable": "資源金曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "南篠崎町": {
-        "burnable": "資源月曜日",
-        "unburnable": "燃やすごみ水曜日・土曜日",
-        "recyclable": "1丁目",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "3丁目（26、27）": {
-        "burnable": "燃やすごみ水曜日・土曜日",
-        "unburnable": "燃やさないごみ第1・3木曜日",
-        "recyclable": "資源月曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "3丁目（26、27を除く）": {
-        "burnable": "燃やすごみ水曜日・土曜日",
-        "unburnable": "燃やさないごみ第2・4月曜日",
-        "recyclable": "資源木曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "4丁目（9、10）": {
-        "burnable": "燃やすごみ水曜日・土曜日",
-        "unburnable": "燃やさないごみ第2・4月曜日",
-        "recyclable": "資源木曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "4丁目（9・10を除く）": {
-        "burnable": "燃やすごみ水曜日・土曜日",
-        "unburnable": "燃やさないごみ第1・3木曜日",
-        "recyclable": "資源月曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "谷河内": {
-        "burnable": "資源火曜日",
-        "unburnable": "燃やすごみ月曜日・木曜日",
-        "recyclable": "1丁目",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "2丁目（1から3）": {
-        "burnable": "燃やすごみ水曜日・土曜日",
-        "unburnable": "燃やさないごみ第2・4月曜日",
-        "recyclable": "資源木曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "2丁目（4から15）": {
-        "burnable": "燃やすごみ水曜日・土曜日",
-        "unburnable": "燃やさないごみ第1・3木曜日",
-        "recyclable": "資源月曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "臨海町": {
-        "burnable": "資源月曜日",
-        "unburnable": "燃やすごみ水曜日・土曜日",
-        "recyclable": "1丁目",
-        "petBottle": "確認中",
-        "plastic": "確認中"
-      },
-      "4・5丁目": {
-        "burnable": "燃やすごみ火曜日・金曜日",
-        "unburnable": "燃やさないごみ第2・4水曜日",
-        "recyclable": "資源木曜日",
-        "petBottle": "確認中",
-        "plastic": "確認中"
+      "17地区": {
+        "burnable": "毎週水・土曜日",
+        "unburnable": "（指定日）（指定日）",
+        "recyclable": "確認中",
+        "petBottle": "（指定日）（指定日）",
+        "plastic": "毎週月曜日"
       }
     }
   }
