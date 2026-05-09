@@ -63,12 +63,19 @@ function normalize(text: string): string {
     .replace(/([月火水木金土日])曜/g, "$1");
 }
 
-/** 週番号をすべて抽出（2つの形式に対応）
+/** 週番号をすべて抽出（複数形式に対応）
  *  - 「第1火・第3火」: 各"第N"を個別にマッチ → [1, 3]
  *  - 「第1・3月」: 最初の"第N"＋後続"・M" → [1, 3]
+ *  - 「隔週」: 第1・3週として近似 → [1, 3]
  */
 function extractNths(text: string): number[] {
   const nths = new Set<number>();
+  // 「隔週」→ 第1・3週として近似表示（正確な開始週は自治体により異なる）
+  if (text.includes('隔週')) {
+    nths.add(1);
+    nths.add(3);
+    return [...nths];
+  }
   // 「第N」をすべて収集（「第1火・第3火」形式）
   for (const m of text.matchAll(/第([１２３４５1-5])/g)) {
     nths.add(parseInt(toHalf(m[1]), 10));
@@ -92,9 +99,12 @@ function parseSchedule(text: string, year: number, month: number): number[] {
   const norm = normalize(text).replace(/毎週/g, "");
 
   // 「第N・第M〇」パターン（月N回収集）
+  // 対応形式:
+  //   末尾形式: 「第1火・第3火」「第2・4水」→ 曜日が末尾
+  //   先頭形式: 「木（第1・3週）」「水（第2・4週）」→ 曜日が先頭
   const nthSegments = norm.split(/[、,，\s]+/);
   for (const seg of nthSegments) {
-    const dayMatch = seg.match(/([月火水木金土日])$/);
+    const dayMatch = seg.match(/([月火水木金土日])$/) ?? seg.match(/^([月火水木金土日])/);
     if (!dayMatch) continue;
     const dow = DAY_CHAR[dayMatch[1]];
     if (dow === undefined) continue;
