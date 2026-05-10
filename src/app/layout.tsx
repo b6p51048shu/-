@@ -71,7 +71,8 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <div className="app-shell">
           <header className="site-header">
             <a href="/" className="site-logo">
-              <span className="logo-icon">♻️</span>
+              {/* eslint-disable-next-line @next/next/no-img-element */}
+              <img src="/raccoon.png" className="logo-raccoon" alt="" width={36} height={36} />
               <span className="logo-text">ゴミの日.com</span>
             </a>
             <nav className="site-nav">
