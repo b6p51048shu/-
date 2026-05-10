@@ -77,11 +77,11 @@ export function scheduleToEn(text: string): string {
 // ── 英語UIテキスト ──────────────────────────────────────────
 export const en = {
   site: {
-    title: "GomiCale",
+    title: "Gominohi.com",
     tagline: "Tokyo garbage collection schedule by neighborhood",
     nav: { top: "Top" },
     footer: {
-      copy: "© 2026 GomiCale — Tokyo Garbage Collection Calendar",
+      copy: "© 2026 Gominohi.com — Tokyo Garbage Collection Calendar",
       note: "Information is based on official ward data but may change. Always confirm with your ward's official website.",
     },
   },
@@ -137,8 +137,8 @@ export const en = {
   },
   faq: [
     {
-      q: "What is GomiCale?",
-      a: "GomiCale is a free service to look up garbage collection schedules for Tokyo's 23 wards by neighborhood. It shows collection days for burnable waste, non-burnable waste, recyclables, and plastics.",
+      q: "What is Gominohi.com?",
+      a: "Gominohi.com is a free service to look up garbage collection schedules across Tokyo (23 wards + 29 Tama cities, 52 municipalities total) by neighborhood. It shows collection days for burnable waste, non-burnable waste, recyclables, and plastics.",
     },
     {
       q: "How do I use the GPS feature?",
@@ -149,8 +149,8 @@ export const en = {
       a: "Data is updated based on official ward websites. For holidays and year-end special schedules, please check your ward's official website.",
     },
     {
-      q: "Is it only for Tokyo's 23 wards?",
-      a: "Currently Tokyo's 23 wards are supported. We plan to expand coverage gradually.",
+      q: "What areas are supported?",
+      a: "Currently all 52 municipalities in Tokyo (23 wards + 29 Tama cities/towns) are supported. We plan to expand to Kanagawa, Saitama, Chiba, and other major cities.",
     },
   ],
 } as const;

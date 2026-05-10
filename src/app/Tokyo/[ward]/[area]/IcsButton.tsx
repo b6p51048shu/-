@@ -60,7 +60,7 @@ export default function IcsButton({ wardName, areaName, schedule }: Props) {
     const ics = [
       "BEGIN:VCALENDAR",
       "VERSION:2.0",
-      "PRODID:-//ゴミカレ//GOMICALE//JA",
+      "PRODID:-//ゴミの日.com//GOMINOHI//JA",
       "CALSCALE:GREGORIAN",
       "METHOD:PUBLISH",
       ...events,

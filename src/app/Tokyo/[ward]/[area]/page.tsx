@@ -19,12 +19,23 @@ export async function generateStaticParams() {
   return result;
 }
 
+/** 「火曜日・金曜日」→「火・金」のように曜日文字だけ抽出して短縮する */
+function shortDays(s: string): string {
+  // 「曜日」「曜」を先に除去してから1文字マッチ（「火曜日」の"日"を誤検出しない）
+  const normalized = s.replace(/曜日/g, "").replace(/曜/g, "");
+  const matches = normalized.match(/[月火水木金土日]/g);
+  return matches ? [...new Set(matches)].join("・") : s;
+}
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { ward: wardSlug, area: areaSlug } = await params;
   const found = getAreaBySlug(wardSlug, areaSlug);
   if (!found) return {};
 
   const { wardName, schedule } = found;
+  const burnable = schedule.burnable ? shortDays(schedule.burnable) : "";
+  const titleSuffix = burnable ? `（燃やすごみ: ${burnable}）` : "";
+
   const parts = [
     schedule.burnable && `燃やすごみ: ${schedule.burnable}`,
     schedule.unburnable && `燃やさないごみ: ${schedule.unburnable}`,
@@ -33,10 +44,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   ].filter(Boolean);
 
   return {
-    title: `${wardName} ${schedule.area}のごみ収集日`,
+    title: `${wardName} ${schedule.area}のごみ収集日${titleSuffix}`,
     description: `${wardName} ${schedule.area}のごみ収集スケジュール。${parts.join("、")}。`,
     openGraph: {
-      title: `${wardName} ${schedule.area}のごみ収集日 | ゴミカレ`,
+      title: `${wardName} ${schedule.area}のごみ収集日${titleSuffix} | ゴミの日.com`,
       description: `${parts.join("、")}`,
     },
   };

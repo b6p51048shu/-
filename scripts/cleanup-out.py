@@ -25,8 +25,11 @@ for root, dirs, files in os.walk(out_dir, topdown=True):
     # __next.* ファイルと index.txt を削除
     for f in files:
         if f.startswith("__next.") or f == "index.txt":
-            os.remove(os.path.join(root, f))
-            removed += 1
+            try:
+                os.remove(os.path.join(root, f))
+                removed += 1
+            except OSError:
+                pass  # OneDrive同期中などでロックされている場合はスキップ
 
 # 残りのファイル数をカウント
 count = sum(len(files) for _, _, files in os.walk(out_dir))

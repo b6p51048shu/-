@@ -11,24 +11,24 @@ const notoSansJP = Noto_Sans_JP({
 
 export const metadata: Metadata = {
   title: {
-    default: "ゴミカレ | 東京23区ごみ収集日カレンダー",
-    template: "%s | ゴミカレ",
+    default: "ゴミの日.com | 東京都ごみ収集日カレンダー",
+    template: "%s | ゴミの日.com",
   },
   description:
-    "東京23区のごみ収集日を地域別に検索。燃やすごみ・資源ごみ・プラスチックの収集曜日を今すぐ確認。GPS対応・無料。",
-  keywords: ["ごみ収集日", "東京23区", "燃やすごみ", "資源ごみ", "ゴミカレ", "収集カレンダー"],
-  authors: [{ name: "ゴミカレ" }],
+    "東京都（23区・多摩地区52自治体）のごみ収集日を地域別に検索。燃やすごみ・資源ごみ・プラスチックの収集曜日を今すぐ確認。GPS対応・無料。",
+  keywords: ["ごみ収集日", "東京都", "東京23区", "多摩地区", "燃やすごみ", "資源ごみ", "ごみの日", "収集カレンダー"],
+  authors: [{ name: "ゴミの日.com" }],
   openGraph: {
     type: "website",
     locale: "ja_JP",
-    siteName: "ゴミカレ",
-    title: "ゴミカレ | 東京23区ごみ収集日カレンダー",
-    description: "東京23区のごみ収集日を地域別に検索。GPS対応・無料。",
+    siteName: "ゴミの日.com",
+    title: "ゴミの日.com | 東京都ごみ収集日カレンダー",
+    description: "東京都のごみ収集日を地域別に検索。GPS対応・無料。",
   },
   twitter: {
     card: "summary",
-    title: "ゴミカレ | 東京23区ごみ収集日",
-    description: "東京23区のごみ収集日を地域別に検索。GPS対応・無料。",
+    title: "ゴミの日.com | 東京都ごみ収集日",
+    description: "東京都のごみ収集日を地域別に検索。GPS対応・無料。",
   },
   robots: {
     index: true,
@@ -65,14 +65,14 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
         <meta name="mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-capable" content="yes" />
         <meta name="apple-mobile-web-app-status-bar-style" content="default" />
-        <meta name="apple-mobile-web-app-title" content="ゴミカレ" />
+        <meta name="apple-mobile-web-app-title" content="ゴミの日" />
       </head>
       <body>
         <div className="app-shell">
           <header className="site-header">
             <a href="/" className="site-logo">
               <span className="logo-icon">♻️</span>
-              <span className="logo-text">ゴミカレ</span>
+              <span className="logo-text">ゴミの日.com</span>
             </a>
             <nav className="site-nav">
               <a href="/">トップ</a>
@@ -82,7 +82,7 @@ export default function RootLayout({ children }: { children: React.ReactNode }) 
           <main className="site-main">{children}</main>
           <footer className="site-footer">
             <div className="footer-inner">
-              <p className="footer-copy">© 2026 ゴミカレ — 東京23区ごみ収集日カレンダー</p>
+              <p className="footer-copy">© 2026 ゴミの日.com — 東京都ごみ収集日カレンダー</p>
               <p className="footer-note">
                 掲載情報は各区の公式データに基づきますが、変更される場合があります。必ず各区の公式サイトでご確認ください。
               </p>

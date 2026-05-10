@@ -1,7 +1,7 @@
 {
-  "name": "ゴミカレ - 東京23区ごみ収集日",
-  "short_name": "ゴミカレ",
-  "description": "東京23区のごみ収集日を地域別に検索",
+  "name": "ゴミの日.com - 東京都ごみ収集日",
+  "short_name": "ゴミの日",
+  "description": "東京都（23区・多摩地区）のごみ収集日を地域別に検索",
   "start_url": "/",
   "display": "standalone",
   "background_color": "#f9fafb",

@@ -115,7 +115,7 @@ export default function TopPage() {
     <>
       {/* ── Hero ── */}
       <section className="hero">
-        <h1 className="hero-title">♻️ ゴミカレ</h1>
+        <h1 className="hero-title">♻️ ゴミの日.com</h1>
         <p className="hero-sub">東京のごみ収集日・指定ごみ袋を地域別に検索</p>
 
         <div className="search-box">
@@ -210,7 +210,7 @@ export default function TopPage() {
         <section className="faq-section" aria-label="よくある質問">
           <h2 className="section-title">よくある質問</h2>
           <div className="faq-item">
-            <p className="faq-q">Q. ゴミカレとは？</p>
+            <p className="faq-q">Q. ゴミの日.comとは？</p>
             <p className="faq-a">東京都内のごみ収集日を地域別に検索できる無料サービスです。燃やすごみ・燃やさないごみ・資源ごみ・プラスチックの収集曜日を一覧表示します。多摩地区では指定ごみ袋の種類・価格情報も確認できます。</p>
           </div>
           <div className="faq-item">
@@ -227,7 +227,7 @@ export default function TopPage() {
           </div>
           <div className="faq-item">
             <p className="faq-q">Q. 対象エリアはどこですか？</p>
-            <p className="faq-a">東京23区と多摩地区（立川市ほか）に対応しています。順次対応エリアを拡大予定です。</p>
+            <p className="faq-a">東京都23区・多摩地区計52自治体に対応しています。今後、神奈川・埼玉・千葉など1都3県や主要都市への対応エリア拡大を予定しています。</p>
           </div>
         </section>
       </div>

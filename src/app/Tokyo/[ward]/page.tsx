@@ -17,7 +17,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: `${wardName}のごみ収集日一覧`,
     description: `${wardName}の全${info.areas.length}地域のごみ収集日（燃やすごみ・資源ごみ・プラスチック）を一覧表示。地域を選ぶと収集曜日をすぐに確認できます。`,
     openGraph: {
-      title: `${wardName}のごみ収集日 | ゴミカレ`,
+      title: `${wardName}のごみ収集日 | ゴミの日.com`,
       description: `${wardName}全${info.areas.length}地域のごみ収集スケジュール。`,
     },
   };

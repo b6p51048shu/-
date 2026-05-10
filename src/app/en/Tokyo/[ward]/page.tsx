@@ -14,10 +14,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!result) return {};
   const { name: wardName, info } = result;
   return {
-    title: `${wardSlug} Ward Garbage Collection | GomiCale`,
+    title: `${wardSlug} Ward Garbage Collection | Gominohi.com`,
     description: `Garbage collection schedule for ${wardSlug} Ward (${wardName}), Tokyo. ${info.areas.length} areas covered.`,
     openGraph: {
-      title: `${wardSlug} Ward Garbage Collection | GomiCale`,
+      title: `${wardSlug} Ward Garbage Collection | Gominohi.com`,
       description: `Find your garbage collection days in ${wardSlug} Ward, Tokyo.`,
     },
     alternates: { canonical: `/en/Tokyo/${wardSlug}` },

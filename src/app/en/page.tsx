@@ -96,7 +96,7 @@ export default function EnTopPage() {
   return (
     <>
       <section className="hero">
-        <h1 className="hero-title">♻️ GomiCale</h1>
+        <h1 className="hero-title">♻️ Gominohi.com</h1>
         <p className="hero-sub">{en.site.tagline}</p>
 
         <div className="search-box">

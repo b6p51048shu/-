@@ -25,7 +25,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   if (!found) return {};
   const { wardName, schedule } = found;
   return {
-    title: `${schedule.area} (${wardSlug} Ward) Garbage Collection | GomiCale`,
+    title: `${schedule.area} (${wardSlug} Ward) Garbage Collection | Gominohi.com`,
     description: `Garbage collection schedule for ${schedule.area}, ${wardSlug} Ward, Tokyo. Burnable: ${scheduleToEn(schedule.burnable)}.`,
     alternates: { canonical: `/en/Tokyo/${wardSlug}/${areaSlug}` },
   };
