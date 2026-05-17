@@ -46,7 +46,8 @@ export default function EnWardPageClient({ wardName, wardInfo, wardSlug }: Props
         <div className="area-list">
           {filtered.map((a) => (
             <a key={a.slug} href={`/en/Tokyo/${wardSlug}/${a.slug}`} className="area-link">
-              {a.area}
+              <span style={{ fontSize: ".8em", opacity: .7, display: "block", marginBottom: ".1rem" }}>{a.area}</span>
+              {a.slug.replace(/-/g, " ")}
             </a>
           ))}
         </div>
