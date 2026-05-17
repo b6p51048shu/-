@@ -115,9 +115,11 @@ export default function TopPage() {
     <>
       {/* ── Hero ── */}
       <section className="hero">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/raccoon.png" className="hero-raccoon" alt="ゴミの日.com マスコット" width={140} height={140} />
-        <h1 className="hero-title">ゴミの日.com</h1>
+        <h1 className="hero-title">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/raccoon.png" className="hero-raccoon" alt="" width={56} height={56} />
+          ゴミの日.com
+        </h1>
         <p className="hero-sub">東京のごみ収集日・指定ごみ袋を地域別に検索</p>
 
         <div className="search-box">
