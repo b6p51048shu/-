@@ -1,13 +1,15 @@
 "use client";
 
 import { useState, useMemo } from "react";
-import type { AreaSchedule } from "@/lib/data";
+import type { AreaSchedule, ParsedSchedule } from "@/lib/data";
 
 type Props = { schedule: AreaSchedule };
 
 type GarbageEvent = { label: string; color: string; bg: string };
 
-const GARBAGE_DEFAULTS: { key: keyof AreaSchedule; label: string; short: string; color: string; bg: string }[] = [
+type GarbageKey = "burnable" | "unburnable" | "recyclable" | "plastic" | "pet";
+
+const GARBAGE_DEFAULTS: { key: GarbageKey; label: string; short: string; color: string; bg: string }[] = [
   { key: "burnable",   label: "Burnable",    short: "Burn",  color: "#fff", bg: "#ef4444" },
   { key: "unburnable", label: "Non-burnable", short: "Non-B", color: "#fff", bg: "#3b82f6" },
   { key: "recyclable", label: "Recyclables",  short: "Rec",  color: "#fff", bg: "#10b981" },
@@ -27,150 +29,36 @@ function getGarbageTypes(schedule: AreaSchedule) {
   });
 }
 
-const DAY_CHAR: Record<string, number> = {
-  月: 1, 火: 2, 水: 3, 木: 4, 金: 5, 土: 6, 日: 0,
-  月曜: 1, 火曜: 2, 水曜: 3, 木曜: 4, 金曜: 5, 土曜: 6, 日曜: 0,
-  月曜日: 1, 火曜日: 2, 水曜日: 3, 木曜日: 4, 金曜日: 5, 土曜日: 6, 日曜日: 0,
-};
-
-const WEEK_NUM: Record<string, number[]> = {
-  "第１": [1], "第1": [1], "１": [1], "1": [1],
-  "第２": [2], "第2": [2], "２": [2], "2": [2],
-  "第３": [3], "第3": [3], "３": [3], "3": [3],
-  "第４": [4], "第4": [4], "４": [4], "4": [4],
-  "第５": [5], "第5": [5], "５": [5], "5": [5],
-};
-
-const FULL_TO_HALF: Record<string, string> = {
-  "１":"1","２":"2","３":"3","４":"4","５":"5",
-  // 丸数字（目黒区等: 「第③土曜日」形式）
-  "①":"1","②":"2","③":"3","④":"4","⑤":"5",
-};
-
-function toHalf(s: string): string {
-  return s.replace(/[１２３４５]/g, (c) => FULL_TO_HALF[c] ?? c);
-}
-
 /** バッジ表示用: 括弧内を除去して・で分割 */
 function splitBadgeLabel(label: string): string[] {
   const stripped = label.replace(/（[^）]*）|\([^)]*\)/g, "").trim();
   return stripped.split("・").filter(Boolean);
 }
 
-/** スケジュール文字列を正規化（複合語除去 → 「〇曜日」→「〇」 → 空白除去） */
-function normalize(text: string): string {
-  return text
-    .replace(/同日|翌日|当日|祝日|休日|平日|毎日|前日|本日|昨日|収集日|回収日/g, "")
-    .replace(/([月火水木金土日])曜日/g, "$1")
-    .replace(/([月火水木金土日])曜/g, "$1")
-    .replace(/[\s　]+/g, ""); // 「第2・4 土」のような空白を除去（曜日と週番号が分離されないように）
-}
-
-// 数字にマッチする文字クラス（全角・半角・丸数字）
-const NTH_DIGIT = "[１２３４５①②③④⑤1-5]";
-// セパレータ文字クラス（全角中点・半角中点・読点・カンマ・セミコロン）
-const SEP = "[・･、,，;；]";
-
-/** 週番号をすべて抽出（複数形式に対応）
- *  - 「第1火・第3火」: 各"第N"を個別にマッチ → [1, 3]
- *  - 「第1・3月」: 最初の"第N"＋後続"・M" → [1, 3]
- *  - 「第2土・4土」: 曜日を挟んだ形式 → [2, 4]
- *  - 「第2･4土」: 半角中点 → [2, 4]
- *  - 「第③土曜日」: 丸数字 → [3]
- *  - 「2・4番目」「1回目・3回目」: N番目/N回目 → [2, 4] / [1, 3]
- *  - 「隔週」: 第1・3週として近似 → [1, 3]
- */
-function extractNths(text: string): number[] {
-  const nths = new Set<number>();
-  // 「隔週」→ 第1・3週として近似表示（正確な開始週は自治体により異なる）
-  if (text.includes('隔週')) {
-    nths.add(1);
-    nths.add(3);
-    return [...nths];
-  }
-  // 「N番目」「N回目」形式（新宿区・台東区・墨田区・板橋区等）
-  // 「2・4番目の土」「その月の1回目・3回目の土」→ テキスト中の全数字を収集
-  if (text.includes('番目') || text.includes('回目')) {
-    for (const m of text.matchAll(new RegExp(NTH_DIGIT, 'g'))) {
-      nths.add(parseInt(toHalf(m[0]), 10));
-    }
-    return [...nths];
-  }
-  // 「第N」をすべて収集（丸数字・全角・半角対応）
-  for (const m of text.matchAll(new RegExp(`第(${NTH_DIGIT})`, 'g'))) {
-    nths.add(parseInt(toHalf(m[1]), 10));
-  }
-  // 「第N・M」の「・M」部分も収集（「第1・3月」「第2･4土」形式）
-  for (const m of text.matchAll(new RegExp(`第${NTH_DIGIT}((?:${SEP}${NTH_DIGIT})+)`, 'g'))) {
-    for (const n of m[1].matchAll(new RegExp(`${SEP}(${NTH_DIGIT})`, 'g'))) {
-      nths.add(parseInt(toHalf(n[1]), 10));
-    }
-  }
-  // 「第2土・4土」形式: セパレータ＋数字＋曜日文字 のパターンも収集
-  // （normalize後に「第2土曜日・4土曜日」→「第2土・4土」となるケース）
-  for (const m of text.matchAll(new RegExp(`${SEP}(${NTH_DIGIT})[月火水木金土日]`, 'g'))) {
-    nths.add(parseInt(toHalf(m[1]), 10));
-  }
-  return [...nths];
-}
-
-/** スケジュール文字列を解析して「その月の収集日リスト」を返す */
-function parseSchedule(text: string, year: number, month: number): number[] {
-  if (!text) return [];
+/** 構造化スケジュールデータから「その月の収集日リスト」を返す */
+function getCollectionDates(parsed: ParsedSchedule | undefined, year: number, month: number): number[] {
+  if (!parsed || parsed.type === "unknown") return [];
   const daysInMonth = new Date(year, month, 0).getDate();
   const dates: number[] = [];
 
-  // 正規化: 「火曜日」→「火」「毎週」→「」
-  const norm = normalize(text).replace(/毎週/g, "");
-
-  // 「第N・第M〇」パターン（月N回収集）
-  // 対応形式:
-  //   末尾形式: 「第1火・第3火」「第2・4水」→ 曜日が末尾
-  //   先頭形式: 「木（第1・3週）」「水（第2・4週）」→ 曜日が先頭
-  const nthSegments = norm.split(/[、,，\s]+/);
-  for (const seg of nthSegments) {
-    const dayMatch = seg.match(/([月火水木金土日])$/) ?? seg.match(/^([月火水木金土日])/);
-    if (!dayMatch) continue;
-    const dow = DAY_CHAR[dayMatch[1]];
-    if (dow === undefined) continue;
-    const nths = extractNths(seg);
-    if (nths.length === 0) continue;
-    let count = 0;
+  if (parsed.type === "weekly") {
+    const daySet = new Set(parsed.days);
     for (let d = 1; d <= daysInMonth; d++) {
-      if (new Date(year, month - 1, d).getDay() === dow) {
-        count++;
-        if (nths.includes(count)) dates.push(d);
-      }
+      if (daySet.has(new Date(year, month - 1, d).getDay())) dates.push(d);
+    }
+  } else if (parsed.type === "nth" || parsed.type === "biweekly") {
+    const daySet = new Set(parsed.days);
+    const weekSet = new Set(parsed.weeks);
+    const countPerDay: Record<number, number> = {};
+    for (let d = 1; d <= daysInMonth; d++) {
+      const dow = new Date(year, month - 1, d).getDay();
+      if (!daySet.has(dow)) continue;
+      countPerDay[dow] = (countPerDay[dow] ?? 0) + 1;
+      if (weekSet.has(countPerDay[dow])) dates.push(d);
     }
   }
 
-  // 第N系・N番目・N回目がなければ毎週パターン
-  if (!norm.includes("第") && !norm.includes("番目") && !norm.includes("回目")) {
-    const dayChars = ["月","火","水","木","金","土","日"] as const;
-    for (const char of dayChars) {
-      // 単体の曜日文字のみ：「〇」が他の曜日文字に隣接していないかチェック
-      const re = new RegExp(`(?<![月火水木金土日])${char}(?![月火水木金土日])`, "g");
-      if (re.test(norm)) {
-        const dow = DAY_CHAR[char];
-        for (let d = 1; d <= daysInMonth; d++) {
-          if (new Date(year, month - 1, d).getDay() === dow) dates.push(d);
-        }
-      }
-    }
-    // 上でマッチしない場合（「月・木」のように・区切り）
-    if (dates.length === 0) {
-      for (const char of dayChars) {
-        if (norm.includes(char)) {
-          const dow = DAY_CHAR[char];
-          for (let d = 1; d <= daysInMonth; d++) {
-            if (new Date(year, month - 1, d).getDay() === dow) dates.push(d);
-          }
-        }
-      }
-    }
-  }
-
-  return [...new Set(dates)].sort((a, b) => a - b);
+  return dates.sort((a, b) => a - b);
 }
 
 export default function GarbageCalendar({ schedule }: Props) {
@@ -180,10 +68,10 @@ export default function GarbageCalendar({ schedule }: Props) {
 
   const calendarData = useMemo(() => {
     const map: Record<number, GarbageEvent[]> = {};
-    for (const { key, label: _label, short: _short, color, bg } of getGarbageTypes(schedule)) {
-      const val = schedule[key] as string | undefined;
-      if (!val) continue;
-      const dates = parseSchedule(val, year, month);
+    for (const { key, label: _label, color, bg } of getGarbageTypes(schedule)) {
+      const parsed = schedule[`${key}_parsed` as keyof AreaSchedule] as ParsedSchedule | undefined;
+      if (!parsed) continue;
+      const dates = getCollectionDates(parsed, year, month);
       for (const d of dates) {
         if (!map[d]) map[d] = [];
         map[d].push({ label: _label, color, bg });

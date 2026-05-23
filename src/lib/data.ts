@@ -1,6 +1,13 @@
 import wardDataRaw from "../../public/data/ward-data.json";
 import regionIndexRaw from "../../public/data/region-index.json";
 
+/** 構造化スケジュールデータ（generate_data.py が生成） */
+export type ParsedSchedule =
+  | { type: "weekly"; days: number[] }                    // 毎週（火・金 等）
+  | { type: "nth"; days: number[]; weeks: number[] }      // 第N週（第2・4土 等）
+  | { type: "biweekly"; days: number[]; weeks: number[] } // 隔週（近似で第1・3週）
+  | { type: "unknown"; raw: string };                     // パース失敗
+
 export type AreaSchedule = {
   area: string;
   slug: string;
@@ -11,6 +18,13 @@ export type AreaSchedule = {
   pet?: string;
   oversized?: string;
   office?: string;
+  /** 構造化スケジュール（カレンダー描画用） */
+  burnable_parsed?: ParsedSchedule;
+  unburnable_parsed?: ParsedSchedule;
+  recyclable_parsed?: ParsedSchedule;
+  plastic_parsed?: ParsedSchedule;
+  pet_parsed?: ParsedSchedule;
+  oversized_parsed?: ParsedSchedule;
   /** 区独自の表示名（デフォルトラベルを上書きする） */
   labels?: {
     burnable?: string;
