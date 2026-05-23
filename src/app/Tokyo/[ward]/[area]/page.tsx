@@ -99,6 +99,11 @@ export default async function AreaPage({ params }: Props) {
 
   const scheduleItems = getScheduleItems(schedule);
 
+  // unknown_parsed があれば公式URLリンクを表示するか判定
+  const hasUnknown = (["burnable","unburnable","recyclable","plastic","pet"] as const).some(
+    (k) => (schedule[`${k}_parsed` as keyof AreaSchedule] as { type?: string } | undefined)?.type === "unknown"
+  );
+
   const jsonLd = {
     "@context": "https://schema.org",
     "@type": "FAQPage",
@@ -159,6 +164,17 @@ export default async function AreaPage({ params }: Props) {
             )}
           </div>
         </div>
+
+        {/* 収集日要問い合わせ通知 */}
+        {hasUnknown && wardInfo?.info_url && (
+          <div className="unknown-notice">
+            <span>📋 </span>
+            <span>このエリアの一部収集スケジュールは固定曜日がなく、カレンダーに表示されません。</span>
+            <a href={wardInfo.info_url} target="_blank" rel="noopener noreferrer" className="unknown-notice-link">
+              {wardName}公式サイトで確認 →
+            </a>
+          </div>
+        )}
 
         {/* カレンダービュー */}
         <GarbageCalendar wardName={wardName} areaName={areaName} schedule={schedule} />

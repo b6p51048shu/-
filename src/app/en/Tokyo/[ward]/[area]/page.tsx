@@ -91,6 +91,11 @@ export default async function EnAreaPage({ params }: Props) {
 
   const scheduleItems = getScheduleItems(schedule);
 
+  // unknown_parsed があれば公式URLリンクを表示するか判定
+  const hasUnknown = (["burnable","unburnable","recyclable","plastic","pet"] as const).some(
+    (k) => (schedule[`${k}_parsed` as keyof AreaSchedule] as { type?: string } | undefined)?.type === "unknown"
+  );
+
   return (
     <div className="container-narrow">
       <nav className="breadcrumb" aria-label="Breadcrumb">
@@ -125,6 +130,17 @@ export default async function EnAreaPage({ params }: Props) {
             : <span className="today-none">{en.area.noCollection}</span>}
         </div>
       </div>
+
+      {/* Collection schedule notice for unknown areas */}
+      {hasUnknown && wardInfo?.info_url && (
+        <div className="unknown-notice">
+          <span>📋 </span>
+          <span>Some collection days for this area are not on a fixed schedule and cannot be shown in the calendar.</span>
+          <a href={wardInfo.info_url} target="_blank" rel="noopener noreferrer" className="unknown-notice-link">
+            Check {wardSlug} Ward official site →
+          </a>
+        </div>
+      )}
 
       {/* カレンダー（英語版） */}
       <EnGarbageCalendar schedule={schedule} />
