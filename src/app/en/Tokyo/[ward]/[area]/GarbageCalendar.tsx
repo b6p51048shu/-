@@ -55,12 +55,13 @@ function splitBadgeLabel(label: string): string[] {
   return stripped.split("・").filter(Boolean);
 }
 
-/** スケジュール文字列を正規化（複合語除去 → 「〇曜日」→「〇」） */
+/** スケジュール文字列を正規化（複合語除去 → 「〇曜日」→「〇」 → 空白除去） */
 function normalize(text: string): string {
   return text
     .replace(/同日|翌日|当日|祝日|休日|平日|毎日|前日|本日|昨日|収集日|回収日/g, "")
     .replace(/([月火水木金土日])曜日/g, "$1")
-    .replace(/([月火水木金土日])曜/g, "$1");
+    .replace(/([月火水木金土日])曜/g, "$1")
+    .replace(/[\s　]+/g, ""); // 「第2・4 土」のような空白を除去（曜日と週番号が分離されないように）
 }
 
 /** 週番号をすべて抽出（複数形式に対応）
