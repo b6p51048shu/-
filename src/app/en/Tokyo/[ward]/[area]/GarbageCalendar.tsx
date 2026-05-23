@@ -43,6 +43,8 @@ const WEEK_NUM: Record<string, number[]> = {
 
 const FULL_TO_HALF: Record<string, string> = {
   "１":"1","２":"2","３":"3","４":"4","５":"5",
+  // 丸数字（目黒区等: 「第③土曜日」形式）
+  "①":"1","②":"2","③":"3","④":"4","⑤":"5",
 };
 
 function toHalf(s: string): string {
@@ -64,9 +66,18 @@ function normalize(text: string): string {
     .replace(/[\s　]+/g, ""); // 「第2・4 土」のような空白を除去（曜日と週番号が分離されないように）
 }
 
+// 数字にマッチする文字クラス（全角・半角・丸数字）
+const NTH_DIGIT = "[１２３４５①②③④⑤1-5]";
+// セパレータ文字クラス（全角中点・半角中点・読点・カンマ・セミコロン）
+const SEP = "[・･、,，;；]";
+
 /** 週番号をすべて抽出（複数形式に対応）
  *  - 「第1火・第3火」: 各"第N"を個別にマッチ → [1, 3]
  *  - 「第1・3月」: 最初の"第N"＋後続"・M" → [1, 3]
+ *  - 「第2土・4土」: 曜日を挟んだ形式 → [2, 4]
+ *  - 「第2･4土」: 半角中点 → [2, 4]
+ *  - 「第③土曜日」: 丸数字 → [3]
+ *  - 「2・4番目」「1回目・3回目」: N番目/N回目 → [2, 4] / [1, 3]
  *  - 「隔週」: 第1・3週として近似 → [1, 3]
  */
 function extractNths(text: string): number[] {
@@ -77,15 +88,28 @@ function extractNths(text: string): number[] {
     nths.add(3);
     return [...nths];
   }
-  // 「第N」をすべて収集（「第1火・第3火」形式）
-  for (const m of text.matchAll(/第([１２３４５1-5])/g)) {
+  // 「N番目」「N回目」形式（新宿区・台東区・墨田区・板橋区等）
+  // 「2・4番目の土」「その月の1回目・3回目の土」→ テキスト中の全数字を収集
+  if (text.includes('番目') || text.includes('回目')) {
+    for (const m of text.matchAll(new RegExp(NTH_DIGIT, 'g'))) {
+      nths.add(parseInt(toHalf(m[0]), 10));
+    }
+    return [...nths];
+  }
+  // 「第N」をすべて収集（丸数字・全角・半角対応）
+  for (const m of text.matchAll(new RegExp(`第(${NTH_DIGIT})`, 'g'))) {
     nths.add(parseInt(toHalf(m[1]), 10));
   }
-  // 「第N・M」の「・M」部分も収集（「第1・3月」形式）
-  for (const m of text.matchAll(/第[１２３４５1-5]((?:[・、,，][１２３４５1-5])+)/g)) {
-    for (const n of m[1].matchAll(/[・、,，]([１２３４５1-5])/g)) {
+  // 「第N・M」の「・M」部分も収集（「第1・3月」「第2･4土」形式）
+  for (const m of text.matchAll(new RegExp(`第${NTH_DIGIT}((?:${SEP}${NTH_DIGIT})+)`, 'g'))) {
+    for (const n of m[1].matchAll(new RegExp(`${SEP}(${NTH_DIGIT})`, 'g'))) {
       nths.add(parseInt(toHalf(n[1]), 10));
     }
+  }
+  // 「第2土・4土」形式: セパレータ＋数字＋曜日文字 のパターンも収集
+  // （normalize後に「第2土曜日・4土曜日」→「第2土・4土」となるケース）
+  for (const m of text.matchAll(new RegExp(`${SEP}(${NTH_DIGIT})[月火水木金土日]`, 'g'))) {
+    nths.add(parseInt(toHalf(m[1]), 10));
   }
   return [...nths];
 }
@@ -120,8 +144,8 @@ function parseSchedule(text: string, year: number, month: number): number[] {
     }
   }
 
-  // 第N系がなければ毎週パターン
-  if (!norm.includes("第")) {
+  // 第N系・N番目・N回目がなければ毎週パターン
+  if (!norm.includes("第") && !norm.includes("番目") && !norm.includes("回目")) {
     const dayChars = ["月","火","水","木","金","土","日"] as const;
     for (const char of dayChars) {
       // 単体の曜日文字のみ：「〇」が他の曜日文字に隣接していないかチェック
