@@ -36,9 +36,9 @@ export const metadata: Metadata = {
     googleBot: { index: true, follow: true },
   },
   icons: {
-    icon: "/favicon.svg",
-    shortcut: "/favicon.svg",
-    apple: "/favicon.svg",
+    icon: "/raccoon.png",
+    shortcut: "/raccoon.png",
+    apple: "/raccoon.png",
   },
   metadataBase: new URL("https://gominohi.com"),
 };
