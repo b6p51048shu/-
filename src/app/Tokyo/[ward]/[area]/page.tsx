@@ -1,23 +1,11 @@
 import type { Metadata } from "next";
-import { wardData, wardNames, getWardBySlug, getAreaBySlug, getTodayGarbage, getTomorrowGarbage } from "@/lib/data";
+import { getWardBySlug, getAreaBySlug, getTodayGarbage, getTomorrowGarbage } from "@/lib/data";
 import type { AreaSchedule } from "@/lib/data";
 import IcsButton from "./IcsButton";
 import GarbageCalendar from "./GarbageCalendar";
 import BagsPanel from "./BagsPanel";
 
 type Props = { params: Promise<{ ward: string; area: string }> };
-
-export async function generateStaticParams() {
-  const result: { ward: string; area: string }[] = [];
-  for (const wardName of wardNames) {
-    const info = wardData[wardName];
-    if (!info) continue;
-    for (const a of info.areas) {
-      result.push({ ward: info.ward_slug, area: a.slug });
-    }
-  }
-  return result;
-}
 
 /** 「火曜日・金曜日」→「火・金」のように曜日文字だけ抽出して短縮する */
 function shortDays(s: string): string {

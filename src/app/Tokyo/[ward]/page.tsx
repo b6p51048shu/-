@@ -1,12 +1,8 @@
 import type { Metadata } from "next";
-import { wardData, wardNames, getWardBySlug } from "@/lib/data";
+import { getWardBySlug } from "@/lib/data";
 import WardPageClient from "./WardPageClient";
 
 type Props = { params: Promise<{ ward: string }> };
-
-export async function generateStaticParams() {
-  return wardNames.map((name) => ({ ward: wardData[name].ward_slug }));
-}
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { ward: wardSlug } = await params;

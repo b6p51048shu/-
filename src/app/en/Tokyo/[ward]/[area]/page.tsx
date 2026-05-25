@@ -1,23 +1,11 @@
 import type { Metadata } from "next";
-import { wardData, wardNames, getWardBySlug, getAreaBySlug } from "@/lib/data";
+import { getWardBySlug, getAreaBySlug } from "@/lib/data";
 import type { AreaSchedule } from "@/lib/data";
 import { en, scheduleToEn } from "@/lib/i18n";
 import EnGarbageCalendar from "./GarbageCalendar";
 import IcsButton from "@/app/Tokyo/[ward]/[area]/IcsButton";
 
 type Props = { params: Promise<{ ward: string; area: string }> };
-
-export async function generateStaticParams() {
-  const result: { ward: string; area: string }[] = [];
-  for (const wardName of wardNames) {
-    const info = wardData[wardName];
-    if (!info) continue;
-    for (const a of info.areas) {
-      result.push({ ward: info.ward_slug, area: a.slug });
-    }
-  }
-  return result;
-}
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { ward: wardSlug, area: areaSlug } = await params;
