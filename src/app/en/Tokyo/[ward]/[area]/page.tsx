@@ -9,7 +9,7 @@ type Props = { params: Promise<{ ward: string; area: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { ward: wardSlug, area: areaSlug } = await params;
-  const found = getAreaBySlug(wardSlug, areaSlug);
+  const found = await getAreaBySlug(wardSlug, areaSlug);
   if (!found) return {};
   const { wardName, schedule } = found;
   return {
@@ -58,14 +58,14 @@ function getTomorrowEn(schedule: AreaSchedule): string[] {
 
 export default async function EnAreaPage({ params }: Props) {
   const { ward: wardSlug, area: areaSlug } = await params;
-  const found = getAreaBySlug(wardSlug, areaSlug);
+  const found = await getAreaBySlug(wardSlug, areaSlug);
 
   if (!found) {
     return <div className="container"><p>{en.area.notFound}</p></div>;
   }
 
   const { wardName, schedule } = found;
-  const wardInfo = getWardBySlug(wardSlug)?.info;
+  const wardInfo = (await getWardBySlug(wardSlug))?.info;
   const areaName = schedule.area;
   const todayItems = getTodayEn(schedule);
   const tomorrowItems = getTomorrowEn(schedule);

@@ -1,4 +1,8 @@
-import wardDataRaw from "../../public/data/ward-data.json";
+// ward-data.json は静的importせず、fetch経由でロードする（bundle size削減）。
+// APP_ORIGIN 環境変数 に サイトのオリジン（例: https://gominohi.com）を設定すること。
+// ローカル開発時は .env.local に APP_ORIGIN=http://localhost:3000 を設定する。
+// モジュールレベルでキャッシュするため、Worker インスタンスあたり1回だけfetchする。
+
 import regionIndexRaw from "../../public/data/region-index.json";
 
 /** 構造化スケジュールデータ（generate_data.py が生成） */
@@ -70,49 +74,90 @@ export const regionIndex = regionIndexRaw as Record<string, string[]>;
 
 export type AllWardData = Record<string, WardInfo>;
 
-export const wardData = wardDataRaw as AllWardData;
+// ─────────────────────────────────────────────
+// モジュールレベルキャッシュ（Worker インスタンス内で共有）
+// ─────────────────────────────────────────────
 
-export const wardNames = Object.keys(wardData);
+let _wardData: AllWardData | null = null;
+let _wardBySlug: Record<string, string> | null = null;
+let _wardByCode: Record<string, string> | null = null;
 
-/** 区コード → 区名 の逆引きマップ */
-export const wardByCode: Record<string, string> = Object.fromEntries(
-  Object.entries(wardData).map(([name, info]) => [info.code, name])
-);
+/**
+ * ward-data.json を fetch で読み込む。
+ * 初回のみ fetch し、以降はモジュールレベルキャッシュを返す。
+ */
+export async function loadWardData(): Promise<AllWardData> {
+  if (_wardData) return _wardData;
 
-/** 英語スラッグ → 区名 の逆引きマップ */
-export const wardBySlug: Record<string, string> = Object.fromEntries(
-  Object.entries(wardData).map(([name, info]) => [info.ward_slug, name])
-);
+  const origin = process.env.APP_ORIGIN ?? "http://localhost:3000";
+  const url = `${origin}/data/ward-data.json`;
 
-export function getWardByCode(code: string): { name: string; info: WardInfo } | null {
-  const name = wardByCode[code];
+  const res = await fetch(url);
+  if (!res.ok) {
+    throw new Error(`ward-data.json の取得に失敗しました: ${res.status} ${res.statusText} (${url})`);
+  }
+
+  _wardData = (await res.json()) as AllWardData;
+
+  // 逆引きマップも同時に構築
+  _wardBySlug = Object.fromEntries(
+    Object.entries(_wardData).map(([name, info]) => [info.ward_slug, name])
+  );
+  _wardByCode = Object.fromEntries(
+    Object.entries(_wardData).map(([name, info]) => [info.code, name])
+  );
+
+  return _wardData;
+}
+
+// ─────────────────────────────────────────────
+// 公開 API（すべて async）
+// ─────────────────────────────────────────────
+
+export async function getWardNames(): Promise<string[]> {
+  const data = await loadWardData();
+  return Object.keys(data);
+}
+
+export async function getWardByCode(code: string): Promise<{ name: string; info: WardInfo } | null> {
+  await loadWardData();
+  const name = _wardByCode![code];
   if (!name) return null;
-  return { name, info: wardData[name] };
+  return { name, info: _wardData![name] };
 }
 
-export function getWardBySlug(wardSlug: string): { name: string; info: WardInfo } | null {
-  const name = wardBySlug[wardSlug];
+export async function getWardBySlug(wardSlug: string): Promise<{ name: string; info: WardInfo } | null> {
+  await loadWardData();
+  const name = _wardBySlug![wardSlug];
   if (!name) return null;
-  return { name, info: wardData[name] };
+  return { name, info: _wardData![name] };
 }
 
-export function getWard(wardName: string): WardInfo | null {
-  return wardData[wardName] ?? null;
+export async function getWard(wardName: string): Promise<WardInfo | null> {
+  const data = await loadWardData();
+  return data[wardName] ?? null;
 }
 
-export function getAreaByIndex(wardName: string, index: number): AreaSchedule | null {
-  const ward = getWard(wardName);
+export async function getAreaByIndex(wardName: string, index: number): Promise<AreaSchedule | null> {
+  const ward = await getWard(wardName);
   if (!ward) return null;
   return ward.areas[index] ?? null;
 }
 
-export function getAreaBySlug(wardSlug: string, areaSlug: string): { wardName: string; schedule: AreaSchedule } | null {
-  const wardResult = getWardBySlug(wardSlug);
+export async function getAreaBySlug(
+  wardSlug: string,
+  areaSlug: string
+): Promise<{ wardName: string; schedule: AreaSchedule } | null> {
+  const wardResult = await getWardBySlug(wardSlug);
   if (!wardResult) return null;
   const schedule = wardResult.info.areas.find((a) => a.slug === areaSlug);
   if (!schedule) return null;
   return { wardName: wardResult.name, schedule };
 }
+
+// ─────────────────────────────────────────────
+// 純粋関数（データに依存しない）
+// ─────────────────────────────────────────────
 
 /** 「火曜日」→「火」に正規化し、同日・祝日等の複合語を除去 */
 function normDay(s: string): string {

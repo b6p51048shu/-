@@ -17,7 +17,7 @@ function shortDays(s: string): string {
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { ward: wardSlug, area: areaSlug } = await params;
-  const found = getAreaBySlug(wardSlug, areaSlug);
+  const found = await getAreaBySlug(wardSlug, areaSlug);
   if (!found) return {};
 
   const { wardName, schedule } = found;
@@ -61,7 +61,7 @@ function getScheduleItems(schedule: AreaSchedule) {
 
 export default async function AreaPage({ params }: Props) {
   const { ward: wardSlug, area: areaSlug } = await params;
-  const found = getAreaBySlug(wardSlug, areaSlug);
+  const found = await getAreaBySlug(wardSlug, areaSlug);
 
   if (!found) {
     return (
@@ -72,7 +72,7 @@ export default async function AreaPage({ params }: Props) {
   }
 
   const { wardName, schedule } = found;
-  const wardInfo = getWardBySlug(wardSlug)?.info;
+  const wardInfo = (await getWardBySlug(wardSlug))?.info;
   const areaName = schedule.area;
   const todayItems = getTodayGarbage(schedule);
   const tomorrowItems = getTomorrowGarbage(schedule);

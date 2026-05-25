@@ -6,7 +6,7 @@ type Props = { params: Promise<{ ward: string }> };
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { ward: wardSlug } = await params;
-  const result = getWardBySlug(wardSlug);
+  const result = await getWardBySlug(wardSlug);
   if (!result) return {};
   const { name: wardName, info } = result;
   return {
@@ -21,7 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
 
 export default async function WardPage({ params }: Props) {
   const { ward: wardSlug } = await params;
-  const result = getWardBySlug(wardSlug);
+  const result = await getWardBySlug(wardSlug);
 
   if (!result) {
     return (

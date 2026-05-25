@@ -1,11 +1,12 @@
 import type { MetadataRoute } from "next";
-import { wardData, wardNames } from "@/lib/data";
-
-export const dynamic = "force-static";
+import { loadWardData } from "@/lib/data";
 
 const BASE = "https://gominohi.com";
 
-export default function sitemap(): MetadataRoute.Sitemap {
+export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
+  const wardData = await loadWardData();
+  const wardNames = Object.keys(wardData);
+
   const urls: MetadataRoute.Sitemap = [
     { url: `${BASE}/`,    lastModified: new Date(), priority: 1.0, changeFrequency: "monthly" },
     { url: `${BASE}/en/`, lastModified: new Date(), priority: 1.0, changeFrequency: "monthly" },
