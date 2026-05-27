@@ -1,9 +1,11 @@
 "use client";
 
-import { useState, useEffect, useRef } from "react";
+import { useEffect, useState, useRef } from "react";
 import wardIndex from "../../../public/data/ward-index.json";
 import regionIndex from "../../../public/data/region-index.json";
-import { en } from "@/lib/i18n";
+import { getT, scheduleToLocale, isValidLocale } from "@/lib/i18n";
+import type { Locale } from "@/lib/i18n";
+import { useParams } from "next/navigation";
 
 type WardIndexEntry = { slug: string; areas: { name: string; slug: string }[]; has_bags?: boolean };
 const wardIndexData = wardIndex as Record<string, WardIndexEntry>;
@@ -27,7 +29,12 @@ function guessArea(areaList: { name: string; slug: string }[], addr: Record<stri
   return null;
 }
 
-export default function EnTopPage() {
+export default function LocaleTopPage() {
+  const params = useParams();
+  const locale = (Array.isArray(params.locale) ? params.locale[0] : params.locale) as string;
+  const validLocale: Locale = isValidLocale(locale) ? locale : "en";
+  const t = getT(validLocale);
+
   const [selectedWard, setSelectedWard] = useState("");
   const [selectedAreaSlug, setSelectedAreaSlug] = useState("");
   const [areas, setAreas] = useState<{ name: string; slug: string }[]>([]);
@@ -51,15 +58,15 @@ export default function EnTopPage() {
 
   const handleSearch = () => {
     if (selectedWard && selectedAreaSlug) {
-      window.location.href = `/en/Tokyo/${wardIndexData[selectedWard].slug}/${selectedAreaSlug}`;
+      window.location.href = `/${validLocale}/Tokyo/${wardIndexData[selectedWard].slug}/${selectedAreaSlug}`;
     } else if (selectedWard) {
-      window.location.href = `/en/Tokyo/${wardIndexData[selectedWard].slug}`;
+      window.location.href = `/${validLocale}/Tokyo/${wardIndexData[selectedWard].slug}`;
     }
   };
 
   const handleGPS = () => {
-    if (!navigator.geolocation) { setGpsStatus(en.search.gpsUnsupported); return; }
-    setGpsStatus(en.search.gpsDetecting);
+    if (!navigator.geolocation) { setGpsStatus(t.search.gpsUnsupported); return; }
+    setGpsStatus(t.search.gpsDetecting);
     navigator.geolocation.getCurrentPosition(
       async (pos) => {
         const { latitude: lat, longitude: lng } = pos.coords;
@@ -76,17 +83,17 @@ export default function EnTopPage() {
             const guessed = guessArea(areaList, addr);
             if (guessed) {
               pendingAreaRef.current = guessed;
-              setGpsStatus(en.search.gpsFound(matched, guessed.name));
+              setGpsStatus(t.search.gpsFound(matched, guessed.name));
             } else {
-              setGpsStatus(en.search.gpsFoundWard(matched));
+              setGpsStatus(t.search.gpsFoundWard(matched));
             }
             setSelectedWard(matched);
           } else {
-            setGpsStatus(en.search.gpsOutOfArea(city));
+            setGpsStatus(t.search.gpsOutOfArea(city));
           }
-        } catch { setGpsStatus(en.search.gpsError); }
+        } catch { setGpsStatus(t.search.gpsError); }
       },
-      () => setGpsStatus(en.search.gpsDenied)
+      () => setGpsStatus(t.search.gpsDenied)
     );
   };
 
@@ -97,21 +104,21 @@ export default function EnTopPage() {
     <>
       <section className="hero">
         <h1 className="hero-title">♻️ Gominohi.com</h1>
-        <p className="hero-sub">{en.site.tagline}</p>
+        <p className="hero-sub">{t.site.tagline}</p>
 
         <div className="search-box">
-          <h2>{en.search.heading}</h2>
+          <h2>{t.search.heading}</h2>
           <div className="form-row">
-            <button className="btn btn-gps" onClick={handleGPS}>{en.search.gpsBtn}</button>
+            <button className="btn btn-gps" onClick={handleGPS}>{t.search.gpsBtn}</button>
             {gpsStatus && <p style={{ fontSize: ".85rem", color: "#374151" }}>{gpsStatus}</p>}
 
             <div className="form-group">
-              <label>{en.search.wardLabel}</label>
+              <label>{t.search.wardLabel}</label>
               <select value={selectedWard} onChange={(e) => setSelectedWard(e.target.value)}>
-                <option value="">{en.search.wardPlaceholder}</option>
+                <option value="">{t.search.wardPlaceholder}</option>
                 <optgroup label="Tokyo 23 Wards">
                   {wards23.filter((w) => wardIndexData[w]).map((w) => (
-                    <option key={w} value={w}>{wardIndexData[w].slug} Ward ({w})</option>
+                    <option key={w} value={w}>{wardIndexData[w].slug} ({w})</option>
                   ))}
                 </optgroup>
                 {tamaCities.some((w) => wardIndexData[w]) && (
@@ -125,9 +132,9 @@ export default function EnTopPage() {
             </div>
 
             <div className="form-group">
-              <label>{en.search.areaLabel}</label>
+              <label>{t.search.areaLabel}</label>
               <select value={selectedAreaSlug} onChange={(e) => setSelectedAreaSlug(e.target.value)} disabled={!selectedWard}>
-                <option value="">{en.search.areaPlaceholder}</option>
+                <option value="">{t.search.areaPlaceholder}</option>
                 {areas.map((a) => (
                   <option key={a.slug} value={a.slug}>{a.name}</option>
                 ))}
@@ -135,26 +142,26 @@ export default function EnTopPage() {
             </div>
 
             <button className="btn btn-primary" onClick={handleSearch} disabled={!selectedWard}>
-              {en.search.searchBtn}
+              {t.search.searchBtn}
             </button>
           </div>
         </div>
       </section>
 
       <div className="container">
-        <h2 className="section-title">{en.ward.gridTitle}</h2>
+        <h2 className="section-title">{t.ward.gridTitle}</h2>
         <div className="ward-grid">
           {wards23.filter((w) => wardIndexData[w]).map((ward) => (
-            <a key={ward} href={`/en/Tokyo/${wardIndexData[ward].slug}`} className="ward-card">
+            <a key={ward} href={`/${validLocale}/Tokyo/${wardIndexData[ward].slug}`} className="ward-card">
               {wardIndexData[ward].slug}
-              <div className="ward-card-count">{en.ward.areas(wardIndexData[ward].areas.length)}</div>
+              <div className="ward-card-count">{t.ward.areas(wardIndexData[ward].areas.length)}</div>
             </a>
           ))}
         </div>
 
         <section className="faq-section" aria-label="FAQ">
           <h2 className="section-title">FAQ</h2>
-          {en.faq.map((item, i) => (
+          {t.faq.map((item, i) => (
             <div key={i} className="faq-item">
               <p className="faq-q">Q. {item.q}</p>
               <p className="faq-a">{item.a}</p>

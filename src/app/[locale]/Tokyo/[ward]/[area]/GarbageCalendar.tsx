@@ -2,40 +2,40 @@
 
 import { useState, useMemo } from "react";
 import type { AreaSchedule, ParsedSchedule } from "@/lib/data";
+import { getT } from "@/lib/i18n";
+import type { Locale } from "@/lib/i18n";
 
-type Props = { schedule: AreaSchedule };
+type Props = { schedule: AreaSchedule; locale: Locale };
 
 type GarbageEvent = { label: string; color: string; bg: string };
-
 type GarbageKey = "burnable" | "unburnable" | "recyclable" | "plastic" | "pet";
 
-const GARBAGE_DEFAULTS: { key: GarbageKey; label: string; short: string; color: string; bg: string }[] = [
-  { key: "burnable",   label: "Burnable",    short: "Burn",  color: "#fff", bg: "#ef4444" },
-  { key: "unburnable", label: "Non-burnable", short: "Non-B", color: "#fff", bg: "#3b82f6" },
-  { key: "recyclable", label: "Recyclables",  short: "Rec",  color: "#fff", bg: "#10b981" },
-  { key: "plastic",    label: "Plastic",      short: "Plas", color: "#fff", bg: "#8b5cf6" },
-  { key: "pet",        label: "PET Bottles",  short: "PET",  color: "#fff", bg: "#f59e0b" },
-];
+function makeGarbageDefaults(locale: Locale) {
+  const t = getT(locale);
+  return [
+    { key: "burnable" as GarbageKey,   label: t.schedule.burnable,   short: t.schedule.burnable.slice(0,4),   color: "#fff", bg: "#ef4444" },
+    { key: "unburnable" as GarbageKey, label: t.schedule.unburnable, short: t.schedule.unburnable.slice(0,4), color: "#fff", bg: "#3b82f6" },
+    { key: "recyclable" as GarbageKey, label: t.schedule.recyclable, short: t.schedule.recyclable.slice(0,4), color: "#fff", bg: "#10b981" },
+    { key: "plastic" as GarbageKey,    label: t.schedule.plastic,    short: t.schedule.plastic.slice(0,4),    color: "#fff", bg: "#8b5cf6" },
+    { key: "pet" as GarbageKey,        label: t.schedule.pet,        short: t.schedule.pet.slice(0,4),        color: "#fff", bg: "#f59e0b" },
+  ];
+}
 
-/** schedule.labels があれば上書き、なければデフォルトを使う */
-function getGarbageTypes(schedule: AreaSchedule) {
-  return GARBAGE_DEFAULTS.map((def) => {
+function getGarbageTypes(schedule: AreaSchedule, locale: Locale) {
+  return makeGarbageDefaults(locale).map((def) => {
     const labelKey = def.key as keyof NonNullable<AreaSchedule["labels"]>;
     const customLabel = schedule.labels?.[labelKey];
     if (!customLabel) return def;
-    // 短縮名: 最大4文字（長い場合は先頭4文字）
     const short = customLabel.length <= 4 ? customLabel : customLabel.slice(0, 4);
     return { ...def, label: customLabel, short };
   });
 }
 
-/** バッジ表示用: 括弧内を除去して・で分割 */
 function splitBadgeLabel(label: string): string[] {
   const stripped = label.replace(/（[^）]*）|\([^)]*\)/g, "").trim();
   return stripped.split("・").filter(Boolean);
 }
 
-/** 構造化スケジュールデータから「その月の収集日リスト」を返す */
 function getCollectionDates(parsed: ParsedSchedule | undefined, year: number, month: number): number[] {
   if (!parsed || parsed.type === "unknown") return [];
   const daysInMonth = new Date(year, month, 0).getDate();
@@ -61,41 +61,33 @@ function getCollectionDates(parsed: ParsedSchedule | undefined, year: number, mo
   return dates.sort((a, b) => a - b);
 }
 
-export default function GarbageCalendar({ schedule }: Props) {
+export default function LocaleGarbageCalendar({ schedule, locale }: Props) {
+  const t = getT(locale);
   const today = new Date();
   const [year, setYear] = useState(today.getFullYear());
   const [month, setMonth] = useState(today.getMonth() + 1);
 
   const calendarData = useMemo(() => {
     const map: Record<number, GarbageEvent[]> = {};
-    for (const { key, label: _label, color, bg } of getGarbageTypes(schedule)) {
+    for (const { key, label, color, bg } of getGarbageTypes(schedule, locale)) {
       const parsed = schedule[`${key}_parsed` as keyof AreaSchedule] as ParsedSchedule | undefined;
       if (!parsed) continue;
       const dates = getCollectionDates(parsed, year, month);
       for (const d of dates) {
         if (!map[d]) map[d] = [];
-        map[d].push({ label: _label, color, bg });
+        map[d].push({ label, color, bg });
       }
     }
     return map;
-  }, [year, month, schedule]);
+  }, [year, month, schedule, locale]);
 
-  const firstDow = new Date(year, month - 1, 1).getDay(); // 0=Sun
+  const firstDow = new Date(year, month - 1, 1).getDay();
   const daysInMonth = new Date(year, month, 0).getDate();
-  // カレンダーは月曜始まり: 月=0, 火=1, ..., 日=6
   const startOffset = (firstDow + 6) % 7;
 
-  const prevMonth = () => {
-    if (month === 1) { setYear(y => y - 1); setMonth(12); }
-    else setMonth(m => m - 1);
-  };
-  const nextMonth = () => {
-    if (month === 12) { setYear(y => y + 1); setMonth(1); }
-    else setMonth(m => m + 1);
-  };
-
-  const isToday = (d: number) =>
-    d === today.getDate() && month === today.getMonth() + 1 && year === today.getFullYear();
+  const prevMonth = () => { if (month === 1) { setYear(y => y - 1); setMonth(12); } else setMonth(m => m - 1); };
+  const nextMonth = () => { if (month === 12) { setYear(y => y + 1); setMonth(1); } else setMonth(m => m + 1); };
+  const isToday = (d: number) => d === today.getDate() && month === today.getMonth() + 1 && year === today.getFullYear();
 
   const cells: (number | null)[] = [
     ...Array(startOffset).fill(null),
@@ -112,7 +104,7 @@ export default function GarbageCalendar({ schedule }: Props) {
       </div>
 
       <div className="calendar-grid">
-        {["Mon","Tue","Wed","Thu","Fri","Sat","Sun"].map((d, i) => (
+        {t.days.calHeader.map((d: string, i: number) => (
           <div key={d} className={`cal-dow ${i === 5 ? "sat" : i === 6 ? "sun" : ""}`}>{d}</div>
         ))}
         {cells.map((d, i) => {
@@ -147,9 +139,8 @@ export default function GarbageCalendar({ schedule }: Props) {
         })}
       </div>
 
-      {/* 凡例 */}
       <div className="cal-legend">
-        {getGarbageTypes(schedule).filter(({ key }) => schedule[key as keyof AreaSchedule]).map(({ label, short, bg }) => (
+        {getGarbageTypes(schedule, locale).filter(({ key }) => schedule[key as keyof AreaSchedule]).map(({ label, short, bg }) => (
           <span key={label} className="cal-legend-item">
             <span className="cal-legend-badge" style={{ background: bg, color: "#fff" }}>{short}</span>
             <span style={{ fontSize: ".8rem", color: "var(--gray-600)" }}>{label}</span>

@@ -25,18 +25,20 @@ for (const info of Object.values(wardData)) {
  * 例: /tokyo/shibuya/shibuya-1~-3/ や /Tokyo/SHIBUYA/Shibuya-1~-3/ など、
  * 大文字小文字が違うURLでも、内部的に正準URLに rewrite してページを表示する。
  * （ブラウザのアドレスバーは変更されない＝ユーザーが入力したURLが保たれる）
+ *
+ * 対応ロケール: なし（日本語）、en、ko、zh
  */
 export function middleware(request: NextRequest) {
   const url = request.nextUrl.clone();
   const pathname = url.pathname;
 
-  // /Tokyo/{ward}/[area]/ または /en/Tokyo/{ward}/[area]/ を大文字小文字無視でマッチ
-  const match = pathname.match(/^(\/en)?\/tokyo\/([^/]+)(?:\/([^/]+))?\/?$/i);
+  // /(en|ko|zh)/tokyo/{ward}/[area]/ または /tokyo/{ward}/[area]/ を大文字小文字無視でマッチ
+  const match = pathname.match(/^(\/(en|ko|zh))?\/tokyo\/([^/]+)(?:\/([^/]+))?\/?$/i);
   if (!match) return NextResponse.next();
 
-  const enPrefix = match[1] ?? "";
-  const wardSlugInUrl = match[2];
-  const areaSlugInUrl = match[3];
+  const localePrefix = match[1] ?? "";   // "/en", "/ko", "/zh", or ""
+  const wardSlugInUrl = match[3];
+  const areaSlugInUrl = match[4];
   const hasTrailingSlash = pathname.endsWith("/");
 
   const wardLower = wardSlugInUrl.toLowerCase();
@@ -51,7 +53,7 @@ export function middleware(request: NextRequest) {
   }
 
   // 正準パスを構築
-  let canonicalPath = `${enPrefix}/Tokyo/${wardCanonical}`;
+  let canonicalPath = `${localePrefix}/Tokyo/${wardCanonical}`;
   if (areaCanonical) canonicalPath += `/${areaCanonical}`;
   if (hasTrailingSlash) canonicalPath += "/";
 

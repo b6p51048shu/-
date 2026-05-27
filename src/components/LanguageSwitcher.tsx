@@ -1,27 +1,52 @@
 "use client";
 
 import { useEffect, useState } from "react";
+import { LOCALES } from "@/lib/i18n";
+import type { Locale } from "@/lib/i18n";
+
+const LABELS: Record<Locale | "ja", string> = {
+  ja: "JA", en: "EN", ko: "KO", zh: "ZH",
+};
 
 export default function LanguageSwitcher() {
-  const [paths, setPaths] = useState({ isEn: false, jaPath: "/", enPath: "/en" });
+  const [currentLocale, setCurrentLocale] = useState<Locale | "ja">("ja");
+  const [basePath, setBasePath] = useState("");
 
   useEffect(() => {
     const pathname = window.location.pathname;
-    const isEn = pathname.startsWith("/en");
-    const jaPath = isEn ? pathname.replace(/^\/en/, "") || "/" : pathname;
-    const enPath = isEn ? pathname : `/en${pathname === "/" ? "" : pathname}`;
-    setPaths({ isEn, jaPath, enPath });
+    // /en/... /ko/... /zh/... のいずれかで始まるか
+    const match = pathname.match(/^\/(en|ko|zh)(\/.*)?$/);
+    if (match) {
+      setCurrentLocale(match[1] as Locale);
+      setBasePath(match[2] ?? "");
+    } else {
+      setCurrentLocale("ja");
+      // /Tokyo/... → /en/Tokyo/... のように変換
+      setBasePath(pathname === "/" ? "" : pathname);
+    }
   }, []);
+
+  function getPath(lang: Locale | "ja"): string {
+    if (lang === "ja") return basePath || "/";
+    return `/${lang}${basePath}`;
+  }
+
+  const allLangs: (Locale | "ja")[] = ["ja", ...LOCALES];
 
   return (
     <div className="lang-switcher">
-      <a href={paths.jaPath} className={`lang-btn ${!paths.isEn ? "active" : ""}`} aria-label="日本語">
-        JA
-      </a>
-      <span className="lang-sep">|</span>
-      <a href={paths.enPath} className={`lang-btn ${paths.isEn ? "active" : ""}`} aria-label="English">
-        EN
-      </a>
+      {allLangs.map((lang, i) => (
+        <span key={lang} style={{ display: "contents" }}>
+          {i > 0 && <span className="lang-sep">|</span>}
+          <a
+            href={getPath(lang)}
+            className={`lang-btn ${currentLocale === lang ? "active" : ""}`}
+            aria-label={lang.toUpperCase()}
+          >
+            {LABELS[lang]}
+          </a>
+        </span>
+      ))}
     </div>
   );
 }
