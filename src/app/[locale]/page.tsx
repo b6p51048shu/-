@@ -103,7 +103,11 @@ export default function LocaleTopPage() {
   return (
     <>
       <section className="hero">
-        <h1 className="hero-title">♻️ Gominohi.com</h1>
+        <h1 className="hero-title">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/raccoon.png" className="hero-raccoon" alt="" width={56} height={56} />
+          Gominohi.com
+        </h1>
         <p className="hero-sub">{t.site.tagline}</p>
 
         <div className="search-box">
