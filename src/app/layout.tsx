@@ -1,7 +1,16 @@
 import type { Metadata } from "next";
 import { Noto_Sans_JP } from "next/font/google";
+import { headers } from "next/headers";
 import "./globals.css";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
+
+// pathname から HTML lang 属性値を判定する
+function htmlLangFromPathname(pathname: string): string {
+  if (/^\/en(\/|$)/.test(pathname)) return "en";
+  if (/^\/ko(\/|$)/.test(pathname)) return "ko";
+  if (/^\/zh(\/|$)/.test(pathname)) return "zh-Hans";
+  return "ja";
+}
 
 const notoSansJP = Noto_Sans_JP({
   weight: ["400", "500", "700"],
@@ -43,9 +52,13 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://gominohi.com"),
 };
 
-export default function RootLayout({ children }: { children: React.ReactNode }) {
+export default async function RootLayout({ children }: { children: React.ReactNode }) {
+  const headersList = await headers();
+  const pathname = headersList.get("x-pathname") ?? "/";
+  const htmlLang = htmlLangFromPathname(pathname);
+
   return (
-    <html lang="ja" className={notoSansJP.className}>
+    <html lang={htmlLang} className={notoSansJP.className}>
       <head>
         {/* Google Analytics */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-XN645HLXN1" />

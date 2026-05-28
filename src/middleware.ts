@@ -32,9 +32,14 @@ export function middleware(request: NextRequest) {
   const url = request.nextUrl.clone();
   const pathname = url.pathname;
 
+  // layout.tsx で <html lang> を動的に設定するため、pathname をヘッダーに乗せる
+  const requestHeaders = new Headers(request.headers);
+  requestHeaders.set("x-pathname", pathname);
+  const passThrough = () => NextResponse.next({ request: { headers: requestHeaders } });
+
   // /(en|ko|zh)/tokyo/{ward}/[area]/ または /tokyo/{ward}/[area]/ を大文字小文字無視でマッチ
   const match = pathname.match(/^(\/(en|ko|zh))?\/tokyo\/([^/]+)(?:\/([^/]+))?\/?$/i);
-  if (!match) return NextResponse.next();
+  if (!match) return passThrough();
 
   const localePrefix = match[1] ?? "";   // "/en", "/ko", "/zh", or ""
   const wardSlugInUrl = match[3];
@@ -43,13 +48,13 @@ export function middleware(request: NextRequest) {
 
   const wardLower = wardSlugInUrl.toLowerCase();
   const wardCanonical = wardSlugByLower.get(wardLower);
-  if (!wardCanonical) return NextResponse.next(); // 該当区なし→自然に404へ
+  if (!wardCanonical) return passThrough(); // 該当区なし→自然に404へ
 
   let areaCanonical: string | undefined;
   if (areaSlugInUrl) {
     const areaLower = areaSlugInUrl.toLowerCase();
     areaCanonical = areaSlugByLowerByWard.get(wardLower)?.get(areaLower);
-    if (!areaCanonical) return NextResponse.next(); // 該当エリアなし→自然に404へ
+    if (!areaCanonical) return passThrough(); // 該当エリアなし→自然に404へ
   }
 
   // 正準パスを構築
@@ -59,12 +64,12 @@ export function middleware(request: NextRequest) {
 
   // 既に正準ならスルー
   if (canonicalPath === pathname) {
-    return NextResponse.next();
+    return passThrough();
   }
 
   // 内部 rewrite（アドレスバーは変わらず、内部で正準ルートにマッチ）
   url.pathname = canonicalPath;
-  return NextResponse.rewrite(url);
+  return NextResponse.rewrite(url, { request: { headers: requestHeaders } });
 }
 
 export const config = {

@@ -8,18 +8,50 @@ export const dynamic = "force-dynamic";
 
 const BASE = "https://gominohi.com";
 
+/**
+ * 指定パス（日本語の正準パス）に対する全言語版の hreflang マップを生成する。
+ * 例: path="/Tokyo/Chiyoda/" → { ja: ..., en: ..., ko: ..., zh: ..., "x-default": ... }
+ */
+function buildAlternates(path: string): { languages: Record<string, string> } {
+  const languages: Record<string, string> = {
+    ja: `${BASE}${path}`,
+    "x-default": `${BASE}${path}`,
+  };
+  for (const locale of LOCALES) {
+    languages[locale] = `${BASE}/${locale}${path}`;
+  }
+  return { languages };
+}
+
+/** 1つの正準パスにつき、全言語版の sitemap エントリを生成する */
+function entriesForPath(
+  path: string,
+  priority: number,
+  changeFrequency: "monthly",
+): MetadataRoute.Sitemap {
+  const alternates = buildAlternates(path);
+  const lastModified = new Date();
+  const result: MetadataRoute.Sitemap = [
+    { url: `${BASE}${path}`, lastModified, priority, changeFrequency, alternates },
+  ];
+  for (const locale of LOCALES) {
+    result.push({
+      url: `${BASE}/${locale}${path}`,
+      lastModified,
+      priority,
+      changeFrequency,
+      alternates,
+    });
+  }
+  return result;
+}
+
 export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
   const wardData = await loadWardData();
   const wardNames = Object.keys(wardData);
 
   const urls: MetadataRoute.Sitemap = [
-    { url: `${BASE}/`,    lastModified: new Date(), priority: 1.0, changeFrequency: "monthly" },
-    ...LOCALES.map(locale => ({
-      url: `${BASE}/${locale}/`,
-      lastModified: new Date(),
-      priority: 1.0,
-      changeFrequency: "monthly" as const,
-    })),
+    ...entriesForPath("/", 1.0, "monthly"),
   ];
 
   for (const wardName of wardNames) {
@@ -27,18 +59,12 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     if (!info) continue;
     const ws = info.ward_slug;
 
-    // 区ページ（JA + 全ロケール）
-    urls.push({ url: `${BASE}/Tokyo/${ws}/`,    lastModified: new Date(), priority: 0.8, changeFrequency: "monthly" });
-    for (const locale of LOCALES) {
-      urls.push({ url: `${BASE}/${locale}/Tokyo/${ws}/`, lastModified: new Date(), priority: 0.8, changeFrequency: "monthly" });
-    }
+    // 区ページ
+    urls.push(...entriesForPath(`/Tokyo/${ws}/`, 0.8, "monthly"));
 
-    // 地域ページ（JA + 全ロケール）
+    // 地域ページ
     for (const a of info.areas) {
-      urls.push({ url: `${BASE}/Tokyo/${ws}/${a.slug}/`,    lastModified: new Date(), priority: 0.6, changeFrequency: "monthly" });
-      for (const locale of LOCALES) {
-        urls.push({ url: `${BASE}/${locale}/Tokyo/${ws}/${a.slug}/`, lastModified: new Date(), priority: 0.6, changeFrequency: "monthly" });
-      }
+      urls.push(...entriesForPath(`/Tokyo/${ws}/${a.slug}/`, 0.6, "monthly"));
     }
   }
 
