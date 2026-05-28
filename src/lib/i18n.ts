@@ -140,6 +140,8 @@ export const en = {
   },
   ward: {
     gridTitle: "Browse by Ward (23 Wards)",
+    tamaGridTitle: "Tama Area (Cities & Towns)",
+    bagsBadge: "Designated bags available",
     areas: (n: number) => `${n} areas`,
     listTitle: (ward: string) => `Garbage Collection in ${ward}`,
     listDesc: (n: number) => `Showing ${n} areas. Click an area to see its schedule.`,
@@ -183,6 +185,10 @@ export const en = {
       a: 'Press the "Auto-detect my location" button to automatically identify your ward using your browser\'s location.',
     },
     {
+      q: "What are designated garbage bags?",
+      a: "In many Tama-area cities, you must use municipality-designated paid bags to dispose of garbage. Bag colors and prices vary by city. Check the size, price, and where to buy on each supported city's page.",
+    },
+    {
       q: "How often is the data updated?",
       a: "Data is updated based on official ward websites. For holidays and year-end special schedules, please check your ward's official website.",
     },
@@ -224,6 +230,8 @@ export const ko = {
   },
   ward: {
     gridTitle: "23구에서 선택",
+    tamaGridTitle: "다마 지역에서 선택",
+    bagsBadge: "지정 봉투 정보 있음",
     areas: (n: number) => `${n}개 지역`,
     listTitle: (ward: string) => `${ward} 쓰레기 수거일`,
     listDesc: (n: number) => `총 ${n}개 지역입니다. 지역을 클릭하면 수거 요일을 확인할 수 있습니다.`,
@@ -267,6 +275,10 @@ export const ko = {
       a: "\"현재 위치로 자동 검색\" 버튼을 누르면 브라우저의 위치 정보를 사용하여 구·시를 자동으로 감지합니다.",
     },
     {
+      q: "지정 쓰레기 봉투란 무엇인가요?",
+      a: "다마 지역의 많은 시에서는 쓰레기를 버릴 때 자치체가 지정한 전용 유료 봉투를 사용해야 합니다. 봉투 색상과 가격은 시마다 다릅니다. 지원 시 페이지에서 크기·가격·판매처를 확인할 수 있습니다.",
+    },
+    {
       q: "데이터는 얼마나 자주 업데이트되나요?",
       a: "각 구·시의 공식 사이트를 기반으로 수시 업데이트합니다. 공휴일이나 연말연시 특별 일정은 각 자치체 공식 사이트를 확인하세요.",
     },
@@ -308,6 +320,8 @@ export const zh = {
   },
   ward: {
     gridTitle: "从23区选择",
+    tamaGridTitle: "从多摩地区选择",
+    bagsBadge: "有指定垃圾袋信息",
     areas: (n: number) => `${n}个地区`,
     listTitle: (ward: string) => `${ward}垃圾收集日`,
     listDesc: (n: number) => `共${n}个地区，点击地区查看收集时间表。`,
@@ -351,6 +365,10 @@ export const zh = {
       a: "点击\"自动检测当前位置\"按钮，将使用浏览器的位置信息自动判断您所在的区·市。",
     },
     {
+      q: "什么是指定垃圾袋？",
+      a: "在多摩地区的许多市，丢弃垃圾时必须使用自治体指定的专用收费垃圾袋。袋子的颜色和价格因市而异。可在各支持城市的页面查看尺寸、价格和销售地点。",
+    },
+    {
       q: "数据多久更新一次？",
       a: "数据基于各区·市官方网站随时更新。节假日及年末年初的特别日程请在各自治体官方网站确认。",
     },
@@ -360,6 +378,54 @@ export const zh = {
     },
   ],
 } as const;
+
+// ── 指定ごみ袋パネル用UI（ja含む4言語）──────────────────────
+export type BagsUILocale = "ja" | Locale;
+
+export const bagsUI: Record<BagsUILocale, {
+  title: string;
+  size: string;
+  capacity: string;
+  perBag: string;
+  per10: string;
+  price: (n: number) => string;
+  whereToBuy: string;
+  detailLink: string;
+  empty: string;
+}> = {
+  ja: {
+    title: "🛍️ 指定ごみ袋",
+    size: "サイズ", capacity: "容量", perBag: "1枚あたり", per10: "10枚セット",
+    price: (n) => `${n}円`,
+    whereToBuy: "🏪 販売場所：",
+    detailLink: "詳細・取扱店一覧 →",
+    empty: "—",
+  },
+  en: {
+    title: "🛍️ Designated Garbage Bags",
+    size: "Size", capacity: "Capacity", perBag: "Per bag", per10: "Pack of 10",
+    price: (n) => `¥${n}`,
+    whereToBuy: "🏪 Where to buy:",
+    detailLink: "Details / store list →",
+    empty: "—",
+  },
+  ko: {
+    title: "🛍️ 지정 쓰레기 봉투",
+    size: "크기", capacity: "용량", perBag: "1장당", per10: "10장 세트",
+    price: (n) => `${n}엔`,
+    whereToBuy: "🏪 판매처:",
+    detailLink: "자세히 / 취급점 목록 →",
+    empty: "—",
+  },
+  zh: {
+    title: "🛍️ 指定垃圾袋",
+    size: "尺寸", capacity: "容量", perBag: "每张", per10: "10张装",
+    price: (n) => `${n}日元`,
+    whereToBuy: "🏪 销售地点：",
+    detailLink: "详情 / 销售店列表 →",
+    empty: "—",
+  },
+};
 
 export type LocaleStrings = typeof en;
 

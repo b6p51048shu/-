@@ -1,4 +1,6 @@
 import type { DesignatedBags } from "@/lib/data";
+import { bagsUI } from "@/lib/i18n";
+import type { BagsUILocale } from "@/lib/i18n";
 
 const COLOR_MAP: Record<string, string> = {
   "黄色":      "#fbbf24",
@@ -11,13 +13,15 @@ const COLOR_MAP: Record<string, string> = {
   "透明":      "#94a3b8",
 };
 
-export default function BagsPanel({ bags }: { bags: DesignatedBags }) {
+export default function BagsPanel({ bags, locale = "ja" }: { bags: DesignatedBags; locale?: BagsUILocale }) {
   if (!bags.required) return null;
 
+  const t = bagsUI[locale];
+
   return (
-    <section className="bags-panel" aria-label="指定ごみ袋情報">
+    <section className="bags-panel" aria-label={t.title}>
       <h2 className="bags-title">
-        🛍️ 指定ごみ袋
+        {t.title}
       </h2>
       {bags.note && <p className="bags-note">{bags.note}</p>}
 
@@ -38,10 +42,10 @@ export default function BagsPanel({ bags }: { bags: DesignatedBags }) {
               <table className="bags-price-table">
                 <thead>
                   <tr>
-                    <th>サイズ</th>
-                    <th>容量</th>
-                    <th>1枚あたり</th>
-                    <th>10枚セット</th>
+                    <th>{t.size}</th>
+                    <th>{t.capacity}</th>
+                    <th>{t.perBag}</th>
+                    <th>{t.per10}</th>
                   </tr>
                 </thead>
                 <tbody>
@@ -50,10 +54,10 @@ export default function BagsPanel({ bags }: { bags: DesignatedBags }) {
                       <td className="bags-size">{s.size}</td>
                       <td className="bags-capacity">{s.capacity}</td>
                       <td className="bags-price">
-                        {s.price_per_bag != null ? `${s.price_per_bag}円` : "—"}
+                        {s.price_per_bag != null ? t.price(s.price_per_bag) : t.empty}
                       </td>
                       <td className="bags-price-10">
-                        {s.price_per_10 != null ? `${s.price_per_10}円` : "—"}
+                        {s.price_per_10 != null ? t.price(s.price_per_10) : t.empty}
                       </td>
                     </tr>
                   ))}
@@ -65,7 +69,7 @@ export default function BagsPanel({ bags }: { bags: DesignatedBags }) {
       </div>
 
       <div className="bags-footer">
-        <span className="bags-buy-label">🏪 販売場所：</span>
+        <span className="bags-buy-label">{t.whereToBuy}</span>
         <span className="bags-buy-text">{bags.where_to_buy}</span>
         <a
           href={bags.info_url}
@@ -73,7 +77,7 @@ export default function BagsPanel({ bags }: { bags: DesignatedBags }) {
           rel="noopener noreferrer"
           className="bags-info-link"
         >
-          詳細・取扱店一覧 →
+          {t.detailLink}
         </a>
       </div>
     </section>

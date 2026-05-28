@@ -163,6 +163,26 @@ export default function LocaleTopPage() {
           ))}
         </div>
 
+        {/* 多摩地区グリッド */}
+        {tamaCities.some((w) => wardIndexData[w]) && (
+          <>
+            <h2 className="section-title" style={{ marginTop: "2.5rem" }}>{t.ward.tamaGridTitle}</h2>
+            <div className="ward-grid">
+              {tamaCities.filter((w) => wardIndexData[w]).map((city) => (
+                <a key={city} href={`/${validLocale}/Tokyo/${wardIndexData[city].slug}`} className="ward-card">
+                  {wardIndexData[city].slug}
+                  <div className="ward-card-count">
+                    {t.ward.areas(wardIndexData[city].areas.length)}
+                    {wardIndexData[city].has_bags && (
+                      <span className="ward-card-bags" title={t.ward.bagsBadge}> 🛍️</span>
+                    )}
+                  </div>
+                </a>
+              ))}
+            </div>
+          </>
+        )}
+
         <section className="faq-section" aria-label="FAQ">
           <h2 className="section-title">FAQ</h2>
           {t.faq.map((item, i) => (

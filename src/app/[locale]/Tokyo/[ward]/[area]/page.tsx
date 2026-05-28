@@ -153,7 +153,7 @@ export default async function LocaleAreaPage({ params }: Props) {
       <IcsButton wardName={wardName} areaName={areaName} schedule={schedule} />
 
       {/* 指定袋 */}
-      {wardInfo?.bags && <BagsPanel bags={wardInfo.bags} />}
+      {wardInfo?.bags && <BagsPanel bags={wardInfo.bags} locale={locale as Locale} />}
 
       {/* スケジュール一覧 */}
       <section style={{ margin: "2rem 0" }}>
