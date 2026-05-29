@@ -3,12 +3,22 @@ import { Noto_Sans_JP } from "next/font/google";
 import { headers } from "next/headers";
 import "./globals.css";
 import LanguageSwitcher from "@/components/LanguageSwitcher";
+import { siteChrome } from "@/lib/i18n";
+import type { BagsUILocale } from "@/lib/i18n";
 
 // pathname から HTML lang 属性値を判定する
 function htmlLangFromPathname(pathname: string): string {
   if (/^\/en(\/|$)/.test(pathname)) return "en";
   if (/^\/ko(\/|$)/.test(pathname)) return "ko";
   if (/^\/zh(\/|$)/.test(pathname)) return "zh-Hans";
+  return "ja";
+}
+
+// pathname からロケールコードを判定する（フッター/ナビの翻訳用）
+function localeFromPathname(pathname: string): BagsUILocale {
+  if (/^\/en(\/|$)/.test(pathname)) return "en";
+  if (/^\/ko(\/|$)/.test(pathname)) return "ko";
+  if (/^\/zh(\/|$)/.test(pathname)) return "zh";
   return "ja";
 }
 
@@ -56,6 +66,10 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const headersList = await headers();
   const pathname = headersList.get("x-pathname") ?? "/";
   const htmlLang = htmlLangFromPathname(pathname);
+  const locale = localeFromPathname(pathname);
+  const chrome = siteChrome[locale];
+  const homeHref = locale === "ja" ? "/" : `/${locale}`;
+  const disclaimerHref = locale === "ja" ? "/disclaimer" : `/${locale}/disclaimer`;
 
   return (
     <html lang={htmlLang} className={notoSansJP.className}>
@@ -83,22 +97,23 @@ export default async function RootLayout({ children }: { children: React.ReactNo
       <body>
         <div className="app-shell">
           <header className="site-header">
-            <a href="/" className="site-logo">
+            <a href={homeHref} className="site-logo">
               {/* eslint-disable-next-line @next/next/no-img-element */}
               <img src="/raccoon.png" className="logo-raccoon" alt="" width={36} height={36} />
               <span className="logo-text">ゴミの日.com</span>
             </a>
             <nav className="site-nav">
-              <a href="/">トップ</a>
+              <a href={homeHref}>{chrome.navTop}</a>
             </nav>
             <LanguageSwitcher />
           </header>
           <main className="site-main">{children}</main>
           <footer className="site-footer">
             <div className="footer-inner">
-              <p className="footer-copy">© 2026 ゴミの日.com — 東京都ごみ収集日カレンダー</p>
-              <p className="footer-note">
-                掲載情報は各区の公式データに基づきますが、変更される場合があります。必ず各区の公式サイトでご確認ください。
+              <p className="footer-copy">{chrome.footerCopy}</p>
+              <p className="footer-note">{chrome.footerNote}</p>
+              <p className="footer-links">
+                <a href={disclaimerHref}>{chrome.navDisclaimer}</a>
               </p>
             </div>
           </footer>

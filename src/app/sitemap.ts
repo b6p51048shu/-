@@ -52,6 +52,7 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
 
   const urls: MetadataRoute.Sitemap = [
     ...entriesForPath("/", 1.0, "monthly"),
+    ...entriesForPath("/disclaimer/", 0.3, "monthly"),
   ];
 
   for (const wardName of wardNames) {

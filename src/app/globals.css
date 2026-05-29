@@ -104,6 +104,9 @@ a:hover { text-decoration: underline; }
 .footer-inner { max-width: 900px; margin: 0 auto; }
 .footer-copy { font-weight: 600; margin-bottom: .5rem; }
 .footer-note { font-size: .8rem; color: var(--gray-400); }
+.footer-links { margin-top: .75rem; font-size: .85rem; }
+.footer-links a { color: #e5e7eb; text-decoration: underline; }
+.footer-links a:hover { color: #fff; }
 
 /* ── Container ── */
 .container { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }

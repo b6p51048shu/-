@@ -427,6 +427,156 @@ export const bagsUI: Record<BagsUILocale, {
   },
 };
 
+// ── サイト共通UI（ヘッダー/フッター, ja含む4言語）─────────────
+export const siteChrome: Record<BagsUILocale, {
+  navTop: string;
+  navDisclaimer: string;
+  footerCopy: string;
+  footerNote: string;
+}> = {
+  ja: {
+    navTop: "トップ",
+    navDisclaimer: "免責事項",
+    footerCopy: "© 2026 ゴミの日.com — 東京都ごみ収集日カレンダー",
+    footerNote: "掲載情報は各自治体の公式データに基づきますが、変更される場合があります。必ず公式サイトでご確認ください。",
+  },
+  en: {
+    navTop: "Top",
+    navDisclaimer: "Disclaimer",
+    footerCopy: "© 2026 Gominohi.com — Tokyo Garbage Collection Calendar",
+    footerNote: "Information is based on official municipal data but may change. Always confirm with the official website.",
+  },
+  ko: {
+    navTop: "홈",
+    navDisclaimer: "면책 조항",
+    footerCopy: "© 2026 Gominohi.com — 도쿄 쓰레기 수거일 달력",
+    footerNote: "정보는 각 자치체의 공식 데이터를 기반으로 하지만 변경될 수 있습니다. 반드시 공식 사이트에서 확인하세요.",
+  },
+  zh: {
+    navTop: "首页",
+    navDisclaimer: "免责声明",
+    footerCopy: "© 2026 Gominohi.com — 东京垃圾收集日历",
+    footerNote: "信息基于各自治体官方数据，可能有所变动。请务必在官方网站上确认。",
+  },
+};
+
+// ── 免責事項ページ本文（ja含む4言語）────────────────────────
+export const disclaimerContent: Record<BagsUILocale, {
+  title: string;
+  updated: string;
+  sections: { h: string; p: string }[];
+  backHome: string;
+}> = {
+  ja: {
+    title: "免責事項",
+    updated: "最終更新日: 2026年5月29日",
+    sections: [
+      {
+        h: "情報の正確性について",
+        p: "当サイト（ゴミの日.com、以下「当サイト」）に掲載しているごみ収集日・分別区分・指定ごみ袋等の情報は、各自治体が公開している情報をもとに作成しています。正確な情報の提供に努めていますが、その内容の正確性・完全性・最新性を保証するものではありません。実際の収集日や分別ルールは予告なく変更される場合があります。",
+      },
+      {
+        h: "免責",
+        p: "当サイトの情報を利用したことによって生じたいかなる損害（ごみの出し忘れ・収集されなかった等を含む）についても、当サイトは一切の責任を負いません。ごみの収集日・分別方法等は、必ずお住まいの自治体の公式サイトまたは窓口でご確認ください。特に祝日・年末年始は通常と異なるスケジュールになる場合があります。",
+      },
+      {
+        h: "外部リンクについて",
+        p: "当サイトから他のウェブサイト（各自治体の公式サイト等）へのリンクを掲載している場合がありますが、リンク先サイトの内容・運営について当サイトは責任を負いません。",
+      },
+      {
+        h: "著作権について",
+        p: "当サイトに掲載されているコンテンツの著作権は、当サイトまたは正当な権利者に帰属します。無断での複製・転載・再配布を禁じます。",
+      },
+      {
+        h: "内容の変更・中断",
+        p: "当サイトは、予告なくサイトの内容を変更・中断・終了する場合があります。あらかじめご了承ください。",
+      },
+    ],
+    backHome: "← トップに戻る",
+  },
+  en: {
+    title: "Disclaimer",
+    updated: "Last updated: May 29, 2026",
+    sections: [
+      {
+        h: "Accuracy of Information",
+        p: "The garbage collection dates, sorting categories, and designated bag information on Gominohi.com (\"this site\") are compiled from information published by each municipality. While we strive to provide accurate information, we do not guarantee its accuracy, completeness, or timeliness. Actual collection days and sorting rules may change without notice.",
+      },
+      {
+        h: "Limitation of Liability",
+        p: "This site assumes no responsibility for any damages (including missed collections) arising from the use of information on this site. Always confirm collection days and sorting methods on your municipality's official website or office. Schedules may differ from the norm, especially on public holidays and around the New Year.",
+      },
+      {
+        h: "External Links",
+        p: "This site may contain links to other websites (such as official municipal sites). We are not responsible for the content or operation of linked sites.",
+      },
+      {
+        h: "Copyright",
+        p: "Copyright of the content on this site belongs to this site or its rightful owners. Unauthorized reproduction, reprinting, or redistribution is prohibited.",
+      },
+      {
+        h: "Changes and Suspension",
+        p: "This site may change, suspend, or discontinue its content without prior notice. Thank you for your understanding.",
+      },
+    ],
+    backHome: "← Back to top",
+  },
+  ko: {
+    title: "면책 조항",
+    updated: "최종 업데이트: 2026년 5월 29일",
+    sections: [
+      {
+        h: "정보의 정확성에 대하여",
+        p: "본 사이트(Gominohi.com, 이하 \"본 사이트\")에 게재된 쓰레기 수거일·분리 구분·지정 쓰레기 봉투 등의 정보는 각 자치체가 공개한 정보를 바탕으로 작성되었습니다. 정확한 정보 제공을 위해 노력하고 있으나, 그 내용의 정확성·완전성·최신성을 보장하지 않습니다. 실제 수거일이나 분리 규칙은 예고 없이 변경될 수 있습니다.",
+      },
+      {
+        h: "면책",
+        p: "본 사이트의 정보를 이용함으로써 발생한 어떠한 손해(쓰레기 미배출·미수거 등 포함)에 대해서도 본 사이트는 일체의 책임을 지지 않습니다. 쓰레기 수거일·분리 방법 등은 반드시 거주하시는 자치체의 공식 사이트 또는 창구에서 확인하시기 바랍니다. 특히 공휴일·연말연시에는 평소와 다른 일정이 될 수 있습니다.",
+      },
+      {
+        h: "외부 링크에 대하여",
+        p: "본 사이트에서 다른 웹사이트(각 자치체 공식 사이트 등)로의 링크를 게재하는 경우가 있으나, 링크 대상 사이트의 내용·운영에 대해 본 사이트는 책임을 지지 않습니다.",
+      },
+      {
+        h: "저작권에 대하여",
+        p: "본 사이트에 게재된 콘텐츠의 저작권은 본 사이트 또는 정당한 권리자에게 귀속됩니다. 무단 복제·전재·재배포를 금합니다.",
+      },
+      {
+        h: "내용의 변경·중단",
+        p: "본 사이트는 예고 없이 사이트의 내용을 변경·중단·종료할 수 있습니다. 미리 양해 부탁드립니다.",
+      },
+    ],
+    backHome: "← 홈으로 돌아가기",
+  },
+  zh: {
+    title: "免责声明",
+    updated: "最后更新: 2026年5月29日",
+    sections: [
+      {
+        h: "关于信息的准确性",
+        p: "本网站（垃圾日.com，以下简称\"本网站\"）所刊载的垃圾收集日、分类区分、指定垃圾袋等信息，是基于各自治体公开的信息编写的。我们努力提供准确的信息，但不保证其准确性、完整性和时效性。实际的收集日和分类规则可能会未经通知而变更。",
+      },
+      {
+        h: "免责",
+        p: "对于因使用本网站信息而产生的任何损害（包括未投放、未收集垃圾等），本网站概不负责。垃圾收集日、分类方法等请务必在您所在自治体的官方网站或窗口确认。特别是节假日和年末年初，日程可能与平时不同。",
+      },
+      {
+        h: "关于外部链接",
+        p: "本网站可能刊载指向其他网站（如各自治体官方网站等）的链接，但本网站对链接目标网站的内容和运营不承担责任。",
+      },
+      {
+        h: "关于著作权",
+        p: "本网站刊载内容的著作权归本网站或合法权利人所有。禁止擅自复制、转载、再分发。",
+      },
+      {
+        h: "内容的变更与中断",
+        p: "本网站可能未经通知变更、中断或终止网站内容，敬请谅解。",
+      },
+    ],
+    backHome: "← 返回首页",
+  },
+};
+
 export type LocaleStrings = typeof en;
 
 /** ロケールに応じた翻訳オブジェクトを返す */
