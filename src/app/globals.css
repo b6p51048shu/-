@@ -120,82 +120,167 @@ a:hover { text-decoration: underline; }
   letter-spacing: .03em;
 }
 
-/* ── インライン広告カード ── */
+/* ── インライン広告カード（バナーテイスト） ── */
 .inline-ad {
   position: relative;
   margin: 2rem 0;
-  padding: 1.25rem 1.25rem 1.5rem;
-  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
-  border: 2px solid #fbbf24;
-  border-radius: 12px;
-  box-shadow: 0 2px 8px rgba(251, 191, 36, .15);
+  padding: 1.25rem;
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 50%, #fcd34d 100%);
+  border: 2px solid #f59e0b;
+  border-radius: 14px;
+  box-shadow: 0 4px 14px rgba(245, 158, 11, .28);
+  overflow: hidden;
 }
-.inline-ad .ad-label { background: rgba(255,255,255,.6); color: #78350f; margin-bottom: .5rem; }
+.inline-ad::before {
+  content: "";
+  position: absolute;
+  top: -40px; right: -40px;
+  width: 120px; height: 120px;
+  background: radial-gradient(circle, rgba(255,255,255,.45) 0%, transparent 70%);
+  pointer-events: none;
+  z-index: 0;
+}
+.inline-ad .ad-label {
+  background: rgba(255,255,255,.85);
+  color: #78350f;
+  margin-bottom: .5rem;
+  position: relative;
+  z-index: 1;
+}
+.inline-ad-grid {
+  display: flex;
+  gap: 1rem;
+  align-items: flex-start;
+  margin-bottom: .75rem;
+  position: relative;
+  z-index: 1;
+}
+.inline-ad-main { flex: 1; min-width: 0; }
 .inline-ad-title {
-  font-size: 1.05rem;
-  font-weight: 700;
-  margin: .3rem 0 .5rem;
+  font-size: 1.1rem;
+  font-weight: 800;
+  margin: .3rem 0 .6rem;
   color: #78350f;
   line-height: 1.4;
 }
-.inline-ad-body {
+.inline-ad-features {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: .35rem;
+}
+.inline-ad-features li {
+  color: #b45309;
+  font-weight: 700;
   font-size: .88rem;
+  line-height: 1.3;
+}
+.inline-ad-features li::before {
+  content: "✓ ";
+  color: #d97706;
+  font-weight: 900;
+  margin-right: .15rem;
+}
+.inline-ad-burst {
+  flex-shrink: 0;
+  width: 88px;
+  height: 88px;
+  background: linear-gradient(135deg, #ef4444 0%, #dc2626 100%);
+  color: #fff;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  font-weight: 900;
+  transform: rotate(-10deg);
+  box-shadow: 0 4px 12px rgba(220, 38, 38, .4), inset 0 -2px 4px rgba(0,0,0,.15);
+  border: 3px solid #fff;
+}
+.inline-ad-burst-label {
+  font-size: .6rem;
+  line-height: 1;
+  letter-spacing: .03em;
+  margin-bottom: 2px;
+  white-space: nowrap;
+}
+.inline-ad-burst-price {
+  font-size: 1.6rem;
+  line-height: 1;
+  font-weight: 900;
+}
+.inline-ad-body {
+  font-size: .82rem;
   color: #92400e;
-  margin-bottom: 1rem;
-  line-height: 1.65;
+  margin: .5rem 0 1rem;
+  line-height: 1.6;
+  position: relative;
+  z-index: 1;
 }
 .inline-ad-cta {
-  display: inline-block;
-  background: #f59e0b;
+  display: block;
+  background: linear-gradient(135deg, #f59e0b 0%, #d97706 100%);
   color: #fff;
-  padding: .65rem 1.2rem;
+  padding: .85rem 1.2rem;
   border-radius: 8px;
-  font-weight: 700;
-  font-size: .9rem;
+  font-weight: 800;
+  font-size: .95rem;
   text-decoration: none;
-  transition: background .15s;
+  text-align: center;
+  letter-spacing: .02em;
+  box-shadow: 0 3px 8px rgba(217, 119, 6, .4);
+  position: relative;
+  z-index: 1;
+  transition: all .15s;
 }
-.inline-ad-cta:hover { background: #d97706; }
+.inline-ad-cta:hover {
+  background: linear-gradient(135deg, #d97706 0%, #b45309 100%);
+  transform: translateY(-1px);
+  box-shadow: 0 5px 14px rgba(217, 119, 6, .5);
+}
+@media (max-width: 480px) {
+  .inline-ad-grid { gap: .5rem; }
+  .inline-ad-burst { width: 74px; height: 74px; }
+  .inline-ad-burst-price { font-size: 1.3rem; }
+  .inline-ad-burst-label { font-size: .55rem; }
+  .inline-ad-title { font-size: 1rem; }
+}
 
-/* ── ボトム固定広告バナー ── */
-.bottom-ad-spacer { height: 76px; }
+/* ── ボトム固定広告バナー（A8画像バナー） ── */
+.bottom-ad-spacer { height: 70px; }
 .bottom-ad-banner {
   position: fixed;
   left: 0;
   right: 0;
   bottom: 0;
-  height: 72px;
   background: #1f2937;
   color: #fff;
   display: flex;
   align-items: center;
-  padding: 0 .75rem;
-  padding-bottom: env(safe-area-inset-bottom, 0);
+  justify-content: center;
+  gap: .5rem;
+  padding: 8px;
+  padding-bottom: calc(8px + env(safe-area-inset-bottom, 0));
   z-index: 50;
-  box-shadow: 0 -4px 16px rgba(0, 0, 0, .2);
+  box-shadow: 0 -4px 16px rgba(0, 0, 0, .25);
 }
-.bottom-ad-link {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  gap: .75rem;
-  color: #fff;
-  text-decoration: none;
-  min-width: 0;
-}
-.bottom-ad-link .ad-label { background: #374151; color: #d1d5db; }
-.bottom-ad-text { display: flex; flex-direction: column; min-width: 0; flex: 1; }
-.bottom-ad-title { font-weight: 600; font-size: .9rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.bottom-ad-body { color: #d1d5db; font-size: .75rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
-.bottom-ad-cta {
-  background: #f59e0b;
-  color: #fff;
-  padding: .55rem 1rem;
-  border-radius: 6px;
-  font-weight: 700;
-  font-size: .85rem;
-  white-space: nowrap;
+.bottom-ad-label {
+  background: #374151;
+  color: #d1d5db;
   flex-shrink: 0;
+}
+.bottom-ad-image-link {
+  flex-shrink: 0;
+  display: block;
+  line-height: 0;
+}
+.bottom-ad-image-link img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+  border-radius: 4px;
 }
 .bottom-ad-close {
   background: transparent;
@@ -205,7 +290,6 @@ a:hover { text-decoration: underline; }
   height: 30px;
   border-radius: 4px;
   cursor: pointer;
-  margin-left: .5rem;
   font-size: 1.1rem;
   line-height: 1;
   display: flex;
@@ -215,14 +299,11 @@ a:hover { text-decoration: underline; }
 }
 .bottom-ad-close:hover { background: #374151; color: #fff; }
 
-@media (max-width: 640px) {
-  .bottom-ad-spacer { height: 68px; }
-  .bottom-ad-banner { height: 64px; padding: 0 .5rem; }
-  .bottom-ad-link { gap: .5rem; }
-  .bottom-ad-body { display: none; }
-  .bottom-ad-title { font-size: .82rem; }
-  .bottom-ad-cta { padding: .45rem .8rem; font-size: .8rem; }
-  .bottom-ad-close { width: 28px; height: 28px; }
+@media (min-width: 768px) {
+  .bottom-ad-spacer { height: 80px; }
+}
+@media (max-width: 480px) {
+  .bottom-ad-label { display: none; }
 }
 
 /* ── Container ── */
