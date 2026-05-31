@@ -577,6 +577,71 @@ export const disclaimerContent: Record<BagsUILocale, {
   },
 };
 
+// ── 広告テキスト（4言語）── 不用品回収アフィリエイト用 ──────
+export const adContent: Record<BagsUILocale, {
+  label: string;
+  closeAria: string;
+  inline: { title: string; body: string; cta: string };
+  banner: { title: string; body: string; cta: string };
+}> = {
+  ja: {
+    label: "広告",
+    closeAria: "閉じる",
+    inline: {
+      title: "粗大ごみ・不用品の処分でお困りですか？",
+      body: "基本料金・見積もり・出張費0円。ゴミ屋敷・遺品整理・引越し時のゴミ回収まで対応。業界最安値に挑戦中。",
+      cta: "無料見積もりを取る →",
+    },
+    banner: {
+      title: "粗大ごみ・不用品回収",
+      body: "出張費0円・業界最安値挑戦中",
+      cta: "無料見積もり",
+    },
+  },
+  en: {
+    label: "Ad",
+    closeAria: "Close",
+    inline: {
+      title: "Need help disposing of bulky waste or unwanted items?",
+      body: "Free quote, no base fee, no travel charge. Bulky waste, estate cleanup, and moving cleanup — all covered. (Service area: Japan)",
+      cta: "Get a free quote →",
+    },
+    banner: {
+      title: "Bulky waste pickup",
+      body: "No travel fee, lowest price challenge",
+      cta: "Free quote",
+    },
+  },
+  ko: {
+    label: "광고",
+    closeAria: "닫기",
+    inline: {
+      title: "대형 쓰레기·불용품 처분으로 고민이신가요?",
+      body: "기본요금·견적·출장비 0엔. 쓰레기 집·유품 정리·이사 시 쓰레기 회수까지 대응. 업계 최저가 도전 중. (서비스 지역: 일본)",
+      cta: "무료 견적 받기 →",
+    },
+    banner: {
+      title: "대형 쓰레기 회수",
+      body: "출장비 0엔・업계 최저가 도전",
+      cta: "무료 견적",
+    },
+  },
+  zh: {
+    label: "广告",
+    closeAria: "关闭",
+    inline: {
+      title: "大型垃圾·不用品的处理有困扰吗？",
+      body: "基本费·报价·出差费均为0日元。垃圾屋·遗品整理·搬家时的垃圾回收均可对应。挑战业界最低价。(服务地区：日本)",
+      cta: "免费报价 →",
+    },
+    banner: {
+      title: "大型垃圾回收",
+      body: "出差费0日元・挑战业界最低价",
+      cta: "免费报价",
+    },
+  },
+};
+
 export type LocaleStrings = typeof en;
 
 /** ロケールに応じた翻訳オブジェクトを返す */

@@ -7,6 +7,8 @@ import { notFound } from "next/navigation";
 import LocaleGarbageCalendar from "./GarbageCalendar";
 import IcsButton from "@/app/Tokyo/[ward]/[area]/IcsButton";
 import BagsPanel from "@/app/Tokyo/[ward]/[area]/BagsPanel";
+import InlineAd from "@/components/InlineAd";
+import BottomAdBanner from "@/components/BottomAdBanner";
 
 type Props = { params: Promise<{ locale: string; ward: string; area: string }> };
 
@@ -102,6 +104,7 @@ export default async function LocaleAreaPage({ params }: Props) {
   );
 
   return (
+    <>
     <div className="container-narrow">
       <nav className="breadcrumb" aria-label="Breadcrumb">
         <a href={`/${locale}`}>{t.site.nav.top}</a>
@@ -155,6 +158,9 @@ export default async function LocaleAreaPage({ params }: Props) {
       {/* 指定袋 */}
       {wardInfo?.bags && <BagsPanel bags={wardInfo.bags} locale={locale as Locale} />}
 
+      {/* インライン広告（粗大ごみ・不用品回収） */}
+      <InlineAd locale={locale as Locale} />
+
       {/* スケジュール一覧 */}
       <section style={{ margin: "2rem 0" }}>
         <h2 className="section-title">
@@ -199,5 +205,8 @@ export default async function LocaleAreaPage({ params }: Props) {
         )}
       </div>
     </div>
+    {/* ボトム固定広告バナー（×で7日間非表示） */}
+    <BottomAdBanner locale={locale as Locale} />
+    </>
   );
 }

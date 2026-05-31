@@ -108,6 +108,123 @@ a:hover { text-decoration: underline; }
 .footer-links a { color: #e5e7eb; text-decoration: underline; }
 .footer-links a:hover { color: #fff; }
 
+/* ── 広告: 共通ラベル ── */
+.ad-label {
+  display: inline-block;
+  font-size: .65rem;
+  font-weight: 600;
+  color: #6b7280;
+  background: #f3f4f6;
+  padding: 2px 7px;
+  border-radius: 3px;
+  letter-spacing: .03em;
+}
+
+/* ── インライン広告カード ── */
+.inline-ad {
+  position: relative;
+  margin: 2rem 0;
+  padding: 1.25rem 1.25rem 1.5rem;
+  background: linear-gradient(135deg, #fef3c7 0%, #fde68a 100%);
+  border: 2px solid #fbbf24;
+  border-radius: 12px;
+  box-shadow: 0 2px 8px rgba(251, 191, 36, .15);
+}
+.inline-ad .ad-label { background: rgba(255,255,255,.6); color: #78350f; margin-bottom: .5rem; }
+.inline-ad-title {
+  font-size: 1.05rem;
+  font-weight: 700;
+  margin: .3rem 0 .5rem;
+  color: #78350f;
+  line-height: 1.4;
+}
+.inline-ad-body {
+  font-size: .88rem;
+  color: #92400e;
+  margin-bottom: 1rem;
+  line-height: 1.65;
+}
+.inline-ad-cta {
+  display: inline-block;
+  background: #f59e0b;
+  color: #fff;
+  padding: .65rem 1.2rem;
+  border-radius: 8px;
+  font-weight: 700;
+  font-size: .9rem;
+  text-decoration: none;
+  transition: background .15s;
+}
+.inline-ad-cta:hover { background: #d97706; }
+
+/* ── ボトム固定広告バナー ── */
+.bottom-ad-spacer { height: 76px; }
+.bottom-ad-banner {
+  position: fixed;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  height: 72px;
+  background: #1f2937;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  padding: 0 .75rem;
+  padding-bottom: env(safe-area-inset-bottom, 0);
+  z-index: 50;
+  box-shadow: 0 -4px 16px rgba(0, 0, 0, .2);
+}
+.bottom-ad-link {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  gap: .75rem;
+  color: #fff;
+  text-decoration: none;
+  min-width: 0;
+}
+.bottom-ad-link .ad-label { background: #374151; color: #d1d5db; }
+.bottom-ad-text { display: flex; flex-direction: column; min-width: 0; flex: 1; }
+.bottom-ad-title { font-weight: 600; font-size: .9rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.bottom-ad-body { color: #d1d5db; font-size: .75rem; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+.bottom-ad-cta {
+  background: #f59e0b;
+  color: #fff;
+  padding: .55rem 1rem;
+  border-radius: 6px;
+  font-weight: 700;
+  font-size: .85rem;
+  white-space: nowrap;
+  flex-shrink: 0;
+}
+.bottom-ad-close {
+  background: transparent;
+  border: 1px solid #6b7280;
+  color: #d1d5db;
+  width: 30px;
+  height: 30px;
+  border-radius: 4px;
+  cursor: pointer;
+  margin-left: .5rem;
+  font-size: 1.1rem;
+  line-height: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+.bottom-ad-close:hover { background: #374151; color: #fff; }
+
+@media (max-width: 640px) {
+  .bottom-ad-spacer { height: 68px; }
+  .bottom-ad-banner { height: 64px; padding: 0 .5rem; }
+  .bottom-ad-link { gap: .5rem; }
+  .bottom-ad-body { display: none; }
+  .bottom-ad-title { font-size: .82rem; }
+  .bottom-ad-cta { padding: .45rem .8rem; font-size: .8rem; }
+  .bottom-ad-close { width: 28px; height: 28px; }
+}
+
 /* ── Container ── */
 .container { max-width: 900px; margin: 0 auto; padding: 2rem 1rem; }
 .container-narrow { max-width: 640px; margin: 0 auto; padding: 2rem 1rem; }

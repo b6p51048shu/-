@@ -4,6 +4,8 @@ import type { AreaSchedule } from "@/lib/data";
 import IcsButton from "./IcsButton";
 import GarbageCalendar from "./GarbageCalendar";
 import BagsPanel from "./BagsPanel";
+import InlineAd from "@/components/InlineAd";
+import BottomAdBanner from "@/components/BottomAdBanner";
 
 type Props = { params: Promise<{ ward: string; area: string }> };
 
@@ -173,6 +175,9 @@ export default async function AreaPage({ params }: Props) {
         {/* 指定ごみ袋情報（あれば表示） */}
         {wardInfo?.bags && <BagsPanel bags={wardInfo.bags} />}
 
+        {/* インライン広告（粗大ごみ・不用品回収） */}
+        <InlineAd locale="ja" />
+
         {/* FAQ テキスト (SEO) */}
         <section className="faq-section">
           <h2 className="section-title">よくある質問</h2>
@@ -201,6 +206,8 @@ export default async function AreaPage({ params }: Props) {
           )}
         </div>
       </div>
+      {/* ボトム固定広告バナー（×で7日間非表示） */}
+      <BottomAdBanner locale="ja" />
     </>
   );
 }
