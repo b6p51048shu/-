@@ -10,14 +10,14 @@ import {
   isAdConfigured,
 } from "@/lib/adConfig";
 
-const STORAGE_KEY = "gomicale_bottom_ad_closed_at";
-const HIDE_DURATION_MS = 7 * 24 * 60 * 60 * 1000; // 7日
+const STORAGE_KEY = "gomicale_bottom_ad_closed";
 
 /**
  * 画面下部固定の広告バナー
  * - ビューポート幅に応じて モバイル(320×50) / PC(468×60) バナーを出し分け
  * - 各バナーは個別のリンクURL・インプレッション計測ピクセルを使用（CTR個別計測）
- * - ×ボタンで閉じる → localStorage に7日間記録
+ * - ×ボタンで閉じる → sessionStorage に記録（ブラウザタブを閉じるまで非表示）
+ * - タブを閉じて再訪すると再表示される
  */
 export default function BottomAdBanner({ locale = "ja" }: { locale?: BagsUILocale }) {
   const [mounted, setMounted] = useState(false);
@@ -31,13 +31,10 @@ export default function BottomAdBanner({ locale = "ja" }: { locale?: BagsUILocal
     // ビューポート判定
     setIsMobile(window.innerWidth < AD_MOBILE_BREAKPOINT);
 
-    // localStorageから閉じた時刻を確認
+    // sessionStorageから閉じたフラグを確認（タブを閉じるとリセットされる）
     try {
-      const closedAt = localStorage.getItem(STORAGE_KEY);
-      if (closedAt) {
-        const elapsed = Date.now() - parseInt(closedAt, 10);
-        if (!isNaN(elapsed) && elapsed < HIDE_DURATION_MS) return; // 7日以内に閉じた → 非表示
-      }
+      const closed = sessionStorage.getItem(STORAGE_KEY);
+      if (closed === "1") return; // このセッション中は閉じられている → 非表示
       setVisible(true);
     } catch {
       setVisible(true);
@@ -56,7 +53,7 @@ export default function BottomAdBanner({ locale = "ja" }: { locale?: BagsUILocal
 
   const handleClose = () => {
     try {
-      localStorage.setItem(STORAGE_KEY, Date.now().toString());
+      sessionStorage.setItem(STORAGE_KEY, "1");
     } catch {
       // ignore
     }
