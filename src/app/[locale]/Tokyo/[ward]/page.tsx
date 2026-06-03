@@ -33,9 +33,7 @@ export default async function LocaleWardPage({ params }: Props) {
   if (!isValidLocale(locale)) notFound();
 
   const result = await getWardBySlug(wardSlug);
-  if (!result) {
-    return <div className="container"><p>Ward not found.</p></div>;
-  }
+  if (!result) notFound();
 
   const { name: wardName, info } = result;
 

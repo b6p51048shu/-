@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { getWardBySlug } from "@/lib/data";
+import { notFound } from "next/navigation";
 import WardPageClient from "./WardPageClient";
 
 type Props = { params: Promise<{ ward: string }> };
@@ -23,13 +24,7 @@ export default async function WardPage({ params }: Props) {
   const { ward: wardSlug } = await params;
   const result = await getWardBySlug(wardSlug);
 
-  if (!result) {
-    return (
-      <div className="container">
-        <p>区が見つかりません</p>
-      </div>
-    );
-  }
+  if (!result) notFound();
 
   const { name: wardName, info } = result;
 

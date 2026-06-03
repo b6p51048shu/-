@@ -60,9 +60,7 @@ export default async function LocaleAreaPage({ params }: Props) {
   const t = getT(locale as Locale);
   const found = await getAreaBySlug(wardSlug, areaSlug);
 
-  if (!found) {
-    return <div className="container"><p>{t.area.notFound}</p></div>;
-  }
+  if (!found) notFound();
 
   const { wardName, schedule } = found;
   const wardInfo = (await getWardBySlug(wardSlug))?.info;

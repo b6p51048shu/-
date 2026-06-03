@@ -6,6 +6,7 @@ import GarbageCalendar from "./GarbageCalendar";
 import BagsPanel from "./BagsPanel";
 import InlineAd from "@/components/InlineAd";
 import BottomAdBanner from "@/components/BottomAdBanner";
+import { notFound } from "next/navigation";
 
 type Props = { params: Promise<{ ward: string; area: string }> };
 
@@ -65,13 +66,7 @@ export default async function AreaPage({ params }: Props) {
   const { ward: wardSlug, area: areaSlug } = await params;
   const found = await getAreaBySlug(wardSlug, areaSlug);
 
-  if (!found) {
-    return (
-      <div className="container">
-        <p>地域が見つかりません</p>
-      </div>
-    );
-  }
+  if (!found) notFound();
 
   const { wardName, schedule } = found;
   const wardInfo = (await getWardBySlug(wardSlug))?.info;

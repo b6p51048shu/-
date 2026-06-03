@@ -5,7 +5,7 @@ import wardIndex from "../../../public/data/ward-index.json";
 import regionIndex from "../../../public/data/region-index.json";
 import { getT, scheduleToLocale, isValidLocale } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
-import { useParams } from "next/navigation";
+import { useParams, notFound } from "next/navigation";
 
 type WardIndexEntry = { slug: string; areas: { name: string; slug: string }[]; has_bags?: boolean };
 const wardIndexData = wardIndex as Record<string, WardIndexEntry>;
@@ -32,7 +32,8 @@ function guessArea(areaList: { name: string; slug: string }[], addr: Record<stri
 export default function LocaleTopPage() {
   const params = useParams();
   const locale = (Array.isArray(params.locale) ? params.locale[0] : params.locale) as string;
-  const validLocale: Locale = isValidLocale(locale) ? locale : "en";
+  if (!isValidLocale(locale)) notFound();
+  const validLocale = locale as Locale;
   const t = getT(validLocale);
 
   const [selectedWard, setSelectedWard] = useState("");

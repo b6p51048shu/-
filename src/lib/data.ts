@@ -1,9 +1,10 @@
-// ward-data.json は静的importせず、fetch経由でロードする（bundle size削減）。
-// APP_ORIGIN 環境変数 に サイトのオリジン（例: https://gominohi.com）を設定すること。
-// ローカル開発時は .env.local に APP_ORIGIN=http://localhost:3000 を設定する。
-// モジュールレベルでキャッシュするため、Worker インスタンスあたり1回だけfetchする。
+// ward-data.json は静的importせず、ロード時に読み込む（bundle size削減）。
+// 本番(Cloudflare Workers): ASSETS バインディング直読み（プロセス内直結、外部fetch無し）。
+// ローカル開発(next dev): APP_ORIGIN 経由の通常fetch（.env.local に APP_ORIGIN=http://localhost:3000）。
+// モジュールレベルでキャッシュするため、Worker インスタンスあたり1回だけ読み込む。
 
 import regionIndexRaw from "../../public/data/region-index.json";
+import { getCloudflareContext } from "@opennextjs/cloudflare";
 
 /** 構造化スケジュールデータ（generate_data.py が生成） */
 export type ParsedSchedule =
@@ -82,19 +83,42 @@ let _wardData: AllWardData | null = null;
 let _wardBySlug: Record<string, string> | null = null;
 let _wardByCode: Record<string, string> | null = null;
 
+/** ASSETS バインディングの最小型 */
+type AssetsFetcher = { fetch: (input: Request | string | URL) => Promise<Response> };
+
 /**
- * ward-data.json を fetch で読み込む。
- * 初回のみ fetch し、以降はモジュールレベルキャッシュを返す。
+ * ward-data.json の Response を取得する。
+ * 本番(Cloudflare): ASSETS バインディング直読み（外部fetchを避け 5xx を防ぐ）。
+ * 失敗時/ローカル開発: APP_ORIGIN 経由の通常fetch にフォールバック。
+ */
+async function fetchWardJson(): Promise<Response> {
+  // 本番: ASSETS バインディング直読み（プロセス内直結・サブリクエスト制限なし）
+  try {
+    const { env } = await getCloudflareContext({ async: true });
+    const assets = (env as unknown as { ASSETS?: AssetsFetcher }).ASSETS;
+    if (assets) {
+      const res = await assets.fetch(new URL("/data/ward-data.json", "https://assets.local"));
+      if (res.ok) return res;
+    }
+  } catch {
+    // Cloudflare コンテキストが無い環境（next dev 等）はフォールバックへ
+  }
+
+  // フォールバック: APP_ORIGIN 経由の通常fetch（ローカル開発用）
+  const origin = process.env.APP_ORIGIN ?? "http://localhost:3000";
+  return fetch(`${origin}/data/ward-data.json`);
+}
+
+/**
+ * ward-data.json を読み込む。
+ * 初回のみ読み込み、以降はモジュールレベルキャッシュを返す。
  */
 export async function loadWardData(): Promise<AllWardData> {
   if (_wardData) return _wardData;
 
-  const origin = process.env.APP_ORIGIN ?? "http://localhost:3000";
-  const url = `${origin}/data/ward-data.json`;
-
-  const res = await fetch(url);
+  const res = await fetchWardJson();
   if (!res.ok) {
-    throw new Error(`ward-data.json の取得に失敗しました: ${res.status} ${res.statusText} (${url})`);
+    throw new Error(`ward-data.json の取得に失敗しました: ${res.status} ${res.statusText}`);
   }
 
   _wardData = (await res.json()) as AllWardData;
