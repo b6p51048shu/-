@@ -10,7 +10,8 @@ import { getCloudflareContext } from "@opennextjs/cloudflare";
 export type ParsedSchedule =
   | { type: "weekly"; days: number[] }                    // 毎週（火・金 等）
   | { type: "nth"; days: number[]; weeks: number[] }      // 第N週（第2・4土 等）
-  | { type: "biweekly"; days: number[]; weeks: number[] } // 隔週（近似で第1・3週）
+  // 隔週。anchor(ISO日付)があれば真の14日周期、なければ weeks による近似（後方互換）
+  | { type: "biweekly"; days: number[]; weeks?: number[]; anchor?: string }
   | { type: "unknown"; raw: string };                     // パース失敗
 
 export type AreaSchedule = {

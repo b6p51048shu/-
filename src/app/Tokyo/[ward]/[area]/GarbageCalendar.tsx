@@ -47,6 +47,16 @@ function getCollectionDates(parsed: ParsedSchedule | undefined, year: number, mo
     for (let d = 1; d <= daysInMonth; d++) {
       if (daySet.has(new Date(year, month - 1, d).getDay())) dates.push(d);
     }
+  } else if (parsed.type === "biweekly" && parsed.anchor) {
+    // 真の隔週: 基準日(anchor)からの14日周期で該当曜日を追加
+    const daySet = new Set(parsed.days);
+    const anchor = new Date(`${parsed.anchor}T00:00:00`);
+    for (let d = 1; d <= daysInMonth; d++) {
+      const cur = new Date(year, month - 1, d);
+      if (!daySet.has(cur.getDay())) continue;
+      const diffDays = Math.round((cur.getTime() - anchor.getTime()) / 86400000);
+      if (((diffDays % 14) + 14) % 14 === 0) dates.push(d);
+    }
   } else if (parsed.type === "nth" || parsed.type === "biweekly") {
     // 第N週: 曜日ごとにN回目のみ追加
     const daySet = new Set(parsed.days);
