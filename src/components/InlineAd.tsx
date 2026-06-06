@@ -1,56 +1,66 @@
+"use client";
+
+import { useEffect, useState } from "react";
 import { adContent } from "@/lib/i18n";
 import type { BagsUILocale } from "@/lib/i18n";
-import { AD_HREF, AD_IMP_PIXEL, isAdConfigured } from "@/lib/adConfig";
+import {
+  AD_BANNER_PC,
+  AD_BANNER_MOBILE,
+  AD_MOBILE_BREAKPOINT,
+  isAdConfigured,
+} from "@/lib/adConfig";
 
 /**
- * エリアページに埋め込むインライン広告カード
- * - A8バナー画像のテイストに寄せた派手な黄色グラデ + 「¥0」バースト + 特典バッジ
- * - サーバーコンポーネント（SSR、SEOクロール可）
- * - rel="nofollow sponsored" でGoogleのpaid linkポリシーに準拠
+ * 記事・エリアページに埋め込むインライン広告
+ * - A8.net 公式バナー素材をそのまま掲載（自作の派手カードは廃止）
+ * - 画面幅で PC(468×60) / モバイル(320×50) を出し分け（二重インプレッション防止のため
+ *   実際に表示する側の画像だけを1枚描画する）
+ * - 画像＝アフィリリンク。rel="nofollow sponsored" で Google の paid link ポリシーに準拠
+ * - クリックを直接促す表現は入れない（A8 会員規約の「クリック誘導」抵触を回避）
  */
 export default function InlineAd({ locale = "ja" }: { locale?: BagsUILocale }) {
+  // null = 未判定（SSR直後）。判定後に true/false。
+  const [isMobile, setIsMobile] = useState<boolean | null>(null);
+
+  useEffect(() => {
+    const mq = window.matchMedia(`(max-width: ${AD_MOBILE_BREAKPOINT - 1}px)`);
+    setIsMobile(mq.matches);
+    const handler = (e: MediaQueryListEvent) => setIsMobile(e.matches);
+    mq.addEventListener("change", handler);
+    return () => mq.removeEventListener("change", handler);
+  }, []);
+
   if (!isAdConfigured()) return null;
 
+  // マウント前は高さだけ確保してレイアウトシフトを防ぐ
+  if (isMobile === null) return <div className="inline-ad-slot" aria-hidden="true" />;
+
   const t = adContent[locale];
+  const b = isMobile ? AD_BANNER_MOBILE : AD_BANNER_PC;
 
   return (
     <aside className="inline-ad" aria-label={t.label}>
       <span className="ad-label">{t.label}</span>
-
-      <div className="inline-ad-grid">
-        <div className="inline-ad-main">
-          <h3 className="inline-ad-title">{t.inline.title}</h3>
-          <ul className="inline-ad-features">
-            {t.inline.features.map((f) => (
-              <li key={f}>{f}</li>
-            ))}
-          </ul>
-        </div>
-        <div className="inline-ad-burst" aria-hidden="true">
-          <span className="inline-ad-burst-label">{t.inline.burstLabel}</span>
-          <span className="inline-ad-burst-price">¥0</span>
-        </div>
-      </div>
-
-      <p className="inline-ad-body">{t.inline.body}</p>
+      <p className="inline-ad-lead">{t.inline.title}</p>
 
       <a
-        href={AD_HREF}
+        href={b.href}
         target="_blank"
         rel="noopener nofollow sponsored"
-        className="inline-ad-cta"
+        className="inline-ad-banner-link"
       >
-        {t.inline.cta}
+        {/* eslint-disable-next-line @next/next/no-img-element */}
+        <img src={b.src} width={b.width} height={b.height} alt={t.banner.title} />
       </a>
 
-      {AD_IMP_PIXEL && (
+      {b.pixel && (
         // eslint-disable-next-line @next/next/no-img-element
         <img
-          src={AD_IMP_PIXEL}
+          src={b.pixel}
           width={1}
           height={1}
           alt=""
-          style={{ position: "absolute", left: 0, top: 0, pointerEvents: "none" }}
+          style={{ position: "absolute", width: 1, height: 1, opacity: 0, pointerEvents: "none" }}
         />
       )}
     </aside>
