@@ -54,6 +54,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...entriesForPath("/", 1.0, "monthly"),
     ...entriesForPath("/disclaimer/", 0.3, "monthly"),
     ...entriesForPath("/privacy/", 0.3, "monthly"),
+    // お役立ちガイド（日本語のみ）
+    { url: `${BASE}/guide/`, lastModified: new Date(), priority: 0.6, changeFrequency: "monthly" },
+    { url: `${BASE}/guide/funyohin-hiyo/`, lastModified: new Date(), priority: 0.7, changeFrequency: "monthly" },
   ];
 
   for (const wardName of wardNames) {

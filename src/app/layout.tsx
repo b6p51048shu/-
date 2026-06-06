@@ -105,6 +105,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             </a>
             <nav className="site-nav">
               <a href={homeHref}>{chrome.navTop}</a>
+              {locale === "ja" && <a href="/guide">お役立ちガイド</a>}
             </nav>
             <LanguageSwitcher />
           </header>
@@ -114,6 +115,12 @@ export default async function RootLayout({ children }: { children: React.ReactNo
               <p className="footer-copy">{chrome.footerCopy}</p>
               <p className="footer-note">{chrome.footerNote}</p>
               <p className="footer-links">
+                {locale === "ja" && (
+                  <>
+                    <a href="/guide">お役立ちガイド</a>
+                    <span aria-hidden="true"> · </span>
+                  </>
+                )}
                 <a href={privacyHref}>{chrome.navPrivacy}</a>
                 <span aria-hidden="true"> · </span>
                 <a href={disclaimerHref}>{chrome.navDisclaimer}</a>
