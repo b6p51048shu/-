@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import InlineAd from "@/components/InlineAd";
+import BottomAdBanner from "@/components/BottomAdBanner";
 
 const PAGE_PATH = "/guide/funyohin-hiyo";
 const UPDATED = "2026年6月7日";
@@ -350,6 +351,8 @@ export default function FunyohinHiyoPage() {
           </div>
         </article>
       </div>
+      {/* ボトム固定広告バナー（×でそのタブ中のみ非表示） */}
+      <BottomAdBanner locale="ja" />
     </>
   );
 }
