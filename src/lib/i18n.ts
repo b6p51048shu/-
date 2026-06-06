@@ -431,30 +431,35 @@ export const bagsUI: Record<BagsUILocale, {
 export const siteChrome: Record<BagsUILocale, {
   navTop: string;
   navDisclaimer: string;
+  navPrivacy: string;
   footerCopy: string;
   footerNote: string;
 }> = {
   ja: {
     navTop: "トップ",
     navDisclaimer: "免責事項",
+    navPrivacy: "プライバシーポリシー",
     footerCopy: "© 2026 ゴミの日.com — 東京都ごみ収集日カレンダー",
     footerNote: "掲載情報は各自治体の公式データに基づきますが、変更される場合があります。必ず公式サイトでご確認ください。",
   },
   en: {
     navTop: "Top",
     navDisclaimer: "Disclaimer",
+    navPrivacy: "Privacy Policy",
     footerCopy: "© 2026 Gominohi.com — Tokyo Garbage Collection Calendar",
     footerNote: "Information is based on official municipal data but may change. Always confirm with the official website.",
   },
   ko: {
     navTop: "홈",
     navDisclaimer: "면책 조항",
+    navPrivacy: "개인정보 처리방침",
     footerCopy: "© 2026 Gominohi.com — 도쿄 쓰레기 수거일 달력",
     footerNote: "정보는 각 자치체의 공식 데이터를 기반으로 하지만 변경될 수 있습니다. 반드시 공식 사이트에서 확인하세요.",
   },
   zh: {
     navTop: "首页",
     navDisclaimer: "免责声明",
+    navPrivacy: "隐私政策",
     footerCopy: "© 2026 Gominohi.com — 东京垃圾收集日历",
     footerNote: "信息基于各自治体官方数据，可能有所变动。请务必在官方网站上确认。",
   },
@@ -571,6 +576,203 @@ export const disclaimerContent: Record<BagsUILocale, {
       {
         h: "内容的变更与中断",
         p: "本网站可能未经通知变更、中断或终止网站内容，敬请谅解。",
+      },
+    ],
+    backHome: "← 返回首页",
+  },
+};
+
+// ── プライバシーポリシーページ本文（ja含む4言語）──────────────
+export const privacyContent: Record<BagsUILocale, {
+  title: string;
+  updated: string;
+  sections: { h: string; p: string }[];
+  backHome: string;
+}> = {
+  ja: {
+    title: "プライバシーポリシー",
+    updated: "最終更新日: 2026年6月6日",
+    sections: [
+      {
+        h: "基本方針",
+        p: "当サイト（ゴミの日.com、以下「当サイト」）は、利用者のプライバシーを尊重し、個人情報の保護に努めます。本ポリシーは、当サイトが取得する情報とその利用目的、第三者への提供等について定めるものです。",
+      },
+      {
+        h: "取得する情報",
+        p: "当サイトは、原則として氏名・住所・電話番号等の個人を直接特定できる情報を収集しません。ただし、アクセス解析および広告配信のため、Cookie・端末情報・閲覧履歴・IPアドレス・おおよその地域情報等を自動的に取得する場合があります。お問い合わせをいただいた場合は、ご返信のためにメールアドレス及び本文に含まれる情報をお預かりします。",
+      },
+      {
+        h: "アクセス解析ツールについて",
+        p: "当サイトは、サイトの利用状況を把握するためにGoogleが提供するアクセス解析ツール「Googleアナリティクス（GA4）」を利用しています。Googleアナリティクスはトラフィックデータの収集のためにCookieを使用します。このトラフィックデータは匿名で収集されており、個人を特定するものではありません。詳細は「Googleのサービスを使用するサイトやアプリから収集した情報のGoogleによる使用」をご確認ください。Cookieはブラウザの設定により無効化することができます。",
+      },
+      {
+        h: "広告配信について",
+        p: "当サイトは、第三者配信の広告サービス「Google AdSense」を利用する場合があります。広告配信事業者は、利用者の興味に応じた広告を表示するためにCookie（Cookieにより収集された当サイトや他サイトへのアクセス情報）を使用することがあります。Googleを含む第三者配信事業者によるCookieの使用、パーソナライズ広告の無効化については、Googleの「広告設定」（https://adssettings.google.com）でオプトアウトできます。また、aboutads.info（https://optout.aboutads.info）にアクセスすることで、第三者配信事業者のCookieを無効にすることも可能です。",
+      },
+      {
+        h: "アフィリエイトプログラムについて",
+        p: "当サイトは、A8.net等のアフィリエイトプログラムに参加しており、不用品回収・引越し等のサービスを紹介する場合があります。これらのリンクを経由してサービスが利用された場合、当サイトが提携先より報酬を受け取ることがあります。アフィリエイトプログラムにおいても、広告配信のためにCookieが使用される場合があります。",
+      },
+      {
+        h: "個人情報の第三者提供",
+        p: "当サイトは、法令に基づく場合等の正当な理由がある場合を除き、取得した個人情報を本人の同意なく第三者に提供することはありません。",
+      },
+      {
+        h: "免責事項",
+        p: "当サイトの掲載情報の正確性、利用により生じた損害等に関する免責については、別途「免責事項」のページに定めるとおりです。",
+      },
+      {
+        h: "運営者情報",
+        p: "運営者: ゴミの日ドットコム中の人（不動産会社管理職）。当サイトは個人により運営されています。",
+      },
+      {
+        h: "お問い合わせ",
+        p: "当サイトおよび本ポリシーに関するお問い合わせは、以下のメールアドレスまでご連絡ください。 gominohi.araiguma@gmail.com",
+      },
+      {
+        h: "本ポリシーの変更",
+        p: "当サイトは、必要に応じて本ポリシーを予告なく変更することがあります。変更後の内容は当ページに掲載した時点で効力を生じるものとします。",
+      },
+    ],
+    backHome: "← トップに戻る",
+  },
+  en: {
+    title: "Privacy Policy",
+    updated: "Last updated: June 6, 2026",
+    sections: [
+      {
+        h: "Our Policy",
+        p: "Gominohi.com (\"this site\") respects the privacy of its users and strives to protect personal information. This policy describes the information we collect, how we use it, and how it may be shared with third parties.",
+      },
+      {
+        h: "Information We Collect",
+        p: "This site does not, as a rule, collect personally identifiable information such as your name, address, or phone number. However, for analytics and advertising, we may automatically collect Cookies, device information, browsing history, IP address, and approximate location. If you contact us, we retain your email address and the contents of your message in order to respond.",
+      },
+      {
+        h: "Analytics",
+        p: "This site uses Google Analytics (GA4), provided by Google, to understand how the site is used. Google Analytics uses Cookies to collect traffic data. This data is collected anonymously and does not identify individuals. You can disable Cookies through your browser settings.",
+      },
+      {
+        h: "Advertising",
+        p: "This site may use the third-party advertising service Google AdSense. Advertising vendors may use Cookies to serve ads based on a user's interests. You can opt out of personalized advertising and the use of Cookies by Google and other third-party vendors via Google's Ad Settings (https://adssettings.google.com) or at aboutads.info (https://optout.aboutads.info).",
+      },
+      {
+        h: "Affiliate Programs",
+        p: "This site participates in affiliate programs such as A8.net and may introduce services such as bulky-waste collection and moving services. If a service is used via these links, this site may receive compensation from the partner. Cookies may also be used for advertising within these affiliate programs.",
+      },
+      {
+        h: "Sharing with Third Parties",
+        p: "Except where required by law or otherwise legitimately justified, this site will not provide collected personal information to third parties without the individual's consent.",
+      },
+      {
+        h: "Disclaimer",
+        p: "Matters concerning the accuracy of information on this site and the limitation of liability for any resulting damages are set out separately on the Disclaimer page.",
+      },
+      {
+        h: "Site Operator",
+        p: "Operator: The person behind Gominohi.com (a real-estate company manager). This site is operated by an individual.",
+      },
+      {
+        h: "Contact",
+        p: "For inquiries about this site or this policy, please contact: gominohi.araiguma@gmail.com",
+      },
+      {
+        h: "Changes to This Policy",
+        p: "This site may change this policy without prior notice as needed. Any revised policy takes effect when posted on this page.",
+      },
+    ],
+    backHome: "← Back to top",
+  },
+  ko: {
+    title: "개인정보 처리방침",
+    updated: "최종 업데이트: 2026년 6월 6일",
+    sections: [
+      {
+        h: "기본 방침",
+        p: "본 사이트(Gominohi.com, 이하 \"본 사이트\")는 이용자의 개인정보를 존중하며 그 보호에 힘쓰고 있습니다. 본 방침은 본 사이트가 취득하는 정보와 그 이용 목적, 제3자 제공 등에 대해 정합니다.",
+      },
+      {
+        h: "취득하는 정보",
+        p: "본 사이트는 원칙적으로 이름·주소·전화번호 등 개인을 직접 특정할 수 있는 정보를 수집하지 않습니다. 다만 액세스 분석 및 광고 게재를 위해 Cookie·단말 정보·열람 이력·IP 주소·대략적인 지역 정보 등을 자동으로 취득하는 경우가 있습니다. 문의를 주신 경우 회신을 위해 이메일 주소 및 본문에 포함된 정보를 보관합니다.",
+      },
+      {
+        h: "액세스 분석 도구에 대하여",
+        p: "본 사이트는 사이트 이용 상황을 파악하기 위해 Google이 제공하는 액세스 분석 도구 'Google 애널리틱스(GA4)'를 이용합니다. Google 애널리틱스는 트래픽 데이터 수집을 위해 Cookie를 사용합니다. 이 데이터는 익명으로 수집되며 개인을 특정하지 않습니다. Cookie는 브라우저 설정으로 비활성화할 수 있습니다.",
+      },
+      {
+        h: "광고 게재에 대하여",
+        p: "본 사이트는 제3자 게재 광고 서비스 'Google AdSense'를 이용하는 경우가 있습니다. 광고 게재 사업자는 이용자의 관심에 맞는 광고를 표시하기 위해 Cookie를 사용할 수 있습니다. Google을 포함한 제3자 사업자의 Cookie 사용 및 맞춤 광고 비활성화는 Google '광고 설정'(https://adssettings.google.com) 또는 aboutads.info(https://optout.aboutads.info)에서 옵트아웃할 수 있습니다.",
+      },
+      {
+        h: "제휴 프로그램에 대하여",
+        p: "본 사이트는 A8.net 등의 제휴(어필리에이트) 프로그램에 참가하고 있으며, 폐기물 수거·이사 등의 서비스를 소개하는 경우가 있습니다. 이러한 링크를 경유하여 서비스가 이용된 경우 본 사이트가 제휴처로부터 보수를 받을 수 있습니다.",
+      },
+      {
+        h: "개인정보의 제3자 제공",
+        p: "본 사이트는 법령에 근거한 경우 등 정당한 이유가 있는 경우를 제외하고, 취득한 개인정보를 본인의 동의 없이 제3자에게 제공하지 않습니다.",
+      },
+      {
+        h: "면책 사항",
+        p: "본 사이트 게재 정보의 정확성 및 이용으로 인해 발생한 손해 등에 관한 면책은 별도 '면책 조항' 페이지에 정한 바와 같습니다.",
+      },
+      {
+        h: "운영자 정보",
+        p: "운영자: Gominohi.com 운영자(부동산 회사 관리직). 본 사이트는 개인이 운영합니다.",
+      },
+      {
+        h: "문의",
+        p: "본 사이트 및 본 방침에 관한 문의는 다음 이메일 주소로 연락해 주십시오. gominohi.araiguma@gmail.com",
+      },
+      {
+        h: "본 방침의 변경",
+        p: "본 사이트는 필요에 따라 본 방침을 예고 없이 변경할 수 있습니다. 변경된 내용은 본 페이지에 게재된 시점에 효력이 발생합니다.",
+      },
+    ],
+    backHome: "← 홈으로 돌아가기",
+  },
+  zh: {
+    title: "隐私政策",
+    updated: "最后更新: 2026年6月6日",
+    sections: [
+      {
+        h: "基本方针",
+        p: "本网站（垃圾日.com，以下简称\"本网站\"）尊重用户的隐私，并致力于保护个人信息。本政策规定本网站所获取的信息及其使用目的、向第三方提供等事项。",
+      },
+      {
+        h: "获取的信息",
+        p: "本网站原则上不收集姓名、地址、电话号码等可直接识别个人的信息。但为进行访问分析及广告投放，可能会自动获取Cookie、设备信息、浏览记录、IP地址、大致地区信息等。当您来信咨询时，我们会保管您的电子邮箱地址及正文所含信息以便回复。",
+      },
+      {
+        h: "关于访问分析工具",
+        p: "本网站使用Google提供的访问分析工具\"Google Analytics（GA4）\"以了解网站的使用情况。Google Analytics使用Cookie来收集流量数据。该数据以匿名方式收集，不会识别个人。您可以通过浏览器设置停用Cookie。",
+      },
+      {
+        h: "关于广告投放",
+        p: "本网站可能使用第三方广告服务\"Google AdSense\"。广告投放商可能会使用Cookie以根据用户兴趣展示广告。对于包括Google在内的第三方投放商使用Cookie以及停用个性化广告，您可通过Google\"广告设置\"（https://adssettings.google.com）或aboutads.info（https://optout.aboutads.info）进行选择退出。",
+      },
+      {
+        h: "关于联盟营销计划",
+        p: "本网站参与A8.net等联盟营销（Affiliate）计划，可能会介绍废品回收、搬家等服务。若通过这些链接使用了服务，本网站可能会从合作方获得报酬。",
+      },
+      {
+        h: "个人信息向第三方提供",
+        p: "除依据法令等正当理由外，本网站不会在未经本人同意的情况下将所获取的个人信息提供给第三方。",
+      },
+      {
+        h: "免责声明",
+        p: "关于本网站刊载信息的准确性以及因使用而产生的损害等免责事项，另行在\"免责声明\"页面中规定。",
+      },
+      {
+        h: "运营者信息",
+        p: "运营者: 垃圾日.com的运营者（房地产公司管理人员）。本网站由个人运营。",
+      },
+      {
+        h: "联系我们",
+        p: "有关本网站及本政策的咨询，请通过以下电子邮箱联系: gominohi.araiguma@gmail.com",
+      },
+      {
+        h: "本政策的变更",
+        p: "本网站可根据需要在不另行通知的情况下变更本政策。变更后的内容自刊载于本页面之时起生效。",
       },
     ],
     backHome: "← 返回首页",

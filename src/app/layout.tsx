@@ -70,6 +70,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const chrome = siteChrome[locale];
   const homeHref = locale === "ja" ? "/" : `/${locale}`;
   const disclaimerHref = locale === "ja" ? "/disclaimer" : `/${locale}/disclaimer`;
+  const privacyHref = locale === "ja" ? "/privacy" : `/${locale}/privacy`;
 
   return (
     <html lang={htmlLang} className={notoSansJP.className}>
@@ -113,6 +114,8 @@ export default async function RootLayout({ children }: { children: React.ReactNo
               <p className="footer-copy">{chrome.footerCopy}</p>
               <p className="footer-note">{chrome.footerNote}</p>
               <p className="footer-links">
+                <a href={privacyHref}>{chrome.navPrivacy}</a>
+                <span aria-hidden="true"> · </span>
                 <a href={disclaimerHref}>{chrome.navDisclaimer}</a>
               </p>
             </div>
