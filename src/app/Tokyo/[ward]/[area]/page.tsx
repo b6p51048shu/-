@@ -170,23 +170,24 @@ export default async function AreaPage({ params }: Props) {
         {/* 指定ごみ袋情報（あれば表示） */}
         {wardInfo?.bags && <BagsPanel bags={wardInfo.bags} />}
 
-        {/* 粗大ごみ案内（自治体公式ページへのリンク） */}
-        {wardInfo?.oversized_url && (
+        {/* 粗大ごみ案内（詳細ページがあれば内部リンク、なければ公式リンク） */}
+        {(wardInfo?.oversized_detail || wardInfo?.oversized_url) && (
           <div className="oversized-notice">
             <span className="oversized-notice-icon" aria-hidden="true">🪑</span>
             <div className="oversized-notice-body">
               <p className="oversized-notice-title">粗大ごみの出し方</p>
               <p className="oversized-notice-text">
-                {wardName}の粗大ごみは事前の申し込みが必要な場合が多く、収集日カレンダーには表示されません。収集日・手数料・申し込み方法は公式ページをご確認ください。
+                {wardName}の粗大ごみは事前の申し込みが必要な場合が多く、収集日カレンダーには表示されません。申し込み方法・手数料・注意点をまとめています。
               </p>
-              <a
-                href={wardInfo.oversized_url}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="oversized-notice-link"
-              >
-                {wardName}の粗大ごみ申し込み（公式）→
-              </a>
+              {wardInfo?.oversized_detail ? (
+                <a href={`/Tokyo/${wardSlug}/sodaigomi`} className="oversized-notice-link">
+                  {wardName}の粗大ごみの出し方を見る →
+                </a>
+              ) : (
+                <a href={wardInfo!.oversized_url} target="_blank" rel="noopener noreferrer" className="oversized-notice-link">
+                  {wardName}の粗大ごみ申し込み（公式）→
+                </a>
+              )}
             </div>
           </div>
         )}

@@ -63,6 +63,26 @@ export type DesignatedBags = {
   info_url: string;
 };
 
+/** 自治体ごとの粗大ごみ詳細情報（自治体別ページ用） */
+export type OversizedDetail = {
+  /** 粗大ごみの定義（例: おおむね一辺30cm以上） */
+  definition?: string;
+  /** 申し込み方法（例: ["インターネット", "電話", "FAX"]） */
+  methods?: string[];
+  /** 受付電話番号 */
+  tel?: string;
+  /** 電話受付時間 */
+  tel_hours?: string;
+  /** インターネット受付ページのURL */
+  online_url?: string;
+  /** 手数料の仕組み・料金例 */
+  fee?: string;
+  /** 持ち込み（自己搬入）の可否・施設名 */
+  dropoff?: string;
+  /** その他の注意点 */
+  note?: string;
+};
+
 export type WardInfo = {
   code: string;
   ward_slug: string;
@@ -72,6 +92,8 @@ export type WardInfo = {
   info_url?: string;
   /** 粗大ごみの申し込み・出し方を案内する自治体公式ページのURL */
   oversized_url?: string;
+  /** 粗大ごみの詳細情報（自治体別ページ用） */
+  oversized_detail?: OversizedDetail;
 };
 
 export const regionIndex = regionIndexRaw as Record<string, string[]>;

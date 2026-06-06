@@ -67,6 +67,16 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // 区ページ
     urls.push(...entriesForPath(`/Tokyo/${ws}/`, 0.8, "monthly"));
 
+    // 粗大ごみの出し方ページ（日本語のみ、詳細データがある自治体のみ公開）
+    if (info.oversized_detail) {
+      urls.push({
+        url: `${BASE}/Tokyo/${ws}/sodaigomi/`,
+        lastModified: new Date(),
+        priority: 0.7,
+        changeFrequency: "monthly",
+      });
+    }
+
     // 地域ページ
     for (const a of info.areas) {
       urls.push(...entriesForPath(`/Tokyo/${ws}/${a.slug}/`, 0.6, "monthly"));
