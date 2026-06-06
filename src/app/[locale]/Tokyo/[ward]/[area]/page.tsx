@@ -156,6 +156,45 @@ export default async function LocaleAreaPage({ params }: Props) {
       {/* 指定袋 */}
       {wardInfo?.bags && <BagsPanel bags={wardInfo.bags} locale={locale as Locale} />}
 
+      {/* 粗大ごみ案内（自治体公式ページへのリンク） */}
+      {wardInfo?.oversized_url && (() => {
+        const ov = {
+          en: {
+            title: "How to dispose of oversized waste",
+            text: `Oversized (bulky) waste usually requires an advance request and is not shown on the calendar. Please check the official page for pickup dates, fees and how to apply.`,
+            link: `${wardSlug} Ward oversized waste (official) →`,
+          },
+          ko: {
+            title: "대형 쓰레기 배출 방법",
+            text: `대형(조대) 쓰레기는 대부분 사전 신청이 필요하며 달력에는 표시되지 않습니다. 수거일·수수료·신청 방법은 공식 페이지에서 확인하세요.`,
+            link: `${wardSlug}구 대형 쓰레기 신청 (공식) →`,
+          },
+          zh: {
+            title: "大件垃圾的丢弃方法",
+            text: `大件（粗大）垃圾大多需要事先申请，且不会显示在日历上。收集日、手续费和申请方法请查看官方页面。`,
+            link: `${wardSlug}区大件垃圾申请（官方）→`,
+          },
+        }[locale as "en" | "ko" | "zh"];
+        if (!ov) return null;
+        return (
+          <div className="oversized-notice">
+            <span className="oversized-notice-icon" aria-hidden="true">🪑</span>
+            <div className="oversized-notice-body">
+              <p className="oversized-notice-title">{ov.title}</p>
+              <p className="oversized-notice-text">{ov.text}</p>
+              <a
+                href={wardInfo.oversized_url}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="oversized-notice-link"
+              >
+                {ov.link}
+              </a>
+            </div>
+          </div>
+        );
+      })()}
+
       {/* インライン広告（粗大ごみ・不用品回収） */}
       <InlineAd locale={locale as Locale} />
 

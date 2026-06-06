@@ -394,6 +394,13 @@ a:hover { text-decoration: underline; }
 .unknown-notice { display: flex; align-items: center; gap: .5rem; flex-wrap: wrap; background: #fffbeb; border: 1px solid #fcd34d; border-left: 4px solid #f59e0b; border-radius: var(--radius); padding: 1rem 1.25rem; margin-bottom: 1.5rem; font-size: .9rem; color: #78350f; }
 .unknown-notice-link { color: #b45309; font-weight: 600; text-decoration: underline; white-space: nowrap; }
 .unknown-notice-link:hover { color: #92400e; }
+.oversized-notice { display: flex; align-items: flex-start; gap: .75rem; background: #f9fafb; border: 1px solid #e5e7eb; border-left: 4px solid #6b7280; border-radius: var(--radius); padding: 1rem 1.25rem; margin-bottom: 1.5rem; }
+.oversized-notice-icon { font-size: 1.4rem; line-height: 1.3; flex-shrink: 0; }
+.oversized-notice-body { display: flex; flex-direction: column; gap: .35rem; }
+.oversized-notice-title { font-weight: 700; color: var(--gray-700); font-size: .95rem; }
+.oversized-notice-text { color: var(--gray-600); font-size: .85rem; line-height: 1.6; }
+.oversized-notice-link { color: #b45309; font-weight: 600; text-decoration: underline; font-size: .9rem; margin-top: .15rem; }
+.oversized-notice-link:hover { color: #92400e; }
 .today-section { background: #fff; border-radius: var(--radius); padding: 1.25rem; margin-bottom: 1.5rem; box-shadow: var(--shadow); border-left: 4px solid var(--green); }
 .today-section h3 { font-size: .9rem; color: var(--gray-600); margin-bottom: .5rem; }
 .today-items { display: flex; flex-wrap: wrap; gap: .5rem; }

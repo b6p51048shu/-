@@ -70,6 +70,8 @@ export type WardInfo = {
   bags?: DesignatedBags;
   /** 収集スケジュールに問い合わせ必要な地域がある場合の公式URL */
   info_url?: string;
+  /** 粗大ごみの申し込み・出し方を案内する自治体公式ページのURL */
+  oversized_url?: string;
 };
 
 export const regionIndex = regionIndexRaw as Record<string, string[]>;
