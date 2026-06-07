@@ -54,9 +54,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     ...entriesForPath("/", 1.0, "monthly"),
     ...entriesForPath("/disclaimer/", 0.3, "monthly"),
     ...entriesForPath("/privacy/", 0.3, "monthly"),
-    // お役立ちガイド（日本語のみ）
-    { url: `${BASE}/guide/`, lastModified: new Date(), priority: 0.6, changeFrequency: "monthly" },
-    { url: `${BASE}/guide/funyohin-hiyo/`, lastModified: new Date(), priority: 0.7, changeFrequency: "monthly" },
+    // お役立ちガイド（4言語: ja/en/ko/zh）
+    ...entriesForPath("/guide/", 0.6, "monthly"),
+    ...entriesForPath("/guide/funyohin-hiyo/", 0.7, "monthly"),
   ];
 
   for (const wardName of wardNames) {
@@ -67,14 +67,9 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // 区ページ
     urls.push(...entriesForPath(`/Tokyo/${ws}/`, 0.8, "monthly"));
 
-    // 粗大ごみの出し方ページ（日本語のみ、詳細データがある自治体のみ公開）
+    // 粗大ごみの出し方ページ（4言語、詳細データがある自治体のみ公開）
     if (info.oversized_detail) {
-      urls.push({
-        url: `${BASE}/Tokyo/${ws}/sodaigomi/`,
-        lastModified: new Date(),
-        priority: 0.7,
-        changeFrequency: "monthly",
-      });
+      urls.push(...entriesForPath(`/Tokyo/${ws}/sodaigomi/`, 0.7, "monthly"));
     }
 
     // 地域ページ

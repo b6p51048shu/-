@@ -1,35 +1,36 @@
 import type { Metadata } from "next";
+import { guideContent } from "@/lib/articleContent";
+
+const c = guideContent.ja;
 
 export const metadata: Metadata = {
-  title: "お役立ちガイド | ゴミの日.com",
-  description: "不用品回収の費用相場、粗大ごみの捨て方、引越し時のゴミ処分など、ごみ・不用品の処分に役立つ情報をまとめています。",
-  alternates: { canonical: "/guide" },
-};
-
-const ARTICLES: { href: string; title: string; desc: string }[] = [
-  {
-    href: "/guide/funyohin-hiyo",
-    title: "不用品回収の費用相場【2026年版】",
-    desc: "単品・トラック積み放題の料金目安、自治体回収との違い、安く抑えるコツ、悪質業者の見分け方まで解説。",
+  title: c.metaTitle,
+  description: c.metaDesc,
+  alternates: {
+    canonical: "/guide",
+    languages: {
+      ja: "/guide",
+      en: "/en/guide",
+      ko: "/ko/guide",
+      zh: "/zh/guide",
+    },
   },
-];
+};
 
 export default function GuideIndexPage() {
   return (
     <div className="container-narrow">
       <nav className="breadcrumb" aria-label="パンくず">
-        <a href="/">ホーム</a>
-        <span>お役立ちガイド</span>
+        <a href="/">{c.bcHome}</a>
+        <span>{c.bcCurrent}</span>
       </nav>
 
-      <h1 className="section-title">お役立ちガイド</h1>
-      <p style={{ color: "var(--gray-600)", fontSize: ".95rem" }}>
-        ごみの分別・処分や、不用品・粗大ごみの片付けに役立つ情報をまとめています。
-      </p>
+      <h1 className="section-title">{c.h1}</h1>
+      <p style={{ color: "var(--gray-600)", fontSize: ".95rem" }}>{c.lead}</p>
 
       <div className="guide-list">
-        {ARTICLES.map((a) => (
-          <a key={a.href} href={a.href} className="guide-card">
+        {c.articles.map((a) => (
+          <a key={a.slug} href={`/guide/${a.slug}`} className="guide-card">
             <div className="guide-card-title">{a.title}</div>
             <div className="guide-card-desc">{a.desc}</div>
           </a>
@@ -37,7 +38,7 @@ export default function GuideIndexPage() {
       </div>
 
       <div style={{ marginTop: "2.5rem" }}>
-        <a href="/" className="btn btn-outline">← トップに戻る</a>
+        <a href="/" className="btn btn-outline">{c.backHome}</a>
       </div>
     </div>
   );
