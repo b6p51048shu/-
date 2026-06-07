@@ -29,6 +29,11 @@ export const guideContent: Record<BagsUILocale, GuideContent> = {
     backHome: "← トップに戻る",
     articles: [
       {
+        slug: "hikkoshi-gomi",
+        title: "引越しで出る大量ゴミの処分方法【2026年版】",
+        desc: "ゴミの種類別の出口、退去日からの逆算スケジュール、自治体回収が間に合わない時の裏ワザ、ケース別おすすめ、業者の選び方まで解説。",
+      },
+      {
         slug: "funyohin-hiyo",
         title: "不用品回収の費用相場【2026年版】",
         desc: "単品・トラック積み放題の料金目安、自治体回収との違い、安く抑えるコツ、悪質業者の見分け方まで解説。",

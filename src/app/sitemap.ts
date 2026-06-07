@@ -57,6 +57,13 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     // お役立ちガイド（4言語: ja/en/ko/zh）
     ...entriesForPath("/guide/", 0.6, "monthly"),
     ...entriesForPath("/guide/funyohin-hiyo/", 0.7, "monthly"),
+    // 引越しゴミ記事（日本語のみ）
+    {
+      url: `${BASE}/guide/hikkoshi-gomi/`,
+      lastModified: new Date(),
+      priority: 0.7,
+      changeFrequency: "monthly",
+    },
   ];
 
   for (const wardName of wardNames) {
