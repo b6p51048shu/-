@@ -164,6 +164,15 @@ export default function TopPage() {
             <button className="btn btn-primary" onClick={handleSearch} disabled={!selectedWard}>
               収集日を確認する →
             </button>
+
+            {selectedWard && wardIndexData[selectedWard] && (
+              <a
+                href={`/Tokyo/${wardIndexData[selectedWard].slug}/sodaigomi`}
+                className="search-sodai-link"
+              >
+                🪑 {selectedWard}の粗大ごみの出し方・申し込み方法を見る →
+              </a>
+            )}
           </div>
         </div>
       </section>

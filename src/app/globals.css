@@ -307,6 +307,8 @@ a:hover { text-decoration: underline; }
 .btn-outline:hover { background: var(--green-light); }
 .btn-gps { background: var(--blue); color: #fff; width: 100%; margin-bottom: .5rem; }
 .btn-gps:hover { background: #1d4ed8; }
+.search-sodai-link { display: inline-block; margin-top: .75rem; font-size: .9rem; font-weight: 600; color: #b45309; text-decoration: underline; text-underline-offset: 2px; }
+.search-sodai-link:hover { color: #92400e; }
 
 /* ── Today Widget ── */
 .unknown-notice { display: flex; align-items: center; gap: .5rem; flex-wrap: wrap; background: #fffbeb; border: 1px solid #fcd34d; border-left: 4px solid #f59e0b; border-radius: var(--radius); padding: 1rem 1.25rem; margin-bottom: 1.5rem; font-size: .9rem; color: #78350f; }
