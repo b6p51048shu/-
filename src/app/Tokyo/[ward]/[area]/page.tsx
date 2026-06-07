@@ -84,6 +84,12 @@ export default async function AreaPage({ params }: Props) {
 
   const scheduleItems = getScheduleItems(schedule);
 
+  // 収集曜日データが1つも無い地域（地区番号制などで固定曜日を持たない自治体）
+  // この場合はカレンダーを描画せず、公式の収集日案内ページへ誘導する
+  const hasAnySchedule = (["burnable","unburnable","recyclable","plastic","pet","oversized"] as const).some(
+    (k) => typeof schedule[k] === "string" && (schedule[k] as string).trim() !== ""
+  );
+
   // unknown_parsed があれば公式URLリンクを表示するか判定
   const hasUnknown = (["burnable","unburnable","recyclable","plastic","pet"] as const).some(
     (k) => (schedule[`${k}_parsed` as keyof AreaSchedule] as { type?: string } | undefined)?.type === "unknown"
@@ -122,7 +128,28 @@ export default async function AreaPage({ params }: Props) {
           <span className="area-page-ward">{wardName}</span>
         </h1>
 
-        {/* 今日・明日のごみ */}
+        {/* 収集日データが無い地域：公式の収集日案内へ誘導 */}
+        {!hasAnySchedule && (
+          <div className="noschedule-notice">
+            <span className="noschedule-notice-icon" aria-hidden="true">🗑️</span>
+            <div className="noschedule-notice-body">
+              <p className="noschedule-notice-title">この地域の収集日はカレンダー未対応です</p>
+              <p className="noschedule-notice-text">
+                {wardName}は収集地区ごとに収集曜日が分かれており、当サイトのカレンダーには未収録です。
+                お住まいの地区の正確な収集日は、{wardName}公式の収集日案内でご確認ください。
+              </p>
+              {wardInfo?.info_url && (
+                <a href={wardInfo.info_url} target="_blank" rel="noopener noreferrer" className="noschedule-notice-link">
+                  {wardName}の収集日カレンダー（公式）→
+                </a>
+              )}
+            </div>
+          </div>
+        )}
+
+        {/* 今日・明日のごみ（収集日データがある場合のみ） */}
+        {hasAnySchedule && (
+        <>
         <div className="today-section">
           <h3>📅 今日（{todayName}）のごみ</h3>
           <div className="today-items">
@@ -166,6 +193,8 @@ export default async function AreaPage({ params }: Props) {
 
         {/* カレンダー同期 */}
         <IcsButton wardName={wardName} areaName={areaName} schedule={schedule} />
+        </>
+        )}
 
         {/* 指定ごみ袋情報（あれば表示） */}
         {wardInfo?.bags && <BagsPanel bags={wardInfo.bags} />}
@@ -195,7 +224,8 @@ export default async function AreaPage({ params }: Props) {
         {/* インライン広告（粗大ごみ・不用品回収） */}
         <InlineAd locale="ja" />
 
-        {/* FAQ テキスト (SEO) */}
+        {/* FAQ テキスト (SEO) — 収集日データがある場合のみ */}
+        {hasAnySchedule && (
         <section className="faq-section">
           <h2 className="section-title">よくある質問</h2>
           {scheduleItems.filter(({ key }) => schedule[key]).map(({ key, label }) => (
@@ -205,6 +235,7 @@ export default async function AreaPage({ params }: Props) {
             </div>
           ))}
         </section>
+        )}
 
         {/* 前後ナビゲーション */}
         <div style={{ display: "flex", gap: "1rem", marginTop: "2rem", flexWrap: "wrap" }}>

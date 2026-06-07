@@ -321,6 +321,13 @@ a:hover { text-decoration: underline; }
 .oversized-notice-text { color: var(--gray-600); font-size: .85rem; line-height: 1.6; }
 .oversized-notice-link { color: #b45309; font-weight: 600; text-decoration: underline; font-size: .9rem; margin-top: .15rem; }
 .oversized-notice-link:hover { color: #92400e; }
+.noschedule-notice { display: flex; align-items: flex-start; gap: .75rem; background: #fffbeb; border: 1px solid #fcd34d; border-left: 4px solid #f59e0b; border-radius: var(--radius); padding: 1.1rem 1.25rem; margin-bottom: 1.5rem; }
+.noschedule-notice-icon { font-size: 1.4rem; line-height: 1.3; flex-shrink: 0; }
+.noschedule-notice-body { display: flex; flex-direction: column; gap: .4rem; }
+.noschedule-notice-title { font-weight: 700; color: #78350f; font-size: .98rem; }
+.noschedule-notice-text { color: #92400e; font-size: .86rem; line-height: 1.7; }
+.noschedule-notice-link { display: inline-block; margin-top: .25rem; color: #b45309; font-weight: 700; text-decoration: underline; font-size: .92rem; }
+.noschedule-notice-link:hover { color: #92400e; }
 .today-section { background: #fff; border-radius: var(--radius); padding: 1.25rem; margin-bottom: 1.5rem; box-shadow: var(--shadow); border-left: 4px solid var(--green); }
 .today-section h3 { font-size: .9rem; color: var(--gray-600); margin-bottom: .5rem; }
 .today-items { display: flex; flex-wrap: wrap; gap: .5rem; }
