@@ -1,18 +1,21 @@
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
-import wardDataRaw from "../public/data/ward-data.json";
+// 大文字小文字の吸収に必要なのは slug 情報だけなので、全区一括の ward-data.json(約1MB)では
+// なく軽量な ward-index.json(約140KB)を読む。middleware は全リクエストで動くため、
+// バンドルサイズ・初期化コストの削減が Worker の負荷軽減に直結する。
+import wardIndexRaw from "../public/data/ward-index.json";
 
-type WardLite = { ward_slug: string; areas: Array<{ slug: string }> };
-const wardData = wardDataRaw as unknown as Record<string, WardLite>;
+type WardLite = { slug: string; areas: Array<{ slug: string }> };
+const wardIndex = wardIndexRaw as unknown as Record<string, WardLite>;
 
 // 小文字化したward_slug → 正準（データに格納されている）ward_slug
 const wardSlugByLower = new Map<string, string>();
 // ward_slug(小文字) → 小文字化したarea slug → 正準area slug
 const areaSlugByLowerByWard = new Map<string, Map<string, string>>();
 
-for (const info of Object.values(wardData)) {
-  const wardLower = info.ward_slug.toLowerCase();
-  wardSlugByLower.set(wardLower, info.ward_slug);
+for (const info of Object.values(wardIndex)) {
+  const wardLower = info.slug.toLowerCase();
+  wardSlugByLower.set(wardLower, info.slug);
   const areaMap = new Map<string, string>();
   for (const area of info.areas) {
     areaMap.set(area.slug.toLowerCase(), area.slug);

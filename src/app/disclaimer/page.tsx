@@ -5,12 +5,12 @@ export const metadata: Metadata = {
   title: "免責事項",
   description: "ゴミの日.com の免責事項。掲載情報の正確性、損害賠償の免責、外部リンク、著作権について。",
   alternates: {
-    canonical: "/disclaimer",
+    canonical: "/disclaimer/",
     languages: {
-      ja: "/disclaimer",
-      en: "/en/disclaimer",
-      ko: "/ko/disclaimer",
-      zh: "/zh/disclaimer",
+      ja: "/disclaimer/",
+      en: "/en/disclaimer/",
+      ko: "/ko/disclaimer/",
+      zh: "/zh/disclaimer/",
     },
   },
 };

@@ -17,12 +17,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: t.ward.listTitle(`${wardSlug} Ward`),
     description: `${t.ward.listDesc(info.areas.length)} (${wardName})`,
     alternates: {
-      canonical: `/${locale}/Tokyo/${wardSlug}`,
+      canonical: `/${locale}/Tokyo/${wardSlug}/`,
       languages: {
-        ja: `/Tokyo/${wardSlug}`,
-        en: `/en/Tokyo/${wardSlug}`,
-        ko: `/ko/Tokyo/${wardSlug}`,
-        zh: `/zh/Tokyo/${wardSlug}`,
+        ja: `/Tokyo/${wardSlug}/`,
+        en: `/en/Tokyo/${wardSlug}/`,
+        ko: `/ko/Tokyo/${wardSlug}/`,
+        zh: `/zh/Tokyo/${wardSlug}/`,
       },
     },
   };

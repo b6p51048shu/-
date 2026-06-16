@@ -12,12 +12,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: c.title,
     description: c.sections[0]?.p.slice(0, 120),
     alternates: {
-      canonical: `/${locale}/privacy`,
+      canonical: `/${locale}/privacy/`,
       languages: {
-        ja: "/privacy",
-        en: "/en/privacy",
-        ko: "/ko/privacy",
-        zh: "/zh/privacy",
+        ja: "/privacy/",
+        en: "/en/privacy/",
+        ko: "/ko/privacy/",
+        zh: "/zh/privacy/",
       },
     },
   };

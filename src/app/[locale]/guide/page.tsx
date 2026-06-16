@@ -13,12 +13,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: c.metaTitle,
     description: c.metaDesc,
     alternates: {
-      canonical: `/${locale}/guide`,
+      canonical: `/${locale}/guide/`,
       languages: {
-        ja: "/guide",
-        en: "/en/guide",
-        ko: "/ko/guide",
-        zh: "/zh/guide",
+        ja: "/guide/",
+        en: "/en/guide/",
+        ko: "/ko/guide/",
+        zh: "/zh/guide/",
       },
     },
   };

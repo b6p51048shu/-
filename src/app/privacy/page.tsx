@@ -5,12 +5,12 @@ export const metadata: Metadata = {
   title: "プライバシーポリシー",
   description: "ゴミの日.com のプライバシーポリシー。Cookie・アクセス解析（GA4）・広告配信（Google AdSense）・アフィリエイト・運営者情報・お問い合わせについて。",
   alternates: {
-    canonical: "/privacy",
+    canonical: "/privacy/",
     languages: {
-      ja: "/privacy",
-      en: "/en/privacy",
-      ko: "/ko/privacy",
-      zh: "/zh/privacy",
+      ja: "/privacy/",
+      en: "/en/privacy/",
+      ko: "/ko/privacy/",
+      zh: "/zh/privacy/",
     },
   },
 };

@@ -49,6 +49,16 @@ export const metadata: Metadata = {
     title: "ゴミの日.com | 東京都ごみ収集日",
     description: "東京都のごみ収集日を地域別に検索。GPS対応・無料。",
   },
+  alternates: {
+    canonical: "/",
+    languages: {
+      ja: "/",
+      en: "/en/",
+      ko: "/ko/",
+      zh: "/zh/",
+      "x-default": "/",
+    },
+  },
   robots: {
     index: true,
     follow: true,

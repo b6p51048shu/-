@@ -12,12 +12,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: c.title,
     description: c.sections[0]?.p.slice(0, 120),
     alternates: {
-      canonical: `/${locale}/disclaimer`,
+      canonical: `/${locale}/disclaimer/`,
       languages: {
-        ja: "/disclaimer",
-        en: "/en/disclaimer",
-        ko: "/ko/disclaimer",
-        zh: "/zh/disclaimer",
+        ja: "/disclaimer/",
+        en: "/en/disclaimer/",
+        ko: "/ko/disclaimer/",
+        zh: "/zh/disclaimer/",
       },
     },
   };

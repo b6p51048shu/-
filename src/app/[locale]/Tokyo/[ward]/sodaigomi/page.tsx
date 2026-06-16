@@ -19,12 +19,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: f(c.metaTitle),
     description: f(c.metaDesc),
     alternates: {
-      canonical: `/${locale}/Tokyo/${wardSlug}/sodaigomi`,
+      canonical: `/${locale}/Tokyo/${wardSlug}/sodaigomi/`,
       languages: {
-        ja: `/Tokyo/${wardSlug}/sodaigomi`,
-        en: `/en/Tokyo/${wardSlug}/sodaigomi`,
-        ko: `/ko/Tokyo/${wardSlug}/sodaigomi`,
-        zh: `/zh/Tokyo/${wardSlug}/sodaigomi`,
+        ja: `/Tokyo/${wardSlug}/sodaigomi/`,
+        en: `/en/Tokyo/${wardSlug}/sodaigomi/`,
+        ko: `/ko/Tokyo/${wardSlug}/sodaigomi/`,
+        zh: `/zh/Tokyo/${wardSlug}/sodaigomi/`,
       },
     },
     openGraph: {

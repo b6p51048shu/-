@@ -37,6 +37,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${wardName} ${schedule.area}のごみ収集日${titleSuffix}`,
     description: `${wardName} ${schedule.area}のごみ収集スケジュール。${parts.join("、")}。`,
+    alternates: {
+      canonical: `/Tokyo/${wardSlug}/${areaSlug}/`,
+      languages: {
+        ja: `/Tokyo/${wardSlug}/${areaSlug}/`,
+        en: `/en/Tokyo/${wardSlug}/${areaSlug}/`,
+        ko: `/ko/Tokyo/${wardSlug}/${areaSlug}/`,
+        zh: `/zh/Tokyo/${wardSlug}/${areaSlug}/`,
+      },
+    },
     openGraph: {
       title: `${wardName} ${schedule.area}のごみ収集日${titleSuffix} | ゴミの日.com`,
       description: `${parts.join("、")}`,

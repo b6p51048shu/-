@@ -8,12 +8,12 @@ export const metadata: Metadata = {
   title: c.metaTitle,
   description: c.metaDesc,
   alternates: {
-    canonical: "/guide/funyohin-hiyo",
+    canonical: "/guide/funyohin-hiyo/",
     languages: {
-      ja: "/guide/funyohin-hiyo",
-      en: "/en/guide/funyohin-hiyo",
-      ko: "/ko/guide/funyohin-hiyo",
-      zh: "/zh/guide/funyohin-hiyo",
+      ja: "/guide/funyohin-hiyo/",
+      en: "/en/guide/funyohin-hiyo/",
+      ko: "/ko/guide/funyohin-hiyo/",
+      zh: "/zh/guide/funyohin-hiyo/",
     },
   },
   openGraph: {

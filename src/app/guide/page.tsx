@@ -7,12 +7,12 @@ export const metadata: Metadata = {
   title: c.metaTitle,
   description: c.metaDesc,
   alternates: {
-    canonical: "/guide",
+    canonical: "/guide/",
     languages: {
-      ja: "/guide",
-      en: "/en/guide",
-      ko: "/ko/guide",
-      zh: "/zh/guide",
+      ja: "/guide/",
+      en: "/en/guide/",
+      ko: "/ko/guide/",
+      zh: "/zh/guide/",
     },
   },
 };

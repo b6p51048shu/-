@@ -23,12 +23,12 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
     title: t.area.pageTitle(schedule.area),
     description: `${wardSlug} ${schedule.area}: ${scheduleToLocale(schedule.burnable, locale)}`,
     alternates: {
-      canonical: `/${locale}/Tokyo/${wardSlug}/${areaSlug}`,
+      canonical: `/${locale}/Tokyo/${wardSlug}/${areaSlug}/`,
       languages: {
-        ja: `/Tokyo/${wardSlug}/${areaSlug}`,
-        en: `/en/Tokyo/${wardSlug}/${areaSlug}`,
-        ko: `/ko/Tokyo/${wardSlug}/${areaSlug}`,
-        zh: `/zh/Tokyo/${wardSlug}/${areaSlug}`,
+        ja: `/Tokyo/${wardSlug}/${areaSlug}/`,
+        en: `/en/Tokyo/${wardSlug}/${areaSlug}/`,
+        ko: `/ko/Tokyo/${wardSlug}/${areaSlug}/`,
+        zh: `/zh/Tokyo/${wardSlug}/${areaSlug}/`,
       },
     },
   };

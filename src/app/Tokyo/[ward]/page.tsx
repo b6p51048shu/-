@@ -13,6 +13,15 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   return {
     title: `${wardName}のごみ収集日一覧`,
     description: `${wardName}の全${info.areas.length}地域のごみ収集日（燃やすごみ・資源ごみ・プラスチック）を一覧表示。地域を選ぶと収集曜日をすぐに確認できます。`,
+    alternates: {
+      canonical: `/Tokyo/${wardSlug}/`,
+      languages: {
+        ja: `/Tokyo/${wardSlug}/`,
+        en: `/en/Tokyo/${wardSlug}/`,
+        ko: `/ko/Tokyo/${wardSlug}/`,
+        zh: `/zh/Tokyo/${wardSlug}/`,
+      },
+    },
     openGraph: {
       title: `${wardName}のごみ収集日 | ゴミの日.com`,
       description: `${wardName}全${info.areas.length}地域のごみ収集スケジュール。`,
