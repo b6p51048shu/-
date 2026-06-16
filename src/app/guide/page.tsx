@@ -30,7 +30,7 @@ export default function GuideIndexPage() {
 
       <div className="guide-list">
         {c.articles.map((a) => (
-          <a key={a.slug} href={`/guide/${a.slug}`} className="guide-card">
+          <a key={a.slug} href={`/guide/${a.slug}/`} className="guide-card">
             <div className="guide-card-title">{a.title}</div>
             <div className="guide-card-desc">{a.desc}</div>
           </a>

@@ -33,7 +33,7 @@ export default async function LocaleGuideIndexPage({ params }: Props) {
   return (
     <div className="container-narrow">
       <nav className="breadcrumb" aria-label="Breadcrumb">
-        <a href={`/${locale}`}>{c.bcHome}</a>
+        <a href={`/${locale}/`}>{c.bcHome}</a>
         <span>{c.bcCurrent}</span>
       </nav>
 
@@ -42,7 +42,7 @@ export default async function LocaleGuideIndexPage({ params }: Props) {
 
       <div className="guide-list">
         {c.articles.map((a) => (
-          <a key={a.slug} href={`/${locale}/guide/${a.slug}`} className="guide-card">
+          <a key={a.slug} href={`/${locale}/guide/${a.slug}/`} className="guide-card">
             <div className="guide-card-title">{a.title}</div>
             <div className="guide-card-desc">{a.desc}</div>
           </a>
@@ -50,7 +50,7 @@ export default async function LocaleGuideIndexPage({ params }: Props) {
       </div>
 
       <div style={{ marginTop: "2.5rem" }}>
-        <a href={`/${locale}`} className="btn btn-outline">{c.backHome}</a>
+        <a href={`/${locale}/`} className="btn btn-outline">{c.backHome}</a>
       </div>
     </div>
   );

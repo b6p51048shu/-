@@ -157,7 +157,7 @@ export default function LocaleTopPage() {
         <h2 className="section-title">{t.ward.gridTitle}</h2>
         <div className="ward-grid">
           {wards23.filter((w) => wardIndexData[w]).map((ward) => (
-            <a key={ward} href={`/${validLocale}/Tokyo/${wardIndexData[ward].slug}`} className="ward-card">
+            <a key={ward} href={`/${validLocale}/Tokyo/${wardIndexData[ward].slug}/`} className="ward-card">
               {wardIndexData[ward].slug}
               <div className="ward-card-count">{t.ward.areas(wardIndexData[ward].areas.length)}</div>
             </a>
@@ -170,7 +170,7 @@ export default function LocaleTopPage() {
             <h2 className="section-title" style={{ marginTop: "2.5rem" }}>{t.ward.tamaGridTitle}</h2>
             <div className="ward-grid">
               {tamaCities.filter((w) => wardIndexData[w]).map((city) => (
-                <a key={city} href={`/${validLocale}/Tokyo/${wardIndexData[city].slug}`} className="ward-card">
+                <a key={city} href={`/${validLocale}/Tokyo/${wardIndexData[city].slug}/`} className="ward-card">
                   {wardIndexData[city].slug}
                   <div className="ward-card-count">
                     {t.ward.areas(wardIndexData[city].areas.length)}

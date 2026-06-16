@@ -119,7 +119,7 @@ export default async function AreaPage({ params }: Props) {
       <div className="container-narrow">
         <nav className="breadcrumb" aria-label="パンくず">
           <a href="/">ホーム</a>
-          <span><a href={`/Tokyo/${wardSlug}`}>{wardName}</a></span>
+          <span><a href={`/Tokyo/${wardSlug}/`}>{wardName}</a></span>
           <span>{areaName}</span>
         </nav>
 
@@ -209,7 +209,7 @@ export default async function AreaPage({ params }: Props) {
                 {wardName}の粗大ごみは事前の申し込みが必要な場合が多く、収集日カレンダーには表示されません。申し込み方法・手数料・注意点をまとめています。
               </p>
               {wardInfo?.oversized_detail ? (
-                <a href={`/Tokyo/${wardSlug}/sodaigomi`} className="oversized-notice-link">
+                <a href={`/Tokyo/${wardSlug}/sodaigomi/`} className="oversized-notice-link">
                   {wardName}の粗大ごみの出し方を見る →
                 </a>
               ) : (
@@ -240,15 +240,15 @@ export default async function AreaPage({ params }: Props) {
         {/* 前後ナビゲーション */}
         <div style={{ display: "flex", gap: "1rem", marginTop: "2rem", flexWrap: "wrap" }}>
           {prevArea && (
-            <a href={`/Tokyo/${wardSlug}/${prevArea.slug}`} className="btn btn-outline">
+            <a href={`/Tokyo/${wardSlug}/${prevArea.slug}/`} className="btn btn-outline">
               ← {prevArea.area}
             </a>
           )}
-          <a href={`/Tokyo/${wardSlug}`} className="btn btn-outline">
+          <a href={`/Tokyo/${wardSlug}/`} className="btn btn-outline">
             {wardName}一覧
           </a>
           {nextArea && (
-            <a href={`/Tokyo/${wardSlug}/${nextArea.slug}`} className="btn btn-outline">
+            <a href={`/Tokyo/${wardSlug}/${nextArea.slug}/`} className="btn btn-outline">
               {nextArea.area} →
             </a>
           )}

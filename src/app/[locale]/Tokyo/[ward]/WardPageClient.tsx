@@ -19,7 +19,7 @@ export default function LocaleWardPageClient({ locale, wardName, wardInfo, wardS
   return (
     <div className="container">
       <nav className="breadcrumb" aria-label="Breadcrumb">
-        <a href={`/${locale}`}>{t.site.nav.top}</a>
+        <a href={`/${locale}/`}>{t.site.nav.top}</a>
         <span>{wardSlug} Ward</span>
       </nav>
 
@@ -46,7 +46,7 @@ export default function LocaleWardPageClient({ locale, wardName, wardInfo, wardS
       ) : (
         <div className="area-list">
           {filtered.map((a) => (
-            <a key={a.slug} href={`/${locale}/Tokyo/${wardSlug}/${a.slug}`} className="area-link">
+            <a key={a.slug} href={`/${locale}/Tokyo/${wardSlug}/${a.slug}/`} className="area-link">
               <span style={{ fontSize: ".8em", opacity: .7, display: "block", marginBottom: ".1rem" }}>{a.area}</span>
               {a.slug.replace(/-/g, " ")}
             </a>

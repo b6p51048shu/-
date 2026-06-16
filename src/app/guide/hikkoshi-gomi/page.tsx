@@ -108,7 +108,7 @@ export default function HikkoshiGomiPage() {
       <div className="container-narrow">
         <nav className="breadcrumb" aria-label="パンくず">
           <a href="/">ホーム</a>
-          <span><a href="/guide">お役立ちガイド</a></span>
+          <span><a href="/guide/">お役立ちガイド</a></span>
           <span>引越しゴミの処分方法</span>
         </nav>
 
@@ -198,7 +198,7 @@ export default function HikkoshiGomiPage() {
           <p>
             基本は<strong>「安い順（自治体→買取→業者）に使い、足りない分を上のルートで埋める」</strong>のが鉄則。
             時間に余裕があるほど安く、急ぐほど業者寄りになります。各品目の細かい料金は
-            {" "}<a href="/guide/funyohin-hiyo" style={{ color: "#b45309", fontWeight: 600, textDecoration: "underline" }}>不用品回収の費用相場</a>{" "}
+            {" "}<a href="/guide/funyohin-hiyo/" style={{ color: "#b45309", fontWeight: 600, textDecoration: "underline" }}>不用品回収の費用相場</a>{" "}
             にまとめています。
           </p>
 
@@ -298,7 +298,7 @@ export default function HikkoshiGomiPage() {
           </ul>
           <p>
             料金の目安・トラック積み放題プランの相場・悪質業者の見分け方は、
-            {" "}<a href="/guide/funyohin-hiyo" style={{ color: "#b45309", fontWeight: 600, textDecoration: "underline" }}>不用品回収の費用相場【2026年版】</a>{" "}
+            {" "}<a href="/guide/funyohin-hiyo/" style={{ color: "#b45309", fontWeight: 600, textDecoration: "underline" }}>不用品回収の費用相場【2026年版】</a>{" "}
             で詳しく解説しています。あわせてご覧ください。
           </p>
 
@@ -320,8 +320,8 @@ export default function HikkoshiGomiPage() {
           <div className="article-related">
             <strong>関連リンク</strong>
             <div className="article-related-links">
-              <a href="/guide/funyohin-hiyo" className="btn btn-outline">不用品回収の費用相場を見る</a>
-              <a href="/guide" className="btn btn-outline">お役立ちガイド一覧</a>
+              <a href="/guide/funyohin-hiyo/" className="btn btn-outline">不用品回収の費用相場を見る</a>
+              <a href="/guide/" className="btn btn-outline">お役立ちガイド一覧</a>
               <a href="/" className="btn btn-outline">ごみ収集日カレンダーで調べる</a>
             </div>
           </div>

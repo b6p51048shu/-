@@ -33,7 +33,7 @@ export default async function LocalePrivacyPage({ params }: Props) {
   return (
     <div className="container-narrow">
       <nav className="breadcrumb" aria-label="Breadcrumb">
-        <a href={`/${locale}`}>{chrome.navTop}</a>
+        <a href={`/${locale}/`}>{chrome.navTop}</a>
         <span>{c.title}</span>
       </nav>
 
@@ -48,7 +48,7 @@ export default async function LocalePrivacyPage({ params }: Props) {
       ))}
 
       <div style={{ marginTop: "2.5rem" }}>
-        <a href={`/${locale}`} className="btn btn-outline">{c.backHome}</a>
+        <a href={`/${locale}/`} className="btn btn-outline">{c.backHome}</a>
       </div>
     </div>
   );

@@ -68,9 +68,9 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const htmlLang = htmlLangFromPathname(pathname);
   const locale = localeFromPathname(pathname);
   const chrome = siteChrome[locale];
-  const homeHref = locale === "ja" ? "/" : `/${locale}`;
-  const disclaimerHref = locale === "ja" ? "/disclaimer" : `/${locale}/disclaimer`;
-  const privacyHref = locale === "ja" ? "/privacy" : `/${locale}/privacy`;
+  const homeHref = locale === "ja" ? "/" : `/${locale}/`;
+  const disclaimerHref = locale === "ja" ? "/disclaimer/" : `/${locale}/disclaimer/`;
+  const privacyHref = locale === "ja" ? "/privacy/" : `/${locale}/privacy/`;
 
   return (
     <html lang={htmlLang} className={notoSansJP.className}>
@@ -105,7 +105,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             </a>
             <nav className="site-nav">
               <a href={homeHref}>{chrome.navTop}</a>
-              {locale === "ja" && <a href="/guide">お役立ちガイド</a>}
+              {locale === "ja" && <a href="/guide/">お役立ちガイド</a>}
             </nav>
             <LanguageSwitcher />
           </header>
@@ -117,7 +117,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
               <p className="footer-links">
                 {locale === "ja" && (
                   <>
-                    <a href="/guide">お役立ちガイド</a>
+                    <a href="/guide/">お役立ちガイド</a>
                     <span aria-hidden="true"> · </span>
                   </>
                 )}

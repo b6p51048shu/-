@@ -54,7 +54,7 @@ export default function FunyohinArticle({ locale }: Props) {
       <div className="container-narrow">
         <nav className="breadcrumb" aria-label="Breadcrumb">
           <a href={`${prefix}/`}>{c.bcHome}</a>
-          <span><a href={`${prefix}/guide`}>{c.bcGuide}</a></span>
+          <span><a href={`${prefix}/guide/`}>{c.bcGuide}</a></span>
           <span>{c.bcCurrent}</span>
         </nav>
 
@@ -208,7 +208,7 @@ export default function FunyohinArticle({ locale }: Props) {
           <div className="article-related">
             <strong>{c.relatedTitle}</strong>
             <div className="article-related-links">
-              <a href={`${prefix}/guide`} className="btn btn-outline">{c.relatedGuide}</a>
+              <a href={`${prefix}/guide/`} className="btn btn-outline">{c.relatedGuide}</a>
               <a href={`${prefix}/`} className="btn btn-outline">{c.relatedCalendar}</a>
             </div>
           </div>

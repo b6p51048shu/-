@@ -105,8 +105,8 @@ export default async function LocaleAreaPage({ params }: Props) {
     <>
     <div className="container-narrow">
       <nav className="breadcrumb" aria-label="Breadcrumb">
-        <a href={`/${locale}`}>{t.site.nav.top}</a>
-        <span><a href={`/${locale}/Tokyo/${wardSlug}`}>{wardSlug} Ward</a></span>
+        <a href={`/${locale}/`}>{t.site.nav.top}</a>
+        <span><a href={`/${locale}/Tokyo/${wardSlug}/`}>{wardSlug} Ward</a></span>
         <span>{areaName}</span>
       </nav>
 
@@ -228,15 +228,15 @@ export default async function LocaleAreaPage({ params }: Props) {
       {/* ナビゲーション */}
       <div style={{ display: "flex", gap: "1rem", marginTop: "2rem", flexWrap: "wrap" }}>
         {prevArea && (
-          <a href={`/${locale}/Tokyo/${wardSlug}/${prevArea.slug}`} className="btn btn-outline">
+          <a href={`/${locale}/Tokyo/${wardSlug}/${prevArea.slug}/`} className="btn btn-outline">
             ← {prevArea.area}
           </a>
         )}
-        <a href={`/${locale}/Tokyo/${wardSlug}`} className="btn btn-outline">
+        <a href={`/${locale}/Tokyo/${wardSlug}/`} className="btn btn-outline">
           {t.area.backToList(`${wardSlug} Ward`)}
         </a>
         {nextArea && (
-          <a href={`/${locale}/Tokyo/${wardSlug}/${nextArea.slug}`} className="btn btn-outline">
+          <a href={`/${locale}/Tokyo/${wardSlug}/${nextArea.slug}/`} className="btn btn-outline">
             {nextArea.area} →
           </a>
         )}

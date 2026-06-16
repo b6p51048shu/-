@@ -114,7 +114,7 @@ export default function SodaigomiArticle({ locale, wardName, wardSlug, info }: P
       <div className="container-narrow">
         <nav className="breadcrumb" aria-label="Breadcrumb">
           <a href={`${prefix}/`}>{c.bcHome}</a>
-          <span><a href={`${prefix}/Tokyo/${wardSlug}`}>{wardName}</a></span>
+          <span><a href={`${prefix}/Tokyo/${wardSlug}/`}>{wardName}</a></span>
           <span>{c.bcCurrent}</span>
         </nav>
 
@@ -218,8 +218,8 @@ export default function SodaigomiArticle({ locale, wardName, wardSlug, info }: P
           <div className="article-related">
             <strong>{c.relatedTitle}</strong>
             <div className="article-related-links">
-              <a href={`${prefix}/Tokyo/${wardSlug}`} className="btn btn-outline">{f(c.relatedSchedule)}</a>
-              <a href={`${prefix}/guide/funyohin-hiyo`} className="btn btn-outline">{c.relatedFunyohin}</a>
+              <a href={`${prefix}/Tokyo/${wardSlug}/`} className="btn btn-outline">{f(c.relatedSchedule)}</a>
+              <a href={`${prefix}/guide/funyohin-hiyo/`} className="btn btn-outline">{c.relatedFunyohin}</a>
               <a href={`${prefix}/`} className="btn btn-outline">{c.relatedCalendar}</a>
             </div>
           </div>

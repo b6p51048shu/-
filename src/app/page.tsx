@@ -167,7 +167,7 @@ export default function TopPage() {
 
             {selectedWard && wardIndexData[selectedWard] && (
               <a
-                href={`/Tokyo/${wardIndexData[selectedWard].slug}/sodaigomi`}
+                href={`/Tokyo/${wardIndexData[selectedWard].slug}/sodaigomi/`}
                 className="search-sodai-link"
               >
                 🪑 {selectedWard}の粗大ごみの出し方・申し込み方法を見る →
@@ -184,7 +184,7 @@ export default function TopPage() {
           {wards23.filter((w) => wardIndexData[w]).map((ward) => (
             <a
               key={ward}
-              href={`/Tokyo/${wardIndexData[ward].slug}`}
+              href={`/Tokyo/${wardIndexData[ward].slug}/`}
               className="ward-card"
             >
               {ward}
@@ -203,7 +203,7 @@ export default function TopPage() {
               {tamaCities.filter((w) => wardIndexData[w]).map((city) => (
                 <a
                   key={city}
-                  href={`/Tokyo/${wardIndexData[city].slug}`}
+                  href={`/Tokyo/${wardIndexData[city].slug}/`}
                   className="ward-card"
                 >
                   {city}
@@ -233,8 +233,8 @@ export default function TopPage() {
                 また、戸別収集では原則として申込者が建物の外まで自分で運び出しておく必要があります。タンスやベッド、大型の家電などを運び出すのが難しい場合は、部屋の中から搬出まで対応してくれる不用品回収を利用するという選択肢もあります。費用の目安は下記のガイドでまとめています。
               </p>
               <div className="article-related-links">
-                <a href="/guide/funyohin-hiyo" className="btn btn-outline">不用品回収の費用相場を見る</a>
-                <a href="/guide" className="btn btn-outline">ごみ・不用品のお役立ちガイド</a>
+                <a href="/guide/funyohin-hiyo/" className="btn btn-outline">不用品回収の費用相場を見る</a>
+                <a href="/guide/" className="btn btn-outline">ごみ・不用品のお役立ちガイド</a>
               </div>
             </div>
           </div>
