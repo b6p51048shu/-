@@ -35,6 +35,15 @@ export const AD_BANNER_PC = {
   height: 60,
 };
 
+/** レクタングル（300×250） - PC右下フローティング用・CTR個別計測 */
+export const AD_BANNER_RECT = {
+  href: "https://px.a8.net/svt/ejp?a8mat=4B5LJZ+8NDQXM+4X26+NV1XD",
+  src: "https://www26.a8.net/svt/bgt?aid=260601695523&wid=002&eno=01&mid=s00000022947004008000&mc=1",
+  pixel: "https://www15.a8.net/0.gif?a8mat=4B5LJZ+8NDQXM+4X26+NV1XD",
+  width: 300,
+  height: 250,
+};
+
 /** モバイル/PC切替のブレークポイント（px） */
 export const AD_MOBILE_BREAKPOINT = 768;
 
