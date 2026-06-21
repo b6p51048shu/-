@@ -124,27 +124,52 @@ a:hover { text-decoration: underline; }
 .inline-ad {
   position: relative;
   margin: 2rem 0;
-  padding: 1rem 1rem 1.1rem;
-  background: #fafafa;
-  border: 1px solid var(--gray-200, #e5e7eb);
-  border-radius: 10px;
+  padding: 1.1rem 1.2rem 1.2rem;
+  background: linear-gradient(135deg, var(--green-light, #dcfce7) 0%, #f0fdf4 60%, #ffffff 100%);
+  border: 1px solid #bbf7d0;
+  border-radius: 14px;
   text-align: center;
 }
 .inline-ad .ad-label {
   display: inline-block;
-  background: #ededed;
-  color: #8a8a8a;
+  background: #ffffff;
+  color: var(--green-dark, #15803d);
   font-size: .68rem;
   font-weight: 600;
   padding: .1rem .5rem;
   border-radius: 4px;
   margin-bottom: .65rem;
+  border: 1px solid #bbf7d0;
+}
+.inline-ad-tip {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: .65rem;
+  margin: 0 0 .9rem;
+  text-align: left;
+}
+.inline-ad-raccoon {
+  flex: none;
+  width: 48px;
+  height: 48px;
+  object-fit: cover;
+  object-position: center top;
+  border-radius: 50%;
+  background: #fff;
+  border: 2px solid #fff;
+  box-shadow: 0 1px 4px rgba(0,0,0,.12);
 }
 .inline-ad-lead {
   font-size: .92rem;
-  color: var(--gray-700, #374151);
-  margin: 0 0 .85rem;
+  color: var(--gray-800, #1f2937);
+  font-weight: 500;
+  margin: 0;
   line-height: 1.55;
+  max-width: 30em;
+}
+@media (max-width: 480px) {
+  .inline-ad-tip { align-items: flex-start; }
 }
 .inline-ad-banner-link {
   display: inline-block;
@@ -227,7 +252,7 @@ a:hover { text-decoration: underline; }
 /* ── PC右下フローティング広告（300×250 レクタングル・A8公式素材そのまま） ── */
 .float-ad-rect {
   position: fixed;
-  right: 16px;
+  right: calc(30% - 150px);
   bottom: 16px;
   z-index: 50;
   width: 300px;

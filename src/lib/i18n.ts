@@ -790,7 +790,7 @@ export const adContent: Record<BagsUILocale, {
     label: "広告",
     closeAria: "閉じる",
     inline: {
-      title: "粗大ごみ・不用品でお困りですか？",
+      title: "粗大ごみが多い・収集日まで間に合わない…そんなときは民間の不用品回収業者が便利です。基本料金0円・見積もり無料・最短即日で対応してもらえます。",
       features: ["基本料金 0円", "見積もり無料", "出張費 0円"],
       body: "ゴミ屋敷・遺品整理・引越し時のゴミ回収まで対応。業界最安値に挑戦中。",
       cta: "無料で見積もりを取る →",
@@ -802,7 +802,7 @@ export const adContent: Record<BagsUILocale, {
     label: "Ad",
     closeAria: "Close",
     inline: {
-      title: "Need help with bulky waste or unwanted items?",
+      title: "Moving out or doing a big clean-up? A pickup service can haul away bulky and unwanted items.",
       features: ["Base fee ¥0", "Free quote", "Travel fee ¥0"],
       body: "Bulky waste, estate cleanup, and moving cleanup — all covered. (Service area: Japan)",
       cta: "Get a free quote →",
