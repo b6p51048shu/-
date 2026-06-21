@@ -175,15 +175,28 @@ a:hover { text-decoration: underline; }
   display: inline-block;
   line-height: 0;
   max-width: 100%;
-  border-radius: 4px;
+  border-radius: 8px;
   overflow: hidden;
-  transition: opacity .15s;
+  box-shadow: 0 4px 14px rgba(21, 128, 61, .22);
+  transition: transform .15s ease, box-shadow .15s ease;
+  animation: inline-ad-pulse 2.6s ease-in-out infinite;
 }
-.inline-ad-banner-link:hover { opacity: .9; }
+.inline-ad-banner-link:hover {
+  transform: translateY(-2px) scale(1.02);
+  box-shadow: 0 8px 20px rgba(21, 128, 61, .32);
+  animation-play-state: paused;
+}
 .inline-ad-banner-link img {
   display: block;
   max-width: 100%;
   height: auto;
+}
+@keyframes inline-ad-pulse {
+  0%, 100% { box-shadow: 0 4px 14px rgba(21, 128, 61, .22); }
+  50% { box-shadow: 0 4px 20px rgba(21, 128, 61, .45); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .inline-ad-banner-link { animation: none; }
 }
 /* マウント前のレイアウトシフト防止用スロット */
 .inline-ad-slot {
