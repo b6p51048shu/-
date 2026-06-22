@@ -129,6 +129,21 @@ a:hover { text-decoration: underline; }
   border: 1px solid #bbf7d0;
   border-radius: 14px;
   text-align: center;
+  transition: border-color .15s ease;
+}
+.inline-ad:has(.inline-ad-clickwrap:hover) {
+  border-color: #4ade80;
+}
+.inline-ad-clickwrap {
+  display: block;
+  color: inherit;
+  text-decoration: none;
+  cursor: pointer;
+  border-radius: 12px;
+  transition: transform .15s ease;
+}
+.inline-ad-clickwrap:hover {
+  transform: translateY(-2px);
 }
 .inline-ad .ad-label {
   display: inline-block;
@@ -178,11 +193,10 @@ a:hover { text-decoration: underline; }
   border-radius: 8px;
   overflow: hidden;
   box-shadow: 0 4px 14px rgba(21, 128, 61, .22);
-  transition: transform .15s ease, box-shadow .15s ease;
+  transition: box-shadow .15s ease;
   animation: inline-ad-pulse 2.6s ease-in-out infinite;
 }
-.inline-ad-banner-link:hover {
-  transform: translateY(-2px) scale(1.02);
+.inline-ad-clickwrap:hover .inline-ad-banner-link {
   box-shadow: 0 8px 20px rgba(21, 128, 61, .32);
   animation-play-state: paused;
 }

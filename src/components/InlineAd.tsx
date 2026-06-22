@@ -41,20 +41,23 @@ export default function InlineAd({ locale = "ja" }: { locale?: BagsUILocale }) {
   return (
     <aside className="inline-ad" aria-label={t.label}>
       <span className="ad-label">{t.label}</span>
-      <div className="inline-ad-tip">
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src="/raccoon.png" className="inline-ad-raccoon" alt="" width={48} height={48} />
-        <p className="inline-ad-lead">{t.inline.title}</p>
-      </div>
 
       <a
         href={b.href}
         target="_blank"
         rel="noopener nofollow sponsored"
-        className="inline-ad-banner-link"
+        className="inline-ad-clickwrap"
       >
-        {/* eslint-disable-next-line @next/next/no-img-element */}
-        <img src={b.src} width={b.width} height={b.height} alt={t.banner.title} />
+        <div className="inline-ad-tip">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src="/raccoon.png" className="inline-ad-raccoon" alt="" width={48} height={48} />
+          <p className="inline-ad-lead">{t.inline.title}</p>
+        </div>
+
+        <span className="inline-ad-banner-link">
+          {/* eslint-disable-next-line @next/next/no-img-element */}
+          <img src={b.src} width={b.width} height={b.height} alt={t.banner.title} />
+        </span>
       </a>
 
       {b.pixel && (
