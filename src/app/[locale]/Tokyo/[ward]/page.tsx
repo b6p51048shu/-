@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getWardBySlug } from "@/lib/data";
 import { getT, isValidLocale } from "@/lib/i18n";
+import { breadcrumbJsonLd } from "@/lib/jsonld";
 import { notFound } from "next/navigation";
 import LocaleWardPageClient from "./WardPageClient";
 
@@ -37,12 +38,24 @@ export default async function LocaleWardPage({ params }: Props) {
 
   const { name: wardName, info } = result;
 
+  const t = getT(locale);
+  const breadcrumbLd = breadcrumbJsonLd([
+    { name: t.site.nav.top, path: `/${locale}/` },
+    { name: `${wardSlug} Ward`, path: `/${locale}/Tokyo/${wardSlug}/` },
+  ]);
+
   return (
-    <LocaleWardPageClient
-      locale={locale}
-      wardName={wardName}
-      wardInfo={info}
-      wardSlug={wardSlug}
-    />
+    <>
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+      />
+      <LocaleWardPageClient
+        locale={locale}
+        wardName={wardName}
+        wardInfo={info}
+        wardSlug={wardSlug}
+      />
+    </>
   );
 }

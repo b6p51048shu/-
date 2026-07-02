@@ -1,5 +1,6 @@
 import type { Metadata } from "next";
 import { getWardBySlug } from "@/lib/data";
+import { breadcrumbJsonLd } from "@/lib/jsonld";
 import { notFound } from "next/navigation";
 import WardPageClient from "./WardPageClient";
 
@@ -45,11 +46,20 @@ export default async function WardPage({ params }: Props) {
     numberOfItems: info.areas.length,
   };
 
+  const breadcrumbLd = breadcrumbJsonLd([
+    { name: "ホーム", path: "/" },
+    { name: wardName, path: `/Tokyo/${wardSlug}/` },
+  ]);
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
       <WardPageClient wardName={wardName} wardInfo={info} wardSlug={wardSlug} />
     </>

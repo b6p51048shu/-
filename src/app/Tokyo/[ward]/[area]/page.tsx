@@ -6,6 +6,7 @@ import GarbageCalendar from "./GarbageCalendar";
 import BagsPanel from "./BagsPanel";
 import InlineAd from "@/components/InlineAd";
 import BottomAdBanner from "@/components/BottomAdBanner";
+import { breadcrumbJsonLd, nearbyAreas } from "@/lib/jsonld";
 import { notFound } from "next/navigation";
 
 type Props = { params: Promise<{ ward: string; area: string }> };
@@ -90,6 +91,7 @@ export default async function AreaPage({ params }: Props) {
   const currentIdx = areas.findIndex((a) => a.slug === areaSlug);
   const prevArea = currentIdx > 0 ? areas[currentIdx - 1] : null;
   const nextArea = currentIdx < areas.length - 1 ? areas[currentIdx + 1] : null;
+  const nearby = nearbyAreas(areas, areaSlug);
 
   const scheduleItems = getScheduleItems(schedule);
 
@@ -119,11 +121,21 @@ export default async function AreaPage({ params }: Props) {
       })),
   };
 
+  const breadcrumbLd = breadcrumbJsonLd([
+    { name: "ホーム", path: "/" },
+    { name: wardName, path: `/Tokyo/${wardSlug}/` },
+    { name: areaName, path: `/Tokyo/${wardSlug}/${areaSlug}/` },
+  ]);
+
   return (
     <>
       <script
         type="application/ld+json"
         dangerouslySetInnerHTML={{ __html: JSON.stringify(jsonLd) }}
+      />
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
       />
       <div className="container-narrow">
         <nav className="breadcrumb" aria-label="パンくず">
@@ -244,6 +256,20 @@ export default async function AreaPage({ params }: Props) {
             </div>
           ))}
         </section>
+        )}
+
+        {/* 同じ区の近隣エリア（内部リンク） */}
+        {nearby.length > 0 && (
+          <section style={{ marginTop: "2rem" }}>
+            <h2 className="section-title">{wardName}の他のエリア</h2>
+            <div className="area-list">
+              {nearby.map((a) => (
+                <a key={a.slug} href={`/Tokyo/${wardSlug}/${a.slug}/`} className="area-link">
+                  {a.area}
+                </a>
+              ))}
+            </div>
+          </section>
         )}
 
         {/* 前後ナビゲーション */}

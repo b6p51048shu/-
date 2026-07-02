@@ -9,6 +9,7 @@ import IcsButton from "@/app/Tokyo/[ward]/[area]/IcsButton";
 import BagsPanel from "@/app/Tokyo/[ward]/[area]/BagsPanel";
 import InlineAd from "@/components/InlineAd";
 import BottomAdBanner from "@/components/BottomAdBanner";
+import { breadcrumbJsonLd, nearbyAreas } from "@/lib/jsonld";
 
 type Props = { params: Promise<{ locale: string; ward: string; area: string }> };
 
@@ -101,8 +102,24 @@ export default async function LocaleAreaPage({ params }: Props) {
     (k) => (schedule[`${k}_parsed` as keyof AreaSchedule] as { type?: string } | undefined)?.type === "unknown"
   );
 
+  const nearby = nearbyAreas(areas, areaSlug);
+  const nearbyTitle =
+    locale === "ko" ? `${wardSlug}구의 다른 지역` :
+    locale === "zh" ? `${wardSlug}区的其他区域` :
+    `Other areas in ${wardSlug} Ward`;
+
+  const breadcrumbLd = breadcrumbJsonLd([
+    { name: t.site.nav.top, path: `/${locale}/` },
+    { name: `${wardSlug} Ward`, path: `/${locale}/Tokyo/${wardSlug}/` },
+    { name: areaName, path: `/${locale}/Tokyo/${wardSlug}/${areaSlug}/` },
+  ]);
+
   return (
     <>
+    <script
+      type="application/ld+json"
+      dangerouslySetInnerHTML={{ __html: JSON.stringify(breadcrumbLd) }}
+    />
     <div className="container-narrow">
       <nav className="breadcrumb" aria-label="Breadcrumb">
         <a href={`/${locale}/`}>{t.site.nav.top}</a>
@@ -224,6 +241,20 @@ export default async function LocaleAreaPage({ params }: Props) {
           </div>
         ))}
       </section>
+
+      {/* 同じ区の近隣エリア（内部リンク） */}
+      {nearby.length > 0 && (
+        <section style={{ marginTop: "2rem" }}>
+          <h2 className="section-title">{nearbyTitle}</h2>
+          <div className="area-list">
+            {nearby.map((a) => (
+              <a key={a.slug} href={`/${locale}/Tokyo/${wardSlug}/${a.slug}/`} className="area-link">
+                {a.area}
+              </a>
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* ナビゲーション */}
       <div style={{ display: "flex", gap: "1rem", marginTop: "2rem", flexWrap: "wrap" }}>
