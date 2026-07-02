@@ -29,6 +29,11 @@ export const guideContent: Record<BagsUILocale, GuideContent> = {
     backHome: "← トップに戻る",
     articles: [
       {
+        slug: "sodaigomi-seal",
+        title: "粗大ごみシール（処理券）の買い方・値段【東京23区】",
+        desc: "A券200円・B券300円の組み合わせ方、コンビニでの買い方、記入・貼り方、区ごとの注意点まで解説。",
+      },
+      {
         slug: "hikkoshi-gomi",
         title: "引越しで出る大量ゴミの処分方法【2026年版】",
         desc: "ゴミの種類別の出口、退去日からの逆算スケジュール、自治体回収が間に合わない時の裏ワザ、ケース別おすすめ、業者の選び方まで解説。",

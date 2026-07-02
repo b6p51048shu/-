@@ -69,6 +69,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
       changeFrequency: "monthly",
     },
+    // 粗大ごみシール記事（日本語のみ）
+    {
+      url: `${BASE}/guide/sodaigomi-seal/`,
+      lastModified: new Date(),
+      priority: 0.7,
+      changeFrequency: "monthly",
+    },
     // 品目辞典（日本語のみ）
     {
       url: `${BASE}/items/`,
