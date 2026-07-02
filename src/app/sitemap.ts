@@ -3,6 +3,7 @@ import { LOCALES } from "@/lib/i18n";
 // sitemap は slug と area slug、粗大ごみページ有無しか必要としないため、
 // 全区一括データ(約1MB)ではなく軽量な ward-index.json(約140KB)を静的importで使う。
 import wardIndexRaw from "../../public/data/ward-index.json";
+import { GOMI_ITEMS } from "@/data/items";
 
 type WardIndexEntry = {
   slug: string;
@@ -68,6 +69,19 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
       changeFrequency: "monthly",
     },
+    // 品目辞典（日本語のみ）
+    {
+      url: `${BASE}/items/`,
+      lastModified: new Date(),
+      priority: 0.8,
+      changeFrequency: "monthly",
+    },
+    ...GOMI_ITEMS.map((item) => ({
+      url: `${BASE}/items/${item.slug}/`,
+      lastModified: new Date(),
+      priority: 0.7,
+      changeFrequency: "monthly" as const,
+    })),
   ];
 
   for (const wardName of wardNames) {
