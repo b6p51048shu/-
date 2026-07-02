@@ -76,6 +76,20 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
       changeFrequency: "monthly",
     },
+    // 日本語のみのguide記事
+    ...[
+      "gyousha-erabikata",
+      "reizouko-sentakuki",
+      "ihin-seiri",
+      "jikka-katazuke",
+      "gomi-yashiki",
+      "aircon-cleaning",
+    ].map((slug) => ({
+      url: `${BASE}/guide/${slug}/`,
+      lastModified: new Date(),
+      priority: 0.7,
+      changeFrequency: "monthly" as const,
+    })),
     // 品目辞典（日本語のみ）
     {
       url: `${BASE}/items/`,
