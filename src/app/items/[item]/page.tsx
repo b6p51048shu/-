@@ -77,7 +77,7 @@ export default async function ItemPage({ params }: Props) {
 
         {/* 結論ファースト */}
         <div className="today-section" style={{ borderLeftColor: cat.color }}>
-          <h3>
+          <h2>
             結論:{" "}
             <span
               style={{
@@ -91,7 +91,7 @@ export default async function ItemPage({ params }: Props) {
             >
               {cat.label}
             </span>
-          </h3>
+          </h2>
           <p style={{ margin: ".5rem 0 0", lineHeight: 1.8 }}>{item.summary}</p>
         </div>
 

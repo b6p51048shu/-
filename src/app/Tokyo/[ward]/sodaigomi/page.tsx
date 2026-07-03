@@ -21,6 +21,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       canonical: `/Tokyo/${wardSlug}/sodaigomi/`,
       languages: {
         ja: `/Tokyo/${wardSlug}/sodaigomi/`,
+        "x-default": `/Tokyo/${wardSlug}/sodaigomi/`,
         en: `/en/Tokyo/${wardSlug}/sodaigomi/`,
         ko: `/ko/Tokyo/${wardSlug}/sodaigomi/`,
         zh: `/zh/Tokyo/${wardSlug}/sodaigomi/`,

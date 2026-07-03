@@ -27,6 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       canonical: `/${locale}/Tokyo/${wardSlug}/${areaSlug}/`,
       languages: {
         ja: `/Tokyo/${wardSlug}/${areaSlug}/`,
+        "x-default": `/Tokyo/${wardSlug}/${areaSlug}/`,
         en: `/en/Tokyo/${wardSlug}/${areaSlug}/`,
         ko: `/ko/Tokyo/${wardSlug}/${areaSlug}/`,
         zh: `/zh/Tokyo/${wardSlug}/${areaSlug}/`,
@@ -134,7 +135,7 @@ export default async function LocaleAreaPage({ params }: Props) {
 
       {/* 今日・明日 */}
       <div className="today-section">
-        <h3>{t.area.todayTitle(todayName)}</h3>
+        <h2>{t.area.todayTitle(todayName)}</h2>
         <div className="today-items">
           {todayItems.length > 0
             ? todayItems.map((item) => <span key={item} className="today-badge">✅ {item}</span>)
@@ -142,7 +143,7 @@ export default async function LocaleAreaPage({ params }: Props) {
         </div>
       </div>
       <div className="today-section" style={{ borderLeftColor: "#f59e0b" }}>
-        <h3>{t.area.tomorrowTitle(tomorrowName)}</h3>
+        <h2>{t.area.tomorrowTitle(tomorrowName)}</h2>
         <div className="today-items">
           {tomorrowItems.length > 0
             ? tomorrowItems.map((item) => (

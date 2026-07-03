@@ -436,7 +436,7 @@ a:hover { text-decoration: underline; }
 .noschedule-notice-link { display: inline-block; margin-top: .25rem; color: #b45309; font-weight: 700; text-decoration: underline; font-size: .92rem; }
 .noschedule-notice-link:hover { color: #92400e; }
 .today-section { background: #fff; border-radius: var(--radius); padding: 1.25rem; margin-bottom: 1.5rem; box-shadow: var(--shadow); border-left: 4px solid var(--green); }
-.today-section h3 { font-size: .9rem; color: var(--gray-600); margin-bottom: .5rem; }
+.today-section h2, .today-section h3 { font-size: .9rem; color: var(--gray-600); margin-bottom: .5rem; }
 .today-items { display: flex; flex-wrap: wrap; gap: .5rem; }
 .today-badge {
   display: inline-flex;

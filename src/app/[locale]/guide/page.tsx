@@ -16,6 +16,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       canonical: `/${locale}/guide/`,
       languages: {
         ja: "/guide/",
+        "x-default": "/guide/",
         en: "/en/guide/",
         ko: "/ko/guide/",
         zh: "/zh/guide/",

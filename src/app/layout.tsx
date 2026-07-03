@@ -30,24 +30,33 @@ const notoSansJP = Noto_Sans_JP({
 
 export const metadata: Metadata = {
   title: {
-    default: "ゴミの日.com | 東京都ごみ収集日カレンダー",
+    default: "東京都のごみ収集日カレンダー｜地域からすぐ検索 - ゴミの日.com",
     template: "%s | ゴミの日.com",
   },
   description:
     "東京都（23区・多摩地区52自治体）のごみ収集日を地域別に検索。燃やすごみ・資源ごみ・プラスチックの収集曜日を今すぐ確認。GPS対応・無料。",
   keywords: ["ごみ収集日", "東京都", "東京23区", "多摩地区", "燃やすごみ", "資源ごみ", "ごみの日", "収集カレンダー"],
-  authors: [{ name: "ゴミの日.com" }],
+  authors: [{ name: "ゴミの日.com運営事務局" }],
   openGraph: {
     type: "website",
     locale: "ja_JP",
     siteName: "ゴミの日.com",
-    title: "ゴミの日.com | 東京都ごみ収集日カレンダー",
+    title: "東京都のごみ収集日カレンダー | ゴミの日.com",
     description: "東京都のごみ収集日を地域別に検索。GPS対応・無料。",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "ゴミの日.com - 東京都のごみ収集日カレンダー",
+      },
+    ],
   },
   twitter: {
-    card: "summary",
-    title: "ゴミの日.com | 東京都ごみ収集日",
+    card: "summary_large_image",
+    title: "東京都のごみ収集日カレンダー | ゴミの日.com",
     description: "東京都のごみ収集日を地域別に検索。GPS対応・無料。",
+    images: ["/og-image.png"],
   },
   alternates: {
     canonical: "/",
@@ -82,9 +91,35 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   const disclaimerHref = locale === "ja" ? "/disclaimer/" : `/${locale}/disclaimer/`;
   const privacyHref = locale === "ja" ? "/privacy/" : `/${locale}/privacy/`;
 
+  const siteJsonLd = {
+    "@context": "https://schema.org",
+    "@graph": [
+      {
+        "@type": "WebSite",
+        "@id": "https://gominohi.com/#website",
+        name: "ゴミの日.com",
+        url: "https://gominohi.com/",
+        inLanguage: "ja",
+        publisher: { "@id": "https://gominohi.com/#organization" },
+      },
+      {
+        "@type": "Organization",
+        "@id": "https://gominohi.com/#organization",
+        name: "ゴミの日.com運営事務局",
+        url: "https://gominohi.com/",
+        logo: "https://gominohi.com/raccoon.png",
+        email: "gominohi.araiguma@gmail.com",
+      },
+    ],
+  };
+
   return (
     <html lang={htmlLang} className={notoSansJP.className}>
       <head>
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(siteJsonLd) }}
+        />
         {/* Google Analytics */}
         <script async src="https://www.googletagmanager.com/gtag/js?id=G-XN645HLXN1" />
         <script
@@ -131,6 +166,8 @@ export default async function RootLayout({ children }: { children: React.ReactNo
                     <a href="/items/">品目別の捨て方</a>
                     <span aria-hidden="true"> · </span>
                     <a href="/guide/">お役立ちガイド</a>
+                    <span aria-hidden="true"> · </span>
+                    <a href="/about/">運営者情報</a>
                     <span aria-hidden="true"> · </span>
                   </>
                 )}

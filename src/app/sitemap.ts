@@ -90,6 +90,13 @@ export default function sitemap(): MetadataRoute.Sitemap {
       priority: 0.7,
       changeFrequency: "monthly" as const,
     })),
+    // 運営者情報（日本語のみ）
+    {
+      url: `${BASE}/about/`,
+      lastModified: new Date(),
+      priority: 0.3,
+      changeFrequency: "monthly" as const,
+    },
     // 品目辞典（日本語のみ）
     {
       url: `${BASE}/items/`,

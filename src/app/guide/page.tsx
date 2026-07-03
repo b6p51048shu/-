@@ -10,6 +10,7 @@ export const metadata: Metadata = {
     canonical: "/guide/",
     languages: {
       ja: "/guide/",
+      "x-default": "/guide/",
       en: "/en/guide/",
       ko: "/ko/guide/",
       zh: "/zh/guide/",

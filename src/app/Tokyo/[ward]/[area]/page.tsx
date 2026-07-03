@@ -42,6 +42,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       canonical: `/Tokyo/${wardSlug}/${areaSlug}/`,
       languages: {
         ja: `/Tokyo/${wardSlug}/${areaSlug}/`,
+        "x-default": `/Tokyo/${wardSlug}/${areaSlug}/`,
         en: `/en/Tokyo/${wardSlug}/${areaSlug}/`,
         ko: `/ko/Tokyo/${wardSlug}/${areaSlug}/`,
         zh: `/zh/Tokyo/${wardSlug}/${areaSlug}/`,
@@ -172,7 +173,7 @@ export default async function AreaPage({ params }: Props) {
         {hasAnySchedule && (
         <>
         <div className="today-section">
-          <h3>📅 今日（{todayName}）のごみ</h3>
+          <h2>📅 今日（{todayName}）のごみ</h2>
           <div className="today-items">
             {todayItems.length > 0 ? (
               todayItems.map((item) => (
@@ -184,7 +185,7 @@ export default async function AreaPage({ params }: Props) {
           </div>
         </div>
         <div className="today-section" style={{ borderLeftColor: "#f59e0b" }}>
-          <h3>📅 明日（{tomorrowName}）のごみ</h3>
+          <h2>📅 明日（{tomorrowName}）のごみ</h2>
           <div className="today-items">
             {tomorrowItems.length > 0 ? (
               tomorrowItems.map((item) => (
@@ -256,6 +257,49 @@ export default async function AreaPage({ params }: Props) {
             </div>
           ))}
         </section>
+        )}
+
+        {/* ごみ出しの基本（エリア固有テキスト） */}
+        {hasAnySchedule && (
+          <section style={{ margin: "2rem 0" }}>
+            <h2 className="section-title">{areaName}（{wardName}）のごみ出しの基本</h2>
+            <p style={{ lineHeight: 1.9, marginBottom: "1rem" }}>
+              {wardName}{areaName}のごみ収集は、
+              {scheduleItems
+                .filter(({ key }) => schedule[key])
+                .map(({ label, key }) => `${label}が${schedule[key]}`)
+                .join("、")}
+              です。収集日の朝、決められた時間まで（多くの自治体で朝8時まで）に所定の場所へ出してください。
+              祝日の収集有無や年末年始の特別スケジュールは自治体により異なるため、
+              時期によっては{wardName}の公式案内もあわせてご確認ください。
+            </p>
+            <ul style={{ paddingLeft: "1.4rem", lineHeight: 2 }}>
+              <li>
+                {wardInfo?.bags
+                  ? `${wardName}では指定収集袋を使用します。袋の種類・購入場所は上記の指定袋情報をご覧ください。`
+                  : `${wardName}では中身の見える透明・半透明の袋で出せます（指定袋はありません）。`}
+              </li>
+              <li>
+                おおむね一辺30cmを超える大型のごみは「粗大ごみ」となり、事前の申し込みが必要です
+                {wardInfo?.oversized_detail ? (
+                  <>（<a href={`/Tokyo/${wardSlug}/sodaigomi/`}>{wardName}の粗大ごみの出し方</a>）</>
+                ) : null}
+                。
+              </li>
+              <li>
+                テレビ・冷蔵庫・洗濯機・エアコンの家電4品目とパソコンは、法律により自治体では収集されません。
+                処分方法は<a href="/items/">品目別の捨て方</a>で確認できます。
+              </li>
+            </ul>
+            {wardInfo?.info_url && (
+              <p style={{ fontSize: ".8rem", color: "var(--gray-600)", marginTop: ".75rem" }}>
+                出典・最新情報:{" "}
+                <a href={wardInfo.info_url} target="_blank" rel="noopener noreferrer">
+                  {wardName}公式サイト
+                </a>
+              </p>
+            )}
+          </section>
         )}
 
         {/* 同じ区の近隣エリア（内部リンク） */}

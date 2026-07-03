@@ -11,6 +11,7 @@ export const metadata: Metadata = {
     canonical: "/guide/funyohin-hiyo/",
     languages: {
       ja: "/guide/funyohin-hiyo/",
+      "x-default": "/guide/funyohin-hiyo/",
       en: "/en/guide/funyohin-hiyo/",
       ko: "/ko/guide/funyohin-hiyo/",
       zh: "/zh/guide/funyohin-hiyo/",
