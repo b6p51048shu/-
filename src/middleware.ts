@@ -4,9 +4,15 @@ import type { NextRequest } from "next/server";
 // なく軽量な ward-index.json(約140KB)を読む。middleware は全リクエストで動くため、
 // バンドルサイズ・初期化コストの削減が Worker の負荷軽減に直結する。
 import wardIndexRaw from "../public/data/ward-index.json";
+import { PREFS } from "./lib/prefs";
 
 type WardLite = { slug: string; areas: Array<{ slug: string }> };
 const wardIndex = wardIndexRaw as unknown as Record<string, WardLite>;
+
+// 小文字化した県slug → 正準県slug（例: tokyo → Tokyo）
+const prefByLower = new Map<string, string>(
+  Object.keys(PREFS).map((p) => [p.toLowerCase(), p])
+);
 
 // 小文字化したward_slug → 正準（データに格納されている）ward_slug
 const wardSlugByLower = new Map<string, string>();
@@ -29,7 +35,10 @@ for (const info of Object.values(wardIndex)) {
  * 大文字小文字が違うURLでも、内部的に正準URLに rewrite してページを表示する。
  * （ブラウザのアドレスバーは変更されない＝ユーザーが入力したURLが保たれる）
  *
+ * 対応県: PREFS の許可リスト（Tokyo/Kanagawa/Saitama/Chiba）
  * 対応ロケール: なし（日本語）、en、ko、zh
+ * ※ 県トップ（/tokyo/ 等・区セグメント無し）は従来どおり rewrite しない
+ *   （/Tokyo/ のみ正準。現行の大文字小文字挙動を変えないため）。
  */
 export function middleware(request: NextRequest) {
   const url = request.nextUrl.clone();
@@ -40,14 +49,19 @@ export function middleware(request: NextRequest) {
   requestHeaders.set("x-pathname", pathname);
   const passThrough = () => NextResponse.next({ request: { headers: requestHeaders } });
 
-  // /(en|ko|zh)/tokyo/{ward}/[area]/ または /tokyo/{ward}/[area]/ を大文字小文字無視でマッチ
-  const match = pathname.match(/^(\/(en|ko|zh))?\/tokyo\/([^/]+)(?:\/([^/]+))?\/?$/i);
+  // /(en|ko|zh)/{pref}/{ward}/[area]/ または /{pref}/{ward}/[area]/ を大文字小文字無視でマッチ
+  const match = pathname.match(/^(\/(en|ko|zh))?\/([^/]+)\/([^/]+)(?:\/([^/]+))?\/?$/i);
   if (!match) return passThrough();
 
   const localePrefix = match[1] ?? "";   // "/en", "/ko", "/zh", or ""
-  const wardSlugInUrl = match[3];
-  const areaSlugInUrl = match[4];
+  const prefInUrl = match[3];
+  const wardSlugInUrl = match[4];
+  const areaSlugInUrl = match[5];
   const hasTrailingSlash = pathname.endsWith("/");
+
+  // 許可リスト外の先頭セグメント（/guide/... /items/... 等）はそのまま通す
+  const prefCanonical = prefByLower.get(prefInUrl.toLowerCase());
+  if (!prefCanonical) return passThrough();
 
   const wardLower = wardSlugInUrl.toLowerCase();
   const wardCanonical = wardSlugByLower.get(wardLower);
@@ -61,7 +75,7 @@ export function middleware(request: NextRequest) {
   }
 
   // 正準パスを構築
-  let canonicalPath = `${localePrefix}/Tokyo/${wardCanonical}`;
+  let canonicalPath = `${localePrefix}/${prefCanonical}/${wardCanonical}`;
   if (areaCanonical) canonicalPath += `/${areaCanonical}`;
   if (hasTrailingSlash) canonicalPath += "/";
 

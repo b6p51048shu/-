@@ -3,6 +3,7 @@
 import { useState, useEffect, useRef } from "react";
 import wardIndex from "../../public/data/ward-index.json";
 import regionIndex from "../../public/data/region-index.json";
+import wardSlugIndex from "../../public/data/ward-slug-index.json";
 
 type WardIndexEntry = {
   slug: string;
@@ -10,8 +11,15 @@ type WardIndexEntry = {
   has_bags?: boolean;
 };
 const wardIndexData = wardIndex as Record<string, WardIndexEntry>;
-const regionData = regionIndex as Record<string, string[]>;
+// region-index は県階層（例: { Tokyo: { "23区": [...], "多摩地区": [...] } }）
+const regionData = regionIndex as Record<string, Record<string, string[]>>;
+const wardSlugData = wardSlugIndex as unknown as Record<string, { name: string; pref: string }>;
 const WARD_NAMES = Object.keys(wardIndexData);
+
+/** ward_slug → 所属県slug（不明時は Tokyo にフォールバック） */
+function prefOf(wardSlug: string): string {
+  return wardSlugData[wardSlug]?.pref ?? "Tokyo";
+}
 
 /** 町名の「〇丁目」数字部分を除いたベース名を返す */
 function baseTown(s: string): string {
@@ -63,10 +71,10 @@ export default function TopPage() {
   const handleSearch = () => {
     if (selectedWard && selectedAreaSlug) {
       const wardSlug = wardIndexData[selectedWard].slug;
-      window.location.href = `/Tokyo/${wardSlug}/${selectedAreaSlug}`;
+      window.location.href = `/${prefOf(wardSlug)}/${wardSlug}/${selectedAreaSlug}`;
     } else if (selectedWard) {
       const wardSlug = wardIndexData[selectedWard].slug;
-      window.location.href = `/Tokyo/${wardSlug}`;
+      window.location.href = `/${prefOf(wardSlug)}/${wardSlug}`;
     }
   };
 
@@ -108,8 +116,8 @@ export default function TopPage() {
     );
   };
 
-  const wards23 = regionData["23区"] ?? [];
-  const tamaCities = regionData["多摩地区"] ?? [];
+  const wards23 = regionData["Tokyo"]?.["23区"] ?? [];
+  const tamaCities = regionData["Tokyo"]?.["多摩地区"] ?? [];
 
   return (
     <>
@@ -167,7 +175,7 @@ export default function TopPage() {
 
             {selectedWard && wardIndexData[selectedWard] && (
               <a
-                href={`/Tokyo/${wardIndexData[selectedWard].slug}/sodaigomi/`}
+                href={`/${prefOf(wardIndexData[selectedWard].slug)}/${wardIndexData[selectedWard].slug}/sodaigomi/`}
                 className="search-sodai-link"
               >
                 🪑 {selectedWard}の粗大ごみの出し方・申し込み方法を見る →
@@ -184,7 +192,7 @@ export default function TopPage() {
           {wards23.filter((w) => wardIndexData[w]).map((ward) => (
             <a
               key={ward}
-              href={`/Tokyo/${wardIndexData[ward].slug}/`}
+              href={`/${prefOf(wardIndexData[ward].slug)}/${wardIndexData[ward].slug}/`}
               className="ward-card"
             >
               {ward}
@@ -203,7 +211,7 @@ export default function TopPage() {
               {tamaCities.filter((w) => wardIndexData[w]).map((city) => (
                 <a
                   key={city}
-                  href={`/Tokyo/${wardIndexData[city].slug}/`}
+                  href={`/${prefOf(wardIndexData[city].slug)}/${wardIndexData[city].slug}/`}
                   className="ward-card"
                 >
                   {city}

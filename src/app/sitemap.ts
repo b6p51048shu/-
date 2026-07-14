@@ -3,6 +3,8 @@ import { LOCALES } from "@/lib/i18n";
 // sitemap は slug と area slug、粗大ごみページ有無しか必要としないため、
 // 全区一括データ(約1MB)ではなく軽量な ward-index.json(約140KB)を静的importで使う。
 import wardIndexRaw from "../../public/data/ward-index.json";
+// ward_slug → 所属県（/{pref}/{ward}/ のURL組み立てに使う）
+import wardSlugIndexRaw from "../../public/data/ward-slug-index.json";
 import { GOMI_ITEMS } from "@/data/items";
 
 type WardIndexEntry = {
@@ -11,6 +13,7 @@ type WardIndexEntry = {
   has_oversized: boolean;
 };
 const wardIndex = wardIndexRaw as unknown as Record<string, WardIndexEntry>;
+const wardSlugIndex = wardSlugIndexRaw as unknown as Record<string, { name: string; pref: string }>;
 
 const BASE = "https://gominohi.com";
 
@@ -112,22 +115,39 @@ export default function sitemap(): MetadataRoute.Sitemap {
     })),
   ];
 
+  // 県トップページ（日本語のみ・データのある県だけ掲載）
+  const prefsWithData = new Set<string>();
+  for (const wardName of wardNames) {
+    const pref = wardSlugIndex[wardIndex[wardName]?.slug]?.pref;
+    if (pref) prefsWithData.add(pref);
+  }
+  for (const pref of prefsWithData) {
+    urls.push({
+      url: `${BASE}/${pref}/`,
+      lastModified: new Date(),
+      priority: 0.8,
+      changeFrequency: "monthly",
+    });
+  }
+
   for (const wardName of wardNames) {
     const info = wardIndex[wardName];
     if (!info) continue;
     const ws = info.slug;
+    const pref = wardSlugIndex[ws]?.pref;
+    if (!pref) continue;
 
     // 区ページ
-    urls.push(...entriesForPath(`/Tokyo/${ws}/`, 0.8, "monthly"));
+    urls.push(...entriesForPath(`/${pref}/${ws}/`, 0.8, "monthly"));
 
     // 粗大ごみの出し方ページ（4言語、詳細データがある自治体のみ公開）
     if (info.has_oversized) {
-      urls.push(...entriesForPath(`/Tokyo/${ws}/sodaigomi/`, 0.7, "monthly"));
+      urls.push(...entriesForPath(`/${pref}/${ws}/sodaigomi/`, 0.7, "monthly"));
     }
 
     // 地域ページ
     for (const a of info.areas) {
-      urls.push(...entriesForPath(`/Tokyo/${ws}/${a.slug}/`, 0.6, "monthly"));
+      urls.push(...entriesForPath(`/${pref}/${ws}/${a.slug}/`, 0.6, "monthly"));
     }
   }
 

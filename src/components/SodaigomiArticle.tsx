@@ -6,6 +6,7 @@ import BottomAdBanner from "@/components/BottomAdBanner";
 
 type Props = {
   locale: BagsUILocale;
+  pref: string;
   wardName: string;
   wardSlug: string;
   info: WardInfo;
@@ -16,7 +17,7 @@ type Props = {
  * テンプレート文は locale ごとに翻訳し、自治体データ値（定義・手数料・電話・注意点等）は
  * 日本語のまま埋め込む。
  */
-export default function SodaigomiArticle({ locale, wardName, wardSlug, info }: Props) {
+export default function SodaigomiArticle({ locale, pref, wardName, wardSlug, info }: Props) {
   const c = sodaigomiContent[locale];
   const d = info.oversized_detail;
   const officialUrl = info.oversized_url;
@@ -86,8 +87,8 @@ export default function SodaigomiArticle({ locale, wardName, wardSlug, info }: P
         "@type": "BreadcrumbList",
         itemListElement: [
           { "@type": "ListItem", position: 1, name: c.bcHome, item: `https://gominohi.com${prefix}/` },
-          { "@type": "ListItem", position: 2, name: wardName, item: `https://gominohi.com${prefix}/Tokyo/${wardSlug}/` },
-          { "@type": "ListItem", position: 3, name: c.bcCurrent, item: `https://gominohi.com${prefix}/Tokyo/${wardSlug}/sodaigomi/` },
+          { "@type": "ListItem", position: 2, name: wardName, item: `https://gominohi.com${prefix}/${pref}/${wardSlug}/` },
+          { "@type": "ListItem", position: 3, name: c.bcCurrent, item: `https://gominohi.com${prefix}/${pref}/${wardSlug}/sodaigomi/` },
         ],
       },
       ...(faq.length > 0
@@ -114,7 +115,7 @@ export default function SodaigomiArticle({ locale, wardName, wardSlug, info }: P
       <div className="container-narrow">
         <nav className="breadcrumb" aria-label="Breadcrumb">
           <a href={`${prefix}/`}>{c.bcHome}</a>
-          <span><a href={`${prefix}/Tokyo/${wardSlug}/`}>{wardName}</a></span>
+          <span><a href={`${prefix}/${pref}/${wardSlug}/`}>{wardName}</a></span>
           <span>{c.bcCurrent}</span>
         </nav>
 
@@ -218,7 +219,7 @@ export default function SodaigomiArticle({ locale, wardName, wardSlug, info }: P
           <div className="article-related">
             <strong>{c.relatedTitle}</strong>
             <div className="article-related-links">
-              <a href={`${prefix}/Tokyo/${wardSlug}/`} className="btn btn-outline">{f(c.relatedSchedule)}</a>
+              <a href={`${prefix}/${pref}/${wardSlug}/`} className="btn btn-outline">{f(c.relatedSchedule)}</a>
               <a href={`${prefix}/guide/funyohin-hiyo/`} className="btn btn-outline">{c.relatedFunyohin}</a>
               <a href={`${prefix}/`} className="btn btn-outline">{c.relatedCalendar}</a>
             </div>

@@ -7,7 +7,7 @@
 // ローカル開発(next dev): APP_ORIGIN 経由の通常fetch（.env.local に APP_ORIGIN=http://localhost:3000）。
 // 読み込んだ区は Worker インスタンス内でキャッシュする。
 //
-// ward-slug-index.json（約1KB）は slug→区市名 の逆引き用。極小なので静的importで問題ない。
+// ward-slug-index.json（約2KB）は slug→{区市名, 県} の逆引き用。極小なので静的importで問題ない。
 
 import regionIndexRaw from "../../public/data/region-index.json";
 import wardSlugIndexRaw from "../../public/data/ward-slug-index.json";
@@ -103,10 +103,17 @@ export type WardInfo = {
   oversized_detail?: OversizedDetail;
 };
 
-export const regionIndex = regionIndexRaw as Record<string, string[]>;
+/** 県スラッグ → { 地域グループ名 → 区市名リスト }（例: Tokyo → { "23区": [...], "多摩地区": [...] }） */
+export const regionIndex = regionIndexRaw as Record<string, Record<string, string[]>>;
 
-/** ward_slug → 区市名 の逆引き（極小・静的import） */
-const wardSlugIndex = wardSlugIndexRaw as Record<string, string>;
+/** ward_slug → { 区市名, 県スラッグ } の逆引き（極小・静的import） */
+type WardSlugEntry = { name: string; pref: string };
+const wardSlugIndex = wardSlugIndexRaw as unknown as Record<string, WardSlugEntry>;
+
+/** ward_slug → 所属県スラッグ（存在しない slug は null） */
+export function prefOfWardSlug(wardSlug: string): string | null {
+  return wardSlugIndex[wardSlug]?.pref ?? null;
+}
 
 export type AllWardData = Record<string, WardInfo>;
 
@@ -173,17 +180,19 @@ async function loadWard(wardSlug: string): Promise<WardInfo | null> {
 // 公開 API（すべて async）
 // ─────────────────────────────────────────────
 
-export async function getWardBySlug(wardSlug: string): Promise<{ name: string; info: WardInfo } | null> {
-  const name = wardSlugIndex[wardSlug];
-  if (!name) return null;
+export async function getWardBySlug(
+  wardSlug: string
+): Promise<{ name: string; pref: string; info: WardInfo } | null> {
+  const entry = wardSlugIndex[wardSlug];
+  if (!entry) return null;
   const info = await loadWard(wardSlug);
   if (!info) return null;
-  return { name, info };
+  return { name: entry.name, pref: entry.pref, info };
 }
 
 export async function getWard(wardName: string): Promise<WardInfo | null> {
   // 区市名 → slug を逆引きしてから区別ファイルを読む
-  const slug = Object.keys(wardSlugIndex).find((s) => wardSlugIndex[s] === wardName);
+  const slug = Object.keys(wardSlugIndex).find((s) => wardSlugIndex[s].name === wardName);
   if (!slug) return null;
   return loadWard(slug);
 }
@@ -191,12 +200,12 @@ export async function getWard(wardName: string): Promise<WardInfo | null> {
 export async function getAreaBySlug(
   wardSlug: string,
   areaSlug: string
-): Promise<{ wardName: string; schedule: AreaSchedule } | null> {
+): Promise<{ wardName: string; pref: string; schedule: AreaSchedule } | null> {
   const wardResult = await getWardBySlug(wardSlug);
   if (!wardResult) return null;
   const schedule = wardResult.info.areas.find((a) => a.slug === areaSlug);
   if (!schedule) return null;
-  return { wardName: wardResult.name, schedule };
+  return { wardName: wardResult.name, pref: wardResult.pref, schedule };
 }
 
 // ─────────────────────────────────────────────

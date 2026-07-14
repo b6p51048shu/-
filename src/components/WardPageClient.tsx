@@ -4,12 +4,13 @@ import { useState } from "react";
 import type { WardInfo } from "@/lib/data";
 
 type Props = {
+  pref: string;
   wardName: string;
   wardInfo: WardInfo;
   wardSlug: string;
 };
 
-export default function WardPageClient({ wardName, wardInfo, wardSlug }: Props) {
+export default function WardPageClient({ pref, wardName, wardInfo, wardSlug }: Props) {
   const [query, setQuery] = useState("");
 
   const filtered = wardInfo.areas.filter((a) =>
@@ -37,7 +38,7 @@ export default function WardPageClient({ wardName, wardInfo, wardSlug }: Props) 
               {wardName}の粗大ごみは事前の申し込みが必要な場合が多く、収集日カレンダーには表示されません。申し込み方法・手数料・注意点をまとめています。
             </p>
             {wardInfo.oversized_detail ? (
-              <a href={`/Tokyo/${wardSlug}/sodaigomi/`} className="oversized-notice-link">
+              <a href={`/${pref}/${wardSlug}/sodaigomi/`} className="oversized-notice-link">
                 {wardName}の粗大ごみの出し方を見る →
               </a>
             ) : (
@@ -66,7 +67,7 @@ export default function WardPageClient({ wardName, wardInfo, wardSlug }: Props) 
           {filtered.map((a) => (
             <a
               key={a.slug}
-              href={`/Tokyo/${wardSlug}/${a.slug}/`}
+              href={`/${pref}/${wardSlug}/${a.slug}/`}
               className="area-link"
             >
               {a.area}

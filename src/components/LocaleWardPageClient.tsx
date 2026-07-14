@@ -5,9 +5,9 @@ import type { WardInfo } from "@/lib/data";
 import { getT } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
 
-type Props = { locale: Locale; wardName: string; wardInfo: WardInfo; wardSlug: string };
+type Props = { locale: Locale; pref: string; wardName: string; wardInfo: WardInfo; wardSlug: string };
 
-export default function LocaleWardPageClient({ locale, wardName, wardInfo, wardSlug }: Props) {
+export default function LocaleWardPageClient({ locale, pref, wardName, wardInfo, wardSlug }: Props) {
   const t = getT(locale);
   const [query, setQuery] = useState("");
 
@@ -46,7 +46,7 @@ export default function LocaleWardPageClient({ locale, wardName, wardInfo, wardS
       ) : (
         <div className="area-list">
           {filtered.map((a) => (
-            <a key={a.slug} href={`/${locale}/Tokyo/${wardSlug}/${a.slug}/`} className="area-link">
+            <a key={a.slug} href={`/${locale}/${pref}/${wardSlug}/${a.slug}/`} className="area-link">
               <span style={{ fontSize: ".8em", opacity: .7, display: "block", marginBottom: ".1rem" }}>{a.area}</span>
               {a.slug.replace(/-/g, " ")}
             </a>

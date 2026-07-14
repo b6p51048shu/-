@@ -3,14 +3,22 @@
 import { useEffect, useState, useRef } from "react";
 import wardIndex from "../../../public/data/ward-index.json";
 import regionIndex from "../../../public/data/region-index.json";
+import wardSlugIndex from "../../../public/data/ward-slug-index.json";
 import { getT, scheduleToLocale, isValidLocale } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
 import { useParams, notFound } from "next/navigation";
 
 type WardIndexEntry = { slug: string; areas: { name: string; slug: string }[]; has_bags?: boolean };
 const wardIndexData = wardIndex as Record<string, WardIndexEntry>;
-const regionData = regionIndex as Record<string, string[]>;
+// region-index は県階層（例: { Tokyo: { "23区": [...], "多摩地区": [...] } }）
+const regionData = regionIndex as Record<string, Record<string, string[]>>;
+const wardSlugData = wardSlugIndex as unknown as Record<string, { name: string; pref: string }>;
 const WARD_NAMES = Object.keys(wardIndexData);
+
+/** ward_slug → 所属県slug（不明時は Tokyo にフォールバック） */
+function prefOf(wardSlug: string): string {
+  return wardSlugData[wardSlug]?.pref ?? "Tokyo";
+}
 
 function baseTown(s: string): string {
   return s.replace(/[0-9０-９一二三四五六七八九]+丁目.*$/, "").replace(/[0-9０-９]+番地.*$/, "").trim();
@@ -59,9 +67,9 @@ export default function LocaleTopPage() {
 
   const handleSearch = () => {
     if (selectedWard && selectedAreaSlug) {
-      window.location.href = `/${validLocale}/Tokyo/${wardIndexData[selectedWard].slug}/${selectedAreaSlug}`;
+      window.location.href = `/${validLocale}/${prefOf(wardIndexData[selectedWard].slug)}/${wardIndexData[selectedWard].slug}/${selectedAreaSlug}`;
     } else if (selectedWard) {
-      window.location.href = `/${validLocale}/Tokyo/${wardIndexData[selectedWard].slug}`;
+      window.location.href = `/${validLocale}/${prefOf(wardIndexData[selectedWard].slug)}/${wardIndexData[selectedWard].slug}`;
     }
   };
 
@@ -98,8 +106,8 @@ export default function LocaleTopPage() {
     );
   };
 
-  const wards23 = regionData["23区"] ?? [];
-  const tamaCities = regionData["多摩地区"] ?? [];
+  const wards23 = regionData["Tokyo"]?.["23区"] ?? [];
+  const tamaCities = regionData["Tokyo"]?.["多摩地区"] ?? [];
 
   return (
     <>
@@ -157,7 +165,7 @@ export default function LocaleTopPage() {
         <h2 className="section-title">{t.ward.gridTitle}</h2>
         <div className="ward-grid">
           {wards23.filter((w) => wardIndexData[w]).map((ward) => (
-            <a key={ward} href={`/${validLocale}/Tokyo/${wardIndexData[ward].slug}/`} className="ward-card">
+            <a key={ward} href={`/${validLocale}/${prefOf(wardIndexData[ward].slug)}/${wardIndexData[ward].slug}/`} className="ward-card">
               {wardIndexData[ward].slug}
               <div className="ward-card-count">{t.ward.areas(wardIndexData[ward].areas.length)}</div>
             </a>
@@ -170,7 +178,7 @@ export default function LocaleTopPage() {
             <h2 className="section-title" style={{ marginTop: "2.5rem" }}>{t.ward.tamaGridTitle}</h2>
             <div className="ward-grid">
               {tamaCities.filter((w) => wardIndexData[w]).map((city) => (
-                <a key={city} href={`/${validLocale}/Tokyo/${wardIndexData[city].slug}/`} className="ward-card">
+                <a key={city} href={`/${validLocale}/${prefOf(wardIndexData[city].slug)}/${wardIndexData[city].slug}/`} className="ward-card">
                   {wardIndexData[city].slug}
                   <div className="ward-card-count">
                     {t.ward.areas(wardIndexData[city].areas.length)}
