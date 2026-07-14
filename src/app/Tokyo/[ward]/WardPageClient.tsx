@@ -23,7 +23,7 @@ export default function WardPageClient({ wardName, wardInfo, wardSlug }: Props) 
         <span>{wardName}</span>
       </nav>
 
-      <h1 className="section-title">{wardName}のごみ収集日</h1>
+      <h1 className="section-title">{wardName}のごみ収集日カレンダー</h1>
       <p style={{ color: "var(--gray-600)", marginBottom: "1.5rem" }}>
         全{wardInfo.areas.length}地域の収集スケジュールを掲載しています。地域名をクリックすると詳細を確認できます。
       </p>

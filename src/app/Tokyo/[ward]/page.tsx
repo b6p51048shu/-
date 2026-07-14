@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { getWardBySlug } from "@/lib/data";
 import { breadcrumbJsonLd } from "@/lib/jsonld";
+import { getCurrentYearJST } from "@/lib/date";
 import { notFound } from "next/navigation";
 import WardPageClient from "./WardPageClient";
 
@@ -11,9 +12,10 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const result = await getWardBySlug(wardSlug);
   if (!result) return {};
   const { name: wardName, info } = result;
+  const year = getCurrentYearJST();
   return {
-    title: `${wardName}のごみ収集日一覧`,
-    description: `${wardName}の全${info.areas.length}地域のごみ収集日（燃やすごみ・資源ごみ・プラスチック）を一覧表示。地域を選ぶと収集曜日をすぐに確認できます。`,
+    title: `${wardName}のごみ収集日カレンダー【${year}年】地域別一覧`,
+    description: `${wardName}の全${info.areas.length}地域のごみ収集日カレンダー【${year}年】。燃やすごみ・資源・プラスチックの収集曜日を地域別に一覧表示。地域を選ぶと収集曜日をすぐに確認できます。`,
     alternates: {
       canonical: `/Tokyo/${wardSlug}/`,
       languages: {
@@ -25,7 +27,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       },
     },
     openGraph: {
-      title: `${wardName}のごみ収集日 | ゴミの日.com`,
+      title: `${wardName}のごみ収集日カレンダー【${year}年】 | ゴミの日.com`,
       description: `${wardName}全${info.areas.length}地域のごみ収集スケジュール。`,
     },
   };

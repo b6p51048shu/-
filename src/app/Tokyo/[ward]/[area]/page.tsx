@@ -36,7 +36,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
   ].filter(Boolean);
 
   return {
-    title: `${wardName} ${schedule.area}のごみ収集日${titleSuffix}`,
+    title: `${wardName} ${schedule.area}のごみ収集日カレンダー${titleSuffix}`,
     description: `${wardName} ${schedule.area}のごみ収集スケジュール。${parts.join("、")}。`,
     alternates: {
       canonical: `/Tokyo/${wardSlug}/${areaSlug}/`,
@@ -49,7 +49,7 @@ export async function generateMetadata({ params }: Props): Promise<Metadata> {
       },
     },
     openGraph: {
-      title: `${wardName} ${schedule.area}のごみ収集日${titleSuffix} | ゴミの日.com`,
+      title: `${wardName} ${schedule.area}のごみ収集日カレンダー${titleSuffix} | ゴミの日.com`,
       description: `${parts.join("、")}`,
     },
   };
@@ -146,7 +146,7 @@ export default async function AreaPage({ params }: Props) {
         </nav>
 
         <h1 className="area-page-title">
-          {areaName}のごみ収集日
+          {areaName}のごみ収集日カレンダー
           <span className="area-page-ward">{wardName}</span>
         </h1>
 
