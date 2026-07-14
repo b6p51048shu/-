@@ -32,11 +32,12 @@ function formatICSDate(d: Date): string {
 export default function IcsButton({ wardName, areaName, schedule }: Props) {
   const handleDownload = () => {
     const events: string[] = [];
+    // 種別名は labels 優先（千葉市の plastic=古紙・布類 等）。labels 無しの区市は従来と同一
     const entries: { label: string; value: string }[] = [
-      { label: "燃やすごみ収集", value: schedule.burnable },
-      { label: "燃やさないごみ収集", value: schedule.unburnable ?? "" },
-      { label: "資源ごみ収集", value: schedule.recyclable ?? "" },
-      { label: "プラスチック収集", value: schedule.plastic ?? "" },
+      { label: `${schedule.labels?.burnable ?? "燃やすごみ"}収集`, value: schedule.burnable },
+      { label: `${schedule.labels?.unburnable ?? "燃やさないごみ"}収集`, value: schedule.unburnable ?? "" },
+      { label: `${schedule.labels?.recyclable ?? "資源ごみ"}収集`, value: schedule.recyclable ?? "" },
+      { label: `${schedule.labels?.plastic ?? "プラスチック"}収集`, value: schedule.plastic ?? "" },
     ].filter((e) => e.value);
 
     for (const { label, value } of entries) {

@@ -2,7 +2,8 @@
 // src/app/[locale]/{Pref}/[ward]/[area]/page.tsx から createLocaleAreaPage(pref) で生成する。
 
 import type { Metadata } from "next";
-import { getWardBySlug, getAreaBySlug, getTodayGarbage, getTomorrowGarbage } from "@/lib/data";
+import { getWardBySlug, getAreaBySlug, getTodayGarbageKeys, getTomorrowGarbageKeys } from "@/lib/data";
+import type { GarbageKey } from "@/lib/data";
 import type { AreaSchedule } from "@/lib/data";
 import { getT, scheduleToLocale, isValidLocale } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
@@ -71,26 +72,12 @@ export function createLocaleAreaPage(pref: PrefSlug) {
     const wardInfo = (await getWardBySlug(wardSlug))?.info;
     const areaName = schedule.area;
 
-    const todayItems = getTodayGarbage(schedule).map(ja => {
-      const map: Record<string,string> = {
-        "燃やすごみ": t.schedule.burnable,
-        "燃やさないごみ": t.schedule.unburnable,
-        "資源ごみ": t.schedule.recyclable,
-        "プラスチック": t.schedule.plastic,
-        "ペットボトル": t.schedule.pet,
-      };
-      return map[ja] ?? ja;
-    });
-    const tomorrowItems = getTomorrowGarbage(schedule).map(ja => {
-      const map: Record<string,string> = {
-        "燃やすごみ": t.schedule.burnable,
-        "燃やさないごみ": t.schedule.unburnable,
-        "資源ごみ": t.schedule.recyclable,
-        "プラスチック": t.schedule.plastic,
-        "ペットボトル": t.schedule.pet,
-      };
-      return map[ja] ?? ja;
-    });
+    // 表示名: labels（区市独自の日本語区分名）があればそれを優先、なければ翻訳名。
+    // カレンダー・スケジュールカード（getScheduleItems / LocaleGarbageCalendar）と同じ優先順位。
+    const localeGarbageLabel = (key: GarbageKey): string =>
+      schedule.labels?.[key] ?? t.schedule[key];
+    const todayItems = getTodayGarbageKeys(schedule).map(localeGarbageLabel);
+    const tomorrowItems = getTomorrowGarbageKeys(schedule).map(localeGarbageLabel);
 
     const todayName = t.days.long[new Date().getDay()];
     const tomorrowName = t.days.long[(new Date().getDay() + 1) % 7];

@@ -19,9 +19,21 @@ export function createWardPage(pref: PrefSlug) {
     if (!result || result.pref !== pref) return {};
     const { name: wardName, info } = result;
     const year = getCurrentYearJST();
+    // ごみ種別の列挙は labels 優先（区市内の全地域で labels は共通）。
+    // labels が無い/デフォルトと同名の区市は従来と同一文字列（東京側の出力不変を保証）。
+    const labels = info.areas[0]?.labels;
+    const kindList = [
+      labels?.burnable ?? "燃やすごみ",
+      labels?.recyclable ?? "資源",
+      labels?.plastic ?? "プラスチック",
+    ];
+    const kinds =
+      kindList.join("・") === "燃やすごみ・資源・プラスチック"
+        ? "燃やすごみ・資源・プラスチック"
+        : kindList.join("、"); // 独自区分名は「・」を含むことがあるため「、」で区切る
     return {
       title: `${wardName}のごみ収集日カレンダー【${year}年】地域別一覧`,
-      description: `${wardName}の全${info.areas.length}地域のごみ収集日カレンダー【${year}年】。燃やすごみ・資源・プラスチックの収集曜日を地域別に一覧表示。地域を選ぶと収集曜日をすぐに確認できます。`,
+      description: `${wardName}の全${info.areas.length}地域のごみ収集日カレンダー【${year}年】。${kinds}の収集曜日を地域別に一覧表示。地域を選ぶと収集曜日をすぐに確認できます。`,
       alternates: {
         canonical: `/${pref}/${wardSlug}/`,
         languages: {

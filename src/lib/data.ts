@@ -220,28 +220,51 @@ function normDay(s: string): string {
     .replace(/([月火水木金土日])曜/g, "$1");
 }
 
-/** 今日収集があるごみ種別を返す */
-export function getTodayGarbage(schedule: AreaSchedule): string[] {
-  const dayChars = ["日", "月", "火", "水", "木", "金", "土"];
-  const today = dayChars[new Date().getDay()];
-  const result: string[] = [];
-  if (normDay(schedule.burnable).includes(today)) result.push("燃やすごみ");
-  if (normDay(schedule.unburnable ?? "").includes(today)) result.push("燃やさないごみ");
-  if (normDay(schedule.recyclable ?? "").includes(today)) result.push("資源ごみ");
-  if (normDay(schedule.plastic ?? "").includes(today)) result.push("プラスチック");
-  if (normDay(schedule.pet ?? "").includes(today)) result.push("ペットボトル");
-  return result;
+/** 収集スケジュールを持つごみ種別キー（表示順） */
+const GARBAGE_KEYS = ["burnable", "unburnable", "recyclable", "plastic", "pet"] as const;
+export type GarbageKey = (typeof GARBAGE_KEYS)[number];
+
+/** ごみ種別のデフォルト表示名（labels が無い区市で使用。従来のハードコード文字列と同一） */
+export const GARBAGE_DEFAULT_LABELS: Record<GarbageKey, string> = {
+  burnable: "燃やすごみ",
+  unburnable: "燃やさないごみ",
+  recyclable: "資源ごみ",
+  plastic: "プラスチック",
+  pet: "ペットボトル",
+};
+
+/**
+ * ごみ種別の表示名を返す。schedule.labels があればそれを優先する。
+ * 千葉市のように plastic=古紙・布類 等、フィールドと実区分が違う自治体で
+ * 誤った種別名を表示しないための共通ヘルパー（カレンダー等と同じ優先順位）。
+ */
+export function garbageLabel(schedule: AreaSchedule, key: GarbageKey): string {
+  return schedule.labels?.[key] ?? GARBAGE_DEFAULT_LABELS[key];
 }
 
-/** 明日収集があるごみ種別を返す */
-export function getTomorrowGarbage(schedule: AreaSchedule): string[] {
+/** 指定曜日（"月"等）に収集があるごみ種別キーを返す */
+function getGarbageKeysOnDay(schedule: AreaSchedule, dayChar: string): GarbageKey[] {
+  return GARBAGE_KEYS.filter((key) => normDay(schedule[key] ?? "").includes(dayChar));
+}
+
+/** 今日収集があるごみ種別キーを返す（表示名は呼び出し側で garbageLabel か多言語辞書を使う） */
+export function getTodayGarbageKeys(schedule: AreaSchedule): GarbageKey[] {
   const dayChars = ["日", "月", "火", "水", "木", "金", "土"];
-  const tomorrow = dayChars[(new Date().getDay() + 1) % 7];
-  const result: string[] = [];
-  if (normDay(schedule.burnable).includes(tomorrow)) result.push("燃やすごみ");
-  if (normDay(schedule.unburnable ?? "").includes(tomorrow)) result.push("燃やさないごみ");
-  if (normDay(schedule.recyclable ?? "").includes(tomorrow)) result.push("資源ごみ");
-  if (normDay(schedule.plastic ?? "").includes(tomorrow)) result.push("プラスチック");
-  if (normDay(schedule.pet ?? "").includes(tomorrow)) result.push("ペットボトル");
-  return result;
+  return getGarbageKeysOnDay(schedule, dayChars[new Date().getDay()]);
+}
+
+/** 明日収集があるごみ種別キーを返す */
+export function getTomorrowGarbageKeys(schedule: AreaSchedule): GarbageKey[] {
+  const dayChars = ["日", "月", "火", "水", "木", "金", "土"];
+  return getGarbageKeysOnDay(schedule, dayChars[(new Date().getDay() + 1) % 7]);
+}
+
+/** 今日収集があるごみ種別の表示名を返す（labels優先。labels無しなら従来と同一出力） */
+export function getTodayGarbage(schedule: AreaSchedule): string[] {
+  return getTodayGarbageKeys(schedule).map((key) => garbageLabel(schedule, key));
+}
+
+/** 明日収集があるごみ種別の表示名を返す（labels優先。labels無しなら従来と同一出力） */
+export function getTomorrowGarbage(schedule: AreaSchedule): string[] {
+  return getTomorrowGarbageKeys(schedule).map((key) => garbageLabel(schedule, key));
 }

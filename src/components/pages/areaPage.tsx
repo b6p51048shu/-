@@ -50,13 +50,14 @@ export function createAreaPage(pref: PrefSlug) {
 
     const { wardName, schedule } = found;
     const burnable = schedule.burnable ? shortDays(schedule.burnable) : "";
-    const titleSuffix = burnable ? `（燃やすごみ: ${burnable}）` : "";
+    // 種別名は labels 優先（千葉市の plastic=古紙・布類 等）。labels 無しの区市は従来と同一文字列
+    const titleSuffix = burnable ? `（${schedule.labels?.burnable ?? "燃やすごみ"}: ${burnable}）` : "";
 
     const parts = [
-      schedule.burnable && `燃やすごみ: ${schedule.burnable}`,
-      schedule.unburnable && `燃やさないごみ: ${schedule.unburnable}`,
-      schedule.recyclable && `資源: ${schedule.recyclable}`,
-      schedule.plastic && `プラスチック: ${schedule.plastic}`,
+      schedule.burnable && `${schedule.labels?.burnable ?? "燃やすごみ"}: ${schedule.burnable}`,
+      schedule.unburnable && `${schedule.labels?.unburnable ?? "燃やさないごみ"}: ${schedule.unburnable}`,
+      schedule.recyclable && `${schedule.labels?.recyclable ?? "資源"}: ${schedule.recyclable}`,
+      schedule.plastic && `${schedule.labels?.plastic ?? "プラスチック"}: ${schedule.plastic}`,
     ].filter(Boolean);
 
     return {
