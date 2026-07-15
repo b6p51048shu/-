@@ -276,7 +276,10 @@ export function createAreaPage(pref: PrefSlug) {
                   .filter(({ key }) => schedule[key])
                   .map(({ label, key }) => `${label}が${schedule[key]}`)
                   .join("、")}
-                です。収集日の朝、決められた時間まで（多くの自治体で朝8時まで）に所定の場所へ出してください。
+                です。
+                {schedule.collection_note
+                  ? `${schedule.collection_note}出す時間・場所の詳細は市の公式案内をご確認ください。`
+                  : "収集日の朝、決められた時間まで（多くの自治体で朝8時まで）に所定の場所へ出してください。"}
                 祝日の収集有無や年末年始の特別スケジュールは自治体により異なるため、
                 時期によっては{wardName}の公式案内もあわせてご確認ください。
               </p>

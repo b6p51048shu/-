@@ -38,6 +38,8 @@ export type AreaSchedule = {
   plastic_parsed?: ParsedSchedule;
   pet_parsed?: ParsedSchedule;
   oversized_parsed?: ParsedSchedule;
+  /** 収集ルールの補足注記（「ごみ出しの基本」の定型文を上書きする自治体固有の一文。例: 船橋市の昼間/夜間収集） */
+  collection_note?: string;
   /** 区独自の表示名（デフォルトラベルを上書きする） */
   labels?: {
     burnable?: string;
