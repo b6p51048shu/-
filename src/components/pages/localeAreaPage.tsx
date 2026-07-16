@@ -7,6 +7,7 @@ import type { GarbageKey } from "@/lib/data";
 import type { AreaSchedule } from "@/lib/data";
 import { getT, scheduleToLocale, isValidLocale } from "@/lib/i18n";
 import type { Locale } from "@/lib/i18n";
+import { getCurrentDayOfWeekJST } from "@/lib/date";
 import { notFound } from "next/navigation";
 import LocaleGarbageCalendar from "@/components/LocaleGarbageCalendar";
 import IcsButton from "@/components/IcsButton";
@@ -79,8 +80,9 @@ export function createLocaleAreaPage(pref: PrefSlug) {
     const todayItems = getTodayGarbageKeys(schedule).map(localeGarbageLabel);
     const tomorrowItems = getTomorrowGarbageKeys(schedule).map(localeGarbageLabel);
 
-    const todayName = t.days.long[new Date().getDay()];
-    const tomorrowName = t.days.long[(new Date().getDay() + 1) % 7];
+    const currentDayJST = getCurrentDayOfWeekJST();
+    const todayName = t.days.long[currentDayJST];
+    const tomorrowName = t.days.long[(currentDayJST + 1) % 7];
 
     const areas = wardInfo?.areas ?? [];
     const currentIdx = areas.findIndex((a) => a.slug === areaSlug);

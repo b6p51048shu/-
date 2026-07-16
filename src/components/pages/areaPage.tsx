@@ -5,6 +5,7 @@
 import type { Metadata } from "next";
 import { getWardBySlug, getAreaBySlug, getTodayGarbage, getTomorrowGarbage } from "@/lib/data";
 import type { AreaSchedule } from "@/lib/data";
+import { getCurrentDayOfWeekJST } from "@/lib/date";
 import IcsButton from "@/components/IcsButton";
 import GarbageCalendar from "@/components/GarbageCalendar";
 import BagsPanel from "@/components/BagsPanel";
@@ -92,8 +93,9 @@ export function createAreaPage(pref: PrefSlug) {
     const todayItems = getTodayGarbage(schedule);
     const tomorrowItems = getTomorrowGarbage(schedule);
     const dayNames = ["日曜日", "月曜日", "火曜日", "水曜日", "木曜日", "金曜日", "土曜日"];
-    const todayName = dayNames[new Date().getDay()];
-    const tomorrowName = dayNames[(new Date().getDay() + 1) % 7];
+    const currentDayJST = getCurrentDayOfWeekJST();
+    const todayName = dayNames[currentDayJST];
+    const tomorrowName = dayNames[(currentDayJST + 1) % 7];
 
     const areas = wardInfo?.areas ?? [];
     const currentIdx = areas.findIndex((a) => a.slug === areaSlug);

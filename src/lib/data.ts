@@ -12,6 +12,7 @@
 import regionIndexRaw from "../../public/data/region-index.json";
 import wardSlugIndexRaw from "../../public/data/ward-slug-index.json";
 import { getCloudflareContext } from "@opennextjs/cloudflare";
+import { getCurrentDayOfWeekJST } from "./date";
 
 /** 構造化スケジュールデータ（generate_data.py が生成） */
 export type ParsedSchedule =
@@ -252,13 +253,13 @@ function getGarbageKeysOnDay(schedule: AreaSchedule, dayChar: string): GarbageKe
 /** 今日収集があるごみ種別キーを返す（表示名は呼び出し側で garbageLabel か多言語辞書を使う） */
 export function getTodayGarbageKeys(schedule: AreaSchedule): GarbageKey[] {
   const dayChars = ["日", "月", "火", "水", "木", "金", "土"];
-  return getGarbageKeysOnDay(schedule, dayChars[new Date().getDay()]);
+  return getGarbageKeysOnDay(schedule, dayChars[getCurrentDayOfWeekJST()]);
 }
 
 /** 明日収集があるごみ種別キーを返す */
 export function getTomorrowGarbageKeys(schedule: AreaSchedule): GarbageKey[] {
   const dayChars = ["日", "月", "火", "水", "木", "金", "土"];
-  return getGarbageKeysOnDay(schedule, dayChars[(new Date().getDay() + 1) % 7]);
+  return getGarbageKeysOnDay(schedule, dayChars[(getCurrentDayOfWeekJST() + 1) % 7]);
 }
 
 /** 今日収集があるごみ種別の表示名を返す（labels優先。labels無しなら従来と同一出力） */
