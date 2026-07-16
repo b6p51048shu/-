@@ -4,17 +4,38 @@ import { useState, useEffect, useRef } from "react";
 import wardIndex from "../../public/data/ward-index.json";
 import regionIndex from "../../public/data/region-index.json";
 import wardSlugIndex from "../../public/data/ward-slug-index.json";
+import { PREFS } from "@/lib/prefs";
+import type { PrefSlug } from "@/lib/prefs";
 
 type WardIndexEntry = {
   slug: string;
   areas: { name: string; slug: string }[];
   has_bags?: boolean;
+  has_oversized?: boolean;
 };
 const wardIndexData = wardIndex as Record<string, WardIndexEntry>;
 // region-index は県階層（例: { Tokyo: { "23区": [...], "多摩地区": [...] } }）
 const regionData = regionIndex as Record<string, Record<string, string[]>>;
 const wardSlugData = wardSlugIndex as unknown as Record<string, { name: string; pref: string }>;
 const WARD_NAMES = Object.keys(wardIndexData);
+
+/** ドロップダウン・対応エリアの表示順（東京→神奈川→千葉→埼玉） */
+const PREF_ORDER: PrefSlug[] = ["Tokyo", "Kanagawa", "Chiba", "Saitama"];
+/** optgroupラベル用の短い県名（「東京都」ではなく「東京」）*/
+const PREF_SHORT_NAME: Record<PrefSlug, string> = {
+  Tokyo: "東京",
+  Kanagawa: "神奈川",
+  Chiba: "千葉",
+  Saitama: "埼玉",
+};
+
+/** optgroupのラベル。県をまたいで同名になりうる汎用グループ名（23区・市部）だけ県名を前置して曖昧さを解消する */
+function groupLabel(pref: PrefSlug, groupName: string): string {
+  if (groupName === "23区" || groupName === "市部") {
+    return `${PREF_SHORT_NAME[pref]}${groupName}`;
+  }
+  return groupName;
+}
 
 /** ward_slug → 所属県slug（不明時は Tokyo にフォールバック） */
 function prefOf(wardSlug: string): string {
@@ -119,6 +140,30 @@ export default function TopPage() {
   const wards23 = regionData["Tokyo"]?.["23区"] ?? [];
   const tamaCities = regionData["Tokyo"]?.["多摩地区"] ?? [];
 
+  // ドロップダウン用: 全県をループしてoptgroupを動的生成（ハードコード禁止・新県追加で自動反映）
+  const dropdownData = PREF_ORDER.filter((p) => regionData[p]).map((p) => ({
+    pref: p,
+    groups: Object.entries(regionData[p])
+      .map(([groupName, wardNames]) => ({
+        key: `${p}-${groupName}`,
+        label: groupLabel(p, groupName),
+        wards: wardNames.filter((w) => wardIndexData[w]),
+      }))
+      .filter((g) => g.wards.length > 0),
+  })).filter((p) => p.groups.length > 0);
+
+  // 「対応エリア」セクション用: 県ごとの対応自治体数
+  const prefLinks = PREF_ORDER.filter((p) => regionData[p]).map((p) => ({
+    pref: p,
+    name: PREFS[p],
+    count: Object.values(regionData[p]).reduce(
+      (sum, wardNames) => sum + wardNames.filter((w) => wardIndexData[w]).length,
+      0
+    ),
+  })).filter((p) => p.count > 0);
+  const totalMunicipalities = prefLinks.reduce((sum, p) => sum + p.count, 0);
+  const countByPref = Object.fromEntries(prefLinks.map((p) => [p.pref, p.count])) as Partial<Record<PrefSlug, number>>;
+
   return (
     <>
       {/* ── Hero ── */}
@@ -128,7 +173,7 @@ export default function TopPage() {
           <img src="/raccoon.png" className="hero-raccoon" alt="" width={56} height={56} />
           ゴミの日.com
         </h1>
-        <p className="hero-sub">東京のごみ収集日・指定ごみ袋を地域別に検索</p>
+        <p className="hero-sub">東京・神奈川・千葉・埼玉のごみ収集日・指定ごみ袋を地域別に検索</p>
 
         <div className="search-box">
           <h2>🔍 地域から調べる</h2>
@@ -142,16 +187,15 @@ export default function TopPage() {
               <label>区・市を選択</label>
               <select value={selectedWard} onChange={(e) => setSelectedWard(e.target.value)}>
                 <option value="">-- 区・市を選択 --</option>
-                <optgroup label="東京23区">
-                  {wards23.filter((w) => wardIndexData[w]).map((w) => (
-                    <option key={w} value={w}>{w}</option>
-                  ))}
-                </optgroup>
-                <optgroup label="多摩地区">
-                  {tamaCities.filter((w) => wardIndexData[w]).map((w) => (
-                    <option key={w} value={w}>{w}</option>
-                  ))}
-                </optgroup>
+                {dropdownData.map((p) =>
+                  p.groups.map((g) => (
+                    <optgroup key={g.key} label={g.label}>
+                      {g.wards.map((w) => (
+                        <option key={w} value={w}>{w}</option>
+                      ))}
+                    </optgroup>
+                  ))
+                )}
               </select>
             </div>
 
@@ -173,7 +217,7 @@ export default function TopPage() {
               収集日を確認する →
             </button>
 
-            {selectedWard && wardIndexData[selectedWard] && (
+            {selectedWard && wardIndexData[selectedWard] && wardIndexData[selectedWard].has_oversized && (
               <a
                 href={`/${prefOf(wardIndexData[selectedWard].slug)}/${wardIndexData[selectedWard].slug}/sodaigomi/`}
                 className="search-sodai-link"
@@ -227,6 +271,19 @@ export default function TopPage() {
           </>
         )}
 
+        {/* ── 対応エリア（県トップへの導線） ── */}
+        <section aria-label="対応エリア">
+          <h2 className="section-title" style={{ marginTop: "2.5rem" }}>対応エリア</h2>
+          <div className="ward-grid">
+            {prefLinks.map((p) => (
+              <a key={p.pref} href={`/${p.pref}/`} className="ward-card">
+                {p.name}
+                <div className="ward-card-count">{p.count}自治体</div>
+              </a>
+            ))}
+          </div>
+        </section>
+
         {/* ── 粗大ごみ・不用品の導線（お役立ち情報） ── */}
         <section aria-label="粗大ごみ・不用品の処分について">
           <h2 className="section-title" style={{ marginTop: "2.5rem" }}>粗大ごみ・不用品の処分でお困りの方へ</h2>
@@ -253,7 +310,7 @@ export default function TopPage() {
           <h2 className="section-title">よくある質問</h2>
           <div className="faq-item">
             <p className="faq-q">Q. ゴミの日.comとは？</p>
-            <p className="faq-a">東京都内のごみ収集日を地域別に検索できる無料サービスです。燃やすごみ・燃やさないごみ・資源ごみ・プラスチックの収集曜日を一覧表示します。多摩地区では指定ごみ袋の種類・価格情報も確認できます。</p>
+            <p className="faq-a">東京・神奈川・千葉・埼玉（1都3県）のごみ収集日を地域別に検索できる無料サービスです。燃やすごみ・燃やさないごみ・資源ごみ・プラスチックの収集曜日を一覧表示します。多摩地区では指定ごみ袋の種類・価格情報も確認できます。</p>
           </div>
           <div className="faq-item">
             <p className="faq-q">Q. GPS機能はどのように使いますか？</p>
@@ -269,7 +326,11 @@ export default function TopPage() {
           </div>
           <div className="faq-item">
             <p className="faq-q">Q. 対象エリアはどこですか？</p>
-            <p className="faq-a">東京都23区・多摩地区計52自治体に対応しています。今後、神奈川・埼玉・千葉など1都3県や主要都市への対応エリア拡大を予定しています。</p>
+            <p className="faq-a">
+              東京都（23区・多摩地区）・神奈川県・千葉県・埼玉県の1都3県、計{totalMunicipalities}自治体
+              （東京{countByPref.Tokyo ?? 0}・神奈川{countByPref.Kanagawa ?? 0}・千葉{countByPref.Chiba ?? 0}・埼玉{countByPref.Saitama ?? 0}）
+              に対応しています。今後は大阪・名古屋・福岡など主要都市への対応エリア拡大を検討しています。
+            </p>
           </div>
         </section>
       </div>
