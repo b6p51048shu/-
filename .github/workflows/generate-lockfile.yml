@@ -1,0 +1,82 @@
+# なぜこのワークフローが必要か（2026-07-16 の障害対応）
+#
+# package-lock.json は開発機(Windows)と本番ビルド環境(Cloudflare Pages = Linux)で
+# 解決結果が食い違うことがある。特に unrs-resolver が使う @emnapi/* 系パッケージは
+# プラットフォーム別のWASMフォールバック実装を optionalDependencies として持ち、
+# Windows上で `npm install` して生成したロックファイルには Linux 用のエントリが
+# 正しく含まれない（またはその逆）。
+# その結果、Cloudflare側のビルドが `npm clean-install`（= npm ci）を実行した際に
+# 「lockfileとpackage.jsonが同期していない」エラーで即失敗し、
+# サイトマップ修正のような緊急デプロイが数時間ブロックされる事故が発生した。
+#
+# 対策として、package-lock.json は「Cloudflareのビルドログで確認済みの実環境
+# （npm@10.9.2, nodejs@22.16.0 / Linux ランナー）」であるGitHub Actions
+# ubuntu-latest 上でのみ生成し、そのままリポジトリにコミットする。
+# これにより Cloudflare は決定論的な `npm ci` に戻れる。
+#
+# 実行方法:
+#   - package.json を変更して push すると自動実行される
+#   - もしくは Actions タブから "Generate lockfile" を手動実行 (workflow_dispatch)
+#
+# 再帰防止:
+#   - push トリガーは package.json の変更時のみに限定している。
+#     このワークフローが自動コミットするのは package-lock.json のみで
+#     package.json 自体は変更しないため、自動コミットが再度このワークフローを
+#     誘発することはない。念のためコミットメッセージにも [skip ci] を付与し、
+#     concurrency で多重実行も防止する。
+
+name: Generate lockfile
+
+on:
+  workflow_dispatch: {}
+  push:
+    branches:
+      - main
+    paths:
+      - "package.json"
+
+permissions:
+  contents: write
+
+concurrency:
+  group: generate-lockfile-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  generate-lockfile:
+    # CloudflareのビルドログでDetectされた実環境と同一のLinuxランナーを使う
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+        with:
+          # git-auto-commit-action が正しいブランチにpushできるよう明示
+          ref: ${{ github.ref_name }}
+
+      - name: Setup Node.js (Cloudflareビルド環境と同一バージョンに固定)
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22.16.0"
+
+      - name: Pin npm to Cloudflare's version (10.9.2)
+        run: npm install -g npm@10.9.2
+
+      - name: Show toolchain versions
+        run: |
+          node -v
+          npm -v
+
+      - name: Generate package-lock.json (node_modules不要・高速)
+        run: npm install --package-lock-only
+
+      - name: Commit and push package-lock.json
+        uses: stefanzweifel/git-auto-commit-action@v5
+        with:
+          commit_message: >-
+            chore: package-lock.jsonを再生成（GitHub Actions/Linux環境, node22.16.0/npm10.9.2）
+
+            [skip ci]
+          file_pattern: "package-lock.json"
+          commit_user_name: "github-actions[bot]"
+          commit_user_email: "github-actions[bot]@users.noreply.github.com"
