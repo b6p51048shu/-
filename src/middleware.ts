@@ -1,7 +1,17 @@
+// ⚠️ Next.js 16 では middleware は非推奨で proxy.ts が推奨（ビルド時に deprecation 警告が出る）。
+// しかし本番は OpenNext(Cloudflare Workers) でビルドしており、OpenNext は
+// 「Node.js ランタイムの proxy」を未対応（`ERROR Node.js middleware is not currently supported.
+// Consider switching to Edge Middleware.` でビルドが落ちる）。
+// proxy.ts は Node ランタイム固定で Edge にできない（docs: proxy の Runtime 節
+// 「The `runtime` config option is not available in Proxy files. Setting the `runtime`
+//  config option in Proxy will throw an error.」）。
+// 一方 middleware.ts は暗黙 Edge ランタイムで動作し OpenNext 対応（今日まで本番稼働の実績あり）。
+// よって OpenNext が Node ランタイムの proxy に対応するまでは、非推奨警告を承知の上で
+// middleware.ts を維持する。
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
 // 大文字小文字の吸収に必要なのは slug 情報だけなので、全区一括の ward-data.json(約1MB)では
-// なく軽量な ward-index.json(約140KB)を読む。proxy は全リクエストで動くため、
+// なく軽量な ward-index.json(約140KB)を読む。middleware は全リクエストで動くため、
 // バンドルサイズ・初期化コストの削減が Worker の負荷軽減に直結する。
 import wardIndexRaw from "../public/data/ward-index.json";
 import { PREFS } from "./lib/prefs";
@@ -100,7 +110,7 @@ function withCacheControl(response: NextResponse, pathname: string): NextRespons
 }
 
 /**
- * 大文字小文字を吸収し、キャッシュ可能なページに適切な Cache-Control を付与する Proxy。
+ * 大文字小文字を吸収し、キャッシュ可能なページに適切な Cache-Control を付与する Middleware。
  * 例: /tokyo/shibuya/shibuya-1~-3/ や /Tokyo/SHIBUYA/Shibuya-1~-3/ など、
  * 大文字小文字が違うURLでも、内部的に正準URLに rewrite してページを表示する。
  * （ブラウザのアドレスバーは変更されない＝ユーザーが入力したURLが保たれる）
@@ -110,7 +120,7 @@ function withCacheControl(response: NextResponse, pathname: string): NextRespons
  * ※ 県トップ（/tokyo/ 等・区セグメント無し）は従来どおり rewrite しない
  *   （/Tokyo/ のみ正準。現行の大文字小文字挙動を変えないため）。
  */
-export function proxy(request: NextRequest) {
+export function middleware(request: NextRequest) {
   const url = request.nextUrl.clone();
   const pathname = url.pathname;
 
