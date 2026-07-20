@@ -3508,7 +3508,7 @@ export const GOMI_ITEMS: GomiItem[] = [
     mistakes: [
       "データを消さずに捨てる → 個人情報・機密情報の流出リスク",
     ],
-    related: ["external-hdd", "pc", "sd-card"],
+    related: ["external-hdd", "pc", "smartphone"],
   },
   {
     slug: "landline-phone",
