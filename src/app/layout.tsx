@@ -132,6 +132,12 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             `,
           }}
         />
+        {/* Google AdSense（審査・広告配信用。ads.txt は public/ads.txt に設置） */}
+        <script
+          async
+          src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-2929551202966135"
+          crossOrigin="anonymous"
+        />
         <link rel="manifest" href="/manifest.json" />
         <meta name="theme-color" content="#16a34a" />
         <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
