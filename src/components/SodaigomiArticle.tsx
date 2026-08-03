@@ -2,7 +2,6 @@ import type { WardInfo } from "@/lib/data";
 import type { BagsUILocale } from "@/lib/i18n";
 import { sodaigomiContent, fillTemplate } from "@/lib/articleContent";
 import InlineAd from "@/components/InlineAd";
-import BottomAdBanner from "@/components/BottomAdBanner";
 
 type Props = {
   locale: BagsUILocale;
@@ -226,8 +225,6 @@ export default function SodaigomiArticle({ locale, pref, wardName, wardSlug, inf
           </div>
         </article>
       </div>
-      {/* ボトム固定広告バナー */}
-      <BottomAdBanner locale={locale} />
     </>
   );
 }

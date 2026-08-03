@@ -13,7 +13,6 @@ import LocaleGarbageCalendar from "@/components/LocaleGarbageCalendar";
 import IcsButton from "@/components/IcsButton";
 import BagsPanel from "@/components/BagsPanel";
 import InlineAd from "@/components/InlineAd";
-import BottomAdBanner from "@/components/BottomAdBanner";
 import { breadcrumbJsonLd, nearbyAreas } from "@/lib/jsonld";
 import type { PrefSlug } from "@/lib/prefs";
 
@@ -266,8 +265,6 @@ export function createLocaleAreaPage(pref: PrefSlug) {
           )}
         </div>
       </div>
-      {/* ボトム固定広告バナー（×で7日間非表示） */}
-      <BottomAdBanner locale={locale as Locale} />
       </>
     );
   }

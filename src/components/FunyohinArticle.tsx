@@ -1,7 +1,6 @@
 import type { BagsUILocale } from "@/lib/i18n";
 import { funyohinContent } from "@/lib/articleContent";
 import InlineAd from "@/components/InlineAd";
-import BottomAdBanner from "@/components/BottomAdBanner";
 
 type Props = { locale: BagsUILocale };
 
@@ -214,8 +213,6 @@ export default function FunyohinArticle({ locale }: Props) {
           </div>
         </article>
       </div>
-      {/* ボトム固定広告バナー */}
-      <BottomAdBanner locale={locale} />
     </>
   );
 }

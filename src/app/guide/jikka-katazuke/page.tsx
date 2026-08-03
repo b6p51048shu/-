@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import InlineAd from "@/components/InlineAd";
-import BottomAdBanner from "@/components/BottomAdBanner";
 
 const PAGE_PATH = "/guide/jikka-katazuke/";
 const UPDATED = "2026年6月29日";
@@ -224,7 +223,6 @@ export default function JikkaKatazukePage() {
           </div>
         </article>
       </div>
-      <BottomAdBanner locale="ja" />
     </>
   );
 }

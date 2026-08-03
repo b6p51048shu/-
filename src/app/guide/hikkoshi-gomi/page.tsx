@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import InlineAd from "@/components/InlineAd";
-import BottomAdBanner from "@/components/BottomAdBanner";
 
 const PAGE_PATH = "/guide/hikkoshi-gomi/";
 const UPDATED = "2026年6月7日";
@@ -327,8 +326,6 @@ export default function HikkoshiGomiPage() {
           </div>
         </article>
       </div>
-      {/* ボトム固定広告バナー */}
-      <BottomAdBanner locale="ja" />
     </>
   );
 }

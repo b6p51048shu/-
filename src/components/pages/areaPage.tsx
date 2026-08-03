@@ -10,7 +10,6 @@ import IcsButton from "@/components/IcsButton";
 import GarbageCalendar from "@/components/GarbageCalendar";
 import BagsPanel from "@/components/BagsPanel";
 import InlineAd from "@/components/InlineAd";
-import BottomAdBanner from "@/components/BottomAdBanner";
 import { breadcrumbJsonLd, nearbyAreas } from "@/lib/jsonld";
 import { notFound } from "next/navigation";
 import type { PrefSlug } from "@/lib/prefs";
@@ -345,8 +344,6 @@ export function createAreaPage(pref: PrefSlug) {
             )}
           </div>
         </div>
-        {/* ボトム固定広告バナー（×で7日間非表示） */}
-        <BottomAdBanner locale="ja" />
       </>
     );
   }

@@ -3,7 +3,6 @@ import { notFound } from "next/navigation";
 import { ITEM_CATEGORIES, getItemBySlug } from "@/data/items";
 import { breadcrumbJsonLd } from "@/lib/jsonld";
 import InlineAd from "@/components/InlineAd";
-import BottomAdBanner from "@/components/BottomAdBanner";
 
 type Props = { params: Promise<{ item: string }> };
 
@@ -168,7 +167,6 @@ export default async function ItemPage({ params }: Props) {
           </a>
         </div>
       </div>
-      <BottomAdBanner locale="ja" />
     </>
   );
 }

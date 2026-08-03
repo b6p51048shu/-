@@ -1,6 +1,5 @@
 import type { Metadata } from "next";
 import InlineAd from "@/components/InlineAd";
-import BottomAdBanner from "@/components/BottomAdBanner";
 
 const PAGE_PATH = "/guide/gomi-yashiki/";
 const UPDATED = "2026年6月29日";
@@ -234,7 +233,6 @@ export default function GomiYashikiPage() {
           </div>
         </article>
       </div>
-      <BottomAdBanner locale="ja" />
     </>
   );
 }
