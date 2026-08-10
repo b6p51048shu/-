@@ -271,6 +271,10 @@ a:hover { text-decoration: underline; }
   width: 49% !important;
 }
 .rakuten-ad-card td[style*="width:248px"] {
+  /* 素材のtdに display:block が指定されており、ブラウザのテーブル修復処理で
+     匿名セルに包まれて実効幅が51%の半分程度に縮む（文字の右側が空く）。
+     table-cellに戻して51%全域をテキストに使わせる。 */
+  display: table-cell !important;
   width: 51% !important;
 }
 .rakuten-ad-card img {
