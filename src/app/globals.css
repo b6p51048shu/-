@@ -277,6 +277,15 @@ a:hover { text-decoration: underline; }
   max-width: 100%;
   height: auto;
 }
+/* 楽天の商品名は出店者がキーワードを大量に詰めるため非常に長い。
+   画像の高さと釣り合うよう最大5行で省略表示する（DOMのテキスト・リンクは
+   無改変。CSSによる表示制御のみ）。価格・購入ボタンはこの下に常に見える。 */
+.rakuten-ad-card p > a {
+  display: -webkit-box;
+  -webkit-line-clamp: 5;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
 
 /* ── ボトム固定広告バナー（A8画像バナー） ── */
 .bottom-ad-spacer { height: 70px; }
