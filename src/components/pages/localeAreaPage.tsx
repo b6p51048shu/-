@@ -12,7 +12,7 @@ import { notFound } from "next/navigation";
 import LocaleGarbageCalendar from "@/components/LocaleGarbageCalendar";
 import IcsButton from "@/components/IcsButton";
 import BagsPanel from "@/components/BagsPanel";
-import InlineAd from "@/components/InlineAd";
+import RakutenAdCard from "@/components/RakutenAdCard";
 import { breadcrumbJsonLd, nearbyAreas } from "@/lib/jsonld";
 import type { PrefSlug } from "@/lib/prefs";
 
@@ -205,7 +205,7 @@ export function createLocaleAreaPage(pref: PrefSlug) {
         })()}
 
         {/* インライン広告（粗大ごみ・不用品回収） */}
-        <InlineAd locale={locale as Locale} />
+        <RakutenAdCard locale={locale as Locale} order="drain-first" />
 
         {/* スケジュール一覧 */}
         <section style={{ margin: "2rem 0" }}>

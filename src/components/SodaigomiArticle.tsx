@@ -1,7 +1,7 @@
 import type { WardInfo } from "@/lib/data";
 import type { BagsUILocale } from "@/lib/i18n";
 import { sodaigomiContent, fillTemplate } from "@/lib/articleContent";
-import InlineAd from "@/components/InlineAd";
+import RakutenAdCard from "@/components/RakutenAdCard";
 
 type Props = {
   locale: BagsUILocale;
@@ -183,7 +183,7 @@ export default function SodaigomiArticle({ locale, pref, wardName, wardSlug, inf
           <p>{f(c.carryP2)}</p>
 
           {/* インライン広告（不用品回収） */}
-          <InlineAd locale={locale} />
+          <RakutenAdCard locale={locale} order="dispenser-first" />
 
           {/* 公式リンク */}
           {officialUrl && (

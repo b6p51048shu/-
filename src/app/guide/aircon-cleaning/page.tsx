@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import InlineAd from "@/components/InlineAd";
+import RakutenAdCard from "@/components/RakutenAdCard";
 
 const PAGE_PATH = "/guide/aircon-cleaning/";
 const UPDATED = "2026年6月29日";
@@ -201,7 +201,7 @@ export default function AirconCleaningPage() {
           </div>
 
           {/* アフィリエイト枠 */}
-          <InlineAd locale="ja" />
+          <RakutenAdCard locale="ja" order="dispenser-first" />
 
           <h2 id="yasuku">安く頼むコツ（時期・まとめ割・相見積もり）</h2>
           <ol>

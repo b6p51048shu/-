@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import InlineAd from "@/components/InlineAd";
+import RakutenAdCard from "@/components/RakutenAdCard";
 
 const PAGE_PATH = "/guide/gomi-yashiki/";
 const UPDATED = "2026年6月29日";
@@ -184,7 +184,7 @@ export default function GomiYashikiPage() {
           </p>
 
           {/* アフィリエイト（不用品回収）— 費用検討の直後 */}
-          <InlineAd locale="ja" />
+          <RakutenAdCard locale="ja" order="dispenser-first" />
 
           <h2 id="gyousha">業者の選び方と近所への配慮</h2>
           <ul>

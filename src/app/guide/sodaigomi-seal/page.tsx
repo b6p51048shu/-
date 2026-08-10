@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import InlineAd from "@/components/InlineAd";
+import RakutenAdCard from "@/components/RakutenAdCard";
 
 const PAGE_PATH = "/guide/sodaigomi-seal/";
 const UPDATED = "2026年6月29日";
@@ -237,7 +237,7 @@ export default function SodaigomiSealPage() {
           </ol>
 
           {/* アフィリエイト広告（不用品回収）— 「予約待ち・急ぎ」を意識するタイミング */}
-          <InlineAd locale="ja" />
+          <RakutenAdCard locale="ja" order="dispenser-first" />
 
           <h2 id="chuui">つまずきやすい注意点5つ</h2>
           <ul>

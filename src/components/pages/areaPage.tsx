@@ -9,7 +9,7 @@ import { getCurrentDayOfWeekJST } from "@/lib/date";
 import IcsButton from "@/components/IcsButton";
 import GarbageCalendar from "@/components/GarbageCalendar";
 import BagsPanel from "@/components/BagsPanel";
-import InlineAd from "@/components/InlineAd";
+import RakutenAdCard from "@/components/RakutenAdCard";
 import { breadcrumbJsonLd, nearbyAreas } from "@/lib/jsonld";
 import { notFound } from "next/navigation";
 import type { PrefSlug } from "@/lib/prefs";
@@ -252,7 +252,7 @@ export function createAreaPage(pref: PrefSlug) {
           )}
 
           {/* インライン広告（粗大ごみ・不用品回収） */}
-          <InlineAd locale="ja" />
+          <RakutenAdCard locale="ja" order="drain-first" />
 
           {/* FAQ テキスト (SEO) — 収集日データがある場合のみ */}
           {hasAnySchedule && (

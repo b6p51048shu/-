@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import InlineAd from "@/components/InlineAd";
+import RakutenAdCard from "@/components/RakutenAdCard";
 
 const PAGE_PATH = "/guide/jikka-katazuke/";
 const UPDATED = "2026年6月29日";
@@ -187,7 +187,7 @@ export default function JikkaKatazukePage() {
           </div>
 
           {/* アフィリエイト（不用品回収）— 業者検討の文脈 */}
-          <InlineAd locale="ja" />
+          <RakutenAdCard locale="ja" order="dispenser-first" />
 
           <h2 id="ureru">売れる物・寄付できる物の見極め</h2>
           <p>実家には<strong>「実は売れる物」</strong>が眠っていることが多く、処分費用の相殺に直結します。</p>

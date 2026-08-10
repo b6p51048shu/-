@@ -1,6 +1,6 @@
 import type { BagsUILocale } from "@/lib/i18n";
 import { funyohinContent } from "@/lib/articleContent";
-import InlineAd from "@/components/InlineAd";
+import RakutenAdCard from "@/components/RakutenAdCard";
 
 type Props = { locale: BagsUILocale };
 
@@ -146,7 +146,7 @@ export default function FunyohinArticle({ locale }: Props) {
           <p dangerouslySetInnerHTML={{ __html: c.s4P2Html }} />
 
           {/* アフィリエイト広告（不用品回収） */}
-          <InlineAd locale={locale} />
+          <RakutenAdCard locale={locale} order="dispenser-first" />
 
           {/* 5. 自治体との違い */}
           <h2 id={IDS[4]}>{c.s5H}</h2>

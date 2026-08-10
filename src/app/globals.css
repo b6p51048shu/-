@@ -218,6 +218,66 @@ a:hover { text-decoration: underline; }
   min-height: 96px;
 }
 
+/* ── 楽天アフィリエイト商品カード（InlineAdの後継）─────────────
+   素材HTML（.rakuten-ad-card 内部）の style属性・リンクURL・rel等は
+   一切書き換えない。ここではラッパーと外側レイアウトのみを調整し、
+   楽天素材の固定px幅（504/240/248）を子孫セレクタで上書きして
+   レスポンシブ化する（詳細度を確実に上回るため !important を使用）。 */
+.rakuten-ad-block {
+  margin: 2rem 0;
+  padding: 1.1rem 1.2rem 1.2rem;
+  background: linear-gradient(135deg, var(--green-light, #dcfce7) 0%, #f0fdf4 60%, #ffffff 100%);
+  border: 1px solid #bbf7d0;
+  border-radius: 14px;
+  text-align: center;
+}
+.rakuten-ad-block .ad-label {
+  display: inline-block;
+  background: #ffffff;
+  color: var(--green-dark, #15803d);
+  font-size: .68rem;
+  font-weight: 600;
+  padding: .1rem .5rem;
+  border-radius: 4px;
+  margin-bottom: .85rem;
+  border: 1px solid #bbf7d0;
+}
+.rakuten-ad-list {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 14px;
+}
+.rakuten-ad-card {
+  width: 100%;
+  max-width: 504px;
+  margin: 0 auto;
+  overflow: hidden;
+}
+/* 楽天素材の内側テーブルを100%幅・固定レイアウトにして横スクロールを防止 */
+.rakuten-ad-card table {
+  width: 100% !important;
+  max-width: 100%;
+  table-layout: fixed;
+}
+/* 外枠div（style="...width:504px..."）を親幅いっぱいに */
+.rakuten-ad-card div[style*="width:504px"] {
+  width: 100% !important;
+  max-width: 100%;
+  box-sizing: border-box;
+}
+/* 画像セル・テキストセルの固定px幅を比率(240:248)を保ったまま%に置換 */
+.rakuten-ad-card td[style*="width:240px"] {
+  width: 49% !important;
+}
+.rakuten-ad-card td[style*="width:248px"] {
+  width: 51% !important;
+}
+.rakuten-ad-card img {
+  max-width: 100%;
+  height: auto;
+}
+
 /* ── ボトム固定広告バナー（A8画像バナー） ── */
 .bottom-ad-spacer { height: 70px; }
 .bottom-ad-banner {

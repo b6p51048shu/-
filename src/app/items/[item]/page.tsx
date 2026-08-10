@@ -2,7 +2,7 @@ import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { ITEM_CATEGORIES, getItemBySlug } from "@/data/items";
 import { breadcrumbJsonLd } from "@/lib/jsonld";
-import InlineAd from "@/components/InlineAd";
+import RakutenAdCard from "@/components/RakutenAdCard";
 
 type Props = { params: Promise<{ item: string }> };
 
@@ -130,7 +130,7 @@ export default async function ItemPage({ params }: Props) {
 
         {/* 粗大ごみ・処分困難系はアフィリエイト枠 */}
         {(item.sodai || item.category === "hazard" || item.category === "kaden") && (
-          <InlineAd locale="ja" />
+          <RakutenAdCard locale="ja" order="dispenser-first" />
         )}
 
         {/* FAQ（SEOテキスト） */}
