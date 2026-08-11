@@ -104,6 +104,8 @@ export type WardInfo = {
   oversized_url?: string;
   /** 粗大ごみの詳細情報（自治体別ページ用） */
   oversized_detail?: OversizedDetail;
+  /** データ整備・最終確認時期（E-E-A-T表示用。例: "2026年7月"） */
+  data_checked?: string;
 };
 
 /** 県スラッグ → { 地域グループ名 → 区市名リスト }（例: Tokyo → { "23区": [...], "多摩地区": [...] }） */
@@ -224,7 +226,7 @@ function normDay(s: string): string {
 }
 
 /** 収集スケジュールを持つごみ種別キー（表示順） */
-const GARBAGE_KEYS = ["burnable", "unburnable", "recyclable", "plastic", "pet"] as const;
+export const GARBAGE_KEYS = ["burnable", "unburnable", "recyclable", "plastic", "pet"] as const;
 export type GarbageKey = (typeof GARBAGE_KEYS)[number];
 
 /** ごみ種別のデフォルト表示名（labels が無い区市で使用。従来のハードコード文字列と同一） */

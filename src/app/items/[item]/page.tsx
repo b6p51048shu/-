@@ -3,6 +3,7 @@ import { notFound } from "next/navigation";
 import { ITEM_CATEGORIES, getItemBySlug } from "@/data/items";
 import { breadcrumbJsonLd } from "@/lib/jsonld";
 import RakutenAdCard from "@/components/RakutenAdCard";
+import { PREFS, PREF_SLUGS } from "@/lib/prefs";
 
 type Props = { params: Promise<{ item: string }> };
 
@@ -127,6 +128,21 @@ export default async function ItemPage({ params }: Props) {
             </a>
           </div>
         </div>
+
+        {/* あなたの地域の収集日を確認（品目→地域の内部導線） */}
+        <section style={{ margin: "2rem 0" }}>
+          <h2 className="section-title">あなたの地域の収集日を確認</h2>
+          <p style={{ color: "var(--gray-600)", marginBottom: "1rem", lineHeight: 1.8 }}>
+            {item.name}の分別区分は自治体によって異なります。お住まいの地域のルールとあわせてご確認ください。
+          </p>
+          <div className="area-list">
+            {PREF_SLUGS.map((slug) => (
+              <a key={slug} href={`/${slug}/`} className="area-link">
+                {PREFS[slug]}のごみ収集日を見る
+              </a>
+            ))}
+          </div>
+        </section>
 
         {/* 粗大ごみ・処分困難系はアフィリエイト枠 */}
         {(item.sodai || item.category === "hazard" || item.category === "kaden") && (

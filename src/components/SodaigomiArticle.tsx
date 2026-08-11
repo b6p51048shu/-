@@ -2,6 +2,7 @@ import type { WardInfo } from "@/lib/data";
 import type { BagsUILocale } from "@/lib/i18n";
 import { sodaigomiContent, fillTemplate } from "@/lib/articleContent";
 import RakutenAdCard from "@/components/RakutenAdCard";
+import SourceNote from "@/components/SourceNote";
 
 type Props = {
   locale: BagsUILocale;
@@ -212,6 +213,16 @@ export default function SodaigomiArticle({ locale, pref, wardName, wardSlug, inf
                 ))}
               </div>
             </>
+          )}
+
+          {/* 出典・データ確認時期（E-E-A-T表示。日本語ページのみ） */}
+          {locale === "ja" && (
+            <SourceNote
+              entityName={wardName}
+              infoUrl={info.info_url}
+              oversizedUrl={info.oversized_url}
+              dataChecked={info.data_checked}
+            />
           )}
 
           {/* 関連リンク */}

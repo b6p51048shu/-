@@ -1106,6 +1106,18 @@ a:hover { text-decoration: underline; }
 .price-table td.price { color: var(--orange); font-weight: 700; white-space: nowrap; }
 .price-table tbody tr:last-child td { border-bottom: none; }
 
+/* ── 出典・データ確認時期（E-E-A-T表示） ── */
+.source-note {
+  font-size: .78rem;
+  color: var(--gray-400);
+  line-height: 1.7;
+  margin-top: 2rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--gray-200);
+}
+.source-note a { color: var(--gray-600); text-decoration: underline; }
+.source-note a:hover { color: var(--green); }
+
 .article-callout {
   background: #fffbeb;
   border: 1px solid #fcd34d;

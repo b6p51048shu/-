@@ -10,6 +10,7 @@ import IcsButton from "@/components/IcsButton";
 import GarbageCalendar from "@/components/GarbageCalendar";
 import BagsPanel from "@/components/BagsPanel";
 import RakutenAdCard from "@/components/RakutenAdCard";
+import SourceNote from "@/components/SourceNote";
 import { breadcrumbJsonLd, nearbyAreas } from "@/lib/jsonld";
 import { notFound } from "next/navigation";
 import type { PrefSlug } from "@/lib/prefs";
@@ -251,9 +252,6 @@ export function createAreaPage(pref: PrefSlug) {
             </div>
           )}
 
-          {/* インライン広告（粗大ごみ・不用品回収） */}
-          <RakutenAdCard locale="ja" order="drain-first" />
-
           {/* FAQ テキスト (SEO) — 収集日データがある場合のみ */}
           {hasAnySchedule && (
           <section className="faq-section">
@@ -302,16 +300,19 @@ export function createAreaPage(pref: PrefSlug) {
                   処分方法は<a href="/items/">品目別の捨て方</a>で確認できます。
                 </li>
               </ul>
-              {wardInfo?.info_url && (
-                <p style={{ fontSize: ".8rem", color: "var(--gray-600)", marginTop: ".75rem" }}>
-                  出典・最新情報:{" "}
-                  <a href={wardInfo.info_url} target="_blank" rel="noopener noreferrer">
-                    {wardName}公式サイト
-                  </a>
-                </p>
-              )}
             </section>
           )}
+
+          {/* インライン広告（粗大ごみ・不用品回収）— FAQ・本文の後ろ、出典表示の直前 */}
+          <RakutenAdCard locale="ja" order="drain-first" />
+
+          {/* 出典・データ確認時期（E-E-A-T表示） */}
+          <SourceNote
+            entityName={wardName}
+            infoUrl={wardInfo?.info_url}
+            oversizedUrl={wardInfo?.oversized_url}
+            dataChecked={wardInfo?.data_checked}
+          />
 
           {/* 同じ区の近隣エリア（内部リンク） */}
           {nearby.length > 0 && (
