@@ -10,35 +10,36 @@
 // middleware.ts を維持する。
 import { NextResponse } from "next/server";
 import type { NextRequest } from "next/server";
-// 大文字小文字の吸収に必要なのは slug 情報だけなので、全区一括の ward-data.json(約1MB)では
-// なく軽量な ward-index.json(約140KB)を読む。middleware は全リクエストで動くため、
-// バンドルサイズ・初期化コストの削減が Worker の負荷軽減に直結する。
-import wardIndexRaw from "../public/data/ward-index.json";
+// 🔴 ここに重いデータを import しないこと（2026-08-17 の本番障害の原因）
+//
+// 経緯: 以前は ward-index.json を読んでエリアslugの大文字小文字も吸収していた。
+// しかしエリア拡大でこのファイルは 140KB → 322KB に膨張し、さらに全105自治体・
+// 約5,400エリア分の Map をモジュール初期化時に構築していた。middleware は
+// 全リクエストで動くため、このコストが Worker の起動時CPU上限に当たり、
+// **全ページ種別の約4%が 503 (Cloudflare error code 1102 = Worker exceeded
+// resource limits) を返す**状態になっていた（Googlebot もこれを踏んでいた）。
+//
+// 対策: middleware が読むのは区市slugの逆引きに必要な最小限だけにする。
+// ward-slug-index.json は約5.7KB・105件で、初期化コストは無視できる。
+// エリアslugの大文字小文字吸収は廃止した（正準URL以外は素直に404）。
+// 廃止の根拠: GSCの上位1,000ページに小文字URLは1件も無く、検索流入はゼロだった。
+// 存在しないエリアslugは areaPage.tsx の notFound() が従来どおり404にする。
+import wardSlugIndexRaw from "../public/data/ward-slug-index.json";
 import { PREFS } from "./lib/prefs";
 import { secondsUntilJstMidnight } from "./lib/date";
-
-type WardLite = { slug: string; areas: Array<{ slug: string }> };
-const wardIndex = wardIndexRaw as unknown as Record<string, WardLite>;
 
 // 小文字化した県slug → 正準県slug（例: tokyo → Tokyo）
 const prefByLower = new Map<string, string>(
   Object.keys(PREFS).map((p) => [p.toLowerCase(), p])
 );
 
-// 小文字化したward_slug → 正準（データに格納されている）ward_slug
-const wardSlugByLower = new Map<string, string>();
-// ward_slug(小文字) → 小文字化したarea slug → 正準area slug
-const areaSlugByLowerByWard = new Map<string, Map<string, string>>();
-
-for (const info of Object.values(wardIndex)) {
-  const wardLower = info.slug.toLowerCase();
-  wardSlugByLower.set(wardLower, info.slug);
-  const areaMap = new Map<string, string>();
-  for (const area of info.areas) {
-    areaMap.set(area.slug.toLowerCase(), area.slug);
-  }
-  areaSlugByLowerByWard.set(wardLower, areaMap);
-}
+// 小文字化したward_slug → 正準ward_slug（105件。小文字化しても衝突しないことを確認済み）
+const wardSlugByLower = new Map<string, string>(
+  Object.keys(wardSlugIndexRaw as Record<string, unknown>).map((slug) => [
+    slug.toLowerCase(),
+    slug,
+  ])
+);
 
 // ─────────────────────────────────────────────
 // キャッシュ制御（Cache-Control）
@@ -110,9 +111,11 @@ function withCacheControl(response: NextResponse, pathname: string): NextRespons
 }
 
 /**
- * 大文字小文字を吸収し、キャッシュ可能なページに適切な Cache-Control を付与する Middleware。
- * 例: /tokyo/shibuya/shibuya-1~-3/ や /Tokyo/SHIBUYA/Shibuya-1~-3/ など、
- * 大文字小文字が違うURLでも、内部的に正準URLに rewrite してページを表示する。
+ * 県slug・区市slugの大文字小文字を吸収し、キャッシュ可能なページに適切な Cache-Control を
+ * 付与する Middleware。
+ * 例: /tokyo/SHIBUYA/Shibuya-1~-3/ → /Tokyo/Shibuya/Shibuya-1~-3/ へ内部 rewrite。
+ * ※ エリアslug（第3セグメント）の大文字小文字は吸収しない（上記の障害対策）。
+ *   エリア部分は正準表記のみ有効で、それ以外は404になる。
  * （ブラウザのアドレスバーは変更されない＝ユーザーが入力したURLが保たれる）
  *
  * 対応県: PREFS の許可リスト（Tokyo/Kanagawa/Saitama/Chiba）
@@ -144,20 +147,14 @@ export function middleware(request: NextRequest) {
   const prefCanonical = prefByLower.get(prefInUrl.toLowerCase());
   if (!prefCanonical) return passThrough();
 
-  const wardLower = wardSlugInUrl.toLowerCase();
-  const wardCanonical = wardSlugByLower.get(wardLower);
+  const wardCanonical = wardSlugByLower.get(wardSlugInUrl.toLowerCase());
   if (!wardCanonical) return passThrough(); // 該当区なし→自然に404へ
 
-  let areaCanonical: string | undefined;
-  if (areaSlugInUrl) {
-    const areaLower = areaSlugInUrl.toLowerCase();
-    areaCanonical = areaSlugByLowerByWard.get(wardLower)?.get(areaLower);
-    if (!areaCanonical) return passThrough(); // 該当エリアなし→自然に404へ
-  }
-
-  // 正準パスを構築
+  // 正準パスを構築。
+  // 第3セグメント（エリアslug / "sodaigomi"）は検証せずそのまま通す。
+  // 存在しないエリアなら areaPage.tsx の notFound() が404を返す。
   let canonicalPath = `${localePrefix}/${prefCanonical}/${wardCanonical}`;
-  if (areaCanonical) canonicalPath += `/${areaCanonical}`;
+  if (areaSlugInUrl) canonicalPath += `/${areaSlugInUrl}`;
   if (hasTrailingSlash) canonicalPath += "/";
 
   // 既に正準ならスルー
