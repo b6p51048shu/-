@@ -4,11 +4,12 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "node scripts/generate-sitemaps.mjs && next build",
-    "build:cloudflare": "node scripts/generate-sitemaps.mjs && npx @opennextjs/cloudflare build",
+    "build": "node scripts/generate-sitemaps.mjs && next build && node scripts/check-edge-bundle-size.mjs",
+    "build:cloudflare": "node scripts/generate-sitemaps.mjs && npx @opennextjs/cloudflare build && node scripts/check-edge-bundle-size.mjs",
     "preview": "npx wrangler pages dev",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "health-check": "node scripts/check-production-health.mjs"
   },
   "dependencies": {
     "next": "^16.2.6",

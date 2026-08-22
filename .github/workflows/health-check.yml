@@ -1,0 +1,38 @@
+# 本番の 5xx を検知して通知するための監視ワークフロー（2026-08-22 新設）。
+#
+# なぜ必要か（2026-08-17の障害）:
+#   middleware の肥大化により本番の約4%がランダムに503(Cloudflare error 1102)を返す状態が
+#   6日間続き、Googlebot がそれを踏んで検索順位が落ちた。当時もローカルPC（Windowsタスク
+#   スケジューラ）に週次の監視スクリプトはあったが、
+#     - PCの電源が入っていないと実行されない
+#     - 実行が途中で止まっても（実際 8/10 の実行は強制終了していた）誰にも通知されない
+#     - レポートはファイルに書かれるだけで、4週間誰にも読まれなかった
+#   という理由で機能しなかった。
+#   → 監視はPCから切り離し、失敗したら必ず通知が飛ぶGitHub Actionsに移す。
+#
+# 通知のしくみ:
+#   このワークフローが失敗すると GitHub がリポジトリ所有者にメールを送る。
+#   （届かない場合は GitHub の Settings → Notifications → Actions のメール通知を有効にする）
+#
+# 手動実行: Actions タブ → "Production health check" → Run workflow
+
+name: Production health check
+
+on:
+  schedule:
+    - cron: "0 */6 * * *" # 6時間ごと（UTC）。JSTでは 9時・15時・21時・3時ごろ
+  workflow_dispatch:
+
+jobs:
+  health-check:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: "22.16.0"
+
+      # 依存パッケージのインストールは不要（Node標準のfetchのみ使用）
+      - name: 本番の5xxを検査
+        run: node scripts/check-production-health.mjs
