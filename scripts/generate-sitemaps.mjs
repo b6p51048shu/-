@@ -65,32 +65,35 @@ const wardSlugIndex = JSON.parse(readFileSync(join(DATA_DIR, "ward-slug-index.js
 // ── 旧 sitemap.ts と同じロジックで entries を組み立てる ─────────────
 const buildDate = new Date();
 
+// 🔴 多言語ページ（/en /ko /zh）はサイトマップに含めない（2026-09-17）
+//
+// 以前は1パスにつき日本語1＋多言語3の計4URLを出力しており、総22,910URLのうち
+// 16,947（74%）が多言語ページだった。しかし実績はクリック全体の4%しかなく、
+// 中身も見出しだけ翻訳した薄いリンク集。「サイトの大半が薄い自動生成ページ」という
+// 構成がサイト全体の品質評価を下げていると判断し、インデックス対象から外した
+// （src/app/[locale]/layout.tsx で noindex を付与。経緯の詳細はそちらのコメント）。
+//
+// hreflang も出力しない。noindex のページを hreflang で指すのは矛盾したシグナルになる。
+// URL自体は404にせず生かしてあるので、既存のリンクや直接アクセスは従来どおり動く。
 function buildAlternates(path) {
-  const languages = {
-    ja: `${BASE}${path}`,
-    "x-default": `${BASE}${path}`,
+  return {
+    languages: {
+      ja: `${BASE}${path}`,
+      "x-default": `${BASE}${path}`,
+    },
   };
-  for (const locale of LOCALES) {
-    languages[locale] = `${BASE}/${locale}${path}`;
-  }
-  return { languages };
 }
 
 function entriesForPath(path, priority, changeFrequency) {
-  const alternates = buildAlternates(path);
-  const result = [
-    { url: `${BASE}${path}`, lastModified: buildDate, priority, changeFrequency, alternates },
-  ];
-  for (const locale of LOCALES) {
-    result.push({
-      url: `${BASE}/${locale}${path}`,
+  return [
+    {
+      url: `${BASE}${path}`,
       lastModified: buildDate,
       priority,
       changeFrequency,
-      alternates,
-    });
-  }
-  return result;
+      alternates: buildAlternates(path),
+    },
+  ];
 }
 
 function buildEntries() {

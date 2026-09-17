@@ -69,9 +69,6 @@ export function createAreaPage(pref: PrefSlug) {
         languages: {
           ja: `/${pref}/${wardSlug}/${areaSlug}/`,
           "x-default": `/${pref}/${wardSlug}/${areaSlug}/`,
-          en: `/en/${pref}/${wardSlug}/${areaSlug}/`,
-          ko: `/ko/${pref}/${wardSlug}/${areaSlug}/`,
-          zh: `/zh/${pref}/${wardSlug}/${areaSlug}/`,
         },
       },
       openGraph: {

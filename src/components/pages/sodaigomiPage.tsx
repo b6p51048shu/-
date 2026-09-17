@@ -27,9 +27,6 @@ export function createSodaigomiPage(pref: PrefSlug) {
         languages: {
           ja: `/${pref}/${wardSlug}/sodaigomi/`,
           "x-default": `/${pref}/${wardSlug}/sodaigomi/`,
-          en: `/en/${pref}/${wardSlug}/sodaigomi/`,
-          ko: `/ko/${pref}/${wardSlug}/sodaigomi/`,
-          zh: `/zh/${pref}/${wardSlug}/sodaigomi/`,
         },
       },
       openGraph: {

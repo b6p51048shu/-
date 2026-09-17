@@ -9,9 +9,6 @@ export const metadata: Metadata = {
     languages: {
       ja: "/disclaimer/",
       "x-default": "/disclaimer/",
-      en: "/en/disclaimer/",
-      ko: "/ko/disclaimer/",
-      zh: "/zh/disclaimer/",
     },
   },
 };

@@ -67,9 +67,6 @@ export function createWardPage(pref: PrefSlug) {
         languages: {
           ja: `/${pref}/${wardSlug}/`,
           "x-default": `/${pref}/${wardSlug}/`,
-          en: `/en/${pref}/${wardSlug}/`,
-          ko: `/ko/${pref}/${wardSlug}/`,
-          zh: `/zh/${pref}/${wardSlug}/`,
         },
       },
       openGraph: {
