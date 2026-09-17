@@ -12,7 +12,6 @@ import { notFound } from "next/navigation";
 import LocaleGarbageCalendar from "@/components/LocaleGarbageCalendar";
 import IcsButton from "@/components/IcsButton";
 import BagsPanel from "@/components/BagsPanel";
-import RakutenAdCard from "@/components/RakutenAdCard";
 import { breadcrumbJsonLd, nearbyAreas } from "@/lib/jsonld";
 import type { PrefSlug } from "@/lib/prefs";
 
@@ -204,8 +203,7 @@ export function createLocaleAreaPage(pref: PrefSlug) {
           );
         })()}
 
-        {/* インライン広告（粗大ごみ・不用品回収） */}
-        <RakutenAdCard locale={locale as Locale} order="drain-first" />
+        {/* 楽天カードは2026-09-17に撤去。本文の薄い地域ページに無関係商品の広告を載せるのは品質評価を下げるため。品目・ガイドには残している */}
 
         {/* スケジュール一覧 */}
         <section style={{ margin: "2rem 0" }}>

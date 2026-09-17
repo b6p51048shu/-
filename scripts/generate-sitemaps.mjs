@@ -63,7 +63,20 @@ const wardIndex = JSON.parse(readFileSync(join(DATA_DIR, "ward-index.json"), "ut
 const wardSlugIndex = JSON.parse(readFileSync(join(DATA_DIR, "ward-slug-index.json"), "utf-8"));
 
 // ── 旧 sitemap.ts と同じロジックで entries を組み立てる ─────────────
-const buildDate = new Date();
+
+// 🔴 lastmod は出力しない（2026-09-17）
+//
+// 以前は全エントリに `lastModified: buildDate`（＝ビルド時刻）を設定していた。
+// 実データ（ward-index.json等）は各ページの実際の更新日を持っていないため、
+// これは「本当に更新された日」ではなく「たまたまビルドを実行した時刻」を
+// 全22,910URL分に一律で書き込んでいたことになる。結果、ビルドするたびに
+// Googleへ「全ページが更新された」と通知することになり、再クロール嵐を招いて
+// サイト全体の品質評価を下げる一因になった（2026-08-20の検索表示消失インシデント）。
+// Google公式も「正確に保てないlastmodは省略すべき」と明言している。
+// 将来、各ページの実データに更新日（例: 自治体データの取得日）を持たせたら、
+// そのタイミングで lastmod を復活させてよい。
+//
+// priority / changeFrequency / alternates(hreflang) は引き続き出力する。
 
 // 🔴 多言語ページ（/en /ko /zh）はサイトマップに含めない（2026-09-17）
 //
@@ -88,7 +101,6 @@ function entriesForPath(path, priority, changeFrequency) {
   return [
     {
       url: `${BASE}${path}`,
-      lastModified: buildDate,
       priority,
       changeFrequency,
       alternates: buildAlternates(path),
@@ -109,14 +121,12 @@ function buildEntries() {
     // 引越しゴミ記事（日本語のみ）
     {
       url: `${BASE}/guide/hikkoshi-gomi/`,
-      lastModified: buildDate,
       priority: 0.7,
       changeFrequency: "monthly",
     },
     // 粗大ごみシール記事（日本語のみ）
     {
       url: `${BASE}/guide/sodaigomi-seal/`,
-      lastModified: buildDate,
       priority: 0.7,
       changeFrequency: "monthly",
     },
@@ -130,27 +140,23 @@ function buildEntries() {
       "aircon-cleaning",
     ].map((slug) => ({
       url: `${BASE}/guide/${slug}/`,
-      lastModified: buildDate,
       priority: 0.7,
       changeFrequency: "monthly",
     })),
     // 運営者情報（日本語のみ）
     {
       url: `${BASE}/about/`,
-      lastModified: buildDate,
       priority: 0.3,
       changeFrequency: "monthly",
     },
     // 品目辞典（日本語のみ）
     {
       url: `${BASE}/items/`,
-      lastModified: buildDate,
       priority: 0.8,
       changeFrequency: "monthly",
     },
     ...GOMI_ITEMS.map((item) => ({
       url: `${BASE}/items/${item.slug}/`,
-      lastModified: buildDate,
       priority: 0.7,
       changeFrequency: "monthly",
     })),
@@ -165,7 +171,6 @@ function buildEntries() {
   for (const pref of prefsWithData) {
     urls.push({
       url: `${BASE}/${pref}/`,
-      lastModified: buildDate,
       priority: 0.8,
       changeFrequency: "monthly",
     });
@@ -213,7 +218,6 @@ function serializeUrlEntry(e) {
       xml += `<xhtml:link rel="alternate" hreflang="${escapeXml(hreflang)}" href="${escapeXml(href)}" />\n`;
     }
   }
-  xml += `<lastmod>${e.lastModified.toISOString()}</lastmod>\n`;
   xml += `<changefreq>${e.changeFrequency}</changefreq>\n`;
   xml += `<priority>${e.priority}</priority>\n`;
   xml += `</url>\n`;
@@ -232,7 +236,7 @@ function serializeSitemapIndex(chunkFiles) {
   let xml = `<?xml version="1.0" encoding="UTF-8"?>\n`;
   xml += `<sitemapindex xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">\n`;
   for (const file of chunkFiles) {
-    xml += `<sitemap>\n<loc>${BASE}/sitemaps/${file}</loc>\n<lastmod>${buildDate.toISOString()}</lastmod>\n</sitemap>\n`;
+    xml += `<sitemap>\n<loc>${BASE}/sitemaps/${file}</loc>\n</sitemap>\n`;
   }
   xml += `</sitemapindex>\n`;
   return xml;

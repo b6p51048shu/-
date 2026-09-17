@@ -9,7 +9,6 @@ import { getCurrentDayOfWeekJST } from "@/lib/date";
 import IcsButton from "@/components/IcsButton";
 import GarbageCalendar from "@/components/GarbageCalendar";
 import BagsPanel from "@/components/BagsPanel";
-import RakutenAdCard from "@/components/RakutenAdCard";
 import SourceNote from "@/components/SourceNote";
 import { breadcrumbJsonLd, nearbyAreas } from "@/lib/jsonld";
 import { notFound } from "next/navigation";
@@ -300,8 +299,7 @@ export function createAreaPage(pref: PrefSlug) {
             </section>
           )}
 
-          {/* インライン広告（粗大ごみ・不用品回収）— FAQ・本文の後ろ、出典表示の直前 */}
-          <RakutenAdCard locale="ja" order="drain-first" />
+          {/* 楽天カードは2026-09-17に撤去。本文の薄い地域ページに無関係商品の広告を載せるのは品質評価を下げるため。品目・ガイドには残している */}
 
           {/* 出典・データ確認時期（E-E-A-T表示） */}
           <SourceNote

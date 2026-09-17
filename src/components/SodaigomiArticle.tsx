@@ -1,7 +1,6 @@
 import type { WardInfo } from "@/lib/data";
 import type { BagsUILocale } from "@/lib/i18n";
 import { sodaigomiContent, fillTemplate } from "@/lib/articleContent";
-import RakutenAdCard from "@/components/RakutenAdCard";
 import SourceNote from "@/components/SourceNote";
 
 type Props = {
@@ -183,8 +182,7 @@ export default function SodaigomiArticle({ locale, pref, wardName, wardSlug, inf
           <p>{f(c.carryP1)}</p>
           <p>{f(c.carryP2)}</p>
 
-          {/* インライン広告（不用品回収） */}
-          <RakutenAdCard locale={locale} order="dispenser-first" />
+          {/* 楽天カードは2026-09-17に撤去。本文の薄い地域ページに無関係商品の広告を載せるのは品質評価を下げるため。品目・ガイドには残している */}
 
           {/* 公式リンク */}
           {officialUrl && (
