@@ -109,7 +109,8 @@ jobs:
           # 404ページとして意図的に noindex になる（Next.js標準の挙動。カスタム
           # not-found.tsx は用意していない）。404ページがnoindexなのはSEO上正しい
           # 挙動なので、この2ファイルは検証から除外する。
-          NOINDEX_FILES=$(grep -rl "noindex" "$OUT_DIR" --include=index.html | grep -v -E "/(404|_not-found)/index\.html$")
+          # grep -v は該当なし（＝正常）のとき終了コード1を返し set -e で止まるため || true を付ける
+          NOINDEX_FILES=$(grep -rl "noindex" "$OUT_DIR" --include=index.html | grep -v -E "/(404|_not-found)/index\.html$" || true)
           NOINDEX_COUNT=$(echo -n "$NOINDEX_FILES" | grep -c . || true)
           echo "noindex count (excluding 404/_not-found): $NOINDEX_COUNT"
           if [ "$NOINDEX_COUNT" -ne 0 ]; then
