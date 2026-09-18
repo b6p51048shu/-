@@ -1,0 +1,125 @@
+# 静的エクスポート移行（static-export ブランチ）の完成検証ワークフロー。
+#
+# なぜ必要か: 設計書 STATIC_MIGRATION.md の絶対制約により、ローカル(Windows)の
+# `next build` は generateStaticParams 実行中にワーカークラッシュで完走しない可能性が高い。
+# そのため完成確認は Cloudflare の実ビルド環境と同一の Linux(ubuntu-latest) / Node 22.16.0 で
+# `npm run build:cloudflare` を実際に走らせ、出力(out/)の中身をシェルで検証する。
+#
+# 実行タイミング: static-export ブランチへの push と手動実行(workflow_dispatch)のみ。
+# main には影響しない（このブランチは main へマージしていない前提）。
+
+name: Static build check
+
+on:
+  push:
+    branches:
+      - static-export
+  workflow_dispatch: {}
+
+jobs:
+  static-build-check:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js (Cloudflareビルド環境と同一バージョン)
+        uses: actions/setup-node@v4
+        with:
+          node-version: "22.16.0"
+
+      - name: Install dependencies (npm ci)
+        run: npm ci
+
+      - name: Build (sitemap生成 + next build, output: export)
+        run: npm run build:cloudflare
+
+      - name: Verify static export output
+        run: |
+          set -e
+          OUT_DIR="out"
+
+          echo "=== 1. index.html の件数（5,900〜6,100件） ==="
+          HTML_COUNT=$(find "$OUT_DIR" -name "index.html" | wc -l)
+          echo "index.html count: $HTML_COUNT"
+          if [ "$HTML_COUNT" -lt 5900 ] || [ "$HTML_COUNT" -gt 6100 ]; then
+            echo "::error::index.html件数が想定範囲外です: $HTML_COUNT (期待値: 5900-6100)"
+            exit 1
+          fi
+
+          echo "=== 2. 北区ページに canonical と区名が含まれるか ==="
+          KITA_FILE="$OUT_DIR/Tokyo/Kita/index.html"
+          if [ ! -f "$KITA_FILE" ]; then
+            echo "::error::$KITA_FILE が存在しません"
+            exit 1
+          fi
+          if ! grep -q 'rel="canonical" href="https://gominohi.com/Tokyo/Kita/"' "$KITA_FILE"; then
+            echo "::error::$KITA_FILE に正しい canonical タグがありません"
+            exit 1
+          fi
+          if ! grep -q "北区" "$KITA_FILE"; then
+            echo "::error::$KITA_FILE に「北区」の文字列がありません"
+            exit 1
+          fi
+
+          echo "=== 3. 北区・赤羽台二丁目ページに収集曜日の表が含まれるか ==="
+          AKABANE_FILE="$OUT_DIR/Tokyo/Kita/Akabanedainichoume/index.html"
+          if [ ! -f "$AKABANE_FILE" ]; then
+            echo "::error::$AKABANE_FILE が存在しません"
+            exit 1
+          fi
+          if ! grep -q "燃やすごみ" "$AKABANE_FILE"; then
+            echo "::error::$AKABANE_FILE に「燃やすごみ」の文字列がありません"
+            exit 1
+          fi
+
+          echo "=== 4. 品目ページ(futon)の存在確認 ==="
+          if [ ! -f "$OUT_DIR/items/futon/index.html" ]; then
+            echo "::error::$OUT_DIR/items/futon/index.html が存在しません"
+            exit 1
+          fi
+
+          echo "=== 5. 外国語ディレクトリが存在しないこと ==="
+          for locale in en ko zh; do
+            if [ -d "$OUT_DIR/$locale" ]; then
+              echo "::error::$OUT_DIR/$locale ディレクトリが存在します（削除されているはず）"
+              exit 1
+            fi
+          done
+
+          echo "=== 6. 必須の静的配信ファイルの存在確認 ==="
+          for f in _redirects _headers 404.html sitemap.xml sitemaps/sitemap-0.xml; do
+            if [ ! -f "$OUT_DIR/$f" ]; then
+              echo "::error::$OUT_DIR/$f が存在しません"
+              exit 1
+            fi
+          done
+
+          echo "=== 7. out直下の総ファイル数（Workers静的アセット上限20,000未満） ==="
+          TOTAL_FILES=$(find "$OUT_DIR" -type f | wc -l)
+          echo "total files: $TOTAL_FILES"
+          if [ "$TOTAL_FILES" -ge 20000 ]; then
+            echo "::error::out配下の総ファイル数が上限を超えています: $TOTAL_FILES (上限: 20000未満)"
+            exit 1
+          fi
+
+          echo "=== 8. 全HTMLにnoindexが含まれないこと（404/_not-foundページを除く） ==="
+          # out/404/index.html と out/_not-found/index.html は Next.js のデフォルト
+          # 404ページとして意図的に noindex になる（Next.js標準の挙動。カスタム
+          # not-found.tsx は用意していない）。404ページがnoindexなのはSEO上正しい
+          # 挙動なので、この2ファイルは検証から除外する。
+          NOINDEX_FILES=$(grep -rl "noindex" "$OUT_DIR" --include=index.html | grep -v -E "/(404|_not-found)/index\.html$")
+          NOINDEX_COUNT=$(echo -n "$NOINDEX_FILES" | grep -c . || true)
+          echo "noindex count (excluding 404/_not-found): $NOINDEX_COUNT"
+          if [ "$NOINDEX_COUNT" -ne 0 ]; then
+            echo "::error::noindexを含むページが${NOINDEX_COUNT}件あります"
+            echo "$NOINDEX_FILES"
+            exit 1
+          fi
+
+          echo "=== 検証サマリ ==="
+          echo "index.html件数: $HTML_COUNT"
+          echo "out配下総ファイル数: $TOTAL_FILES"
+          echo "noindexページ数: $NOINDEX_COUNT"
+          echo "✅ すべての検証に合格しました"
