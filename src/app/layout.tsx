@@ -1,26 +1,7 @@
 import type { Metadata } from "next";
 import { Noto_Sans_JP } from "next/font/google";
-import { headers } from "next/headers";
 import "./globals.css";
-import LanguageSwitcher from "@/components/LanguageSwitcher";
 import { siteChrome } from "@/lib/i18n";
-import type { BagsUILocale } from "@/lib/i18n";
-
-// pathname から HTML lang 属性値を判定する
-function htmlLangFromPathname(pathname: string): string {
-  if (/^\/en(\/|$)/.test(pathname)) return "en";
-  if (/^\/ko(\/|$)/.test(pathname)) return "ko";
-  if (/^\/zh(\/|$)/.test(pathname)) return "zh-Hans";
-  return "ja";
-}
-
-// pathname からロケールコードを判定する（フッター/ナビの翻訳用）
-function localeFromPathname(pathname: string): BagsUILocale {
-  if (/^\/en(\/|$)/.test(pathname)) return "en";
-  if (/^\/ko(\/|$)/.test(pathname)) return "ko";
-  if (/^\/zh(\/|$)/.test(pathname)) return "zh";
-  return "ja";
-}
 
 const notoSansJP = Noto_Sans_JP({
   weight: ["400", "500", "700"],
@@ -78,15 +59,12 @@ export const metadata: Metadata = {
   metadataBase: new URL("https://gominohi.com"),
 };
 
-export default async function RootLayout({ children }: { children: React.ReactNode }) {
-  const headersList = await headers();
-  const pathname = headersList.get("x-pathname") ?? "/";
-  const htmlLang = htmlLangFromPathname(pathname);
-  const locale = localeFromPathname(pathname);
-  const chrome = siteChrome[locale];
-  const homeHref = locale === "ja" ? "/" : `/${locale}/`;
-  const disclaimerHref = locale === "ja" ? "/disclaimer/" : `/${locale}/disclaimer/`;
-  const privacyHref = locale === "ja" ? "/privacy/" : `/${locale}/privacy/`;
+export default function RootLayout({ children }: { children: React.ReactNode }) {
+  // 静的エクスポートではリクエストヘッダーからの言語判定は使えない（外国語ページは削除済みのため常に日本語固定）。
+  const chrome = siteChrome.ja;
+  const homeHref = "/";
+  const disclaimerHref = "/disclaimer/";
+  const privacyHref = "/privacy/";
 
   const siteJsonLd = {
     "@context": "https://schema.org",
@@ -111,7 +89,7 @@ export default async function RootLayout({ children }: { children: React.ReactNo
   };
 
   return (
-    <html lang={htmlLang} className={notoSansJP.className}>
+    <html lang="ja" className={notoSansJP.className}>
       <head>
         <script
           type="application/ld+json"
@@ -153,10 +131,9 @@ export default async function RootLayout({ children }: { children: React.ReactNo
             </a>
             <nav className="site-nav">
               <a href={homeHref}>{chrome.navTop}</a>
-              {locale === "ja" && <a href="/items/">品目でさがす</a>}
-              {locale === "ja" && <a href="/guide/">お役立ちガイド</a>}
+              <a href="/items/">品目でさがす</a>
+              <a href="/guide/">お役立ちガイド</a>
             </nav>
-            <LanguageSwitcher />
           </header>
           <main className="site-main">{children}</main>
           <footer className="site-footer">
@@ -164,16 +141,12 @@ export default async function RootLayout({ children }: { children: React.ReactNo
               <p className="footer-copy">{chrome.footerCopy}</p>
               <p className="footer-note">{chrome.footerNote}</p>
               <p className="footer-links">
-                {locale === "ja" && (
-                  <>
-                    <a href="/items/">品目別の捨て方</a>
-                    <span aria-hidden="true"> · </span>
-                    <a href="/guide/">お役立ちガイド</a>
-                    <span aria-hidden="true"> · </span>
-                    <a href="/about/">運営者情報</a>
-                    <span aria-hidden="true"> · </span>
-                  </>
-                )}
+                <a href="/items/">品目別の捨て方</a>
+                <span aria-hidden="true"> · </span>
+                <a href="/guide/">お役立ちガイド</a>
+                <span aria-hidden="true"> · </span>
+                <a href="/about/">運営者情報</a>
+                <span aria-hidden="true"> · </span>
                 <a href={privacyHref}>{chrome.navPrivacy}</a>
                 <span aria-hidden="true"> · </span>
                 <a href={disclaimerHref}>{chrome.navDisclaimer}</a>
