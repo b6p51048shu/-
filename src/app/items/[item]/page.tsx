@@ -1,11 +1,16 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { ITEM_CATEGORIES, getItemBySlug } from "@/data/items";
+import { GOMI_ITEMS, ITEM_CATEGORIES, getItemBySlug } from "@/data/items";
 import { breadcrumbJsonLd } from "@/lib/jsonld";
 import RakutenAdCard from "@/components/RakutenAdCard";
 import { PREFS, PREF_SLUGS } from "@/lib/prefs";
 
 type Props = { params: Promise<{ item: string }> };
+
+export function generateStaticParams() {
+  return GOMI_ITEMS.map((item) => ({ item: item.slug }));
+}
+export const dynamicParams = false;
 
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
   const { item: slug } = await params;

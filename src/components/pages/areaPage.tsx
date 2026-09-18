@@ -3,13 +3,13 @@
 // 東京のみのデータ状態でも従来の /Tokyo/... と同一出力になること（P0受け入れ条件）。
 
 import type { Metadata } from "next";
-import { getWardBySlug, getAreaBySlug, getTodayGarbage, getTomorrowGarbage } from "@/lib/data";
+import { getWardBySlug, getAreaBySlug } from "@/lib/data";
 import type { AreaSchedule } from "@/lib/data";
-import { getCurrentDayOfWeekJST } from "@/lib/date";
 import IcsButton from "@/components/IcsButton";
 import GarbageCalendar from "@/components/GarbageCalendar";
 import BagsPanel from "@/components/BagsPanel";
 import SourceNote from "@/components/SourceNote";
+import TodayTomorrow from "@/components/TodayTomorrow";
 import { breadcrumbJsonLd, nearbyAreas } from "@/lib/jsonld";
 import { notFound } from "next/navigation";
 import type { PrefSlug } from "@/lib/prefs";
@@ -86,12 +86,6 @@ export function createAreaPage(pref: PrefSlug) {
     const { wardName, schedule } = found;
     const wardInfo = (await getWardBySlug(wardSlug))?.info;
     const areaName = schedule.area;
-    const todayItems = getTodayGarbage(schedule);
-    const tomorrowItems = getTomorrowGarbage(schedule);
-    const dayNames = ["日曜日", "月曜日", "火曜日", "水曜日", "木曜日", "金曜日", "土曜日"];
-    const currentDayJST = getCurrentDayOfWeekJST();
-    const todayName = dayNames[currentDayJST];
-    const tomorrowName = dayNames[(currentDayJST + 1) % 7];
 
     const areas = wardInfo?.areas ?? [];
     const currentIdx = areas.findIndex((a) => a.slug === areaSlug);
@@ -174,35 +168,12 @@ export function createAreaPage(pref: PrefSlug) {
             </div>
           )}
 
-          {/* 今日・明日のごみ（収集日データがある場合のみ） */}
+          {/* 今日・明日のごみ（収集日データがある場合のみ）。
+              静的エクスポートではビルド時の「今日」で固定されてしまうため、
+              ブラウザ側でJSTの今日/明日を算出するクライアントコンポーネントに切り出している。 */}
           {hasAnySchedule && (
           <>
-          <div className="today-section">
-            <h2>📅 今日（{todayName}）のごみ</h2>
-            <div className="today-items">
-              {todayItems.length > 0 ? (
-                todayItems.map((item) => (
-                  <span key={item} className="today-badge">✅ {item}</span>
-                ))
-              ) : (
-                <span className="today-none">収集なし</span>
-              )}
-            </div>
-          </div>
-          <div className="today-section" style={{ borderLeftColor: "#f59e0b" }}>
-            <h2>📅 明日（{tomorrowName}）のごみ</h2>
-            <div className="today-items">
-              {tomorrowItems.length > 0 ? (
-                tomorrowItems.map((item) => (
-                  <span key={item} className="today-badge" style={{ background: "#fffbeb", color: "#92400e" }}>
-                    ⚠️ {item}
-                  </span>
-                ))
-              ) : (
-                <span className="today-none">収集なし</span>
-              )}
-            </div>
-          </div>
+          <TodayTomorrow schedule={schedule} />
 
           {/* 収集日要問い合わせ通知 */}
           {hasUnknown && wardInfo?.info_url && (
