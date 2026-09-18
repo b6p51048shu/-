@@ -4,8 +4,8 @@
   "private": true,
   "scripts": {
     "dev": "next dev",
-    "build": "node scripts/generate-sitemaps.mjs && next build && node scripts/check-edge-bundle-size.mjs",
-    "build:cloudflare": "node scripts/generate-sitemaps.mjs && npx @opennextjs/cloudflare build && node scripts/check-edge-bundle-size.mjs",
+    "build": "node scripts/generate-sitemaps.mjs && next build && node scripts/cleanup-export.mjs",
+    "build:cloudflare": "node scripts/generate-sitemaps.mjs && next build && node scripts/cleanup-export.mjs",
     "preview": "npx wrangler pages dev",
     "start": "next start",
     "lint": "eslint",

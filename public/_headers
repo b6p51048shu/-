@@ -1,0 +1,6 @@
+/sitemap.xml
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+/sitemaps/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800
+/data/*
+  Cache-Control: public, max-age=86400, stale-while-revalidate=604800

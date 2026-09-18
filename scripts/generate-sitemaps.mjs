@@ -13,7 +13,6 @@
 //   - public/data/ward-index.json
 //   - public/data/ward-slug-index.json
 //   - src/data/items.ts の GOMI_ITEMS
-//   - src/lib/i18n.ts の LOCALES
 //
 // 使い方: node scripts/generate-sitemaps.mjs
 // package.json の build / build:cloudflare の前段で自動実行される。
@@ -33,8 +32,8 @@ const SITEMAPS_DIR = join(PUBLIC_DIR, "sitemaps");
 const BASE = "https://gominohi.com";
 const CHUNK_SIZE = 5000; // Google推奨上限50,000より十分小さく、5MB制限にも余裕を持たせる
 
-// ── LOCALES / GOMI_ITEMS を実ソース(TS)から取得 ─────────────────────
-// items.ts / i18n.ts を esbuild で一時バンドルして require する。
+// ── GOMI_ITEMS を実ソース(TS)から取得 ─────────────────────
+// items.ts を esbuild で一時バンドルして require する。
 // (JSONの静的importだけでは items.ts の中身は取れないため。旧 sitemap.ts と
 //  完全に同じデータソースを使うことで URL 集合のズレを防ぐ。)
 function loadTsExports(entryFile) {
@@ -56,7 +55,6 @@ function loadTsExports(entryFile) {
 }
 
 const { GOMI_ITEMS } = loadTsExports(join(APP_DIR, "src", "data", "items.ts"));
-const { LOCALES } = loadTsExports(join(APP_DIR, "src", "lib", "i18n.ts"));
 
 // ── データ読み込み ──────────────────────────────────────────
 const wardIndex = JSON.parse(readFileSync(join(DATA_DIR, "ward-index.json"), "utf-8"));
@@ -84,10 +82,12 @@ const wardSlugIndex = JSON.parse(readFileSync(join(DATA_DIR, "ward-slug-index.js
 // 16,947（74%）が多言語ページだった。しかし実績はクリック全体の4%しかなく、
 // 中身も見出しだけ翻訳した薄いリンク集。「サイトの大半が薄い自動生成ページ」という
 // 構成がサイト全体の品質評価を下げていると判断し、インデックス対象から外した
-// （src/app/[locale]/layout.tsx で noindex を付与。経緯の詳細はそちらのコメント）。
+// （旧: 多言語レイアウトで noindex を付与していた。多言語ルート自体は
+// static-export 移行(2026-09)で削除済み。経緯の詳細はgit履歴を参照）。
 //
 // hreflang も出力しない。noindex のページを hreflang で指すのは矛盾したシグナルになる。
 // URL自体は404にせず生かしてあるので、既存のリンクや直接アクセスは従来どおり動く。
+// （多言語ルート自体は static-export 移行で削除済み。noindex付与の経緯はgit履歴を参照）
 function buildAlternates(path) {
   return {
     languages: {

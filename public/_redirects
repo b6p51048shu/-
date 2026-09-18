@@ -1,0 +1,10 @@
+/en  /  301
+/ko  /  301
+/zh  /  301
+/en/*  /:splat  301
+/ko/*  /:splat  301
+/zh/*  /:splat  301
+/tokyo/*     /Tokyo/:splat     301
+/kanagawa/*  /Kanagawa/:splat  301
+/chiba/*     /Chiba/:splat     301
+/saitama/*   /Saitama/:splat   301
