@@ -32,7 +32,7 @@ jobs:
       - name: Install dependencies (npm ci)
         run: npm ci
 
-      - name: Build (sitemap生成 + next build, output: export)
+      - name: "Build (sitemap生成 + next build, output: export)"
         run: npm run build:cloudflare
 
       - name: Verify static export output
