@@ -1,8 +1,14 @@
+# 静的アセットのみのWorker（2026-09 static-export移行）。
+# `main` を持たないため Worker スクリプトは動かず、`out/`（next build の output:"export" の成果物）を
+# Cloudflare のエッジからそのまま配信する。CPU消費ゼロ・無料枠でリクエスト無制限。
+#
+# 注意: main が無い構成では `[assets].binding` を書くと wrangler が
+#   "Cannot use assets with a binding in an assets-only Worker" で失敗する。binding は書かないこと。
+# not_found_handling = "404-page" は out/404.html を 404 応答として返す設定。
+# `_redirects` / `_headers` は out/ 直下に置かれたものが自動で解釈される。
 name = "gominohi"
 compatibility_date = "2024-12-30"
-compatibility_flags = ["nodejs_compat", "global_fetch_strictly_public"]
 
 [assets]
 directory = "out"
-binding = "ASSETS"
 not_found_handling = "404-page"
