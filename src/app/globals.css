@@ -218,79 +218,6 @@ a:hover { text-decoration: underline; }
   min-height: 96px;
 }
 
-/* ── 楽天アフィリエイト商品カード（InlineAdの後継）─────────────
-   素材HTML（.rakuten-ad-card 内部）の style属性・リンクURL・rel等は
-   一切書き換えない。ここではラッパーと外側レイアウトのみを調整し、
-   楽天素材の固定px幅（504/240/248）を子孫セレクタで上書きして
-   レスポンシブ化する（詳細度を確実に上回るため !important を使用）。 */
-.rakuten-ad-block {
-  margin: 2rem 0;
-  padding: 1.1rem 1.2rem 1.2rem;
-  background: linear-gradient(135deg, var(--green-light, #dcfce7) 0%, #f0fdf4 60%, #ffffff 100%);
-  border: 1px solid #bbf7d0;
-  border-radius: 14px;
-  text-align: center;
-}
-.rakuten-ad-block .ad-label {
-  display: inline-block;
-  background: #ffffff;
-  color: var(--green-dark, #15803d);
-  font-size: .68rem;
-  font-weight: 600;
-  padding: .1rem .5rem;
-  border-radius: 4px;
-  margin-bottom: .85rem;
-  border: 1px solid #bbf7d0;
-}
-.rakuten-ad-list {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: 14px;
-}
-.rakuten-ad-card {
-  width: 100%;
-  max-width: 504px;
-  margin: 0 auto;
-  overflow: hidden;
-}
-/* 楽天素材の内側テーブルを100%幅・固定レイアウトにして横スクロールを防止 */
-.rakuten-ad-card table {
-  width: 100% !important;
-  max-width: 100%;
-  table-layout: fixed;
-}
-/* 外枠div（style="...width:504px..."）を親幅いっぱいに */
-.rakuten-ad-card div[style*="width:504px"] {
-  width: 100% !important;
-  max-width: 100%;
-  box-sizing: border-box;
-}
-/* 画像セル・テキストセルの固定px幅を比率(240:248)を保ったまま%に置換 */
-.rakuten-ad-card td[style*="width:240px"] {
-  width: 49% !important;
-}
-.rakuten-ad-card td[style*="width:248px"] {
-  /* 素材のtdに display:block が指定されており、ブラウザのテーブル修復処理で
-     匿名セルに包まれて実効幅が51%の半分程度に縮む（文字の右側が空く）。
-     table-cellに戻して51%全域をテキストに使わせる。 */
-  display: table-cell !important;
-  width: 51% !important;
-}
-.rakuten-ad-card img {
-  max-width: 100%;
-  height: auto;
-}
-/* 楽天の商品名は出店者がキーワードを大量に詰めるため非常に長い。
-   画像の高さと釣り合うよう最大5行で省略表示する（DOMのテキスト・リンクは
-   無改変。CSSによる表示制御のみ）。価格・購入ボタンはこの下に常に見える。 */
-.rakuten-ad-card p > a {
-  display: -webkit-box;
-  -webkit-line-clamp: 5;
-  -webkit-box-orient: vertical;
-  overflow: hidden;
-}
-
 /* ── ボトム固定広告バナー（A8画像バナー） ── */
 .bottom-ad-spacer { height: 70px; }
 .bottom-ad-banner {
@@ -1136,3 +1063,10 @@ a:hover { text-decoration: underline; }
   border-top: 1px solid var(--gray-200);
 }
 .article-related-links { display: flex; flex-wrap: wrap; gap: .75rem; margin-top: .75rem; }
+
+/* ── 宅配買取（リコマース）広告 ── */
+.recommerce-ad{margin:2rem 0;padding:1rem;border:1px solid #e5e7eb;border-radius:8px;background:#fafafa}
+.recommerce-ad p{margin:.5rem 0;font-size:.95rem;line-height:1.7}
+.recommerce-ad .recommerce-rect{display:block;text-align:center;margin:.75rem 0}
+.recommerce-ad .recommerce-rect img{max-width:100%;height:auto}
+.recommerce-ad .recommerce-text{display:block;margin-top:.5rem}
