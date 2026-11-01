@@ -1,3 +1,4 @@
+import RecommerceAd from "@/components/RecommerceAd";
 import type { Metadata } from "next";
 
 const PAGE_PATH = "/guide/aircon-cleaning/";
@@ -217,6 +218,8 @@ export default function AirconCleaningPage() {
             {" "}<a href="/items/aircon/" style={{ color: "#b45309", fontWeight: 600, textDecoration: "underline" }}>エアコンの捨て方</a>{" "}
             にまとめています。
           </p>
+
+          <RecommerceAd variant="text" />
 
           <h2 id="faq">よくある質問</h2>
           <div className="faq-section" style={{ marginTop: "1rem" }}>

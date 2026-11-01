@@ -3,7 +3,6 @@ import { notFound } from "next/navigation";
 import { GOMI_ITEMS, ITEM_CATEGORIES, getItemBySlug } from "@/data/items";
 import { breadcrumbJsonLd } from "@/lib/jsonld";
 import RecommerceAd from "@/components/RecommerceAd";
-import { RECOMMERCE_TARGETS } from "@/data/recommerceTargets";
 import { PREFS, PREF_SLUGS } from "@/lib/prefs";
 
 type Props = { params: Promise<{ item: string }> };
@@ -150,8 +149,8 @@ export default async function ItemPage({ params }: Props) {
           </div>
         </section>
 
-        {/* 宅配買取の対象になり得る品目のみ広告枠 */}
-        {RECOMMERCE_TARGETS.includes(item.slug) && <RecommerceAd variant="full" />}
+        {/* 宅配買取の広告枠（全品目） */}
+        <RecommerceAd variant="full" />
 
         {/* FAQ（SEOテキスト） */}
         <section className="faq-section">

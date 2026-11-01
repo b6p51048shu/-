@@ -1,3 +1,4 @@
+import RecommerceAd from "@/components/RecommerceAd";
 import type { BagsUILocale } from "@/lib/i18n";
 import { funyohinContent } from "@/lib/articleContent";
 
@@ -187,6 +188,8 @@ export default function FunyohinArticle({ locale }: Props) {
               <li key={i} dangerouslySetInnerHTML={{ __html: li }} />
             ))}
           </ul>
+
+          <RecommerceAd variant="text" />
 
           {/* FAQ */}
           <h2 id={IDS[7]}>{c.faqH}</h2>

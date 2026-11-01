@@ -1,3 +1,4 @@
+import RecommerceAd from "@/components/RecommerceAd";
 import type { Metadata } from "next";
 import { guideContent } from "@/lib/articleContent";
 
@@ -38,6 +39,8 @@ export default function GuideIndexPage() {
       <div style={{ marginTop: "2.5rem" }}>
         <a href="/" className="btn btn-outline">{c.backHome}</a>
       </div>
+
+      <RecommerceAd variant="text" />
     </div>
   );
 }

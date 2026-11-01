@@ -1,5 +1,6 @@
 "use client";
 
+import RecommerceAd from "@/components/RecommerceAd";
 import { useState, useEffect, useRef } from "react";
 import wardIndex from "../../public/data/ward-index.json";
 import regionIndex from "../../public/data/region-index.json";
@@ -283,6 +284,8 @@ export default function TopPage() {
             ))}
           </div>
         </section>
+
+        <RecommerceAd variant="text" />
 
         {/* ── 粗大ごみ・不用品の導線（お役立ち情報） ── */}
         <section aria-label="粗大ごみ・不用品の処分について">

@@ -1,3 +1,4 @@
+import RecommerceAd from "@/components/RecommerceAd";
 import type { Metadata } from "next";
 
 const PAGE_PATH = "/guide/gomi-yashiki/";
@@ -204,6 +205,8 @@ export default function GomiYashikiPage() {
             <li><strong>物の入口を絞る</strong>：買い置き・もらい物・通販の段ボールなど、入ってくる量を減らす。</li>
             <li><strong>定期的な見守り</strong>：家族の定期訪問や、自治体・福祉サービスとのつながりを保つ。孤立が再発の最大要因です。</li>
           </ol>
+
+          <RecommerceAd variant="text" />
 
           <h2 id="faq">よくある質問</h2>
           <div className="faq-section" style={{ marginTop: "1rem" }}>

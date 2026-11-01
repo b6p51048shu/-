@@ -1,3 +1,4 @@
+import RecommerceAd from "@/components/RecommerceAd";
 import type { Metadata } from "next";
 
 const PAGE_PATH = "/guide/sodaigomi-seal/";
@@ -256,6 +257,8 @@ export default function SodaigomiSealPage() {
               </a>
             ))}
           </div>
+
+          <RecommerceAd variant="text" />
 
           <h2 id="faq">よくある質問</h2>
           <div className="faq-section" style={{ marginTop: "1rem" }}>

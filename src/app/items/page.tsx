@@ -1,3 +1,4 @@
+import RecommerceAd from "@/components/RecommerceAd";
 import type { Metadata } from "next";
 import { groupItemsByCategory, ITEM_CATEGORIES, GOMI_ITEMS } from "@/data/items";
 import { breadcrumbJsonLd } from "@/lib/jsonld";
@@ -93,6 +94,8 @@ export default function ItemsIndexPage() {
             地域から収集日を調べる
           </a>
         </div>
+
+        <RecommerceAd variant="text" />
       </div>
     </>
   );

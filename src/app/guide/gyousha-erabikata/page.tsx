@@ -1,3 +1,4 @@
+import RecommerceAd from "@/components/RecommerceAd";
 import type { Metadata } from "next";
 
 const PAGE_PATH = "/guide/gyousha-erabikata/";
@@ -207,6 +208,8 @@ export default function GyoushaErabikataPage() {
             <li><strong>警察相談専用電話（#9110）</strong>：脅迫的な取り立てなど身の危険を感じる場合。</li>
             <li><strong>自治体の清掃担当窓口</strong>：無許可業者の通報先。地域の許可業者の案内も受けられます。</li>
           </ul>
+
+          <RecommerceAd variant="text" />
 
           <h2 id="faq">よくある質問</h2>
           <div className="faq-section" style={{ marginTop: "1rem" }}>
