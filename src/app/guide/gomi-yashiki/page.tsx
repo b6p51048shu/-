@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import RakutenAdCard from "@/components/RakutenAdCard";
 
 const PAGE_PATH = "/guide/gomi-yashiki/";
 const UPDATED = "2026年6月29日";
@@ -183,8 +182,6 @@ export default function GomiYashikiPage() {
             見積もり時に作業範囲を必ず確認しましょう。
           </p>
 
-          {/* アフィリエイト（不用品回収）— 費用検討の直後 */}
-          <RakutenAdCard locale="ja" order="dispenser-first" />
 
           <h2 id="gyousha">業者の選び方と近所への配慮</h2>
           <ul>

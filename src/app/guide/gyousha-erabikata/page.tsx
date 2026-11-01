@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import RakutenAdCard from "@/components/RakutenAdCard";
 
 const PAGE_PATH = "/guide/gyousha-erabikata/";
 const UPDATED = "2026年6月29日";
@@ -165,8 +164,6 @@ export default function GyoushaErabikataPage() {
             自治体サイトの許可業者一覧で確認できます。
           </p>
 
-          {/* アフィリエイト（不用品回収）— 比較検討の文脈 */}
-          <RakutenAdCard locale="ja" order="dispenser-first" />
 
           <h2 id="akushitsu">悪質業者の手口と見分け方</h2>
           <p>

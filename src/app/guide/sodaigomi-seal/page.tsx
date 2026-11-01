@@ -1,5 +1,4 @@
 import type { Metadata } from "next";
-import RakutenAdCard from "@/components/RakutenAdCard";
 
 const PAGE_PATH = "/guide/sodaigomi-seal/";
 const UPDATED = "2026年6月29日";
@@ -236,8 +235,6 @@ export default function SodaigomiSealPage() {
             <li><strong>収集日の朝に指定場所へ出す</strong>：多くの区で朝8時まで。玄関先・集積所など、申込時に案内された場所へ。</li>
           </ol>
 
-          {/* アフィリエイト広告（不用品回収）— 「予約待ち・急ぎ」を意識するタイミング */}
-          <RakutenAdCard locale="ja" order="dispenser-first" />
 
           <h2 id="chuui">つまずきやすい注意点5つ</h2>
           <ul>
