@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import RakutenAdCard from "@/components/RakutenAdCard";
+import RecommerceAd from "@/components/RecommerceAd";
 
 const PAGE_PATH = "/guide/hikkoshi-gomi/";
 const UPDATED = "2026年6月7日";
@@ -230,7 +230,7 @@ export default function HikkoshiGomiPage() {
           </p>
 
           {/* アフィリエイト広告（不用品回収）— 逆算で「間に合わない」を意識した直後に置く */}
-          <RakutenAdCard locale="ja" order="dispenser-first" />
+          <RecommerceAd variant="text" />
 
           <h2 id="maniawanai">「間に合わない」を防ぐ4つのコツ</h2>
           <ul>

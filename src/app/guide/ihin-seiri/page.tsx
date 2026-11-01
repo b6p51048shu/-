@@ -1,5 +1,5 @@
 import type { Metadata } from "next";
-import RakutenAdCard from "@/components/RakutenAdCard";
+import RecommerceAd from "@/components/RecommerceAd";
 
 const PAGE_PATH = "/guide/ihin-seiri/";
 const UPDATED = "2026年6月29日";
@@ -182,7 +182,7 @@ export default function IhinSeiriPage() {
           </p>
 
           {/* アフィリエイト（不用品回収・遺品整理）— 費用検討の直後 */}
-          <RakutenAdCard locale="ja" order="dispenser-first" />
+          <RecommerceAd variant="text" />
 
           <h2 id="gyousha">遺品整理業者の選び方</h2>
           <ul>
