@@ -2,6 +2,7 @@
 // 各県ディレクトリ（src/app/{Pref}/[ward]/page.tsx）から createWardPage(pref) で生成する。
 // 東京のみのデータ状態でも従来の /Tokyo/... と同一出力になること（P0受け入れ条件）。
 
+import RecommerceAd from "@/components/RecommerceAd";
 import type { Metadata } from "next";
 import { getWardBySlug, garbageLabel, GARBAGE_KEYS } from "@/lib/data";
 import type { AreaSchedule, GarbageKey } from "@/lib/data";
@@ -242,6 +243,8 @@ export function createWardPage(pref: PrefSlug) {
               </div>
             ))}
           </section>
+
+          <RecommerceAd variant="text" />
 
           <SourceNote
             entityName={wardName}

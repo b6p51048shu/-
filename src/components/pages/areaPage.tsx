@@ -2,6 +2,7 @@
 // 各県ディレクトリ（src/app/{Pref}/[ward]/[area]/page.tsx）から createAreaPage(pref) で生成する。
 // 東京のみのデータ状態でも従来の /Tokyo/... と同一出力になること（P0受け入れ条件）。
 
+import RecommerceAd from "@/components/RecommerceAd";
 import type { Metadata } from "next";
 import { getWardBySlug, getAreaBySlug } from "@/lib/data";
 import type { AreaSchedule } from "@/lib/data";
@@ -270,7 +271,8 @@ export function createAreaPage(pref: PrefSlug) {
             </section>
           )}
 
-          {/* 楽天カードは2026-09-17に撤去。本文の薄い地域ページに無関係商品の広告を載せるのは品質評価を下げるため。品目・ガイドには残している */}
+          {/* 宅配買取の広告枠（2026-11-01 全ページ設置の方針。テキストリンクのみ） */}
+          <RecommerceAd variant="text" />
 
           {/* 出典・データ確認時期（E-E-A-T表示） */}
           <SourceNote

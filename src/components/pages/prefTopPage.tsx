@@ -2,6 +2,7 @@
 // 各県ディレクトリ（src/app/{Pref}/page.tsx）から createPrefTopPage(pref) で生成する。
 // データ未対応の県（region-index に県キーが無い）は「準備中」表示の200ページになる。
 
+import RecommerceAd from "@/components/RecommerceAd";
 import type { Metadata } from "next";
 import { regionIndex } from "@/lib/data";
 import { breadcrumbJsonLd } from "@/lib/jsonld";
@@ -93,6 +94,8 @@ export function createPrefTopPage(pref: PrefSlug) {
               </section>
             ))
           )}
+
+          <RecommerceAd variant="text" />
         </div>
       </>
     );
