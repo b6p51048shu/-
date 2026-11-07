@@ -10,8 +10,8 @@ const DESCRIPTION =
   "多くの自治体は「収集日の当日、朝8時まで」に出すルールで、前日の夜に出すのは禁止です。理由（カラス・放火・近隣）、夜間収集の自治体の例外、朝が早い人の工夫、出し忘れたときの対処法を整理しました。";
 const H1 = "ごみは前日の夜に出していい？";
 const BREADCRUMB = "前日の夜のごみ出し";
-const DATE_PUBLISHED = "2026-11-10";
-const UPDATED = "2026年11月10日";
+const DATE_PUBLISHED = "2026-11-07";
+const UPDATED = "2026年11月7日";
 
 const RELATED_ITEMS = ["cat-litter", "diaper", "cardboard", "spray-can"];
 const RELATED_GUIDES = ["hikkoshi-gomi", "osouji-gomi"];

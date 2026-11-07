@@ -10,8 +10,8 @@ const DESCRIPTION =
   "しめ縄や門松などの正月飾りは、1月15日ごろのどんど焼き（左義長）か神社の古札納所に。出せないときは自治体のごみに出せます。分別のポイント、鏡餅・だるま・破魔矢の扱い、プラスチック製の飾りの注意をまとめました。";
 const H1 = "正月飾り・しめ縄・門松・鏡餅・だるまの捨て方";
 const BREADCRUMB = "正月飾りの捨て方";
-const DATE_PUBLISHED = "2026-11-10";
-const UPDATED = "2026年11月10日";
+const DATE_PUBLISHED = "2026-11-07";
+const UPDATED = "2026年11月7日";
 
 const RELATED_ITEMS = ["kadomatsu", "christmas-tree", "kamidana", "calendar", "cardboard"];
 const RELATED_GUIDES = ["osouji-gomi", "sodaigomi-nenmatsu"];

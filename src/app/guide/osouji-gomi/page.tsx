@@ -10,8 +10,8 @@ const DESCRIPTION =
   "年末の大掃除で一気に出る衣類・食器・紙類・小型家電・スプレー缶・粗大ごみを、何ごみにどう出すかを整理。12月は粗大ごみの申込が混むので、収集日と申込期限を先に押さえるのがコツです。";
 const H1 = "大掃除で出たごみの分け方と出し方｜12月に間に合わせるコツ";
 const BREADCRUMB = "大掃除のごみの分け方";
-const DATE_PUBLISHED = "2026-11-10";
-const UPDATED = "2026年11月10日";
+const DATE_PUBLISHED = "2026-11-07";
+const UPDATED = "2026年11月7日";
 
 const RELATED_ITEMS = ["clothes", "futon", "carpet", "kotatsu", "heater", "glass-pottery", "cardboard", "newspaper", "books", "magazine", "cosmetics", "spray-can", "battery", "button-battery", "light-bulb", "pc", "mobile-battery", "calendar", "photo-album"];
 const RELATED_GUIDES = ["sodaigomi-seal", "funyohin-hiyo", "hikkoshi-gomi"];

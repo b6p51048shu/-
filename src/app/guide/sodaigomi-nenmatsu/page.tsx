@@ -10,8 +10,8 @@ const DESCRIPTION =
   "12月は粗大ごみの申込が集中し、年内の収集枠が早く埋まります。間に合わないときの4つの選択肢（持ち込み・年明けの収集・買取・許可業者）と、年末年始の受付休止期間、申込の締め切りの目安を整理しました。";
 const H1 = "年末に粗大ごみの収集が間に合わないとき";
 const BREADCRUMB = "年末の粗大ごみ";
-const DATE_PUBLISHED = "2026-11-10";
-const UPDATED = "2026年11月10日";
+const DATE_PUBLISHED = "2026-11-07";
+const UPDATED = "2026年11月7日";
 
 const RELATED_ITEMS = ["sofa", "mattress", "futon", "desk", "chair", "shelf", "kotatsu", "heater", "bicycle", "tv", "refrigerator", "washing-machine"];
 const RELATED_GUIDES = ["sodaigomi-seal", "funyohin-hiyo", "gyousha-erabikata", "osouji-gomi"];
