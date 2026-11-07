@@ -138,6 +138,10 @@ function buildEntries() {
       "jikka-katazuke",
       "gomi-yashiki",
       "aircon-cleaning",
+      "osouji-gomi",
+      "shogatsu-kazari",
+      "sodaigomi-nenmatsu",
+      "gomi-zenjitsu",
     ].map((slug) => ({
       url: `${BASE}/guide/${slug}/`,
       priority: 0.7,
